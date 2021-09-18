@@ -49,7 +49,10 @@
   <ItemGroup>
     <Compile Include="CapaAccesoDatos\AsistenciaUsuarioDao.cs" />
     <Compile Include="CapaAccesoDatos\DataManager.cs" />
+    <Compile Include="CapaAccesoDatos\EstadoAsistenciaDao.cs" />
     <Compile Include="CapaAccesoDatos\UsuarioDao.cs" />
+    <Compile Include="CapaLogicaNegocio\AsistenciaUsuarioService.cs" />
+    <Compile Include="CapaLogicaNegocio\EstadoAsistenciaService.cs" />
     <Compile Include="CapaLogicaNegocio\UsuarioService.cs" />
     <Compile Include="CapaPresentacion\FrmConsultaAsignaciones.cs">
       <SubType>Form</SubType>

@@ -11,6 +11,6 @@ namespace BugTrackingSystem.Entidades
         public Usuario Usuario { get; set; }
         public DateTime Fecha { get; set; }
         public float SueldoBruto { get; set; }
-
+        public bool Borrado { get; set; }
     }
 }

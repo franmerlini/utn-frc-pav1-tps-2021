@@ -11,6 +11,7 @@ namespace BugTrackingSystem.Entidades
         public int Id { get; set; }
         public string Nombre { get; set; }
         public float Monto { get; set; }
+        public bool Borrado { get; set; }
 
         public override string ToString()
         {

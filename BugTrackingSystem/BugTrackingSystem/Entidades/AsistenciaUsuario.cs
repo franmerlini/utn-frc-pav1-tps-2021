@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BugTrackingSystem.Entidades
 {
-    class AsistenciaUsuario
+    public class AsistenciaUsuario
     {
         public Usuario Usuario { get; set; }
         public DateTime Fecha { get; set; }
@@ -14,6 +14,6 @@ namespace BugTrackingSystem.Entidades
         public DateTime HoraSalida { get; set; }
         public EstadoAsistencia EstadoAsistencia { get; set; }
         public string Comentario { get; set; }
-
+        public bool Borrado { get; set; }
     }
 }

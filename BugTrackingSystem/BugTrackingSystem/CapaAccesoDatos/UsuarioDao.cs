@@ -99,7 +99,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             parametros.Add("usuario", usuario.Nombre);
             parametros.Add("password", usuario.Contrasena);
             parametros.Add("email", usuario.Email);
-            parametros.Add("id_perfil", usuario.Perfil.Id);
+            parametros.Add("id_perfil", usuario.Perfil.IdPerfil);
 
             // Si una fila es afectada por la inserción retorna TRUE. Caso contrario retorna FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -120,13 +120,13 @@ namespace BugTrackingSystem.CapaAccesoDatos
         {
             Usuario usuario = new Usuario
             {
-                Id = Convert.ToInt32(row["id_usuario"].ToString()),
+                IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
                 Nombre = row["usuario"].ToString(),
                 Email = row["email"].ToString(),
                 Contrasena = row.Table.Columns.Contains("password") ? row["password"].ToString() : null,
                 Perfil = new Perfil()
                 {
-                    Id = Convert.ToInt32(row["id_perfil"].ToString()),
+                    IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
                     Nombre = row["perfil"].ToString(),
                 }
             };

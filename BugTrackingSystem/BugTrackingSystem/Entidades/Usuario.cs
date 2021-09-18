@@ -14,6 +14,7 @@ namespace BugTrackingSystem.Entidades
         public string Email { get; set; }
         public string Estado { get; set; }
         public Perfil Perfil { get; set; }
+        public bool Borrado { get; set; }
 
         public override string ToString()
         {

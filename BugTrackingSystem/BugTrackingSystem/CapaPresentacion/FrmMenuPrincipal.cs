@@ -1,4 +1,5 @@
-﻿using BugTrackingSystem.Entidades;
+﻿using BugTrackingSystem.CapaPresentacion;
+using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,6 @@ namespace BugTrackingSystem.Forms
         public FrmMenuPrincipal(Usuario usu)
         {
             InitializeComponent();
-            lblUsuario.Text = usu.Nombre;
-            lblPerfil.Text = usu.Perfil.Nombre;
-            lblUsuario.Visible = true;
-            lblPerfil.Visible = true;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,9 +24,19 @@ namespace BugTrackingSystem.Forms
             System.Environment.Exit(1);
         }
 
-        private void tsiAsignaciones_Click(object sender, EventArgs e)
+        private void MostrarVentana(Form ventana)
         {
-            FrmConsultaAsignaciones ventana = new FrmConsultaAsignaciones;
+            this.IsMdiContainer = true;
+            if (this.MdiChildren.Length != 0)
+                this.MdiChildren[0].Close();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaAsignaciones ventana = new FrmConsultaAsignaciones();
+            MostrarVentana(ventana);
         }
     }
 }

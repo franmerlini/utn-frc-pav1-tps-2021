@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BugTrackingSystem.Entidades
 {
-    class EstadoAsistencia
+    public class EstadoAsistencia
     {
-        public int Id { get; set; }
+        public int IdEstadoAsistencia { get; set; }
         public string Nombre { get; set; }
+        public bool Borrado { get; set; }
 
         public override string ToString()
         {

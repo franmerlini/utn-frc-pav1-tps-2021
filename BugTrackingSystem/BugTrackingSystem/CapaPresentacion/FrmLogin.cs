@@ -61,5 +61,7 @@ namespace BugTrackingSystem
                 txtContra.PasswordChar = '•';
             }
         }
+
+
     }
 }

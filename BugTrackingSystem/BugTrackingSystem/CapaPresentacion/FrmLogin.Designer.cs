@@ -83,20 +83,22 @@ namespace BugTrackingSystem
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
             this.txtNombre.Location = new System.Drawing.Point(96, 270);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(141, 20);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.Text = "ADMIN";
             // 
             // txtContra
             // 
             this.txtContra.BackColor = System.Drawing.Color.White;
             this.txtContra.Location = new System.Drawing.Point(96, 315);
-            this.txtContra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContra.Margin = new System.Windows.Forms.Padding(2);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '•';
             this.txtContra.Size = new System.Drawing.Size(141, 20);
             this.txtContra.TabIndex = 2;
+            this.txtContra.Text = "123";
             // 
             // btnIniciarSesion
             // 
@@ -104,7 +106,7 @@ namespace BugTrackingSystem
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.Red;
             this.btnIniciarSesion.Location = new System.Drawing.Point(95, 384);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(141, 28);
             this.btnIniciarSesion.TabIndex = 4;
@@ -139,7 +141,7 @@ namespace BugTrackingSystem
             this.chkContra.AutoSize = true;
             this.chkContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkContra.Location = new System.Drawing.Point(95, 339);
-            this.chkContra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkContra.Margin = new System.Windows.Forms.Padding(2);
             this.chkContra.Name = "chkContra";
             this.chkContra.Size = new System.Drawing.Size(142, 20);
             this.chkContra.TabIndex = 3;
@@ -151,7 +153,7 @@ namespace BugTrackingSystem
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(117, 85);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(90, 90);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,9 +174,9 @@ namespace BugTrackingSystem
             this.gBxLogin.Controls.Add(this.label4);
             this.gBxLogin.Controls.Add(this.btnIniciarSesion);
             this.gBxLogin.Location = new System.Drawing.Point(118, 98);
-            this.gBxLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBxLogin.Margin = new System.Windows.Forms.Padding(2);
             this.gBxLogin.Name = "gBxLogin";
-            this.gBxLogin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBxLogin.Padding = new System.Windows.Forms.Padding(2);
             this.gBxLogin.Size = new System.Drawing.Size(334, 443);
             this.gBxLogin.TabIndex = 11;
             this.gBxLogin.TabStop = false;
@@ -190,7 +192,7 @@ namespace BugTrackingSystem
             this.tableLayoutPanel1.Controls.Add(this.gBxLogin, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -209,12 +211,13 @@ namespace BugTrackingSystem
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gBxLogin.ResumeLayout(false);
             this.gBxLogin.PerformLayout();
