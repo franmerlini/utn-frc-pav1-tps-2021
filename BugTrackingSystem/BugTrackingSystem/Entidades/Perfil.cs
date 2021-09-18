@@ -8,11 +8,8 @@ namespace BugTrackingSystem.Entidades
 {
     public class Perfil
     {
-        private int id;
-        private string nombre;
-
-        public int Id { get => id; set => id = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
+        public int IdPerfil { get; set; }
+        public string Nombre { get; set; }
 
         public override string ToString()
         {

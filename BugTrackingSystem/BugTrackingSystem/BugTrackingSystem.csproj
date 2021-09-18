@@ -47,10 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaAccesoDatos\AsistenciaUsuarioDao.cs" />
     <Compile Include="CapaAccesoDatos\DataManager.cs" />
     <Compile Include="CapaAccesoDatos\UsuarioDao.cs" />
     <Compile Include="CapaLogicaNegocio\UsuarioService.cs" />
+    <Compile Include="CapaPresentacion\FrmConsultaAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FrmConsultaAsignaciones.Designer.cs">
+      <DependentUpon>FrmConsultaAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Asignacion.cs" />
+    <Compile Include="Entidades\AsistenciaUsuario.cs" />
+    <Compile Include="Entidades\Descuento.cs" />
+    <Compile Include="Entidades\EstadoAsistencia.cs" />
     <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Sueldo.cs" />
+    <Compile Include="Entidades\SueldoAsignacion.cs" />
+    <Compile Include="Entidades\SueldoDescuento.cs" />
+    <Compile Include="Entidades\SueldoPerfilHistorico.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="CapaPresentacion\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -66,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaPresentacion\FrmConsultaAsignaciones.resx">
+      <DependentUpon>FrmConsultaAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>

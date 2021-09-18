@@ -50,49 +50,52 @@ namespace BugTrackingSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("OldSansBlack", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(32, 17);
+            this.label1.Location = new System.Drawing.Point(24, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 46);
+            this.label1.Size = new System.Drawing.Size(312, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bug Tracking System";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 112);
+            this.label2.Location = new System.Drawing.Point(94, 91);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(120, 231);
+            this.label3.Location = new System.Drawing.Point(90, 188);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 36);
+            this.label3.Size = new System.Drawing.Size(146, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "¡Bienvenido!";
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(128, 332);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(96, 270);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(187, 22);
+            this.txtNombre.Size = new System.Drawing.Size(141, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtContra
             // 
             this.txtContra.BackColor = System.Drawing.Color.White;
-            this.txtContra.Location = new System.Drawing.Point(128, 388);
-            this.txtContra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContra.Location = new System.Drawing.Point(96, 315);
+            this.txtContra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '•';
-            this.txtContra.Size = new System.Drawing.Size(187, 22);
+            this.txtContra.Size = new System.Drawing.Size(141, 20);
             this.txtContra.TabIndex = 2;
             // 
             // btnIniciarSesion
@@ -100,10 +103,10 @@ namespace BugTrackingSystem
             this.btnIniciarSesion.BackColor = System.Drawing.Color.White;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.Red;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(127, 473);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(95, 384);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(188, 34);
+            this.btnIniciarSesion.Size = new System.Drawing.Size(141, 28);
             this.btnIniciarSesion.TabIndex = 4;
             this.btnIniciarSesion.Text = "Iniciar sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
@@ -113,9 +116,10 @@ namespace BugTrackingSystem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(125, 305);
+            this.label4.Location = new System.Drawing.Point(94, 248);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 25);
+            this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Usuario:";
             // 
@@ -123,9 +127,10 @@ namespace BugTrackingSystem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(125, 361);
+            this.label5.Location = new System.Drawing.Point(94, 293);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 25);
+            this.label5.Size = new System.Drawing.Size(96, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "Contraseña:";
             // 
@@ -133,10 +138,10 @@ namespace BugTrackingSystem
             // 
             this.chkContra.AutoSize = true;
             this.chkContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkContra.Location = new System.Drawing.Point(127, 417);
-            this.chkContra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkContra.Location = new System.Drawing.Point(95, 339);
+            this.chkContra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkContra.Name = "chkContra";
-            this.chkContra.Size = new System.Drawing.Size(177, 24);
+            this.chkContra.Size = new System.Drawing.Size(142, 20);
             this.chkContra.TabIndex = 3;
             this.chkContra.Text = "Mostrar contraseña";
             this.chkContra.UseVisualStyleBackColor = true;
@@ -145,10 +150,10 @@ namespace BugTrackingSystem
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(156, 105);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(117, 85);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(120, 111);
+            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -166,11 +171,11 @@ namespace BugTrackingSystem
             this.gBxLogin.Controls.Add(this.txtContra);
             this.gBxLogin.Controls.Add(this.label4);
             this.gBxLogin.Controls.Add(this.btnIniciarSesion);
-            this.gBxLogin.Location = new System.Drawing.Point(158, 120);
-            this.gBxLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gBxLogin.Location = new System.Drawing.Point(118, 98);
+            this.gBxLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gBxLogin.Name = "gBxLogin";
-            this.gBxLogin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gBxLogin.Size = new System.Drawing.Size(444, 546);
+            this.gBxLogin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBxLogin.Size = new System.Drawing.Size(334, 443);
             this.gBxLogin.TabIndex = 11;
             this.gBxLogin.TabStop = false;
             // 
@@ -180,32 +185,32 @@ namespace BugTrackingSystem
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 450F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 338F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.gBxLogin, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 550F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 447F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 787);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(570, 639);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(760, 787);
+            this.ClientSize = new System.Drawing.Size(570, 639);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";

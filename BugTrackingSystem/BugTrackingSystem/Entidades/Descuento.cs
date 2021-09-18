@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace BugTrackingSystem.Entidades
 {
-    public class Usuario
+    class Descuento
     {
-        public int IdUsuario { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Contrasena { get; set; }
-        public string Email { get; set; }
-        public string Estado { get; set; }
-        public Perfil Perfil { get; set; }
+        public float Monto { get; set; }
 
         public override string ToString()
         {

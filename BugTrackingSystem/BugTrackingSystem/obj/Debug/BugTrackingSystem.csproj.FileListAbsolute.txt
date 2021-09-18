@@ -9,3 +9,15 @@ C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\Bu
 C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
 C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
 C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmConsultaAsignaciones.resources
