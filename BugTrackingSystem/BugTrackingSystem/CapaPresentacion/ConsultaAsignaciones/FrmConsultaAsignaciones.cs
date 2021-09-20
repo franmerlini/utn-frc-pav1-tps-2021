@@ -16,13 +16,24 @@ namespace BugTrackingSystem.CapaPresentacion
     {
         private readonly AsistenciaUsuarioService asistenciaService;
         private readonly UsuarioService usuarioService;
+        private readonly EstadoAsistenciaService estadoAsistenciaService;
 
         public FrmConsultaAsignaciones()
         {
             InitializeComponent();
             InitializeDataGridView();
+
+            btnConsultar.FlatAppearance.BorderSize = 0;
+            btnNuevo.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnInformacion.FlatAppearance.BorderSize = 0;
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnDeshacer.FlatAppearance.BorderSize = 0;
+            btnRehacer.FlatAppearance.BorderSize = 0;
+
             asistenciaService = new AsistenciaUsuarioService();
             usuarioService = new UsuarioService();
+            estadoAsistenciaService = new EstadoAsistenciaService();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -41,7 +52,7 @@ namespace BugTrackingSystem.CapaPresentacion
                 parametros.Add("fechaHasta", fechaHasta);
             }
 
-            var usuario = "";
+            string usuario;
             if (cboUsuario.SelectedValue == null)
                 usuario = cboUsuario.Text;
             else
@@ -64,7 +75,7 @@ namespace BugTrackingSystem.CapaPresentacion
             }
 
             // Solicitamos la lista de bugs que cumplan con los filtros:
-            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerConFiltros(parametros);
+            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
 
             dgvConsultaAsistencias.DataSource = listadoAsistencias;
             if (listadoAsistencias.Count == 0)
@@ -74,22 +85,10 @@ namespace BugTrackingSystem.CapaPresentacion
 
         }
 
-        private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
-        {
-            // Datasource: establece el origen de datos de este objeto.
-            cbx.DataSource = source;
-            // DisplayMember: establece la propiedad que se va a mostrar para este ListControl.
-            cbx.DisplayMember = display;
-            // ValueMember: establece la ruta de acceso de la propiedad que se utilizará como valor real para los elementos de ListControl.
-            cbx.ValueMember = value;
-            //SelectedIndex: establece el índice que especifica el elemento seleccionado actualmente.
-            cbx.SelectedIndex = -1;
-        }
-
         private void InitializeDataGridView()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            dgvConsultaAsistencias.ColumnCount = 10;
+            dgvConsultaAsistencias.ColumnCount = 7;
             dgvConsultaAsistencias.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -104,39 +103,46 @@ namespace BugTrackingSystem.CapaPresentacion
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            dgvConsultaAsistencias.Columns[0].Name = "Nombre";
-            dgvConsultaAsistencias.Columns[0].DataPropertyName = "Usuario";
+            CrearColumnas(dgvConsultaAsistencias, 0, "Nombre", "Usuario", 150);
+            CrearColumnas(dgvConsultaAsistencias, 1, "Fecha", "Fecha", 70);
+            CrearColumnas(dgvConsultaAsistencias, 2, "Hora Ingreso", "HoraIngreso", 100);
+            CrearColumnas(dgvConsultaAsistencias, 3, "Hora Salida", "HoraSalida", 100);
+            CrearColumnas(dgvConsultaAsistencias, 4, "Estado", "EstadoAsistencia", 110);
+            CrearColumnas(dgvConsultaAsistencias, 5, "Comentario", "Comentario", 320);
+            CrearColumnas(dgvConsultaAsistencias, 6, "Borrado", "Borrado", 80);
 
-            dgvConsultaAsistencias.Columns[1].Name = "Fecha";
-            dgvConsultaAsistencias.Columns[1].DataPropertyName = "fecha";
-
-            dgvConsultaAsistencias.Columns[2].Name = "Hora Ingreso";
-            dgvConsultaAsistencias.Columns[2].DataPropertyName = "HoraIngreso";
-
-            dgvConsultaAsistencias.Columns[3].Name = "Hora Salida";
-            dgvConsultaAsistencias.Columns[3].DataPropertyName = "HoraSalida";
-
-            dgvConsultaAsistencias.Columns[4].Name = "Estado";
-            dgvConsultaAsistencias.Columns[4].DataPropertyName = "EstadoAsistencia";
-
-            dgvConsultaAsistencias.Columns[5].Name = "Comentario";
-            dgvConsultaAsistencias.Columns[5].DataPropertyName = "Comentario";
-
-            dgvConsultaAsistencias.Columns[6].Name = "Borrado";
-            dgvConsultaAsistencias.Columns[6].DataPropertyName = "Borrado";
-
-            // Cambia el tamaño de la altura de los encabezados de columna.
-            dgvConsultaAsistencias.AutoResizeColumnHeadersHeight();
-
-            // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
-            dgvConsultaAsistencias.AutoResizeRows(
-                DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
 
         private void FrmConsultaAsignaciones_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cboUsuario, usuarioService.ObtenerTodos(), "Nombre", "Nombre");
+            LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "Nombre");
+            LlenarCombo(cboEstado, estadoAsistenciaService.ObtenerEstadosAsistencia(), "Nombre", "IdEstadoAsistencia");
+        }
 
+        private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
+        {
+            // Datasource: establece el origen de datos de este objeto.
+            cbx.DataSource = source;
+            // DisplayMember: establece la propiedad que se va a mostrar para este ListControl.
+            cbx.DisplayMember = display;
+            // ValueMember: establece la ruta de acceso de la propiedad que se utilizará como valor real para los elementos de ListControl.
+            cbx.ValueMember = value;
+            //SelectedIndex: establece el índice que especifica el elemento seleccionado actualmente.
+            cbx.SelectedIndex = -1;
+        }
+
+        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
+        {
+            tabla.Columns[columna].Name = nombre;
+            tabla.Columns[columna].DataPropertyName = propiedad;
+            tabla.Columns[columna].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            tabla.Columns[columna].Width = tamaño;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FrmConsultaAsignacionesAgregar frmAgregar = new FrmConsultaAsignacionesAgregar();
+            frmAgregar.ShowDialog();
         }
     }
 }

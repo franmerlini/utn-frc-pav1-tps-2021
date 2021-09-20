@@ -11,7 +11,7 @@ namespace BugTrackingSystem.CapaLogicaNegocio
     public class AsistenciaUsuarioService
     {
         //---Atributos---
-        private AsistenciaUsuarioDao asistenciaUsuarioDao;
+        private readonly AsistenciaUsuarioDao asistenciaUsuarioDao;
 
         //---Metodos---
         //Constructor
@@ -20,11 +20,24 @@ namespace BugTrackingSystem.CapaLogicaNegocio
             asistenciaUsuarioDao = new AsistenciaUsuarioDao();
         }
 
-        // Búsqueda filtrada
-        public IList<AsistenciaUsuario> ObtenerConFiltros(Dictionary<string, object> parametros = null)
+        //Obtener
+        public IList<AsistenciaUsuario> ObtenerAsistenciasUsuario(Dictionary<string, object> parametros = null)
         {
-            return asistenciaUsuarioDao.ObtenerConFiltros(parametros);
+            return asistenciaUsuarioDao.ObtenerAsistenciasUsuario(parametros);
         }
 
+        //Crear
+        internal bool CrearAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
+        {
+            return asistenciaUsuarioDao.CrearAsistenciaUsuario(asistenciaUsuario);
+        }
+
+        //Actualizar
+        internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
+        {
+            return asistenciaUsuarioDao.ActualizarAsistenciaUsuario(asistenciaUsuario);
+        }
+
+        //Eliminar
     }
 }

@@ -19,19 +19,17 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         {
             usuarioDao = new UsuarioDao();
         }
-        //Listar todos los usuarios
-        public IList<Usuario> ObtenerTodos()
-        {
-            return usuarioDao.ObtenerTodos();
-        }
         //Validar un usuario pasando como parametro el nombre y la contraseña
         public Usuario ValidarUsuario(string nom, string cont)
         {
-            var usu = usuarioDao.ObtenerUsuario(nom);
+            Dictionary<string, object> parametro = new Dictionary<string, object>();
+            parametro.Add("nombreExacto", nom);
 
-            if (usu != null && usu.Contrasena.Equals(cont))
+            var usu = usuarioDao.ObtenerUsuarios(parametro);
+
+            if (usu[0] != null && usu[0].Contrasena.Equals(cont))
             {
-                return usu;
+                return usu[0];
             }
 
             return null;
@@ -51,15 +49,10 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         {
             return usuarioDao.EliminarUsuario(usuario);
         }
-        //Obtener un usuario
-        internal object ObtenerUsuario(string usuario)
-        {
-            return usuarioDao.ObtenerUsuario(usuario);
-        }
         //Consultar varios usuarios por filtros
-        internal IList<Usuario> ObtenerConFiltros(Dictionary<string, object> filtros)
+        internal IList<Usuario> ObtenerUsuarios(Dictionary<string, object> filtros = null)
         {
-            return usuarioDao.ObtenerConFiltros(filtros);
+            return usuarioDao.ObtenerUsuarios(filtros);
         }
     }
 }

@@ -39,9 +39,7 @@ namespace BugTrackingSystem
                 Usuario usu = usuarioService.ValidarUsuario(nom, cont);
                 if (usu != null)
                 {
-                    FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(usu);
-                    frmMenuPrincipal.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
@@ -61,7 +59,5 @@ namespace BugTrackingSystem
                 txtContra.PasswordChar = '•';
             }
         }
-
-
     }
 }

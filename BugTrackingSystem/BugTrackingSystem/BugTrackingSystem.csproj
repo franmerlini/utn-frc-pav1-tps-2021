@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,11 +55,17 @@
     <Compile Include="CapaLogicaNegocio\AsistenciaUsuarioService.cs" />
     <Compile Include="CapaLogicaNegocio\EstadoAsistenciaService.cs" />
     <Compile Include="CapaLogicaNegocio\UsuarioService.cs" />
-    <Compile Include="CapaPresentacion\FrmConsultaAsignaciones.cs">
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\FrmConsultaAsignaciones.Designer.cs">
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignaciones.Designer.cs">
       <DependentUpon>FrmConsultaAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignacionesAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignacionesAgregar.Designer.cs">
+      <DependentUpon>FrmConsultaAsignacionesAgregar.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Asignacion.cs" />
     <Compile Include="Entidades\AsistenciaUsuario.cs" />
@@ -70,27 +77,30 @@
     <Compile Include="Entidades\SueldoDescuento.cs" />
     <Compile Include="Entidades\SueldoPerfilHistorico.cs" />
     <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="CapaPresentacion\FrmLogin.cs">
+    <Compile Include="CapaPresentacion\Login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\FrmLogin.Designer.cs">
+    <Compile Include="CapaPresentacion\Login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\FrmMenuPrincipal.cs">
+    <Compile Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\FrmMenuPrincipal.Designer.cs">
+    <Compile Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CapaPresentacion\FrmConsultaAsignaciones.resx">
+    <EmbeddedResource Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignaciones.resx">
       <DependentUpon>FrmConsultaAsignaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\FrmLogin.resx">
+    <EmbeddedResource Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignacionesAgregar.resx">
+      <DependentUpon>FrmConsultaAsignacionesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\FrmMenuPrincipal.resx">
+    <EmbeddedResource Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,5 +125,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
