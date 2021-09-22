@@ -39,5 +39,9 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         }
 
         //Eliminar
+        internal bool EliminarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
+        {
+            return asistenciaUsuarioDao.EliminarAsistenciaUsuario(asistenciaUsuario);
+        }
     }
 }

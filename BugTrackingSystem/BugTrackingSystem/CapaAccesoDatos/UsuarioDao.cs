@@ -16,16 +16,16 @@ namespace BugTrackingSystem.CapaAccesoDatos
             List<Usuario> listadoUsuarios = new List<Usuario>();
 
             String consultaSQL = string.Concat(" SELECT id_usuario, ",
-                                              "        u.id_perfil, ",
-                                              "        usuario, ",
-                                              "        password, ",
-                                              "        email, ",
-                                              "        estado, ",
-                                              "        u.borrado, ",
-                                              "        p.nombre ",
-                                              "   FROM Usuarios u ",
+                                              "         u.id_perfil, ",
+                                              "         usuario, ",
+                                              "         password, ",
+                                              "         email, ",
+                                              "         estado, ",
+                                              "         u.borrado, ",
+                                              "         p.nombre ",
+                                              "  FROM Usuarios u ",
                                               "  INNER JOIN Perfiles p ON u.id_perfil = p.id_perfil ",
-                                              "  WHERE 1=1 ") ;
+                                              "  WHERE 1=1 ");
 
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
@@ -77,41 +77,42 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal bool ActualizarUsuario(Usuario oUsuario)
+        internal bool ActualizarUsuario(Usuario usuario)
         {
-            string ConsultaSQL = "  UPDATE Usuarios" +
-                                "      SET usuario = @usuario," +
-                                "       id_perfil = @idPerfil," +
-                                "       contrasena = @contrasena," +
-                                "       email = @email," +
-                                "       estado = @estado," +
-                                "   WHERE id_usuario = @idUsuario";
+            string consultaSQL = " UPDATE Usuarios" +
+                                 " SET usuario = @nombre," +
+                                 "     id_perfil = @idPerfil," +
+                                 "     contrasena = @contrasena," +
+                                 "     email = @email," +
+                                 "     estado = @estado," +
+                                 " WHERE id_usuario = @idUsuario";
 
             var parametros = new Dictionary<string, object>();
-            parametros.Add("idUsuario", oUsuario.IdUsuario);
-            parametros.Add("idPerfil", oUsuario.Perfil.IdPerfil);
-            parametros.Add("nombre", oUsuario.Nombre);
-            parametros.Add("contrasena", oUsuario.Contrasena);
-            parametros.Add("email", oUsuario.Email);
-            parametros.Add("estado", oUsuario.Estado);
-            // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(ConsultaSQL, parametros) == 1);
 
+            parametros.Add("idUsuario", usuario.IdUsuario);
+            parametros.Add("idPerfil", usuario.Perfil.IdPerfil);
+            parametros.Add("nombre", usuario.Nombre);
+            parametros.Add("contrasena", usuario.Contrasena);
+            parametros.Add("email", usuario.Email);
+            parametros.Add("estado", usuario.Estado);
+
+            // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
+            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal bool EliminarUsuario(Usuario oUsuario)
+        internal bool EliminarUsuario(Usuario usuario)
         {
             string ConsultaSQL = " UPDATE Usuarios" +
-                            "   SET borrado = 1" +
-                            "  WHERE id_usuario = @id_usuario";
+                                 " SET borrado = 1" +
+                                 " WHERE id_usuario = @idUsuario";
+
             var parametros = new Dictionary<string, object>();
-            parametros.Add("id_usuario", oUsuario.IdUsuario);
+
+            parametros.Add("idUsuario", usuario.IdUsuario);
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(ConsultaSQL, parametros) == 1);
-
         }
-
 
         private Usuario MapeoObjeto(DataRow row)
         {

@@ -22,10 +22,11 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         //Validar un usuario pasando como parametro el nombre y la contraseña
         public Usuario ValidarUsuario(string nom, string cont)
         {
-            Dictionary<string, object> parametro = new Dictionary<string, object>();
-            parametro.Add("nombreExacto", nom);
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
 
-            var usu = usuarioDao.ObtenerUsuarios(parametro);
+            parametros.Add("nombreExacto", nom);
+
+            var usu = usuarioDao.ObtenerUsuarios(parametros);
 
             if (usu[0] != null && usu[0].Contrasena.Equals(cont))
             {
@@ -50,9 +51,9 @@ namespace BugTrackingSystem.CapaLogicaNegocio
             return usuarioDao.EliminarUsuario(usuario);
         }
         //Consultar varios usuarios por filtros
-        internal IList<Usuario> ObtenerUsuarios(Dictionary<string, object> filtros = null)
+        internal IList<Usuario> ObtenerUsuarios(Dictionary<string, object> parametros = null)
         {
-            return usuarioDao.ObtenerUsuarios(filtros);
+            return usuarioDao.ObtenerUsuarios(parametros);
         }
     }
 }

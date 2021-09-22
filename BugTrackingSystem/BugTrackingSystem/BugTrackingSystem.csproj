@@ -55,17 +55,17 @@
     <Compile Include="CapaLogicaNegocio\AsistenciaUsuarioService.cs" />
     <Compile Include="CapaLogicaNegocio\EstadoAsistenciaService.cs" />
     <Compile Include="CapaLogicaNegocio\UsuarioService.cs" />
-    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignaciones.cs">
+    <Compile Include="CapaPresentacion\ConsultaAsistencias\FrmAsistencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignaciones.Designer.cs">
-      <DependentUpon>FrmConsultaAsignaciones.cs</DependentUpon>
+    <Compile Include="CapaPresentacion\ConsultaAsistencias\FrmAsistencias.Designer.cs">
+      <DependentUpon>FrmAsistencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignacionesAgregar.cs">
+    <Compile Include="CapaPresentacion\ConsultaAsistencias\FrmAsistenciasABM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignacionesAgregar.Designer.cs">
-      <DependentUpon>FrmConsultaAsignacionesAgregar.cs</DependentUpon>
+    <Compile Include="CapaPresentacion\ConsultaAsistencias\FrmAsistenciasABM.Designer.cs">
+      <DependentUpon>FrmAsistenciasABM.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Asignacion.cs" />
     <Compile Include="Entidades\AsistenciaUsuario.cs" />
@@ -91,11 +91,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignaciones.resx">
-      <DependentUpon>FrmConsultaAsignaciones.cs</DependentUpon>
+    <EmbeddedResource Include="CapaPresentacion\ConsultaAsistencias\FrmAsistencias.resx">
+      <DependentUpon>FrmAsistencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\ConsultaAsignaciones\FrmConsultaAsignacionesAgregar.resx">
-      <DependentUpon>FrmConsultaAsignacionesAgregar.cs</DependentUpon>
+    <EmbeddedResource Include="CapaPresentacion\ConsultaAsistencias\FrmAsistenciasABM.resx">
+      <DependentUpon>FrmAsistenciasABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

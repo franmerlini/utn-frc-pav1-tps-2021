@@ -14,6 +14,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             List<AsistenciaUsuario> listadoAsistencias = new List<AsistenciaUsuario>();
 
             var consultaSQL = String.Concat("SELECT a.id_usuario, ",
+                                      "        a.id_asistencia_usuario, ",
                                       "        a.fecha, ",
                                       "        a.hora_ingreso, ",
                                       "        a.hora_salida, ",
@@ -49,9 +50,14 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (fecha<=@fechaHasta) ";
                 if (parametros.ContainsKey("idEstadoAsistencia"))
                     consultaSQL += " AND (e.id_estado_asistencia=@idEstadoAsistencia) ";
-                if (parametros.ContainsKey("borrado"))
+                if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (a.borrado=0) ";
+                //Para consultar por el usuario exacto
+                if (parametros.ContainsKey("usuarioExacto"))
+                    consultaSQL += " AND (usuario = @usuarioExacto) ";
             }
+            else
+                consultaSQL += "AND (a.borrado=0) ";
 
             consultaSQL += " ORDER BY a.fecha DESC";
 
@@ -80,6 +86,9 @@ namespace BugTrackingSystem.CapaAccesoDatos
             parametros.Add("comentario", asistenciaUsuario.Comentario);
 
             // Si una fila es afectada por la inserción retorna TRUE. Caso contrario retorna FALSE
+
+            // TODO: VER TEMA DE AÑADIR NULLS DENTRO DE LOS REGISTROS SQL
+
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
@@ -89,10 +98,10 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "     SET id_usuario = @idUsuario," +
                                  "         fecha = @fecha, " +
                                  "         hora_ingreso = @horaIngreso, " +
-                                 "         hora_salida = @horaSalida" +
-                                 "         id_estado_asistencia = @idEstadoAsistencia" +
+                                 "         hora_salida = @horaSalida, " +
+                                 "         id_estado_asistencia = @idEstadoAsistencia, " +
                                  "         comentario = @comentario" +
-                                 "   WHERE id_usuario = @idUsuario";
+                                 "   WHERE id_asistencia_usuario = @idAsistenciaUsuario";
 
             var parametros = new Dictionary<string, object>();
 
@@ -102,6 +111,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             parametros.Add("horaSalida", asistenciaUsuario.HoraSalida);
             parametros.Add("idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia);
             parametros.Add("comentario", asistenciaUsuario.Comentario);
+            parametros.Add("idAsistenciaUsuario", asistenciaUsuario.IdAsistenciaUsuario);
 
             // Si una fila es afectada por la actualización retorna TRUE. Caso contrario retorna FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -111,11 +121,11 @@ namespace BugTrackingSystem.CapaAccesoDatos
         {
             string consultaSQL = "  UPDATE AsistenciaUsuarios " +
                                  "     SET borrado = 1 " +
-                                 "   WHERE id_usuario = @idUsuario";
+                                 "   WHERE id_asistencia_usuario = @idAsistenciaUsuario";
 
             var parametros = new Dictionary<string, object>();
 
-            parametros.Add("idUsuario", asistenciaUsuario.Usuario.IdUsuario);
+            parametros.Add("idAsistenciaUsuario", asistenciaUsuario.IdAsistenciaUsuario);
 
             // Si una fila es afectada por la actualización retorna TRUE. Caso contrario retorna FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -137,6 +147,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             asistenciaUsuario.Usuario.Perfil.IdPerfil = Convert.ToInt32(row["id_perfil"].ToString());
             asistenciaUsuario.Usuario.Perfil.Nombre = row["nombre"].ToString();
 
+            asistenciaUsuario.IdAsistenciaUsuario = Convert.ToInt32(row["id_asistencia_usuario"].ToString());
             asistenciaUsuario.Fecha = Convert.ToDateTime(row["fecha"].ToString());
             asistenciaUsuario.HoraIngreso = Convert.ToDateTime(row["hora_ingreso"].ToString());
             asistenciaUsuario.HoraSalida = Convert.ToDateTime(row["hora_salida"].ToString());

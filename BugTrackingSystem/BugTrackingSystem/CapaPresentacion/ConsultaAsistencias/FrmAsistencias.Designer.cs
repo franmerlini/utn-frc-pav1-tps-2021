@@ -1,7 +1,7 @@
 ﻿
 namespace BugTrackingSystem.CapaPresentacion
 {
-    partial class FrmConsultaAsignaciones
+    partial class FrmAsistencias
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace BugTrackingSystem.CapaPresentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaAsignaciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsistencias));
             this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.ChkBaja = new System.Windows.Forms.CheckBox();
             this.cboEstado = new System.Windows.Forms.ComboBox();
@@ -96,7 +96,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.cboEstado.Location = new System.Drawing.Point(310, 54);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(163, 21);
-            this.cboEstado.Sorted = true;
             this.cboEstado.TabIndex = 8;
             // 
             // label4
@@ -287,6 +286,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnEditar.TabIndex = 11;
             this.toolTip1.SetToolTip(this.btnEditar, "Editar registro seleccionado");
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -301,6 +301,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnEliminar.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar registro seleccionado");
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvConsultaAsistencias
             // 
@@ -309,6 +310,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvConsultaAsistencias.AllowUserToOrderColumns = true;
             this.dgvConsultaAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultaAsistencias.Location = new System.Drawing.Point(12, 142);
+            this.dgvConsultaAsistencias.MultiSelect = false;
             this.dgvConsultaAsistencias.Name = "dgvConsultaAsistencias";
             this.dgvConsultaAsistencias.ReadOnly = true;
             this.dgvConsultaAsistencias.Size = new System.Drawing.Size(971, 296);
@@ -324,7 +326,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
             // 
-            // FrmConsultaAsignaciones
+            // FrmAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,11 +340,11 @@ namespace BugTrackingSystem.CapaPresentacion
             this.Controls.Add(this.grpFiltros);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmConsultaAsignaciones";
+            this.Name = "FrmAsistencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmConsultaAsignaciones";
+            this.Text = "FrmAsistencias";
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.Load += new System.EventHandler(this.FrmConsultaAsignaciones_Load);
+            this.Load += new System.EventHandler(this.FrmAsignaciones_Load);
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
             this.grpAcciones.ResumeLayout(false);

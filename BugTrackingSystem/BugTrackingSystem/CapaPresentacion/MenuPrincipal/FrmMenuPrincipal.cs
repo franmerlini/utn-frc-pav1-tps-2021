@@ -44,7 +44,7 @@ namespace BugTrackingSystem.Forms
         // Se inicia la ventana de Consulta de asignaciones con su botón correspondiente:)
         private void tsiAsignaciones_Click(object sender, EventArgs e)
         {
-            FrmConsultaAsignaciones ventana = new FrmConsultaAsignaciones();
+            FrmAsistencias ventana = new FrmAsistencias();
             MostrarVentana(ventana, "Consulta de Asistencias");
         }
 

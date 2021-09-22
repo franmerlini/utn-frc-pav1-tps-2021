@@ -12,13 +12,15 @@ using System.Windows.Forms;
 
 namespace BugTrackingSystem.CapaPresentacion
 {
-    public partial class FrmConsultaAsignaciones : Form
+    public partial class FrmAsistencias : Form
     {
         private readonly AsistenciaUsuarioService asistenciaService;
         private readonly UsuarioService usuarioService;
         private readonly EstadoAsistenciaService estadoAsistenciaService;
 
-        public FrmConsultaAsignaciones()
+        private Dictionary<string, object> parametros = new Dictionary<string, object>();
+
+        public FrmAsistencias()
         {
             InitializeComponent();
             InitializeDataGridView();
@@ -34,13 +36,14 @@ namespace BugTrackingSystem.CapaPresentacion
             asistenciaService = new AsistenciaUsuarioService();
             usuarioService = new UsuarioService();
             estadoAsistenciaService = new EstadoAsistenciaService();
+            parametros.Clear();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             // Sección reviso de filtros:
 
-            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Clear();
 
             if (DateTime.TryParse(dateFechaDesde.Text, out DateTime fechaDesde) && dateFechaDesde.Checked)
             {
@@ -53,25 +56,26 @@ namespace BugTrackingSystem.CapaPresentacion
             }
 
             string usuario;
-            if (cboUsuario.SelectedValue == null)
-                usuario = cboUsuario.Text;
-            else
-                usuario = cboUsuario.SelectedValue.ToString();
-
-            if (!string.IsNullOrEmpty(usuario))
+            if (cboUsuario.SelectedValue == null && !string.IsNullOrEmpty(cboUsuario.Text))
             {
+                usuario = cboUsuario.Text;
                 parametros.Add("usuario", usuario);
             }
-
-            if (!string.IsNullOrEmpty(cboEstado.Text))
+            else if (cboUsuario.SelectedValue != null)
             {
-                var idEstadoAsistencia = cboEstado.SelectedValue.ToString();
-                parametros.Add("idEstado", idEstadoAsistencia);
+                usuario = cboUsuario.SelectedValue.ToString();
+                parametros.Add("usuarioExacto", usuario);
             }
 
-            if (!ChkBaja.Checked)
+            if (cboEstado.SelectedValue != null)
             {
-                parametros.Add("borrado", false);
+                var idEstadoAsistencia = cboEstado.SelectedValue.ToString();
+                parametros.Add("idEstadoAsistencia", idEstadoAsistencia);
+            }
+
+            if (ChkBaja.Checked)
+            {
+                parametros.Add("borrado", true);
             }
 
             // Solicitamos la lista de bugs que cumplan con los filtros:
@@ -82,6 +86,9 @@ namespace BugTrackingSystem.CapaPresentacion
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            cboEstado.SelectedIndex = -1;
+            cboUsuario.SelectedIndex = -1;
 
         }
 
@@ -113,11 +120,16 @@ namespace BugTrackingSystem.CapaPresentacion
 
         }
 
-        private void FrmConsultaAsignaciones_Load(object sender, EventArgs e)
+        private void FrmAsignaciones_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "Nombre");
             LlenarCombo(cboEstado, estadoAsistenciaService.ObtenerEstadosAsistencia(), "Nombre", "IdEstadoAsistencia");
+
+            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario();
+            dgvConsultaAsistencias.DataSource = listadoAsistencias;
         }
+
+
 
         private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
         {
@@ -141,8 +153,44 @@ namespace BugTrackingSystem.CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FrmConsultaAsignacionesAgregar frmAgregar = new FrmConsultaAsignacionesAgregar();
+            FrmAsistenciasABM frmAgregar = new FrmAsistenciasABM();
             frmAgregar.ShowDialog();
+
+            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
+            dgvConsultaAsistencias.DataSource = listadoAsistencias;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvConsultaAsistencias.CurrentRow.DataBoundItem;
+            if (asistenciaUsuario.Borrado == true)
+                MessageBox.Show("¡No puede eliminar un registro ya borrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            DialogResult rta = MessageBox.Show("¿Seguro que desea borrar el registro seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rta == DialogResult.Yes)
+            {
+                if (asistenciaService.EliminarAsistenciaUsuario(asistenciaUsuario))
+                    MessageBox.Show("Registro eliminado correctamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else
+                    MessageBox.Show("El registro no se pudo borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
+                dgvConsultaAsistencias.DataSource = listadoAsistencias;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            FrmAsistenciasABM frmEditar = new FrmAsistenciasABM();
+
+            AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvConsultaAsistencias.CurrentRow.DataBoundItem;
+
+            frmEditar.InicializarFormulario(FrmAsistenciasABM.FormMode.actualizar, asistenciaUsuario);
+
+            frmEditar.ShowDialog();
+
+            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
+            dgvConsultaAsistencias.DataSource = listadoAsistencias;
         }
     }
 }
