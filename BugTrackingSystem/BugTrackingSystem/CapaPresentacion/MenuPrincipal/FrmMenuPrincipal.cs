@@ -44,6 +44,9 @@ namespace BugTrackingSystem.Forms
         // Se inicia la ventana de Consulta de asignaciones con su botón correspondiente:)
         private void tsiAsignaciones_Click(object sender, EventArgs e)
         {
+            if (this.ActiveMdiChild != null)
+                if (this.MdiChildren[0] is FrmAsistencias)
+                    return;
             FrmAsistencias ventana = new FrmAsistencias();
             MostrarVentana(ventana, "Consulta de Asistencias");
         }

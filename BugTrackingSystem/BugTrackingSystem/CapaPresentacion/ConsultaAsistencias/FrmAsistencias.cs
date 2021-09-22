@@ -143,6 +143,7 @@ namespace BugTrackingSystem.CapaPresentacion
             cbx.SelectedIndex = -1;
         }
 
+        // Método para crear las columnas de la DataGridView
         private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
         {
             tabla.Columns[columna].Name = nombre;
@@ -151,6 +152,7 @@ namespace BugTrackingSystem.CapaPresentacion
             tabla.Columns[columna].Width = tamaño;
         }
 
+        // Botón para crear nuevo registro
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             FrmAsistenciasABM frmAgregar = new FrmAsistenciasABM();
@@ -160,12 +162,23 @@ namespace BugTrackingSystem.CapaPresentacion
             dgvConsultaAsistencias.DataSource = listadoAsistencias;
         }
 
+        // Botón para eliminar un registro seleccionado
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvConsultaAsistencias.CurrentRow.DataBoundItem;
-            if (asistenciaUsuario.Borrado == true)
-                MessageBox.Show("¡No puede eliminar un registro ya borrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (dgvConsultaAsistencias.RowCount.Equals(0))
+            {
+                MessageBox.Show("Debe seleccionar un registro antes de eliminarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvConsultaAsistencias.CurrentRow.DataBoundItem;
+
+            if (asistenciaUsuario.Borrado == true)
+            {
+                MessageBox.Show("¡No puede eliminar un registro ya borrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                
             DialogResult rta = MessageBox.Show("¿Seguro que desea borrar el registro seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (rta == DialogResult.Yes)
             {
@@ -183,6 +196,12 @@ namespace BugTrackingSystem.CapaPresentacion
         {
             FrmAsistenciasABM frmEditar = new FrmAsistenciasABM();
 
+            if (dgvConsultaAsistencias.RowCount.Equals(0))
+            {
+                MessageBox.Show("Debe seleccionar un registro antes de editarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+                
             AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvConsultaAsistencias.CurrentRow.DataBoundItem;
 
             frmEditar.InicializarFormulario(FrmAsistenciasABM.FormMode.actualizar, asistenciaUsuario);
