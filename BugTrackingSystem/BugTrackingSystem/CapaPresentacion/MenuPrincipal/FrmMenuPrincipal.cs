@@ -26,7 +26,7 @@ namespace BugTrackingSystem.Forms
         private void FrmMenuPrincipal_Shown(object sender, EventArgs e)
         {
             FrmLogin login = new FrmLogin();
-            MostrarVentana(login, "System Bug Tracker");
+            MostrarVentana(login, "Bug Tracking System");
         }
 
         // Cuando el formulario de login se cierre, se activará el menú principal

@@ -167,6 +167,7 @@ namespace BugTrackingSystem.Forms
             // 
             this.lblTitulo.AutoEllipsis = true;
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(471, 6);
             this.lblTitulo.Name = "lblTitulo";
