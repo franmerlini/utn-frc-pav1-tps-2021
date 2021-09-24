@@ -81,7 +81,7 @@ namespace BugTrackingSystem.Forms
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // tsiGestion
             // 
@@ -107,7 +107,7 @@ namespace BugTrackingSystem.Forms
             this.tsiAsistencias.Name = "tsiAsistencias";
             this.tsiAsistencias.Size = new System.Drawing.Size(144, 22);
             this.tsiAsistencias.Text = "Asistencias";
-            this.tsiAsistencias.Click += new System.EventHandler(this.tsiAsignaciones_Click);
+            this.tsiAsistencias.Click += new System.EventHandler(this.TsiAsignaciones_Click);
             // 
             // modificarToolStripMenuItem
             // 
@@ -179,6 +179,7 @@ namespace BugTrackingSystem.Forms
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Salmon;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
@@ -188,11 +189,12 @@ namespace BugTrackingSystem.Forms
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.BackColor = System.Drawing.Color.Salmon;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.Brown;
@@ -203,14 +205,14 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar.Text = "―";
             this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMinimizar.UseVisualStyleBackColor = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.btnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.layered_peaks_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 484);
             this.Controls.Add(this.btnMinimizar);

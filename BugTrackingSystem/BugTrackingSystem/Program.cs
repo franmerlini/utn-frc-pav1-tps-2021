@@ -1,4 +1,5 @@
 ﻿using BugTrackingSystem.CapaPresentacion;
+using BugTrackingSystem.DAO;
 using BugTrackingSystem.Forms;
 using System;
 using System.Collections.Generic;

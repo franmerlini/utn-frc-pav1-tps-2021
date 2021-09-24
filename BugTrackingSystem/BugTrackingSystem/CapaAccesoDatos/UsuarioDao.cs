@@ -11,7 +11,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
 {
     public class UsuarioDao
     {
-        public IList<Usuario> ObtenerUsuarios(Dictionary<string, object> parametros = null)
+        public IList<Usuario> ObtenerUsuarios(Dictionary<string, object> parametros)
         {
             List<Usuario> listadoUsuarios = new List<Usuario>();
 
@@ -48,6 +48,9 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 if (parametros.ContainsKey("nombreExacto"))
                     consultaSQL += " AND (usuario = @nombreExacto) ";
             }
+            else
+                consultaSQL += "AND (u.borrado=0) ";
+            consultaSQL += " ORDER BY LOWER(usuario) ASC";
 
             var resultados = DataManager.ObtenerInstancia().ConsultaSQL(consultaSQL, parametros);
 
@@ -64,14 +67,15 @@ namespace BugTrackingSystem.CapaAccesoDatos
             string consultaSQL = " INSERT INTO Usuarios (id_usuario, id_perfil, usuario, password, email, estado, borrado)" +
                                  " VALUES (@idUsuario, @idPerfil, @nombre, @contrasena, @email, @estado, 0)";
 
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("idUsuario", usuario.IdUsuario);
-            parametros.Add("idPerfil", usuario.Perfil.IdPerfil);
-            parametros.Add("nombre", usuario.Nombre);
-            parametros.Add("contrasena", usuario.Contrasena);
-            parametros.Add("email", usuario.Email);
-            parametros.Add("estado", usuario.Estado);
+            var parametros = new Dictionary<string, object>
+            {
+                { "idUsuario", usuario.IdUsuario },
+                { "idPerfil", usuario.Perfil.IdPerfil },
+                { "nombre", usuario.Nombre },
+                { "contrasena", usuario.Contrasena },
+                { "email", usuario.Email },
+                { "estado", usuario.Estado }
+            };
 
             // Si una fila es afectada por la inserción retorna TRUE. Caso contrario retorna FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -85,33 +89,22 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "     contrasena = @contrasena," +
                                  "     email = @email," +
                                  "     estado = @estado," +
+                                 "     borrado = @borrado" + 
                                  " WHERE id_usuario = @idUsuario";
 
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("idUsuario", usuario.IdUsuario);
-            parametros.Add("idPerfil", usuario.Perfil.IdPerfil);
-            parametros.Add("nombre", usuario.Nombre);
-            parametros.Add("contrasena", usuario.Contrasena);
-            parametros.Add("email", usuario.Email);
-            parametros.Add("estado", usuario.Estado);
+            var parametros = new Dictionary<string, object>
+            {
+                { "idUsuario", usuario.IdUsuario },
+                { "idPerfil", usuario.Perfil.IdPerfil },
+                { "nombre", usuario.Nombre },
+                { "contrasena", usuario.Contrasena },
+                { "email", usuario.Email },
+                { "estado", usuario.Estado },
+                { "borrado", usuario.Borrado }
+            };
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
-        internal bool EliminarUsuario(Usuario usuario)
-        {
-            string ConsultaSQL = " UPDATE Usuarios" +
-                                 " SET borrado = 1" +
-                                 " WHERE id_usuario = @idUsuario";
-
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("idUsuario", usuario.IdUsuario);
-
-            // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(ConsultaSQL, parametros) == 1);
         }
 
         private Usuario MapeoObjeto(DataRow row)

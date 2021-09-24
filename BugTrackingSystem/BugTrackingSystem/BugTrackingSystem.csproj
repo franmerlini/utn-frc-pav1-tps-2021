@@ -111,6 +111,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,6 +126,44 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\editaar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Remove Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Snapback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Snapforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knob Valid Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layered_peaks_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recuperar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

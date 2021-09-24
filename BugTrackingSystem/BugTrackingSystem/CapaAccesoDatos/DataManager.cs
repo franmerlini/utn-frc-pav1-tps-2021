@@ -13,7 +13,7 @@ namespace BugTrackingSystem.DAO
         //Atributo declarado como static para instanciar un solo objeto de la clase DataManager
         private static DataManager instanciaDataManager;
         //Atributo que contiene la cadena de conexion a la base de datos
-        private string cadenaConexion;
+        private readonly string cadenaConexion;
 
         //Metodo constructor (inicializa el atributo cnnStr con la cadena de conexion a la base de datos)
         public DataManager()
@@ -124,10 +124,11 @@ namespace BugTrackingSystem.DAO
         ///     Se utiliza para sentencias SQL del tipo “Select”. Recibe por valor una sentencia sql como string
         /// Devuelve:
         ///      un valor entero
-        public object ConsultaSQLScalar(string consultaSQL)
+        public object ConsultaSQLScalar(string consultaSQL, Dictionary<string, object> parametros = null)
         {
             SqlConnection conexionSQL = new SqlConnection();
             SqlCommand comandoSQL = new SqlCommand();
+            Object resultado = new Object();
 
             try
             {
@@ -138,7 +139,15 @@ namespace BugTrackingSystem.DAO
                 comandoSQL.CommandType = CommandType.Text;
                 comandoSQL.CommandText = consultaSQL;
 
-                return comandoSQL.ExecuteScalar();
+                if (parametros != null)
+                {
+                    foreach (var parametro in parametros)
+                    {
+                        comandoSQL.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                    }
+                }
+
+                resultado = comandoSQL.ExecuteScalar();
             }
 
             catch (SqlException ex)
@@ -150,6 +159,8 @@ namespace BugTrackingSystem.DAO
             {
                 conexionSQL.Close();
             }
+
+            return resultado;
         }
     }
 }

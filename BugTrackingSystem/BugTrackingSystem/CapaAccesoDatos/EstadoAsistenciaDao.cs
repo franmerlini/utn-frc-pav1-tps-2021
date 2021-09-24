@@ -11,7 +11,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
 {
     public class EstadoAsistenciaDao
     {
-        public IList<EstadoAsistencia> ObtenerEstadosAsistencia(Dictionary<string, object> parametros = null)
+        public IList<EstadoAsistencia> ObtenerEstadosAsistencia(Dictionary<string, object> parametros)
         {
             List<EstadoAsistencia> listadoEstadosAsistencia = new List<EstadoAsistencia>();
 
@@ -31,6 +31,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 if (parametros.ContainsKey("borrado"))
                     strSql += " AND (borrado=0) ";
             }
+            else
+                strSql += " AND (borrado=0) ";
 
             var resultadoConsulta = (DataRowCollection)DataManager.ObtenerInstancia().ConsultaSQL(strSql, parametros).Rows;
 
@@ -44,11 +46,12 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
         private EstadoAsistencia MapeoObjeto(DataRow row)
         {
-            EstadoAsistencia estadoAsistencia = new EstadoAsistencia();
-
-            estadoAsistencia.IdEstadoAsistencia = Convert.ToInt32(row["id_estado_asistencia"].ToString());
-            estadoAsistencia.Nombre = row["n_estados_asistencia"].ToString();
-            estadoAsistencia.Borrado = Convert.ToBoolean(row["borrado"].ToString());
+            EstadoAsistencia estadoAsistencia = new EstadoAsistencia
+            {
+                IdEstadoAsistencia = Convert.ToInt32(row["id_estado_asistencia"].ToString()),
+                Nombre = row["n_estados_asistencia"].ToString(),
+                Borrado = Convert.ToBoolean(row["borrado"].ToString())
+            };
 
             return estadoAsistencia;
         }

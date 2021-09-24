@@ -42,6 +42,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
             {
+                if (parametros.ContainsKey("idAsistenciaUsuario"))
+                    consultaSQL += " AND (a.id_asistencia_usuario=@idAsistenciaUsuario) ";
                 if (parametros.ContainsKey("usuario"))
                     consultaSQL += " AND (LOWER(u.usuario) LIKE '%' + LOWER(@usuario) + '%') ";
                 if (parametros.ContainsKey("fechaDesde"))
@@ -76,14 +78,15 @@ namespace BugTrackingSystem.CapaAccesoDatos
             string consultaSQL = " INSERT INTO AsistenciaUsuarios (id_usuario, fecha, hora_ingreso, hora_salida, id_estado_asistencia, comentario, borrado) " +
                                  " VALUES (@idUsuario, @fecha, @horaIngreso, @horaSalida, @idEstadoAsistencia, @comentario, 0) ";
 
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("idUsuario", asistenciaUsuario.Usuario.IdUsuario);
-            parametros.Add("fecha", asistenciaUsuario.Fecha);
-            parametros.Add("horaIngreso", asistenciaUsuario.HoraIngreso);
-            parametros.Add("horaSalida", asistenciaUsuario.HoraSalida);
-            parametros.Add("idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia);
-            parametros.Add("comentario", asistenciaUsuario.Comentario);
+            var parametros = new Dictionary<string, object>
+            {
+                { "idUsuario", asistenciaUsuario.Usuario.IdUsuario },
+                { "fecha", asistenciaUsuario.Fecha },
+                { "horaIngreso", asistenciaUsuario.HoraIngreso },
+                { "horaSalida", asistenciaUsuario.HoraSalida },
+                { "idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia },
+                { "comentario", asistenciaUsuario.Comentario }
+            };
 
             // Si una fila es afectada por la inserción retorna TRUE. Caso contrario retorna FALSE
 
@@ -100,32 +103,21 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "         hora_ingreso = @horaIngreso, " +
                                  "         hora_salida = @horaSalida, " +
                                  "         id_estado_asistencia = @idEstadoAsistencia, " +
-                                 "         comentario = @comentario" +
+                                 "         comentario = @comentario, " +
+                                 "         borrado = @borrado " + 
                                  "   WHERE id_asistencia_usuario = @idAsistenciaUsuario";
 
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("idUsuario", asistenciaUsuario.Usuario.IdUsuario);
-            parametros.Add("fecha", asistenciaUsuario.Fecha);
-            parametros.Add("horaIngreso", asistenciaUsuario.HoraIngreso);
-            parametros.Add("horaSalida", asistenciaUsuario.HoraSalida);
-            parametros.Add("idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia);
-            parametros.Add("comentario", asistenciaUsuario.Comentario);
-            parametros.Add("idAsistenciaUsuario", asistenciaUsuario.IdAsistenciaUsuario);
-
-            // Si una fila es afectada por la actualización retorna TRUE. Caso contrario retorna FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
-        internal bool EliminarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
-        {
-            string consultaSQL = "  UPDATE AsistenciaUsuarios " +
-                                 "     SET borrado = 1 " +
-                                 "   WHERE id_asistencia_usuario = @idAsistenciaUsuario";
-
-            var parametros = new Dictionary<string, object>();
-
-            parametros.Add("idAsistenciaUsuario", asistenciaUsuario.IdAsistenciaUsuario);
+            var parametros = new Dictionary<string, object>
+            {
+                { "idUsuario", asistenciaUsuario.Usuario.IdUsuario },
+                { "fecha", asistenciaUsuario.Fecha },
+                { "horaIngreso", asistenciaUsuario.HoraIngreso },
+                { "horaSalida", asistenciaUsuario.HoraSalida },
+                { "idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia },
+                { "comentario", asistenciaUsuario.Comentario },
+                { "idAsistenciaUsuario", asistenciaUsuario.IdAsistenciaUsuario },
+                { "borrado", asistenciaUsuario.Borrado }
+            };
 
             // Si una fila es afectada por la actualización retorna TRUE. Caso contrario retorna FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -133,33 +125,38 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
         private AsistenciaUsuario MapeoObjeto(DataRow row)
         {
-            AsistenciaUsuario asistenciaUsuario = new AsistenciaUsuario();
+            AsistenciaUsuario asistenciaUsuario = new AsistenciaUsuario
+            {
+                IdAsistenciaUsuario = Convert.ToInt32(row["id_asistencia_usuario"].ToString()),
+                Fecha = Convert.ToDateTime(row["fecha"].ToString()),
+                HoraIngreso = Convert.ToDateTime(row["hora_ingreso"].ToString()).ToString("HH:mm"),
+                HoraSalida = Convert.ToDateTime(row["hora_salida"].ToString()).ToString("HH:mm"),
+                Comentario = row["comentario"].ToString(),
+                Borrado = Convert.ToBoolean(row["borrado"].ToString()),
 
-            asistenciaUsuario.Usuario = new Usuario();
-            asistenciaUsuario.Usuario.IdUsuario = Convert.ToInt32(row["id_usuario"].ToString());
-            asistenciaUsuario.Usuario.Nombre = row["usuario"].ToString();
-            asistenciaUsuario.Usuario.Contrasena = row["password"].ToString();
-            asistenciaUsuario.Usuario.Email = row["email"].ToString();
-            asistenciaUsuario.Usuario.Estado = row["estado"].ToString();
-            asistenciaUsuario.Usuario.Borrado = Convert.ToBoolean(row["borrado"].ToString());
+                Usuario = new Usuario
+                {
+                    IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
+                    Nombre = row["usuario"].ToString(),
+                    Contrasena = row["password"].ToString(),
+                    Email = row["email"].ToString(),
+                    Estado = row["estado"].ToString(),
+                    Borrado = Convert.ToBoolean(row["borrado"].ToString()),
 
-            asistenciaUsuario.Usuario.Perfil = new Perfil();
-            asistenciaUsuario.Usuario.Perfil.IdPerfil = Convert.ToInt32(row["id_perfil"].ToString());
-            asistenciaUsuario.Usuario.Perfil.Nombre = row["nombre"].ToString();
+                    Perfil = new Perfil
+                    {
+                        IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
+                        Nombre = row["nombre"].ToString()
+                    }
+                },
 
-            asistenciaUsuario.IdAsistenciaUsuario = Convert.ToInt32(row["id_asistencia_usuario"].ToString());
-            asistenciaUsuario.Fecha = Convert.ToDateTime(row["fecha"].ToString());
-            asistenciaUsuario.HoraIngreso = Convert.ToDateTime(row["hora_ingreso"].ToString());
-            asistenciaUsuario.HoraSalida = Convert.ToDateTime(row["hora_salida"].ToString());
-
-            asistenciaUsuario.EstadoAsistencia = new EstadoAsistencia();
-            asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia = Convert.ToInt32(row["id_estado_asistencia"].ToString());
-            asistenciaUsuario.EstadoAsistencia.Nombre = row["n_estados_asistencia"].ToString();
-            asistenciaUsuario.EstadoAsistencia.Borrado = Convert.ToBoolean(row["borrado"].ToString());
-
-            asistenciaUsuario.Comentario = row["comentario"].ToString();
-
-            asistenciaUsuario.Borrado = Convert.ToBoolean(row["borrado"].ToString());
+                EstadoAsistencia = new EstadoAsistencia
+                {
+                    IdEstadoAsistencia = Convert.ToInt32(row["id_estado_asistencia"].ToString()),
+                    Nombre = row["n_estados_asistencia"].ToString(),
+                    Borrado = Convert.ToBoolean(row["borrado"].ToString())
+                }
+            };
 
             return asistenciaUsuario;
         }

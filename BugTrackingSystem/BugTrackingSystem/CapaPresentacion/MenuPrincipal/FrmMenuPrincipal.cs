@@ -15,11 +15,10 @@ namespace BugTrackingSystem.Forms
 {
     public partial class FrmMenuPrincipal : Form
     {
+
         public FrmMenuPrincipal()
         {
             InitializeComponent();
-            btnSalir.FlatAppearance.BorderSize = 0;
-            btnMinimizar.FlatAppearance.BorderSize = 0;
         }
 
         // Se inicia la ventana de login apenas se muestra el menú principal
@@ -41,40 +40,20 @@ namespace BugTrackingSystem.Forms
             }
         }
 
-        // Se inicia la ventana de Consulta de asignaciones con su botón correspondiente:)
-        private void tsiAsignaciones_Click(object sender, EventArgs e)
-        {
-            if (this.ActiveMdiChild != null)
-                if (this.MdiChildren[0] is FrmAsistencias)
-                    return;
-            FrmAsistencias ventana = new FrmAsistencias();
-            MostrarVentana(ventana, "Consulta de Asistencias");
-        }
-
         // Método para iniciar las ventanas dentro del menú principal.
         private void MostrarVentana(Form ventana, string titulo)
         {
-            this.IsMdiContainer = true;
             if (this.ActiveMdiChild != null)
+            {
+                if (this.ActiveMdiChild.GetType() == ventana.GetType())
+                {
+                    return;
+                }
                 this.MdiChildren[0].Close();
+            }
             lblTitulo.Text = titulo;
             ventana.MdiParent = this;
             ventana.Show();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         // Mensaje en pantalla confirmando si cerrar la ventana
@@ -92,6 +71,29 @@ namespace BugTrackingSystem.Forms
             }
         }
 
+        // Botones:
+
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TsiAsignaciones_Click(object sender, EventArgs e)
+        {
+            FrmAsistencias ventana = new FrmAsistencias();
+            MostrarVentana(ventana, "Consulta de Asistencias");
+        }
+
         // Código para poder mover la ventana desde el menu strip
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -104,5 +106,6 @@ namespace BugTrackingSystem.Forms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
     }
 }

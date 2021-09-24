@@ -25,7 +25,7 @@ namespace BugTrackingSystem
             usuarioService = new UsuarioService();
         }
 
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        private void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
             string nom = txtNombre.Text;
             string cont = txtContra.Text;
@@ -48,7 +48,7 @@ namespace BugTrackingSystem
             }
         }
 
-        private void chkContra_CheckedChanged(object sender, EventArgs e)
+        private void ChkContra_CheckedChanged(object sender, EventArgs e)
         {
             if (txtContra.PasswordChar == '•')
             {

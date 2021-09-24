@@ -1,6 +1,7 @@
 ﻿using BugTrackingSystem.CapaLogicaNegocio;
 using BugTrackingSystem.Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,28 +16,24 @@ namespace BugTrackingSystem.CapaPresentacion
 {
     public partial class FrmAsistenciasABM : Form
     {
-        private FormMode formMode = FormMode.nuevo;
-
         private readonly UsuarioService usuarioService;
         private readonly EstadoAsistenciaService estadoAsistenciaService;
         private readonly AsistenciaUsuarioService asistenciaUsuarioService;
-        private AsistenciaUsuario asistenciaUsuarioSeleccionada;
+        private readonly AsistenciaUsuario asistenciaUsuarioSeleccionada;
+        public enum FormMode { nuevo, actualizar };
+        private readonly FormMode formMode;
 
-        public FrmAsistenciasABM()
+        // Métodos de carga e inicialización:
+
+        public FrmAsistenciasABM(FormMode formMode, AsistenciaUsuario asistenciaUsuario = null)
         {
             InitializeComponent();
-            btnVolver.FlatAppearance.BorderSize = 0;
-            btnAgregar.FlatAppearance.BorderSize = 0;
             usuarioService = new UsuarioService();
             estadoAsistenciaService = new EstadoAsistenciaService();
             asistenciaUsuarioService = new AsistenciaUsuarioService();
             btnSalir.FlatAppearance.BorderSize = 0;
-        }
-
-        public enum FormMode
-        {
-            nuevo,
-            actualizar
+            this.formMode = formMode;
+            asistenciaUsuarioSeleccionada = asistenciaUsuario;
         }
 
         private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
@@ -60,37 +57,36 @@ namespace BugTrackingSystem.CapaPresentacion
             {
                 case FormMode.nuevo:
                     {
-                        this.Text = "Nueva Asistencia";
+                        this.Text = "Agregar un registro nuevo";
+                        dateHoraIngreso.Value = DateTime.Parse("00:00");
+                        dateHoraSalida.Value = DateTime.Parse("00:00");
                         break;
                     }
                 case FormMode.actualizar:
                     {
-                        this.Text = "Actualizar Asistencia";
-                        lblTitulo.Text = "Actualizar Asistencia";
+                        this.Text = "Actualizar un registro";
+                        lblTitulo.Text = "Actualizar un registro";
                         cboUsuario.SelectedValue = asistenciaUsuarioSeleccionada.Usuario.IdUsuario;
                         cboEstado.SelectedValue = asistenciaUsuarioSeleccionada.EstadoAsistencia.IdEstadoAsistencia;
                         dateFecha.Value = asistenciaUsuarioSeleccionada.Fecha;
-                        dateHoraIngreso.Value = asistenciaUsuarioSeleccionada.HoraIngreso;
-                        dateHoraSalida.Value = asistenciaUsuarioSeleccionada.HoraSalida;
+                        dateHoraIngreso.Value = DateTime.Parse(asistenciaUsuarioSeleccionada.HoraIngreso);
+                        dateHoraSalida.Value = DateTime.Parse(asistenciaUsuarioSeleccionada.HoraSalida);
                         rtxtComentario.Text = asistenciaUsuarioSeleccionada.Comentario;
                         break;
                     }
             }
         }
 
-        public void InicializarFormulario(FormMode formMode, AsistenciaUsuario asistenciaUsuario)
-        {
-            this.formMode = formMode;
-            asistenciaUsuarioSeleccionada = asistenciaUsuario;
-        }
+        // Botones:
 
-
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
 
-            AsistenciaUsuario asistenciaUsuario = new AsistenciaUsuario();
-            asistenciaUsuario.Usuario = new Usuario();
-            asistenciaUsuario.EstadoAsistencia = new EstadoAsistencia();
+            AsistenciaUsuario asistenciaUsuario = new AsistenciaUsuario
+            {
+                Usuario = new Usuario(),
+                EstadoAsistencia = new EstadoAsistencia()
+            };
 
             if (cboUsuario.SelectedValue == null)
             {
@@ -105,17 +101,25 @@ namespace BugTrackingSystem.CapaPresentacion
             asistenciaUsuario.Fecha = Convert.ToDateTime(dateFecha.Value);
 
             DateTime.TryParse(dateHoraIngreso.Text, out DateTime horaDesde);
-            asistenciaUsuario.HoraIngreso = horaDesde;
+            asistenciaUsuario.HoraIngreso = horaDesde.ToString("HH:mm");
 
             DateTime.TryParse(dateHoraSalida.Text, out DateTime horaHasta);
-            asistenciaUsuario.HoraSalida = horaHasta;
+            asistenciaUsuario.HoraSalida = horaHasta.ToString("HH:mm");
+
+            if (horaDesde > horaHasta)
+            {
+                MessageBox.Show("Error: ¿Hora de ingreso MAYOR a hora de salida?", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (cboEstado.SelectedValue != null)
                 asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia = Convert.ToInt32(cboEstado.SelectedValue);
             else
             {
-                Dictionary<string, object> parametroSinAsignar = new Dictionary<string, object>();
-                parametroSinAsignar.Add("nombreEstadoAsistencia", "Sin Asignar");
+                Dictionary<string, object> parametroSinAsignar = new Dictionary<string, object>
+                {
+                    { "nombreEstadoAsistencia", "Sin Asignar" }
+                };
                 asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia = Convert.ToInt32(estadoAsistenciaService.ObtenerEstadosAsistencia(parametroSinAsignar)[0].IdEstadoAsistencia);
             }
 
@@ -157,17 +161,16 @@ namespace BugTrackingSystem.CapaPresentacion
             }
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnCrearUsuario_Click(object sender, EventArgs e)
+        private void BtnCrearUsuario_Click(object sender, EventArgs e)
         {
-
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -179,7 +182,7 @@ namespace BugTrackingSystem.CapaPresentacion
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void menuStrip1_MouseMove(object sender, MouseEventArgs e)
+        private void MenuStrip1_MouseMove(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

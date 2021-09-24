@@ -11,7 +11,7 @@ namespace BugTrackingSystem.CapaLogicaNegocio
     public class UsuarioService
     {
         //---Atributos---
-        private UsuarioDao usuarioDao;
+        private readonly UsuarioDao usuarioDao;
 
         //---Metodos---
         //Constructor
@@ -22,9 +22,10 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         //Validar un usuario pasando como parametro el nombre y la contraseña
         public Usuario ValidarUsuario(string nom, string cont)
         {
-            Dictionary<string, object> parametros = new Dictionary<string, object>();
-
-            parametros.Add("nombreExacto", nom);
+            Dictionary<string, object> parametros = new Dictionary<string, object>
+            {
+                { "nombreExacto", nom }
+            };
 
             var usu = usuarioDao.ObtenerUsuarios(parametros);
 
@@ -35,21 +36,19 @@ namespace BugTrackingSystem.CapaLogicaNegocio
 
             return null;
         }
+
         //Crear un usuario
         internal bool CrearUsuario(Usuario usuario)
         {
             return usuarioDao.CrearUsuario(usuario);
         }
+
         //Actualizar un usuario
         internal bool ActualizarUsuario(Usuario usuario)
         {
             return usuarioDao.ActualizarUsuario(usuario);
         }
-        //Eliminar un usuario
-        internal bool EliminarUsuario(Usuario usuario)
-        {
-            return usuarioDao.EliminarUsuario(usuario);
-        }
+
         //Consultar varios usuarios por filtros
         internal IList<Usuario> ObtenerUsuarios(Dictionary<string, object> parametros = null)
         {

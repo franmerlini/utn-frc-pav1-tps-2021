@@ -34,7 +34,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpEntradas = new System.Windows.Forms.GroupBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.rtxtComentario = new System.Windows.Forms.RichTextBox();
             this.lblComentario = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
@@ -58,7 +58,7 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.grpEntradas.Controls.Add(this.btnVolver);
             this.grpEntradas.Controls.Add(this.btnCrearUsuario);
-            this.grpEntradas.Controls.Add(this.btnAgregar);
+            this.grpEntradas.Controls.Add(this.btnAceptar);
             this.grpEntradas.Controls.Add(this.rtxtComentario);
             this.grpEntradas.Controls.Add(this.lblComentario);
             this.grpEntradas.Controls.Add(this.cboEstado);
@@ -80,8 +80,9 @@ namespace BugTrackingSystem.CapaPresentacion
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVolver.BackgroundImage")));
+            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Left;
             this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
             this.btnVolver.Location = new System.Drawing.Point(267, 321);
@@ -90,7 +91,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnVolver.TabIndex = 29;
             this.toolTip1.SetToolTip(this.btnVolver, "Volver");
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // btnCrearUsuario
             // 
@@ -100,22 +101,23 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnCrearUsuario.TabIndex = 28;
             this.btnCrearUsuario.Text = "Crear Usuario";
             this.btnCrearUsuario.UseVisualStyleBackColor = true;
-            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
+            this.btnCrearUsuario.Click += new System.EventHandler(this.BtnCrearUsuario_Click);
             // 
-            // btnAgregar
+            // btnAceptar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.Location = new System.Drawing.Point(311, 321);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(40, 40);
-            this.btnAgregar.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.btnAgregar, "Aceptar");
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAceptar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Valid_Green;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.Location = new System.Drawing.Point(311, 321);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
+            this.btnAceptar.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.btnAceptar, "Aceptar");
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // rtxtComentario
             // 
@@ -157,14 +159,14 @@ namespace BugTrackingSystem.CapaPresentacion
             // dateHoraSalida
             // 
             this.dateHoraSalida.Checked = false;
-            this.dateHoraSalida.CustomFormat = "";
-            this.dateHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateHoraSalida.CustomFormat = "HH:mm ";
+            this.dateHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateHoraSalida.Location = new System.Drawing.Point(115, 143);
             this.dateHoraSalida.Name = "dateHoraSalida";
             this.dateHoraSalida.ShowUpDown = true;
             this.dateHoraSalida.Size = new System.Drawing.Size(204, 20);
             this.dateHoraSalida.TabIndex = 22;
-            this.dateHoraSalida.Value = new System.DateTime(2021, 9, 21, 0, 0, 0, 0);
+            this.dateHoraSalida.Value = new System.DateTime(2021, 9, 21, 23, 58, 0, 0);
             // 
             // label1
             // 
@@ -178,14 +180,14 @@ namespace BugTrackingSystem.CapaPresentacion
             // dateHoraIngreso
             // 
             this.dateHoraIngreso.Checked = false;
-            this.dateHoraIngreso.CustomFormat = "";
-            this.dateHoraIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateHoraIngreso.CustomFormat = "HH:mm";
+            this.dateHoraIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateHoraIngreso.Location = new System.Drawing.Point(115, 109);
             this.dateHoraIngreso.Name = "dateHoraIngreso";
             this.dateHoraIngreso.ShowUpDown = true;
             this.dateHoraIngreso.Size = new System.Drawing.Size(204, 20);
             this.dateHoraIngreso.TabIndex = 20;
-            this.dateHoraIngreso.Value = new System.DateTime(2021, 9, 21, 0, 0, 0, 0);
+            this.dateHoraIngreso.Value = new System.DateTime(2021, 9, 22, 1, 0, 0, 0);
             // 
             // lblHoraIngreso
             // 
@@ -239,7 +241,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblTitulo.BackColor = System.Drawing.Color.Salmon;
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(82, 4);
+            this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTitulo.Location = new System.Drawing.Point(85, 4);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(198, 16);
             this.lblTitulo.TabIndex = 27;
@@ -254,11 +257,12 @@ namespace BugTrackingSystem.CapaPresentacion
             this.menuStrip1.Size = new System.Drawing.Size(356, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseMove);
+            this.menuStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseMove);
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Salmon;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
@@ -268,7 +272,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnSalir.TabIndex = 29;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // FrmAsistenciasABM
             // 
@@ -311,7 +315,7 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.ComboBox cboUsuario;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnCrearUsuario;
         private System.Windows.Forms.Button btnVolver;

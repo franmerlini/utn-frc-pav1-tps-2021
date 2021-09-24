@@ -1,6 +1,7 @@
 ﻿using BugTrackingSystem.CapaAccesoDatos;
 using BugTrackingSystem.Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,16 +33,11 @@ namespace BugTrackingSystem.CapaLogicaNegocio
             return asistenciaUsuarioDao.CrearAsistenciaUsuario(asistenciaUsuario);
         }
 
-        //Actualizar
+        //Actualizar y Eliminar
         internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
         {
             return asistenciaUsuarioDao.ActualizarAsistenciaUsuario(asistenciaUsuario);
         }
-
-        //Eliminar
-        internal bool EliminarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
-        {
-            return asistenciaUsuarioDao.EliminarAsistenciaUsuario(asistenciaUsuario);
-        }
+        
     }
 }

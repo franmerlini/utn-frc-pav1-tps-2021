@@ -69,7 +69,7 @@ namespace BugTrackingSystem
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::BugTrackingSystem.Properties.Resources.user_logo;
             this.pictureBox2.Location = new System.Drawing.Point(117, 85);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
@@ -113,7 +113,7 @@ namespace BugTrackingSystem
             this.chkContra.TabIndex = 3;
             this.chkContra.Text = "Mostrar contraseña";
             this.chkContra.UseVisualStyleBackColor = true;
-            this.chkContra.CheckedChanged += new System.EventHandler(this.chkContra_CheckedChanged);
+            this.chkContra.CheckedChanged += new System.EventHandler(this.ChkContra_CheckedChanged);
             // 
             // txtNombre
             // 
@@ -172,7 +172,7 @@ namespace BugTrackingSystem
             this.btnIniciarSesion.TabIndex = 4;
             this.btnIniciarSesion.Text = "Iniciar sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
-            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            this.btnIniciarSesion.Click += new System.EventHandler(this.BtnIniciarSesion_Click);
             // 
             // FrmLogin
             // 
