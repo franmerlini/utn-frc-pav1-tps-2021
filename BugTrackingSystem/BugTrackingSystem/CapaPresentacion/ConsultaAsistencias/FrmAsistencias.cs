@@ -177,9 +177,7 @@ namespace BugTrackingSystem.CapaPresentacion
             if (rta == DialogResult.Yes)
             {
                 asistenciaUsuario.Borrado = true;
-                if (asistenciaService.ActualizarAsistenciaUsuario(asistenciaUsuario))
-                    MessageBox.Show("Registro eliminado correctamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                else
+                if (!asistenciaService.ActualizarAsistenciaUsuario(asistenciaUsuario))
                     MessageBox.Show("El registro no se pudo borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
@@ -200,36 +198,6 @@ namespace BugTrackingSystem.CapaPresentacion
             AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvAsistencias.CurrentRow.DataBoundItem;
             FrmAsistenciasABM frmEditar = new FrmAsistenciasABM(FrmAsistenciasABM.FormMode.actualizar, asistenciaUsuario);
             frmEditar.ShowDialog();
-
-            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
-            dgvAsistencias.DataSource = listadoAsistencias;
-            lblTotal.Text = "Registros encontrados: " + listadoAsistencias.Count;
-        }
-
-        private void BtnRecuperar_Click(object sender, EventArgs e)
-        {
-            if (dgvAsistencias.RowCount.Equals(0))
-            {
-                MessageBox.Show("Debe seleccionar un registro borrado antes de recuperarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvAsistencias.CurrentRow.DataBoundItem;
-
-            if (asistenciaUsuario.Borrado == false)
-            {
-                MessageBox.Show("¡No puede recuperar un registro que no esté borrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            asistenciaUsuario.Borrado = false;
-
-            if (asistenciaService.ActualizarAsistenciaUsuario(asistenciaUsuario))
-            {
-                MessageBox.Show("Registro recuperado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                MessageBox.Show("El registro no se pudo recuperar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
             dgvAsistencias.DataSource = listadoAsistencias;

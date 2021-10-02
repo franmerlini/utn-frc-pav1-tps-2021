@@ -51,11 +51,13 @@ namespace BugTrackingSystem.CapaPresentacion
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.chkBorrado = new System.Windows.Forms.CheckBox();
             this.grpEntradas.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpEntradas
             // 
+            this.grpEntradas.Controls.Add(this.chkBorrado);
             this.grpEntradas.Controls.Add(this.btnVolver);
             this.grpEntradas.Controls.Add(this.btnCrearUsuario);
             this.grpEntradas.Controls.Add(this.btnAceptar);
@@ -274,6 +276,16 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // chkBorrado
+            // 
+            this.chkBorrado.AutoSize = true;
+            this.chkBorrado.Location = new System.Drawing.Point(115, 334);
+            this.chkBorrado.Name = "chkBorrado";
+            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
+            this.chkBorrado.TabIndex = 30;
+            this.chkBorrado.Text = "Borrado";
+            this.chkBorrado.UseVisualStyleBackColor = true;
+            // 
             // FrmAsistenciasABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,5 +333,6 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.CheckBox chkBorrado;
     }
 }

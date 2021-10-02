@@ -60,6 +60,7 @@ namespace BugTrackingSystem.CapaPresentacion
                         this.Text = "Agregar un registro nuevo";
                         dateHoraIngreso.Value = DateTime.Parse("00:00");
                         dateHoraSalida.Value = DateTime.Parse("00:00");
+                        chkBorrado.Visible = false;
                         break;
                     }
                 case FormMode.actualizar:
@@ -72,6 +73,7 @@ namespace BugTrackingSystem.CapaPresentacion
                         dateHoraIngreso.Value = DateTime.Parse(asistenciaUsuarioSeleccionada.HoraIngreso);
                         dateHoraSalida.Value = DateTime.Parse(asistenciaUsuarioSeleccionada.HoraSalida);
                         rtxtComentario.Text = asistenciaUsuarioSeleccionada.Comentario;
+                        chkBorrado.Checked = asistenciaUsuarioSeleccionada.Borrado;
                         break;
                     }
             }
@@ -147,6 +149,7 @@ namespace BugTrackingSystem.CapaPresentacion
 
                 case FormMode.actualizar:
                     {
+                        asistenciaUsuario.Borrado = chkBorrado.Checked;
                         asistenciaUsuario.IdAsistenciaUsuario = asistenciaUsuarioSeleccionada.IdAsistenciaUsuario;
 
                         if (asistenciaUsuarioService.ActualizarAsistenciaUsuario(asistenciaUsuario))

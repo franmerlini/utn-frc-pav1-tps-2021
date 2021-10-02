@@ -36,24 +36,21 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label4 = new System.Windows.Forms.Label();
             this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.dateFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dateFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.grpAcciones = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnRecuperar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnInformacion = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnRehacer = new System.Windows.Forms.Button();
-            this.btnDeshacer = new System.Windows.Forms.Button();
             this.dgvAsistencias = new System.Windows.Forms.DataGridView();
             this.grpInformacion = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnInformacion = new System.Windows.Forms.Button();
             this.grpFiltros.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -69,6 +66,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpFiltros.Controls.Add(this.label4);
             this.grpFiltros.Controls.Add(this.cboUsuario);
             this.grpFiltros.Controls.Add(this.label3);
+            this.grpFiltros.Controls.Add(this.btnConsultar);
             this.grpFiltros.Controls.Add(this.dateFechaHasta);
             this.grpFiltros.Controls.Add(this.label2);
             this.grpFiltros.Controls.Add(this.dateFechaDesde);
@@ -83,7 +81,7 @@ namespace BugTrackingSystem.CapaPresentacion
             // ChkBaja
             // 
             this.ChkBaja.AutoSize = true;
-            this.ChkBaja.Location = new System.Drawing.Point(349, 101);
+            this.ChkBaja.Location = new System.Drawing.Point(264, 98);
             this.ChkBaja.Name = "ChkBaja";
             this.ChkBaja.Size = new System.Drawing.Size(124, 17);
             this.ChkBaja.TabIndex = 9;
@@ -125,6 +123,23 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Usuario:";
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnConsultar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Search;
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnConsultar.Location = new System.Drawing.Point(429, 80);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(44, 44);
+            this.btnConsultar.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btnConsultar, "Realizar consulta");
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
             // dateFechaHasta
             // 
@@ -168,23 +183,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha Desde:";
             // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnConsultar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Search;
-            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConsultar.Location = new System.Drawing.Point(3, 53);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(44, 44);
-            this.btnConsultar.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.btnConsultar, "Realizar consulta");
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
-            // 
             // grpAcciones
             // 
             this.grpAcciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -204,38 +202,16 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Controls.Add(this.btnRecuperar, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInformacion, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEditar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnConsultar, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnRehacer, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnDeshacer, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 18);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 99);
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 52);
             this.tableLayoutPanel1.TabIndex = 14;
-            // 
-            // btnRecuperar
-            // 
-            this.btnRecuperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnRecuperar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.recuperar;
-            this.btnRecuperar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRecuperar.FlatAppearance.BorderSize = 0;
-            this.btnRecuperar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnRecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecuperar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRecuperar.Location = new System.Drawing.Point(153, 53);
-            this.btnRecuperar.Name = "btnRecuperar";
-            this.btnRecuperar.Size = new System.Drawing.Size(45, 44);
-            this.btnRecuperar.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.btnRecuperar, "Recuperar registro seleccionado");
-            this.btnRecuperar.UseVisualStyleBackColor = false;
-            this.btnRecuperar.Click += new System.EventHandler(this.BtnRecuperar_Click);
             // 
             // btnNuevo
             // 
@@ -253,22 +229,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.toolTip1.SetToolTip(this.btnNuevo, "Crear nuevo registro");
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
-            // 
-            // btnInformacion
-            // 
-            this.btnInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnInformacion.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Info;
-            this.btnInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnInformacion.FlatAppearance.BorderSize = 0;
-            this.btnInformacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformacion.ForeColor = System.Drawing.Color.Transparent;
-            this.btnInformacion.Location = new System.Drawing.Point(153, 3);
-            this.btnInformacion.Name = "btnInformacion";
-            this.btnInformacion.Size = new System.Drawing.Size(45, 44);
-            this.btnInformacion.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btnInformacion, "Ver detalles del registro seleccionado");
-            this.btnInformacion.UseVisualStyleBackColor = false;
             // 
             // btnEditar
             // 
@@ -304,40 +264,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // btnRehacer
-            // 
-            this.btnRehacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnRehacer.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Snapforward;
-            this.btnRehacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRehacer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnRehacer.FlatAppearance.BorderSize = 0;
-            this.btnRehacer.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnRehacer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRehacer.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRehacer.Location = new System.Drawing.Point(103, 53);
-            this.btnRehacer.Name = "btnRehacer";
-            this.btnRehacer.Size = new System.Drawing.Size(44, 44);
-            this.btnRehacer.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.btnRehacer, "Rehacer");
-            this.btnRehacer.UseVisualStyleBackColor = false;
-            // 
-            // btnDeshacer
-            // 
-            this.btnDeshacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDeshacer.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Snapback;
-            this.btnDeshacer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDeshacer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnDeshacer.FlatAppearance.BorderSize = 0;
-            this.btnDeshacer.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnDeshacer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeshacer.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDeshacer.Location = new System.Drawing.Point(53, 53);
-            this.btnDeshacer.Name = "btnDeshacer";
-            this.btnDeshacer.Size = new System.Drawing.Size(44, 44);
-            this.btnDeshacer.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.btnDeshacer, "Deshacer");
-            this.btnDeshacer.UseVisualStyleBackColor = false;
-            // 
             // dgvAsistencias
             // 
             this.dgvAsistencias.AllowUserToAddRows = false;
@@ -370,6 +296,22 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblTotal.Size = new System.Drawing.Size(116, 13);
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Registros encontrados:";
+            // 
+            // btnInformacion
+            // 
+            this.btnInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnInformacion.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Info;
+            this.btnInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnInformacion.FlatAppearance.BorderSize = 0;
+            this.btnInformacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformacion.ForeColor = System.Drawing.Color.Transparent;
+            this.btnInformacion.Location = new System.Drawing.Point(153, 3);
+            this.btnInformacion.Name = "btnInformacion";
+            this.btnInformacion.Size = new System.Drawing.Size(45, 44);
+            this.btnInformacion.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btnInformacion, "Ver detalles del registro seleccionado");
+            this.btnInformacion.UseVisualStyleBackColor = false;
             // 
             // FrmAsistencias
             // 
@@ -420,12 +362,9 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnInformacion;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnDeshacer;
-        private System.Windows.Forms.Button btnRehacer;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Button btnRecuperar;
+        private System.Windows.Forms.Button btnInformacion;
     }
 }
