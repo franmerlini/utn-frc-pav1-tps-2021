@@ -3,9 +3,6 @@ using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BugTrackingSystem.CapaAccesoDatos
 {
@@ -16,16 +13,16 @@ namespace BugTrackingSystem.CapaAccesoDatos
             List<Usuario> listadoUsuarios = new List<Usuario>();
 
             String consultaSQL = string.Concat(" SELECT id_usuario, ",
-                                              "         u.id_perfil, ",
-                                              "         usuario, ",
-                                              "         password, ",
-                                              "         email, ",
-                                              "         estado, ",
-                                              "         u.borrado, ",
-                                              "         p.nombre ",
-                                              "  FROM Usuarios u ",
-                                              "  INNER JOIN Perfiles p ON u.id_perfil = p.id_perfil ",
-                                              "  WHERE 1=1 ");
+                                               "        u.id_perfil, ",
+                                               "        usuario, ",
+                                               "        password, ",
+                                               "        email, ",
+                                               "        estado, ",
+                                               "        u.borrado, ",
+                                               "        p.nombre ",
+                                               "  FROM Usuarios u ",
+                                               "  INNER JOIN Perfiles p ON p.id_perfil = u.id_perfil ",
+                                               "  WHERE 1 = 1 ");
 
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
@@ -43,13 +40,16 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 if (parametros.ContainsKey("estado"))
                     consultaSQL += " AND (estado = @estado) ";
                 if (parametros.ContainsKey("borrado"))
-                    consultaSQL += " AND (u.borrado=0) ";
+                    consultaSQL += " AND (u.borrado = 0) ";
                 //Para consultar por el nombre exacto
                 if (parametros.ContainsKey("nombreExacto"))
                     consultaSQL += " AND (usuario = @nombreExacto) ";
             }
             else
-                consultaSQL += "AND (u.borrado=0) ";
+            {
+                consultaSQL += "AND (u.borrado = 0) ";
+            }
+
             consultaSQL += " ORDER BY LOWER(usuario) ASC";
 
             var resultados = DataManager.ObtenerInstancia().ConsultaSQL(consultaSQL, parametros);
@@ -89,7 +89,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "     contrasena = @contrasena," +
                                  "     email = @email," +
                                  "     estado = @estado," +
-                                 "     borrado = @borrado" + 
+                                 "     borrado = @borrado" +
                                  " WHERE id_usuario = @idUsuario";
 
             var parametros = new Dictionary<string, object>

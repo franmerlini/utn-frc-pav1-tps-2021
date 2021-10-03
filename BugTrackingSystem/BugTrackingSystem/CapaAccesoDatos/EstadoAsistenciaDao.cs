@@ -3,9 +3,6 @@ using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BugTrackingSystem.CapaAccesoDatos
 {
@@ -15,28 +12,30 @@ namespace BugTrackingSystem.CapaAccesoDatos
         {
             List<EstadoAsistencia> listadoEstadosAsistencia = new List<EstadoAsistencia>();
 
-            var strSql = String.Concat("SELECT id_estado_asistencia, ",
-                                      "        n_estados_asistencia, ",
-                                      "        borrado ",
-                                      "  FROM EstadosAsistencia ",
-                                      "  WHERE 1=1 ");
+            String consultaSQL = string.Concat("  SELECT id_estado_asistencia, ",
+                                               "         n_estados_asistencia, ",
+                                               "         borrado ",
+                                               "  FROM EstadosAsistencia ",
+                                               "  WHERE 1 = 1 ");
 
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
             {
                 if (parametros.ContainsKey("idEstadoAsistencia"))
-                    strSql += " AND (id_estado_asistencia=@idEstadoAsistencia) ";
+                    consultaSQL += " AND (id_estado_asistencia = @idEstadoAsistencia) ";
                 if (parametros.ContainsKey("nombreEstadoAsistencia"))
-                    strSql += " AND (n_estados_asistencia=@nombreEstadoAsistencia) ";
+                    consultaSQL += " AND (n_estados_asistencia = @nombreEstadoAsistencia) ";
                 if (parametros.ContainsKey("borrado"))
-                    strSql += " AND (borrado=0) ";
+                    consultaSQL += " AND (borrado = 0) ";
             }
             else
-                strSql += " AND (borrado=0) ";
+            {
+                consultaSQL += " AND (borrado = 0) ";
+            }
 
-            var resultadoConsulta = (DataRowCollection)DataManager.ObtenerInstancia().ConsultaSQL(strSql, parametros).Rows;
+            var resultados = DataManager.ObtenerInstancia().ConsultaSQL(consultaSQL, parametros);
 
-            foreach (DataRow resultado in resultadoConsulta)
+            foreach (DataRow resultado in resultados.Rows)
             {
                 listadoEstadosAsistencia.Add(MapeoObjeto(resultado));
             }

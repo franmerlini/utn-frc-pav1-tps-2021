@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BugTrackingSystem.DAO
 {
@@ -12,6 +9,7 @@ namespace BugTrackingSystem.DAO
     {
         //Atributo declarado como static para instanciar un solo objeto de la clase DataManager
         private static DataManager instanciaDataManager;
+
         //Atributo que contiene la cadena de conexion a la base de datos
         private readonly string cadenaConexion;
 

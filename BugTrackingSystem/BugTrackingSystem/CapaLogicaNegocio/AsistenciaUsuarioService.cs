@@ -1,43 +1,37 @@
 ﻿using BugTrackingSystem.CapaAccesoDatos;
 using BugTrackingSystem.Entidades;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BugTrackingSystem.CapaLogicaNegocio
 {
     public class AsistenciaUsuarioService
     {
-        //---Atributos---
+        //-------------------------------------------------------Atributos-------------------------------------------------------
         private readonly AsistenciaUsuarioDao asistenciaUsuarioDao;
 
-        //---Metodos---
+        //--------------------------------------------------------Metodos--------------------------------------------------------
         //Constructor
         public AsistenciaUsuarioService()
         {
             asistenciaUsuarioDao = new AsistenciaUsuarioDao();
         }
 
-        //Obtener
-        public IList<AsistenciaUsuario> ObtenerAsistenciasUsuario(Dictionary<string, object> parametros = null)
-        {
-            return asistenciaUsuarioDao.ObtenerAsistenciasUsuario(parametros);
-        }
-
-        //Crear
+        //Crear una asistencia de usuario
         internal bool CrearAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
         {
             return asistenciaUsuarioDao.CrearAsistenciaUsuario(asistenciaUsuario);
         }
 
-        //Actualizar y Eliminar
+        //Actualizar una asistencia de usuario
         internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
         {
             return asistenciaUsuarioDao.ActualizarAsistenciaUsuario(asistenciaUsuario);
         }
-        
+
+        //Consultar varias asistencias de usuario por filtros
+        public IList<AsistenciaUsuario> ObtenerAsistenciasUsuario(Dictionary<string, object> parametros = null)
+        {
+            return asistenciaUsuarioDao.ObtenerAsistenciasUsuario(parametros);
+        }
     }
 }

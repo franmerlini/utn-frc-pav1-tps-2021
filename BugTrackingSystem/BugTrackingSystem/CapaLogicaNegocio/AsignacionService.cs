@@ -4,22 +4,22 @@ using System.Collections.Generic;
 
 namespace BugTrackingSystem.CapaLogicaNegocio
 {
-    public class EstadoAsistenciaService
+    public class AsignacionService
     {
         //-------------------------------------------------------Atributos-------------------------------------------------------
-        private readonly EstadoAsistenciaDao estadoAsistenciaDao;
+        private readonly AsignacionDao asignacionDao;
 
         //--------------------------------------------------------Metodos--------------------------------------------------------
         //Constructor
-        public EstadoAsistenciaService()
+        public AsignacionService()
         {
-            estadoAsistenciaDao = new EstadoAsistenciaDao();
+            asignacionDao = new AsignacionDao();
         }
 
-        //Consultar varios estados de asistencia por filtros
-        public IList<EstadoAsistencia> ObtenerEstadosAsistencia(Dictionary<string, object> parametros = null)
+        //Consultar varias asignaciones por filtros
+        internal IList<Asignacion> ObtenerAsignaciones(Dictionary<string, object> parametros = null)
         {
-            return estadoAsistenciaDao.ObtenerEstadosAsistencia(parametros);
+            return asignacionDao.ObtenerAsignaciones(parametros);
         }
     }
 }

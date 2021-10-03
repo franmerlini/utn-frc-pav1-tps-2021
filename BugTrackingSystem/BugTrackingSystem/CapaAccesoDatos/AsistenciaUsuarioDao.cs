@@ -3,7 +3,6 @@ using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
 
 namespace BugTrackingSystem.CapaAccesoDatos
 {
@@ -13,53 +12,52 @@ namespace BugTrackingSystem.CapaAccesoDatos
         {
             List<AsistenciaUsuario> listadoAsistencias = new List<AsistenciaUsuario>();
 
-            var consultaSQL = String.Concat("SELECT a.id_usuario, ",
-                                      "        a.id_asistencia_usuario, ",
-                                      "        a.fecha, ",
-                                      "        a.hora_ingreso, ",
-                                      "        a.hora_salida, ",
-                                      "        a.id_estado_asistencia, ",
-                                      "        a.comentario,  ",
-                                      "        a.borrado, ",
-                                      "        e.id_estado_asistencia, ",
-                                      "        e.n_estados_asistencia, ",
-                                      "        e.borrado, ",
-                                      "        u.id_usuario, ",
-                                      "        u.id_perfil, ",
-                                      "        u.usuario, ",
-                                      "        u.password, ",
-                                      "        u.email, ",
-                                      "        u.estado, ",
-                                      "        u.borrado, ",
-                                      "        p.id_perfil, ",
-                                      "        p.nombre ",
-                                      "  FROM AsistenciaUsuarios a",
-                                      "  INNER JOIN EstadosAsistencia e ON e.id_estado_asistencia = a.id_estado_asistencia",
-                                      "  INNER JOIN Usuarios u ON u.id_usuario = a.id_usuario",
-                                      "  INNER JOIN Perfiles p ON p.id_perfil = u.id_perfil",
-                                      "  WHERE 1=1 ");
+            String consultaSQL = string.Concat(" SELECT a.id_usuario, ",
+                                               "        a.id_asistencia_usuario, ",
+                                               "        a.fecha, ",
+                                               "        a.hora_ingreso, ",
+                                               "        a.hora_salida, ",
+                                               "        a.id_estado_asistencia, ",
+                                               "        a.comentario,  ",
+                                               "        a.borrado, ",
+                                               "        e.id_estado_asistencia, ",
+                                               "        e.n_estados_asistencia, ",
+                                               "        e.borrado, ",
+                                               "        u.id_usuario, ",
+                                               "        u.id_perfil, ",
+                                               "        u.usuario, ",
+                                               "        u.password, ",
+                                               "        u.email, ",
+                                               "        u.estado, ",
+                                               "        u.borrado, ",
+                                               "        p.id_perfil, ",
+                                               "        p.nombre ",
+                                               "  FROM AsistenciaUsuarios a",
+                                               "  INNER JOIN EstadosAsistencia e ON e.id_estado_asistencia = a.id_estado_asistencia",
+                                               "  INNER JOIN Perfiles p ON p.id_perfil = u.id_perfil",
+                                               "  WHERE 1 = 1 ");
 
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
             {
                 if (parametros.ContainsKey("idAsistenciaUsuario"))
-                    consultaSQL += " AND (a.id_asistencia_usuario=@idAsistenciaUsuario) ";
+                    consultaSQL += " AND (a.id_asistencia_usuario = @idAsistenciaUsuario) ";
                 if (parametros.ContainsKey("usuario"))
                     consultaSQL += " AND (LOWER(u.usuario) LIKE '%' + LOWER(@usuario) + '%') ";
                 if (parametros.ContainsKey("fechaDesde"))
-                    consultaSQL += " AND (fecha>=@fechaDesde) ";
+                    consultaSQL += " AND (a.fecha >= @fechaDesde) ";
                 if (parametros.ContainsKey("fechaHasta"))
-                    consultaSQL += " AND (fecha<=@fechaHasta) ";
+                    consultaSQL += " AND (a.fecha <= @fechaHasta) ";
                 if (parametros.ContainsKey("idEstadoAsistencia"))
-                    consultaSQL += " AND (e.id_estado_asistencia=@idEstadoAsistencia) ";
+                    consultaSQL += " AND (e.id_estado_asistencia = @idEstadoAsistencia) ";
                 if (!parametros.ContainsKey("borrado"))
-                    consultaSQL += " AND (a.borrado=0) ";
+                    consultaSQL += " AND (a.borrado = 0) ";
                 //Para consultar por el usuario exacto
                 if (parametros.ContainsKey("usuarioExacto"))
                     consultaSQL += " AND (usuario = @usuarioExacto) ";
             }
             else
-                consultaSQL += "AND (a.borrado=0) ";
+                consultaSQL += "AND (a.borrado = 0) ";
 
             consultaSQL += " ORDER BY a.fecha DESC";
 
@@ -98,14 +96,14 @@ namespace BugTrackingSystem.CapaAccesoDatos
         internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
         {
             string consultaSQL = "  UPDATE AsistenciaUsuarios " +
-                                 "     SET id_usuario = @idUsuario," +
-                                 "         fecha = @fecha, " +
-                                 "         hora_ingreso = @horaIngreso, " +
-                                 "         hora_salida = @horaSalida, " +
-                                 "         id_estado_asistencia = @idEstadoAsistencia, " +
-                                 "         comentario = @comentario, " +
-                                 "         borrado = @borrado " + 
-                                 "   WHERE id_asistencia_usuario = @idAsistenciaUsuario";
+                                 "  SET id_usuario = @idUsuario," +
+                                 "      fecha = @fecha, " +
+                                 "      hora_ingreso = @horaIngreso, " +
+                                 "      hora_salida = @horaSalida, " +
+                                 "      id_estado_asistencia = @idEstadoAsistencia, " +
+                                 "      comentario = @comentario, " +
+                                 "      borrado = @borrado " +
+                                 "  WHERE id_asistencia_usuario = @idAsistenciaUsuario";
 
             var parametros = new Dictionary<string, object>
             {

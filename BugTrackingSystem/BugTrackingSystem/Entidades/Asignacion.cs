@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BugTrackingSystem.Entidades
+﻿namespace BugTrackingSystem.Entidades
 {
-    class Asignacion
+    public class Asignacion
     {
-        public int Id { get; set; }
+        public int IdAsignacion { get; set; }
         public string Nombre { get; set; }
         public float Monto { get; set; }
         public bool Borrado { get; set; }
