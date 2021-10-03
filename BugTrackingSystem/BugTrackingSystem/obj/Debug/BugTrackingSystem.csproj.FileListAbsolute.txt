@@ -22,3 +22,5 @@ D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales
 D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
 D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
 D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources

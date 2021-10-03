@@ -17,7 +17,6 @@ namespace BugTrackingSystem.CapaPresentacion
         private readonly AsistenciaUsuarioService asistenciaService;
         private readonly UsuarioService usuarioService;
         private readonly EstadoAsistenciaService estadoAsistenciaService;
-
         private readonly Dictionary<string, object> parametros = new Dictionary<string, object>();
 
         // Métodos de carga e inicialización:
