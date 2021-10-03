@@ -153,6 +153,7 @@ namespace BugTrackingSystem.Forms
             this.tsiUsuarios.Name = "tsiUsuarios";
             this.tsiUsuarios.Size = new System.Drawing.Size(188, 22);
             this.tsiUsuarios.Text = "Usuarios";
+            this.tsiUsuarios.Click += new System.EventHandler(this.TsiUsuarios_Click);
             // 
             // tsiTransaccion
             // 

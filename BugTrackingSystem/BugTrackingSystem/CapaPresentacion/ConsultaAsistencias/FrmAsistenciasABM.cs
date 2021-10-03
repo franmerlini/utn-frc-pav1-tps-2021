@@ -169,10 +169,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.Close();
         }
 
-        private void BtnCrearUsuario_Click(object sender, EventArgs e)
-        {
-        }
-
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -1,4 +1,5 @@
 ﻿using BugTrackingSystem.CapaPresentacion;
+using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
@@ -127,6 +128,12 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Consulta de Asistencias");
         }
 
+        private void TsiUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios ventana = new FrmUsuarios();
+            MostrarVentana(ventana, "Consulta de Usuarios");
+        }
+
         // Código para poder mover la ventana desde el menu strip
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -139,5 +146,7 @@ namespace BugTrackingSystem.Forms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+    
     }
 }

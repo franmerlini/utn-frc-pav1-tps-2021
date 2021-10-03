@@ -35,18 +35,19 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 if (parametros.ContainsKey("idPerfil"))
                     consultaSQL += " AND (u.id_perfil = @idPerfil) ";
                 if (parametros.ContainsKey("nombre"))
-                    consultaSQL += " AND (usuario LIKE '%' + @nombre + '%') ";
-                if (parametros.ContainsKey("contrasena"))
-                    consultaSQL += " AND (password = @contrasena) ";
+                    consultaSQL += " AND (LOWER(usuario) LIKE '%' + LOWER(@nombre) + '%') ";
                 if (parametros.ContainsKey("email"))
-                    consultaSQL += " AND (email = @email) ";
+                    consultaSQL += " AND (LOWER(email) Like '%' + LOWER(@email) + '%') ";
                 if (parametros.ContainsKey("estado"))
-                    consultaSQL += " AND (estado = @estado) ";
-                if (parametros.ContainsKey("borrado"))
+                    consultaSQL += " AND (LOWER(estado) = LOWER(@estado)) ";
+                if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (u.borrado=0) ";
                 //Para consultar por el nombre exacto
                 if (parametros.ContainsKey("nombreExacto"))
                     consultaSQL += " AND (usuario = @nombreExacto) ";
+                //Para consultar por el email exacto
+                if (parametros.ContainsKey("emailExacto"))
+                    consultaSQL += " AND (email = @emailExacto) ";
             }
             else
                 consultaSQL += "AND (u.borrado=0) ";
@@ -64,12 +65,11 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
         internal bool CrearUsuario(Usuario usuario)
         {
-            string consultaSQL = " INSERT INTO Usuarios (id_usuario, id_perfil, usuario, password, email, estado, borrado)" +
-                                 " VALUES (@idUsuario, @idPerfil, @nombre, @contrasena, @email, @estado, 0)";
+            string consultaSQL = " INSERT INTO Usuarios (id_perfil, usuario, password, email, estado, borrado)" +
+                                 " VALUES (@idPerfil, @nombre, @contrasena, @email, @estado, 0)";
 
             var parametros = new Dictionary<string, object>
             {
-                { "idUsuario", usuario.IdUsuario },
                 { "idPerfil", usuario.Perfil.IdPerfil },
                 { "nombre", usuario.Nombre },
                 { "contrasena", usuario.Contrasena },
@@ -86,7 +86,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             string consultaSQL = " UPDATE Usuarios" +
                                  " SET usuario = @nombre," +
                                  "     id_perfil = @idPerfil," +
-                                 "     contrasena = @contrasena," +
+                                 "     password = @contrasena," +
                                  "     email = @email," +
                                  "     estado = @estado," +
                                  "     borrado = @borrado" + 
@@ -114,7 +114,9 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
                 Nombre = row["usuario"].ToString(),
                 Email = row["email"].ToString(),
+                Estado = row["estado"].ToString(),
                 Contrasena = row.Table.Columns.Contains("password") ? row["password"].ToString() : null,
+                Borrado = Convert.ToBoolean(row["borrado"].ToString()),
                 Perfil = new Perfil()
                 {
                     IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),

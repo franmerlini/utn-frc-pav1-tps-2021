@@ -37,10 +37,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.dateFechaHasta = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateFechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.grpAcciones = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -51,6 +47,10 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpInformacion = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dateFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpFiltros.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -140,48 +140,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.toolTip1.SetToolTip(this.btnConsultar, "Realizar consulta");
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
-            // 
-            // dateFechaHasta
-            // 
-            this.dateFechaHasta.Checked = false;
-            this.dateFechaHasta.CustomFormat = "";
-            this.dateFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaHasta.Location = new System.Drawing.Point(310, 25);
-            this.dateFechaHasta.Name = "dateFechaHasta";
-            this.dateFechaHasta.ShowCheckBox = true;
-            this.dateFechaHasta.Size = new System.Drawing.Size(163, 20);
-            this.dateFechaHasta.TabIndex = 3;
-            this.dateFechaHasta.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(233, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fecha Hasta:";
-            // 
-            // dateFechaDesde
-            // 
-            this.dateFechaDesde.Checked = false;
-            this.dateFechaDesde.CustomFormat = "";
-            this.dateFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaDesde.Location = new System.Drawing.Point(86, 25);
-            this.dateFechaDesde.Name = "dateFechaDesde";
-            this.dateFechaDesde.ShowCheckBox = true;
-            this.dateFechaDesde.Size = new System.Drawing.Size(141, 20);
-            this.dateFechaDesde.TabIndex = 1;
-            this.dateFechaDesde.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fecha Desde:";
             // 
             // grpAcciones
             // 
@@ -313,6 +271,48 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Registros encontrados:";
             // 
+            // dateFechaHasta
+            // 
+            this.dateFechaHasta.Checked = false;
+            this.dateFechaHasta.CustomFormat = "";
+            this.dateFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaHasta.Location = new System.Drawing.Point(310, 25);
+            this.dateFechaHasta.Name = "dateFechaHasta";
+            this.dateFechaHasta.ShowCheckBox = true;
+            this.dateFechaHasta.Size = new System.Drawing.Size(163, 20);
+            this.dateFechaHasta.TabIndex = 3;
+            this.dateFechaHasta.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(233, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Fecha Hasta:";
+            // 
+            // dateFechaDesde
+            // 
+            this.dateFechaDesde.Checked = false;
+            this.dateFechaDesde.CustomFormat = "";
+            this.dateFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaDesde.Location = new System.Drawing.Point(86, 25);
+            this.dateFechaDesde.Name = "dateFechaDesde";
+            this.dateFechaDesde.ShowCheckBox = true;
+            this.dateFechaDesde.Size = new System.Drawing.Size(141, 20);
+            this.dateFechaDesde.TabIndex = 1;
+            this.dateFechaDesde.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Fecha Desde:";
+            // 
             // FrmAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,10 +349,6 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.DataGridView dgvAsistencias;
         private System.Windows.Forms.GroupBox grpInformacion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateFechaHasta;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateFechaDesde;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label label4;
@@ -365,5 +361,9 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnInformacion;
+        private System.Windows.Forms.DateTimePicker dateFechaHasta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateFechaDesde;
+        private System.Windows.Forms.Label label1;
     }
 }
