@@ -4,22 +4,22 @@ using System.Collections.Generic;
 
 namespace BugTrackingSystem.CapaLogicaNegocio
 {
-    public class EstadoAsistenciaService
+    public class DescuentoService
     {
         //-------------------------------------------------------Atributos-------------------------------------------------------
-        private readonly EstadoAsistenciaDao estadoAsistenciaDao;
+        private readonly DescuentoDao descuentoDao;
 
         //--------------------------------------------------------Metodos--------------------------------------------------------
         //Constructor
-        public EstadoAsistenciaService()
+        public DescuentoService()
         {
-            estadoAsistenciaDao = new EstadoAsistenciaDao();
+            descuentoDao = new DescuentoDao();
         }
 
-        //Consultar varios estados de asistencia por filtros
-        public IList<EstadoAsistencia> ObtenerEstadosAsistencia(Dictionary<string, object> parametros = null)
+        //Consultar varios descuentos por filtros
+        public IList<Descuento> ObtenerDescuentos(Dictionary<string, object> parametros = null)
         {
-            return estadoAsistenciaDao.ObtenerEstadosAsistencia(parametros);
+            return descuentoDao.ObtenerDescuentos(parametros);
         }
     }
 }

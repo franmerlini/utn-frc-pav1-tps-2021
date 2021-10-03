@@ -1,24 +1,21 @@
 ﻿using BugTrackingSystem.CapaAccesoDatos;
 using BugTrackingSystem.Entidades;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BugTrackingSystem.CapaLogicaNegocio
 {
     public class UsuarioService
     {
-        //---Atributos---
+        //-------------------------------------------------------Atributos-------------------------------------------------------
         private readonly UsuarioDao usuarioDao;
 
-        //---Metodos---
+        //--------------------------------------------------------Metodos--------------------------------------------------------
         //Constructor
         public UsuarioService()
         {
             usuarioDao = new UsuarioDao();
         }
+
         //Validar un usuario pasando como parametro el nombre y la contraseña
         public Usuario ValidarUsuario(string nom, string cont)
         {
