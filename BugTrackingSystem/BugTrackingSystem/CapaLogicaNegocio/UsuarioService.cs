@@ -29,11 +29,13 @@ namespace BugTrackingSystem.CapaLogicaNegocio
 
             var usu = usuarioDao.ObtenerUsuarios(parametros);
 
-            if (usu[0] != null && usu[0].Contrasena.Equals(cont))
+            if (usu.Count != 0)
             {
-                return usu[0];
+                if (usu[0] != null && usu[0].Contrasena.Equals(cont))
+                {
+                    return usu[0];
+                }
             }
-
             return null;
         }
 

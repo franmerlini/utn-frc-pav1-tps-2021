@@ -18,6 +18,7 @@ namespace BugTrackingSystem
     public partial class FrmLogin : Form
     {
         private readonly UsuarioService usuarioService;
+        public Usuario Usuario { get; set; }
 
         public FrmLogin()
         {
@@ -25,7 +26,7 @@ namespace BugTrackingSystem
             usuarioService = new UsuarioService();
         }
 
-        private void BtnIniciarSesion_Click(object sender, EventArgs e)
+        internal void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
             string nom = txtNombre.Text;
             string cont = txtContra.Text;
@@ -36,8 +37,8 @@ namespace BugTrackingSystem
             }
             else
             {
-                Usuario usu = usuarioService.ValidarUsuario(nom, cont);
-                if (usu != null)
+                Usuario = usuarioService.ValidarUsuario(nom, cont);
+                if (Usuario != null)
                 {
                     this.Close();
                 }
@@ -59,5 +60,6 @@ namespace BugTrackingSystem
                 txtContra.PasswordChar = '•';
             }
         }
+
     }
 }

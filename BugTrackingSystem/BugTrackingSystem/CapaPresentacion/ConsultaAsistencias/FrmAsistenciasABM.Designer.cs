@@ -32,8 +32,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsistenciasABM));
             this.grpEntradas = new System.Windows.Forms.GroupBox();
+            this.chkBorrado = new System.Windows.Forms.CheckBox();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.rtxtComentario = new System.Windows.Forms.RichTextBox();
             this.lblComentario = new System.Windows.Forms.Label();
@@ -51,7 +51,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.chkBorrado = new System.Windows.Forms.CheckBox();
             this.grpEntradas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +58,6 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.grpEntradas.Controls.Add(this.chkBorrado);
             this.grpEntradas.Controls.Add(this.btnVolver);
-            this.grpEntradas.Controls.Add(this.btnCrearUsuario);
             this.grpEntradas.Controls.Add(this.btnAceptar);
             this.grpEntradas.Controls.Add(this.rtxtComentario);
             this.grpEntradas.Controls.Add(this.lblComentario);
@@ -79,6 +77,16 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpEntradas.TabIndex = 1;
             this.grpEntradas.TabStop = false;
             // 
+            // chkBorrado
+            // 
+            this.chkBorrado.AutoSize = true;
+            this.chkBorrado.Location = new System.Drawing.Point(115, 334);
+            this.chkBorrado.Name = "chkBorrado";
+            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
+            this.chkBorrado.TabIndex = 30;
+            this.chkBorrado.Text = "Borrado";
+            this.chkBorrado.UseVisualStyleBackColor = true;
+            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -94,16 +102,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.toolTip1.SetToolTip(this.btnVolver, "Volver");
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
-            // 
-            // btnCrearUsuario
-            // 
-            this.btnCrearUsuario.Location = new System.Drawing.Point(228, 36);
-            this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(91, 23);
-            this.btnCrearUsuario.TabIndex = 28;
-            this.btnCrearUsuario.Text = "Crear Usuario";
-            this.btnCrearUsuario.UseVisualStyleBackColor = true;
-            this.btnCrearUsuario.Click += new System.EventHandler(this.BtnCrearUsuario_Click);
             // 
             // btnAceptar
             // 
@@ -225,7 +223,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.cboUsuario.Location = new System.Drawing.Point(115, 37);
             this.cboUsuario.MaxLength = 50;
             this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(107, 21);
+            this.cboUsuario.Size = new System.Drawing.Size(204, 21);
             this.cboUsuario.TabIndex = 16;
             // 
             // lblUsuario
@@ -276,16 +274,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
-            // chkBorrado
-            // 
-            this.chkBorrado.AutoSize = true;
-            this.chkBorrado.Location = new System.Drawing.Point(115, 334);
-            this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
-            this.chkBorrado.TabIndex = 30;
-            this.chkBorrado.Text = "Borrado";
-            this.chkBorrado.UseVisualStyleBackColor = true;
-            // 
             // FrmAsistenciasABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +317,6 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button btnCrearUsuario;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btnSalir;

@@ -44,13 +44,13 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpAcciones = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnInformacion = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvAsistencias = new System.Windows.Forms.DataGridView();
             this.grpInformacion = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnInformacion = new System.Windows.Forms.Button();
             this.grpFiltros.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -230,6 +230,22 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
+            // btnInformacion
+            // 
+            this.btnInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnInformacion.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Info;
+            this.btnInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnInformacion.FlatAppearance.BorderSize = 0;
+            this.btnInformacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformacion.ForeColor = System.Drawing.Color.Transparent;
+            this.btnInformacion.Location = new System.Drawing.Point(153, 3);
+            this.btnInformacion.Name = "btnInformacion";
+            this.btnInformacion.Size = new System.Drawing.Size(45, 44);
+            this.btnInformacion.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btnInformacion, "Ver detalles del registro seleccionado");
+            this.btnInformacion.UseVisualStyleBackColor = false;
+            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -297,28 +313,11 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Registros encontrados:";
             // 
-            // btnInformacion
-            // 
-            this.btnInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnInformacion.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Info;
-            this.btnInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnInformacion.FlatAppearance.BorderSize = 0;
-            this.btnInformacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformacion.ForeColor = System.Drawing.Color.Transparent;
-            this.btnInformacion.Location = new System.Drawing.Point(153, 3);
-            this.btnInformacion.Name = "btnInformacion";
-            this.btnInformacion.Size = new System.Drawing.Size(45, 44);
-            this.btnInformacion.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btnInformacion, "Ver detalles del registro seleccionado");
-            this.btnInformacion.UseVisualStyleBackColor = false;
-            // 
             // FrmAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Sienna;
-            this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.layered_peaks_bg;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(995, 450);
             this.Controls.Add(this.grpInformacion);
@@ -330,7 +329,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.Name = "FrmAsistencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAsistencias";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.Brown;
             this.Load += new System.EventHandler(this.FrmAsignaciones_Load);
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();

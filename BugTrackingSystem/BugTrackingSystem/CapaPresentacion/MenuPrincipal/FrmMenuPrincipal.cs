@@ -15,6 +15,8 @@ namespace BugTrackingSystem.Forms
 {
     public partial class FrmMenuPrincipal : Form
     {
+        private Usuario usuario;
+        private readonly FrmLogin login = new FrmLogin();
 
         public FrmMenuPrincipal()
         {
@@ -24,19 +26,50 @@ namespace BugTrackingSystem.Forms
         // Se inicia la ventana de login apenas se muestra el menú principal
         private void FrmMenuPrincipal_Shown(object sender, EventArgs e)
         {
-            FrmLogin login = new FrmLogin();
+            login.FormClosing += Login_FormClosing;
             MostrarVentana(login, "Bug Tracking System");
         }
 
-        // Cuando el formulario de login se cierre, se activará el menú principal
-        private void FrmMenuPrincipal_MdiChildActivate(object sender, EventArgs e)
+        // Event handler del form login para extraer el usuario
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Si no hay ninguna ventana hija activa (es decir, el usuario pudo loguearse), se habilita el menú.
-            if (this.ActiveMdiChild == null)
+            if (login.Usuario != null)
             {
-                tsiGestion.Enabled = true;
-                tsiTransaccion.Enabled = true;
-                tsiArchivo.Enabled = true;
+                usuario = login.Usuario;
+                switch (usuario.Perfil.Nombre)
+                {
+                    case "Administrador":
+                        {
+                            tsiReportes.Enabled = true;
+                            tsiArchivo.Enabled = true;
+                            tsiGestion.Enabled = true;
+                            tsiTransaccion.Enabled = true;
+                            break;
+                        }
+                    case "Tester":
+                        {
+                            tsiArchivo.Enabled = true;
+                            tsiGestion.Enabled = true;
+                            tsiUsuarios.Enabled = false;
+                            break;
+                        }
+                    case "Desarrollador":
+                        {
+                            tsiArchivo.Enabled = true;
+                            tsiGestion.Enabled = true;
+                            tsiUsuarios.Enabled = false;
+                            break;
+                        }
+                    case "Responsable de Reportes":
+                        {
+                            tsiArchivo.Enabled = true;
+                            tsiTransaccion.Enabled = true;
+                            tsiReportes.Enabled = true;
+                            break;
+                        }
+                }
+                LblNombre.Text = "Usuario: " + usuario.Nombre + " - Perfil: " + usuario.Perfil.Nombre;
+                LblNombre.Visible = true;
             }
         }
 
@@ -106,6 +139,5 @@ namespace BugTrackingSystem.Forms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
     }
 }
