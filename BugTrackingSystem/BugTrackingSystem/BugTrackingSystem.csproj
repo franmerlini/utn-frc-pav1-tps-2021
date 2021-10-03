@@ -48,14 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaAccesoDatos\AsignacionDao.cs" />
     <Compile Include="CapaAccesoDatos\AsistenciaUsuarioDao.cs" />
     <Compile Include="CapaAccesoDatos\DataManager.cs" />
+    <Compile Include="CapaAccesoDatos\DescuentoDao.cs" />
     <Compile Include="CapaAccesoDatos\EstadoAsistenciaDao.cs" />
     <Compile Include="CapaAccesoDatos\PerfilDao.cs" />
+    <Compile Include="CapaAccesoDatos\SueldoAsignacionDao.cs" />
+    <Compile Include="CapaAccesoDatos\SueldoDao.cs" />
+    <Compile Include="CapaAccesoDatos\SueldoDescuentoDao.cs" />
     <Compile Include="CapaAccesoDatos\UsuarioDao.cs" />
     <Compile Include="CapaLogicaNegocio\AsistenciaUsuarioService.cs" />
+    <Compile Include="CapaLogicaNegocio\DescuentoService.cs" />
     <Compile Include="CapaLogicaNegocio\EstadoAsistenciaService.cs" />
     <Compile Include="CapaLogicaNegocio\PerfilService.cs" />
+    <Compile Include="CapaLogicaNegocio\SueldoAsignacionService.cs" />
+    <Compile Include="CapaLogicaNegocio\SueldoDescuentoService.cs" />
+    <Compile Include="CapaLogicaNegocio\SueldoService.cs" />
     <Compile Include="CapaLogicaNegocio\UsuarioService.cs" />
     <Compile Include="CapaPresentacion\ConsultaAsistencias\FrmAsistencias.cs">
       <SubType>Form</SubType>

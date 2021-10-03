@@ -33,6 +33,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                                "        p.id_perfil, ",
                                                "        p.nombre ",
                                                "  FROM AsistenciaUsuarios a",
+                                               "  INNER JOIN Usuarios u ON u.id_usuario = a.id_usuario",
                                                "  INNER JOIN EstadosAsistencia e ON e.id_estado_asistencia = a.id_estado_asistencia",
                                                "  INNER JOIN Perfiles p ON p.id_perfil = u.id_perfil",
                                                "  WHERE 1 = 1 ");

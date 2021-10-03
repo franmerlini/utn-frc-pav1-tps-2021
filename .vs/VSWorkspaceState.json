@@ -3,11 +3,10 @@
     "",
     "\\BugTrackingSystem",
     "\\BugTrackingSystem\\BugTrackingSystem",
-    "\\BugTrackingSystem\\BugTrackingSystem\\CapaAccesoDatos",
     "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion",
     "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion\\Login",
     "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion\\MenuPrincipal"
   ],
-  "SelectedNode": "\\BugTrackingSystem\\BugTrackingSystem\\CapaAccesoDatos\\AsistenciaUsuarioDao.cs",
+  "SelectedNode": "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion\\MenuPrincipal\\FrmMenuPrincipal.cs",
   "PreviewInSolutionExplorer": false
 }
