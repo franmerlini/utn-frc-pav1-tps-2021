@@ -13,7 +13,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
             List<AsistenciaUsuario> listadoAsistencias = new List<AsistenciaUsuario>();
 
             String consultaSQL = string.Concat(" SELECT a.id_usuario, ",
-                                               "        a.id_asistencia_usuario, ",
                                                "        a.fecha, ",
                                                "        a.hora_ingreso, ",
                                                "        a.hora_salida, ",
@@ -41,8 +40,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
             {
-                if (parametros.ContainsKey("idAsistenciaUsuario"))
-                    consultaSQL += " AND (a.id_asistencia_usuario = @idAsistenciaUsuario) ";
+                if (parametros.ContainsKey("idUsuario"))
+                    consultaSQL += " AND a.id_usuario = @idUsuario ";
                 if (parametros.ContainsKey("usuario"))
                     consultaSQL += " AND (LOWER(u.usuario) LIKE '%' + LOWER(@usuario) + '%') ";
                 if (parametros.ContainsKey("fechaDesde"))
@@ -51,6 +50,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (a.fecha <= @fechaHasta) ";
                 if (parametros.ContainsKey("idEstadoAsistencia"))
                     consultaSQL += " AND (e.id_estado_asistencia = @idEstadoAsistencia) ";
+                if (parametros.ContainsKey("fechaExacta"))
+                    consultaSQL += " AND (a.fecha = @fechaExacta) ";
                 if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (a.borrado = 0) ";
                 //Para consultar por el usuario exacto
@@ -94,7 +95,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
+        internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario, Dictionary<string, object> parametros)
         {
             string consultaSQL = "  UPDATE AsistenciaUsuarios " +
                                  "  SET id_usuario = @idUsuario," +
@@ -104,19 +105,16 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "      id_estado_asistencia = @idEstadoAsistencia, " +
                                  "      comentario = @comentario, " +
                                  "      borrado = @borrado " +
-                                 "  WHERE id_asistencia_usuario = @idAsistenciaUsuario";
+                                 "  WHERE fecha = @fechaBase " +
+                                 "  AND id_usuario = @idUsuarioBase ";
 
-            var parametros = new Dictionary<string, object>
-            {
-                { "idUsuario", asistenciaUsuario.Usuario.IdUsuario },
-                { "fecha", asistenciaUsuario.Fecha },
-                { "horaIngreso", asistenciaUsuario.HoraIngreso },
-                { "horaSalida", asistenciaUsuario.HoraSalida },
-                { "idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia },
-                { "comentario", asistenciaUsuario.Comentario },
-                { "idAsistenciaUsuario", asistenciaUsuario.IdAsistenciaUsuario },
-                { "borrado", asistenciaUsuario.Borrado }
-            };
+            parametros.Add("idUsuario", asistenciaUsuario.Usuario.IdUsuario);
+            parametros.Add("fecha", asistenciaUsuario.Fecha);
+            parametros.Add("horaIngreso", asistenciaUsuario.HoraIngreso);
+            parametros.Add("horaSalida", asistenciaUsuario.HoraSalida);
+            parametros.Add("idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia);
+            parametros.Add("comentario", asistenciaUsuario.Comentario);
+            parametros.Add("borrado", asistenciaUsuario.Borrado);
 
             // Si una fila es afectada por la actualización retorna TRUE. Caso contrario retorna FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -126,7 +124,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
         {
             AsistenciaUsuario asistenciaUsuario = new AsistenciaUsuario
             {
-                IdAsistenciaUsuario = Convert.ToInt32(row["id_asistencia_usuario"].ToString()),
                 Fecha = Convert.ToDateTime(row["fecha"].ToString()),
                 HoraIngreso = Convert.ToDateTime(row["hora_ingreso"].ToString()).ToString("HH:mm"),
                 HoraSalida = Convert.ToDateTime(row["hora_salida"].ToString()).ToString("HH:mm"),

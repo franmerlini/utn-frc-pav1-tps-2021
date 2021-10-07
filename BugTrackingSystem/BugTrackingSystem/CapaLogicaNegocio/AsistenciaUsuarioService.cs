@@ -23,9 +23,9 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         }
 
         //Actualizar una asistencia de usuario
-        internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario)
+        internal bool ActualizarAsistenciaUsuario(AsistenciaUsuario asistenciaUsuario, Dictionary<string, object> parametros)
         {
-            return asistenciaUsuarioDao.ActualizarAsistenciaUsuario(asistenciaUsuario);
+            return asistenciaUsuarioDao.ActualizarAsistenciaUsuario(asistenciaUsuario, parametros);
         }
 
         //Consultar varias asistencias de usuario por filtros

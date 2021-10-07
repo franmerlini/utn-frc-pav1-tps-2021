@@ -60,7 +60,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnSalir.TabIndex = 32;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // LblTitulo
             // 
@@ -84,7 +84,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.menuStrip1.Size = new System.Drawing.Size(367, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
+            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseDown);
             // 
             // label1
             // 
@@ -125,7 +125,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // TxtPassword
             // 
             this.TxtPassword.Location = new System.Drawing.Point(119, 159);
-            this.TxtPassword.MaxLength = 50;
+            this.TxtPassword.MaxLength = 10;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(204, 20);
             this.TxtPassword.TabIndex = 40;
@@ -185,7 +185,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // BtnVolver
             // 
-            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BtnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Left;
             this.BtnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
@@ -200,7 +200,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BtnAceptar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Valid_Green;
             this.BtnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnAceptar.FlatAppearance.BorderSize = 0;
@@ -217,7 +217,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(367, 280);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnAceptar);

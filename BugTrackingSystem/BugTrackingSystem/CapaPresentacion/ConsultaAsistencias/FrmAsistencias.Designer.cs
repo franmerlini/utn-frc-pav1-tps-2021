@@ -36,21 +36,21 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label4 = new System.Windows.Forms.Label();
             this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.grpAcciones = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnInformacion = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.dgvAsistencias = new System.Windows.Forms.DataGridView();
-            this.grpInformacion = new System.Windows.Forms.GroupBox();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dateFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dateFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.grpAcciones = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvAsistencias = new System.Windows.Forms.DataGridView();
+            this.grpInformacion = new System.Windows.Forms.GroupBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnInformacion = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.grpFiltros.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -124,22 +124,47 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label3.TabIndex = 4;
             this.label3.Text = "Usuario:";
             // 
-            // btnConsultar
+            // dateFechaHasta
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnConsultar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Search;
-            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConsultar.Location = new System.Drawing.Point(429, 80);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(44, 44);
-            this.btnConsultar.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.btnConsultar, "Realizar consulta");
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
+            this.dateFechaHasta.Checked = false;
+            this.dateFechaHasta.CustomFormat = "";
+            this.dateFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaHasta.Location = new System.Drawing.Point(310, 25);
+            this.dateFechaHasta.Name = "dateFechaHasta";
+            this.dateFechaHasta.ShowCheckBox = true;
+            this.dateFechaHasta.Size = new System.Drawing.Size(163, 20);
+            this.dateFechaHasta.TabIndex = 3;
+            this.dateFechaHasta.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(233, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Fecha Hasta:";
+            // 
+            // dateFechaDesde
+            // 
+            this.dateFechaDesde.Checked = false;
+            this.dateFechaDesde.CustomFormat = "";
+            this.dateFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaDesde.Location = new System.Drawing.Point(86, 25);
+            this.dateFechaDesde.Name = "dateFechaDesde";
+            this.dateFechaDesde.ShowCheckBox = true;
+            this.dateFechaDesde.Size = new System.Drawing.Size(141, 20);
+            this.dateFechaDesde.TabIndex = 1;
+            this.dateFechaDesde.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Fecha Desde:";
             // 
             // grpAcciones
             // 
@@ -170,6 +195,39 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 52);
             this.tableLayoutPanel1.TabIndex = 14;
+            // 
+            // dgvAsistencias
+            // 
+            this.dgvAsistencias.AllowUserToAddRows = false;
+            this.dgvAsistencias.AllowUserToDeleteRows = false;
+            this.dgvAsistencias.AllowUserToOrderColumns = true;
+            this.dgvAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAsistencias.Location = new System.Drawing.Point(12, 142);
+            this.dgvAsistencias.MultiSelect = false;
+            this.dgvAsistencias.Name = "dgvAsistencias";
+            this.dgvAsistencias.ReadOnly = true;
+            this.dgvAsistencias.Size = new System.Drawing.Size(971, 296);
+            this.dgvAsistencias.TabIndex = 2;
+            // 
+            // grpInformacion
+            // 
+            this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.grpInformacion.Controls.Add(this.lblTotal);
+            this.grpInformacion.Location = new System.Drawing.Point(723, 12);
+            this.grpInformacion.Name = "grpInformacion";
+            this.grpInformacion.Size = new System.Drawing.Size(260, 124);
+            this.grpInformacion.TabIndex = 2;
+            this.grpInformacion.TabStop = false;
+            this.grpInformacion.Text = "Información";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(6, 22);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(116, 13);
+            this.lblTotal.TabIndex = 0;
+            this.lblTotal.Text = "Registros encontrados:";
             // 
             // btnNuevo
             // 
@@ -238,80 +296,22 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // dgvAsistencias
+            // btnConsultar
             // 
-            this.dgvAsistencias.AllowUserToAddRows = false;
-            this.dgvAsistencias.AllowUserToDeleteRows = false;
-            this.dgvAsistencias.AllowUserToOrderColumns = true;
-            this.dgvAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAsistencias.Location = new System.Drawing.Point(12, 142);
-            this.dgvAsistencias.MultiSelect = false;
-            this.dgvAsistencias.Name = "dgvAsistencias";
-            this.dgvAsistencias.ReadOnly = true;
-            this.dgvAsistencias.Size = new System.Drawing.Size(971, 296);
-            this.dgvAsistencias.TabIndex = 2;
-            // 
-            // grpInformacion
-            // 
-            this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(723, 12);
-            this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(260, 124);
-            this.grpInformacion.TabIndex = 2;
-            this.grpInformacion.TabStop = false;
-            this.grpInformacion.Text = "Información";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 22);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(116, 13);
-            this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Registros encontrados:";
-            // 
-            // dateFechaHasta
-            // 
-            this.dateFechaHasta.Checked = false;
-            this.dateFechaHasta.CustomFormat = "";
-            this.dateFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaHasta.Location = new System.Drawing.Point(310, 25);
-            this.dateFechaHasta.Name = "dateFechaHasta";
-            this.dateFechaHasta.ShowCheckBox = true;
-            this.dateFechaHasta.Size = new System.Drawing.Size(163, 20);
-            this.dateFechaHasta.TabIndex = 3;
-            this.dateFechaHasta.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(233, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fecha Hasta:";
-            // 
-            // dateFechaDesde
-            // 
-            this.dateFechaDesde.Checked = false;
-            this.dateFechaDesde.CustomFormat = "";
-            this.dateFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaDesde.Location = new System.Drawing.Point(86, 25);
-            this.dateFechaDesde.Name = "dateFechaDesde";
-            this.dateFechaDesde.ShowCheckBox = true;
-            this.dateFechaDesde.Size = new System.Drawing.Size(141, 20);
-            this.dateFechaDesde.TabIndex = 1;
-            this.dateFechaDesde.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fecha Desde:";
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnConsultar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Search;
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnConsultar.Location = new System.Drawing.Point(429, 80);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(44, 44);
+            this.btnConsultar.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btnConsultar, "Realizar consulta");
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
             // FrmAsistencias
             // 

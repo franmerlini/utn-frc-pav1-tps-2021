@@ -108,12 +108,6 @@ namespace BugTrackingSystem.CapaPresentacion
             DateTime.TryParse(dateHoraSalida.Text, out DateTime horaHasta);
             asistenciaUsuario.HoraSalida = horaHasta.ToString("HH:mm");
 
-            if (horaDesde > horaHasta)
-            {
-                MessageBox.Show("Error: ¿Hora de ingreso MAYOR a hora de salida?", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (cboEstado.SelectedValue != null)
                 asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia = Convert.ToInt32(cboEstado.SelectedValue);
             else
@@ -130,10 +124,24 @@ namespace BugTrackingSystem.CapaPresentacion
             else
                 asistenciaUsuario.Comentario = "";
 
+            var parametrosRepeticion = new Dictionary<string, object>()
+            {
+                {"idUsuario", Convert.ToInt32(asistenciaUsuario.Usuario.IdUsuario)},
+                {"fechaExacta", Convert.ToDateTime(asistenciaUsuario.Fecha) },
+                {"borrado" , true}
+            };
+
             switch (formMode)
             {
                 case FormMode.nuevo:
                     {
+
+                        if (asistenciaUsuarioService.ObtenerAsistenciasUsuario(parametrosRepeticion).Count > 0)
+                        {
+                            MessageBox.Show("¡Ya existe un registro con tal fecha y usuario! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
                         if (asistenciaUsuarioService.CrearAsistenciaUsuario(asistenciaUsuario))
                         {
                             MessageBox.Show("¡Registro creado con éxito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -149,10 +157,21 @@ namespace BugTrackingSystem.CapaPresentacion
 
                 case FormMode.actualizar:
                     {
-                        asistenciaUsuario.Borrado = chkBorrado.Checked;
-                        asistenciaUsuario.IdAsistenciaUsuario = asistenciaUsuarioSeleccionada.IdAsistenciaUsuario;
+                        if ((asistenciaUsuarioService.ObtenerAsistenciasUsuario(parametrosRepeticion).Count > 0) && ((asistenciaUsuarioSeleccionada.Fecha != asistenciaUsuario.Fecha) || (asistenciaUsuarioSeleccionada.Usuario.IdUsuario != asistenciaUsuario.Usuario.IdUsuario)))
+                        {
+                            MessageBox.Show("¡Ya existe un registro con tal fecha y usuario! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
 
-                        if (asistenciaUsuarioService.ActualizarAsistenciaUsuario(asistenciaUsuario))
+                        asistenciaUsuario.Borrado = chkBorrado.Checked;
+
+                        var parametros = new Dictionary<string, object>
+                        {
+                            { "fechaBase", Convert.ToDateTime(asistenciaUsuarioSeleccionada.Fecha) },
+                            { "idUsuarioBase", Convert.ToInt32(asistenciaUsuarioSeleccionada.Usuario.IdUsuario) }
+                        };
+
+                        if (asistenciaUsuarioService.ActualizarAsistenciaUsuario(asistenciaUsuario, parametros))
                         {
                             MessageBox.Show("Asistencia actualizada!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Dispose();

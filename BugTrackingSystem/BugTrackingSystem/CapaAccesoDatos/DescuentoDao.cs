@@ -28,7 +28,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (n_descuento = @nombre) ";
                 if (parametros.ContainsKey("monto"))
                     consultaSQL += " AND (monto = @monto) ";
-                if (parametros.ContainsKey("borrado"))
+                if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (borrado = 0) ";
             }
             else
@@ -54,7 +54,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             {
                 IdDescuento = Convert.ToInt32(row["id_descuento"].ToString()),
                 Nombre = row["n_descuento"].ToString(),
-                Monto = (float)Convert.ToDouble(row["monto"].ToString()),
+                Monto = Convert.ToDecimal(row["monto"].ToString()),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
 

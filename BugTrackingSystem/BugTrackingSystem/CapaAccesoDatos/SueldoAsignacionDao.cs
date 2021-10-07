@@ -26,25 +26,34 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                             "        u.estado, ",
                                             "        u.borrado, ",
                                             "        p.id_perfil, ",
-                                            "        p.nombre ",
+                                            "        p.nombre, ",
+                                            "        a.n_asignacion, ",
+                                            "        a.monto ",
                                             "  FROM SueldoAsignaciones s",
                                             "  INNER JOIN Usuarios u ON u.id_usuario = s.id_usuario",
                                             "  INNER JOIN Perfiles p ON p.id_perfil = u.id_perfil",
+                                            "  INNER JOIN Asignaciones a ON a.id_asignacion = s.id_asignacion",
                                             "  WHERE 1 = 1 ");
 
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
             {
-                if (parametros.ContainsKey("idUsuario"))
-                    consultaSQL += " AND (s.id_usuario = @idUsuario) ";
-                if (parametros.ContainsKey("fecha"))
-                    consultaSQL += " AND (s.fecha = @fecha) ";
+                if (parametros.ContainsKey("usuario"))
+                    consultaSQL += " AND (LOWER(u.usuario) LIKE '%' + LOWER(@usuario) + '%') ";
+                if (parametros.ContainsKey("fechaDesde"))
+                    consultaSQL += " AND (s.fecha >= @fechaDesde) ";
+                if (parametros.ContainsKey("fechaHasta"))
+                    consultaSQL += " AND (s.fecha <= @fechaHasta) ";
                 if (parametros.ContainsKey("monto"))
                     consultaSQL += " AND (s.monto = @monto) ";
                 if (parametros.ContainsKey("cantidad"))
                     consultaSQL += " AND (s.cantidad = @cantidad) ";
-                if (parametros.ContainsKey("borrado"))
+                if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (s.borrado = 0) ";
+                if (parametros.ContainsKey("usuarioExacto"))
+                    consultaSQL += " AND (u.usuario = @usuarioExacto) ";
+                if (parametros.ContainsKey("idAsignacion"))
+                    consultaSQL += " AND (s.id_asignacion = @idAsignacion) ";
             }
             else
             {
@@ -81,7 +90,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal bool ActualizarSueldoAsignacion(SueldoAsignacion sueldoAsignacion)
+        internal bool ActualizarSueldoAsignacion(SueldoAsignacion sueldoAsignacion, Dictionary<string, object> parametros)
         {
             string consultaSQL = " UPDATE SueldoAsignaciones" +
                                  " SET id_usuario = @idUsuario," +
@@ -90,17 +99,16 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "     monto = @monto," +
                                  "     cantidad = @cantidad," +
                                  "     borrado = @borrado" +
-                                 " WHERE id_usuario = @idUsuario";
+                                 " WHERE id_usuario = @idUsuarioBase " +
+                                 " AND fecha = @fechaBase " +
+                                 " AND id_asignacion = @idAsignacionBase";
 
-            var parametros = new Dictionary<string, object>
-            {
-                { "idUsuario", sueldoAsignacion.Usuario.IdUsuario },
-                { "fecha", sueldoAsignacion.Fecha },
-                { "idAsignacion", sueldoAsignacion.Asignacion.IdAsignacion },
-                { "monto", sueldoAsignacion.Monto },
-                { "cantidad", sueldoAsignacion.Cantidad },
-                { "borrado", sueldoAsignacion.Borrado }
-            };
+            parametros.Add("idUsuario", sueldoAsignacion.Usuario.IdUsuario);
+            parametros.Add("fecha", sueldoAsignacion.Fecha);
+            parametros.Add("idAsignacion", sueldoAsignacion.Asignacion.IdAsignacion);
+            parametros.Add("monto", sueldoAsignacion.Monto);
+            parametros.Add("cantidad", sueldoAsignacion.Cantidad);
+            parametros.Add("borrado", sueldoAsignacion.Borrado);
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -129,11 +137,10 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 {
                     IdAsignacion = Convert.ToInt32(row["id_asignacion"].ToString()),
                     Nombre = row["n_asignacion"].ToString(),
-                    Monto = (float)Convert.ToDouble(row["monto"].ToString()),
-                    Borrado = Convert.ToBoolean(row["borrado"].ToString())
+                    Monto = Convert.ToDecimal(row["monto"].ToString()),
                 },
 
-                Monto = (float)Convert.ToDouble(row["monto"].ToString()),
+                Monto = Convert.ToDecimal(row["monto"].ToString()),
                 Cantidad = Convert.ToInt32(row["cantidad"].ToString()),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };

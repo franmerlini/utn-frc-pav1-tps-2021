@@ -73,7 +73,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // grpInformacion
             // 
-            this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpInformacion.Controls.Add(this.lblTotal);
             this.grpInformacion.Location = new System.Drawing.Point(723, 12);
             this.grpInformacion.Name = "grpInformacion";
@@ -93,7 +93,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // grpAcciones
             // 
-            this.grpAcciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.grpAcciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
             this.grpAcciones.Location = new System.Drawing.Point(497, 12);
             this.grpAcciones.Name = "grpAcciones";
@@ -123,7 +123,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnNuevo.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Add;
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNuevo.FlatAppearance.BorderSize = 0;
@@ -140,7 +140,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // btnInformacion
             // 
-            this.btnInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnInformacion.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Info;
             this.btnInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnInformacion.FlatAppearance.BorderSize = 0;
@@ -156,7 +156,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnEditar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.editaar;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEditar.FlatAppearance.BorderSize = 0;
@@ -173,7 +173,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnEliminar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Remove_Red;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
@@ -190,7 +190,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // grpFiltros
             // 
-            this.grpFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.grpFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpFiltros.Controls.Add(this.TxtEstado);
             this.grpFiltros.Controls.Add(this.cboEmail);
             this.grpFiltros.Controls.Add(this.label2);
@@ -291,7 +291,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // btnConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnConsultar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Search;
             this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnConsultar.FlatAppearance.BorderSize = 0;

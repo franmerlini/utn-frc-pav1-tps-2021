@@ -23,9 +23,9 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         }
 
         //Actualizar un sueldo descuento
-        internal bool ActualizarSueldoDescuento(SueldoDescuento sueldoDescuento)
+        internal bool ActualizarSueldoDescuento(SueldoDescuento sueldoDescuento, Dictionary<string, object> parametros)
         {
-            return sueldoDescuentoDao.ActualizarSueldoDescuento(sueldoDescuento);
+            return sueldoDescuentoDao.ActualizarSueldoDescuento(sueldoDescuento, parametros);
         }
 
         //Consultar varios sueldo descuentos por filtros

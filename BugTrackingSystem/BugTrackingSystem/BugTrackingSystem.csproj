@@ -58,6 +58,7 @@
     <Compile Include="CapaAccesoDatos\SueldoDao.cs" />
     <Compile Include="CapaAccesoDatos\SueldoDescuentoDao.cs" />
     <Compile Include="CapaAccesoDatos\UsuarioDao.cs" />
+    <Compile Include="CapaLogicaNegocio\AsignacionService.cs" />
     <Compile Include="CapaLogicaNegocio\AsistenciaUsuarioService.cs" />
     <Compile Include="CapaLogicaNegocio\DescuentoService.cs" />
     <Compile Include="CapaLogicaNegocio\EstadoAsistenciaService.cs" />
@@ -66,6 +67,18 @@
     <Compile Include="CapaLogicaNegocio\SueldoDescuentoService.cs" />
     <Compile Include="CapaLogicaNegocio\SueldoService.cs" />
     <Compile Include="CapaLogicaNegocio\UsuarioService.cs" />
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmAsignaciones.Designer.cs">
+      <DependentUpon>FrmAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmAsignacionesABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaAsignaciones\FrmAsignacionesABM.Designer.cs">
+      <DependentUpon>FrmAsignacionesABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\ConsultaAsistencias\FrmAsistencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +90,18 @@
     </Compile>
     <Compile Include="CapaPresentacion\ConsultaAsistencias\FrmAsistenciasABM.Designer.cs">
       <DependentUpon>FrmAsistenciasABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaDescuentos\FrmDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaDescuentos\FrmDescuentos.Designer.cs">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaDescuentos\FrmDescuentosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaDescuentos\FrmDescuentosABM.Designer.cs">
+      <DependentUpon>FrmDescuentosABM.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaPresentacion\ConsultaUsuarios\FrmUsuarios.cs">
       <SubType>Form</SubType>
@@ -114,11 +139,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaPresentacion\ConsultaAsignaciones\FrmAsignaciones.resx">
+      <DependentUpon>FrmAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ConsultaAsignaciones\FrmAsignacionesABM.resx">
+      <DependentUpon>FrmAsignacionesABM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\ConsultaAsistencias\FrmAsistencias.resx">
       <DependentUpon>FrmAsistencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\ConsultaAsistencias\FrmAsistenciasABM.resx">
       <DependentUpon>FrmAsistenciasABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ConsultaDescuentos\FrmDescuentos.resx">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ConsultaDescuentos\FrmDescuentosABM.resx">
+      <DependentUpon>FrmDescuentosABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\ConsultaUsuarios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
@@ -194,6 +231,8 @@
   <ItemGroup>
     <None Include="Resources\guardar.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Diagrama.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

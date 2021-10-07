@@ -33,8 +33,6 @@ namespace BugTrackingSystem.CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsistenciasABM));
             this.grpEntradas = new System.Windows.Forms.GroupBox();
             this.chkBorrado = new System.Windows.Forms.CheckBox();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.rtxtComentario = new System.Windows.Forms.RichTextBox();
             this.lblComentario = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
@@ -51,6 +49,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.grpEntradas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,38 +86,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.chkBorrado.TabIndex = 30;
             this.chkBorrado.Text = "Borrado";
             this.chkBorrado.UseVisualStyleBackColor = true;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Left;
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Location = new System.Drawing.Point(267, 321);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(40, 40);
-            this.btnVolver.TabIndex = 29;
-            this.toolTip1.SetToolTip(this.btnVolver, "Volver");
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAceptar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Valid_Green;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(311, 321);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
-            this.btnAceptar.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.btnAceptar, "Aceptar");
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // rtxtComentario
             // 
@@ -273,6 +241,38 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Left;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
+            this.btnVolver.Location = new System.Drawing.Point(267, 321);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(40, 40);
+            this.btnVolver.TabIndex = 29;
+            this.toolTip1.SetToolTip(this.btnVolver, "Volver");
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAceptar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Valid_Green;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.Location = new System.Drawing.Point(311, 321);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(40, 40);
+            this.btnAceptar.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.btnAceptar, "Aceptar");
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // FrmAsistenciasABM
             // 

@@ -34,9 +34,7 @@ namespace BugTrackingSystem.Forms
             this.tsiArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiGestion = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiAsignaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiAsistencias = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiDescuentos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSueldos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSueldosAsignaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSueldosDescuentos = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,9 +90,7 @@ namespace BugTrackingSystem.Forms
             // tsiGestion
             // 
             this.tsiGestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiAsignaciones,
             this.tsiAsistencias,
-            this.tsiDescuentos,
             this.tsiSueldos,
             this.tsiSueldosAsignaciones,
             this.tsiSueldosDescuentos,
@@ -105,53 +101,43 @@ namespace BugTrackingSystem.Forms
             this.tsiGestion.Size = new System.Drawing.Size(59, 20);
             this.tsiGestion.Text = "Gestion";
             // 
-            // tsiAsignaciones
-            // 
-            this.tsiAsignaciones.Name = "tsiAsignaciones";
-            this.tsiAsignaciones.Size = new System.Drawing.Size(188, 22);
-            this.tsiAsignaciones.Text = "Asignaciones";
-            // 
             // tsiAsistencias
             // 
             this.tsiAsistencias.Name = "tsiAsistencias";
-            this.tsiAsistencias.Size = new System.Drawing.Size(188, 22);
+            this.tsiAsistencias.Size = new System.Drawing.Size(196, 22);
             this.tsiAsistencias.Text = "Asistencias";
             this.tsiAsistencias.Click += new System.EventHandler(this.TsiAsignaciones_Click);
-            // 
-            // tsiDescuentos
-            // 
-            this.tsiDescuentos.Name = "tsiDescuentos";
-            this.tsiDescuentos.Size = new System.Drawing.Size(188, 22);
-            this.tsiDescuentos.Text = "Descuentos";
             // 
             // tsiSueldos
             // 
             this.tsiSueldos.Name = "tsiSueldos";
-            this.tsiSueldos.Size = new System.Drawing.Size(188, 22);
+            this.tsiSueldos.Size = new System.Drawing.Size(196, 22);
             this.tsiSueldos.Text = "Sueldos";
             // 
             // tsiSueldosAsignaciones
             // 
             this.tsiSueldosAsignaciones.Name = "tsiSueldosAsignaciones";
-            this.tsiSueldosAsignaciones.Size = new System.Drawing.Size(188, 22);
+            this.tsiSueldosAsignaciones.Size = new System.Drawing.Size(196, 22);
             this.tsiSueldosAsignaciones.Text = "Sueldos Asignaciones";
+            this.tsiSueldosAsignaciones.Click += new System.EventHandler(this.TsiSueldosAsignaciones_Click);
             // 
             // tsiSueldosDescuentos
             // 
             this.tsiSueldosDescuentos.Name = "tsiSueldosDescuentos";
-            this.tsiSueldosDescuentos.Size = new System.Drawing.Size(188, 22);
+            this.tsiSueldosDescuentos.Size = new System.Drawing.Size(196, 22);
             this.tsiSueldosDescuentos.Text = "Sueldos Descuentos";
+            this.tsiSueldosDescuentos.Click += new System.EventHandler(this.TsiSueldosDescuentos_Click);
             // 
             // tsiSueldosPorPefil
             // 
             this.tsiSueldosPorPefil.Name = "tsiSueldosPorPefil";
-            this.tsiSueldosPorPefil.Size = new System.Drawing.Size(188, 22);
-            this.tsiSueldosPorPefil.Text = "Sueldos por Perfil";
+            this.tsiSueldosPorPefil.Size = new System.Drawing.Size(196, 22);
+            this.tsiSueldosPorPefil.Text = "Sueldos Perfil Histórico";
             // 
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(188, 22);
+            this.tsiUsuarios.Size = new System.Drawing.Size(196, 22);
             this.tsiUsuarios.Text = "Usuarios";
             this.tsiUsuarios.Click += new System.EventHandler(this.TsiUsuarios_Click);
             // 
@@ -292,9 +278,7 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.ToolStripMenuItem tsiArchivo;
         private System.Windows.Forms.ToolStripMenuItem tsiSalir;
         private System.Windows.Forms.ToolStripMenuItem tsiGestion;
-        private System.Windows.Forms.ToolStripMenuItem tsiAsignaciones;
         private System.Windows.Forms.ToolStripMenuItem tsiAsistencias;
-        private System.Windows.Forms.ToolStripMenuItem tsiDescuentos;
         private System.Windows.Forms.ToolStripMenuItem tsiSueldos;
         private System.Windows.Forms.ToolStripMenuItem tsiTransaccion;
         private System.Windows.Forms.ToolStripMenuItem tsiAyuda;

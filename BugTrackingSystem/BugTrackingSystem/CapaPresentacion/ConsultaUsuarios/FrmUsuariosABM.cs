@@ -125,10 +125,21 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
                 usuario.Estado = TxtEstado.Text;
             }
 
+            var parametrosRepeticion = new Dictionary<string, object>()
+            {
+                {"nombreExacto", usuario.Nombre},
+            };
+
             switch (formMode)
             {
                 case FormMode.nuevo:
                     {
+                        if (usuarioService.ObtenerUsuarios(parametrosRepeticion).Count > 0)
+                        {
+                            MessageBox.Show("¡Ya existe un registro con tal nombre de usuario! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
                         if (usuarioService.CrearUsuario(usuario))
                         {
                             MessageBox.Show("¡Registro creado con éxito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -144,6 +155,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
                     }
                 case FormMode.actualizar:
                     {
+                        if (usuarioService.ObtenerUsuarios(parametrosRepeticion).Count > 0 && usuarioSeleccionado.Nombre != usuario.Nombre) 
+                        {
+                            MessageBox.Show("¡Ya existe un registro con tal nombre de usuario! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
                         usuario.Borrado = ChkBorrado.Checked;
                         usuario.IdUsuario = usuarioSeleccionado.IdUsuario;
 
@@ -164,7 +181,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.Close();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -176,7 +193,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
+        private void MenuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);

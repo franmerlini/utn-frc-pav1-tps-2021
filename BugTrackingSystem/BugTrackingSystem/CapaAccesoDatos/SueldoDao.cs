@@ -15,7 +15,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             String consultaSQL = string.Concat(" SELECT s.id_usuario, ",
                                                 "         s.fecha, ",
                                                 "         s.sueldo_bruto, ",
-                                                "         s.borrado ",
+                                                "         s.borrado, ",
                                                 "         u.id_usuario, ",
                                                 "         u.id_perfil, ",
                                                 "         u.usuario, ",
@@ -37,9 +37,11 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (s.id_usuario = @idUsuario) ";
                 if (parametros.ContainsKey("fecha"))
                     consultaSQL += " AND (s.fecha = @fecha) ";
+                if (parametros.ContainsKey("fechaExacta"))
+                    consultaSQL += " AND (s.fecha = @fechaExacta) ";
                 if (parametros.ContainsKey("sueldoBruto"))
                     consultaSQL += " AND (s.sueldo_bruto = @sueldoBruto) ";
-                if (parametros.ContainsKey("borrado"))
+                if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (s.borrado = 0) ";
             }
             else

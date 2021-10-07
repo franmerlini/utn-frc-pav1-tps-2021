@@ -4,7 +4,6 @@ namespace BugTrackingSystem.Entidades
 {
     public class AsistenciaUsuario
     {
-        public int IdAsistenciaUsuario { get; set; }
         public Usuario Usuario { get; set; }
         public DateTime Fecha { get; set; }
         public string HoraIngreso { get; set; }
@@ -12,6 +11,5 @@ namespace BugTrackingSystem.Entidades
         public EstadoAsistencia EstadoAsistencia { get; set; }
         public string Comentario { get; set; }
         public bool Borrado { get; set; }
-
     }
 }

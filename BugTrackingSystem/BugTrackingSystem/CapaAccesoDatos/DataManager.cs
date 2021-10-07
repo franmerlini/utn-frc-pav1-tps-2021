@@ -14,7 +14,7 @@ namespace BugTrackingSystem.DAO
         private readonly string cadenaConexion;
 
         //Metodo constructor (inicializa el atributo cnnStr con la cadena de conexion a la base de datos)
-        public DataManager()
+        private DataManager()
         {
             cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=BugTrackerTPI;Integrated Security=True";
             //cadenaConexion = "Data Source=bugtrackertpi.c2mqrjpcp3xc.sa-east-1.rds.amazonaws.com,1433;Initial Catalog=BugTrackerTPI;User ID=admin;Password=admin123";

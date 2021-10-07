@@ -23,9 +23,9 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         }
 
         //Actualizar una asignacion de sueldo
-        internal bool ActualizarSueldoAsignacion(SueldoAsignacion sueldoAsignacion)
+        internal bool ActualizarSueldoAsignacion(SueldoAsignacion sueldoAsignacion, Dictionary<string, object> parametros)
         {
-            return sueldoAsignacionDao.ActualizarSueldoAsignacion(sueldoAsignacion);
+            return sueldoAsignacionDao.ActualizarSueldoAsignacion(sueldoAsignacion, parametros);
         }
 
         //Consultar varias asignaciones de sueldo por filtros

@@ -28,7 +28,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (n_asignacion = @nombre) ";
                 if (parametros.ContainsKey("monto"))
                     consultaSQL += " AND (monto = @monto) ";
-                if (parametros.ContainsKey("borrado"))
+                if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (borrado = 0) ";
             }
             else
@@ -54,7 +54,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             {
                 IdAsignacion = Convert.ToInt32(row["id_asignacion"].ToString()),
                 Nombre = row["n_asignacion"].ToString(),
-                Monto = (float)Convert.ToDouble(row["monto"].ToString()),
+                Monto = Convert.ToDecimal(row["monto"].ToString()),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
 

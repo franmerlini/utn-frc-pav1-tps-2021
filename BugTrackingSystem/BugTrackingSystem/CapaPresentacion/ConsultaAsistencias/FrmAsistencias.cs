@@ -176,7 +176,14 @@ namespace BugTrackingSystem.CapaPresentacion
             if (rta == DialogResult.Yes)
             {
                 asistenciaUsuario.Borrado = true;
-                if (!asistenciaService.ActualizarAsistenciaUsuario(asistenciaUsuario))
+
+                var parametrosEliminacion = new Dictionary<string, object>
+                        {
+                            { "fechaBase", Convert.ToDateTime(asistenciaUsuario.Fecha) },
+                            { "idUsuarioBase", Convert.ToInt32(asistenciaUsuario.Usuario.IdUsuario) }
+                        };
+
+                if (!asistenciaService.ActualizarAsistenciaUsuario(asistenciaUsuario, parametrosEliminacion))
                     MessageBox.Show("El registro no se pudo borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
