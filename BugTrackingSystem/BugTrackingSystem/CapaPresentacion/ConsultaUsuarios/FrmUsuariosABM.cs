@@ -18,7 +18,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
         private readonly UsuarioService usuarioService = new UsuarioService();
         private readonly PerfilService perfilService = new PerfilService();
         private readonly Usuario usuarioSeleccionado;
-        public enum FormMode { nuevo, actualizar};
+        public enum FormMode { nuevo, actualizar };
         private readonly FormMode formMode;
 
         public FrmUsuariosABM(FormMode formMode, Usuario usuario = null)
@@ -68,7 +68,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             }
         }
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario
             {
@@ -155,7 +155,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
                     }
                 case FormMode.actualizar:
                     {
-                        if (usuarioService.ObtenerUsuarios(parametrosRepeticion).Count > 0 && usuarioSeleccionado.Nombre != usuario.Nombre) 
+                        if (usuarioService.ObtenerUsuarios(parametrosRepeticion).Count > 0 && usuarioSeleccionado.Nombre != usuario.Nombre)
                         {
                             MessageBox.Show("¡Ya existe un registro con tal nombre de usuario! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -176,12 +176,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             }
         }
 
-        private void BtnVolver_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }

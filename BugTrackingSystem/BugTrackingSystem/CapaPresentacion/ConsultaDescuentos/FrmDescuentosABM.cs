@@ -49,7 +49,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
         private void FrmDescuentosABM_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "IdUsuario");
-            LlenarCombo(CboDescuento, descuentoService.ObtenerDescuentos(), "Nombre", "IdDescuento");
+            LlenarCombo(cboDescuento, descuentoService.ObtenerDescuentos(), "Nombre", "IdDescuento");
 
             switch (formMode)
             {
@@ -65,17 +65,17 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
                         this.Text = "Actualizar un registro";
                         lblTitulo.Text = "Actualizar un registro";
                         cboUsuario.SelectedValue = sueldoDescuentoSeleccionado.Usuario.IdUsuario;
-                        CboDescuento.SelectedValue = sueldoDescuentoSeleccionado.Descuento.IdDescuento;
+                        cboDescuento.SelectedValue = sueldoDescuentoSeleccionado.Descuento.IdDescuento;
                         dateFecha.Value = sueldoDescuentoSeleccionado.Fecha;
-                        NudCantidad.Value = sueldoDescuentoSeleccionado.Cantidad;
-                        NudMonto.Value = sueldoDescuentoSeleccionado.Monto;
+                        nudCantidad.Value = sueldoDescuentoSeleccionado.Cantidad;
+                        nudMonto.Value = sueldoDescuentoSeleccionado.Monto;
                         chkBorrado.Checked = sueldoDescuentoSeleccionado.Borrado;
                         break;
                     }
             }
         }
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             SueldoDescuento sueldoDescuento = new SueldoDescuento
             {
@@ -105,16 +105,16 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
                 return;
             }
 
-            if (CboDescuento.SelectedValue != null)
-                sueldoDescuento.Descuento.IdDescuento = Convert.ToInt32(CboDescuento.SelectedValue);
+            if (cboDescuento.SelectedValue != null)
+                sueldoDescuento.Descuento.IdDescuento = Convert.ToInt32(cboDescuento.SelectedValue);
             else
             {
                 MessageBox.Show("Debe seleccionar un descuento.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            sueldoDescuento.Monto = NudMonto.Value;
-            sueldoDescuento.Cantidad = Convert.ToInt32(NudCantidad.Value);
+            sueldoDescuento.Monto = nudMonto.Value;
+            sueldoDescuento.Cantidad = Convert.ToInt32(nudCantidad.Value);
 
             var parametrosRepeticion = new Dictionary<string, object>()
             {
@@ -137,11 +137,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
                         if (sueldoDescuentoService.CrearSueldoDescuento(sueldoDescuento))
                         {
                             MessageBox.Show("¡Registro creado con éxito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CboDescuento.SelectedIndex = -1;
+                            cboDescuento.SelectedIndex = -1;
                             cboUsuario.SelectedIndex = -1;
                             dateFecha.Value = DateTime.Today;
-                            NudCantidad.Value = 0;
-                            NudMonto.Value = 0;
+                            nudCantidad.Value = 0;
+                            nudMonto.Value = 0;
                         }
                         else
                             MessageBox.Show("El registro no se ha podido crear", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -177,12 +177,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             }
         }
 
-        private void BtnVolver_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }

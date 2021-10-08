@@ -20,7 +20,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
         private readonly AsignacionService asignacionService;
         private readonly SueldoService sueldoService;
         private readonly SueldoAsignacion sueldoAsignacionSeleccionado;
-        public enum FormMode { nuevo, actualizar};
+        public enum FormMode { nuevo, actualizar };
         private readonly FormMode formMode;
 
         public FrmAsignacionesABM(FormMode formMode, SueldoAsignacion sueldoAsignacion = null)
@@ -49,7 +49,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
         private void FrmAsignacionesABM_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "IdUsuario");
-            LlenarCombo(CboAsignacion, asignacionService.ObtenerAsignaciones(), "Nombre", "IdAsignacion");
+            LlenarCombo(cboAsignacion, asignacionService.ObtenerAsignaciones(), "Nombre", "IdAsignacion");
 
             switch (formMode)
             {
@@ -65,17 +65,17 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                         this.Text = "Actualizar un registro";
                         lblTitulo.Text = "Actualizar un registro";
                         cboUsuario.SelectedValue = sueldoAsignacionSeleccionado.Usuario.IdUsuario;
-                        CboAsignacion.SelectedValue = sueldoAsignacionSeleccionado.Asignacion.IdAsignacion;
+                        cboAsignacion.SelectedValue = sueldoAsignacionSeleccionado.Asignacion.IdAsignacion;
                         dateFecha.Value = sueldoAsignacionSeleccionado.Fecha;
-                        NudCantidad.Value = sueldoAsignacionSeleccionado.Cantidad;
-                        NudMonto.Value = sueldoAsignacionSeleccionado.Monto;
+                        nudCantidad.Value = sueldoAsignacionSeleccionado.Cantidad;
+                        nudMonto.Value = sueldoAsignacionSeleccionado.Monto;
                         chkBorrado.Checked = sueldoAsignacionSeleccionado.Borrado;
                         break;
                     }
             }
         }
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             SueldoAsignacion sueldoAsignacion = new SueldoAsignacion
             {
@@ -105,16 +105,16 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                 return;
             }
 
-            if (CboAsignacion.SelectedValue != null)
-                sueldoAsignacion.Asignacion.IdAsignacion = Convert.ToInt32(CboAsignacion.SelectedValue);
+            if (cboAsignacion.SelectedValue != null)
+                sueldoAsignacion.Asignacion.IdAsignacion = Convert.ToInt32(cboAsignacion.SelectedValue);
             else
             {
                 MessageBox.Show("Debe seleccionar una asignación.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            sueldoAsignacion.Monto = NudMonto.Value;
-            sueldoAsignacion.Cantidad = Convert.ToInt32(NudCantidad.Value);
+            sueldoAsignacion.Monto = nudMonto.Value;
+            sueldoAsignacion.Cantidad = Convert.ToInt32(nudCantidad.Value);
 
             var parametrosRepeticion = new Dictionary<string, object>()
             {
@@ -137,11 +137,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                         if (sueldoAsignacionService.CrearSueldoAsignacion(sueldoAsignacion))
                         {
                             MessageBox.Show("¡Registro creado con éxito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CboAsignacion.SelectedIndex = -1;
+                            cboAsignacion.SelectedIndex = -1;
                             cboUsuario.SelectedIndex = -1;
                             dateFecha.Value = DateTime.Today;
-                            NudCantidad.Value = 0;
-                            NudMonto.Value = 0;
+                            nudCantidad.Value = 0;
+                            nudMonto.Value = 0;
                         }
                         else
                             MessageBox.Show("El registro no se ha podido crear", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -182,12 +182,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
 
         }
 
-        private void BtnVolver_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }

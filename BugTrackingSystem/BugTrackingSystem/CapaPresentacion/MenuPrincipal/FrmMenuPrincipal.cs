@@ -1,6 +1,7 @@
 ﻿using BugTrackingSystem.CapaPresentacion;
 using BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones;
 using BugTrackingSystem.CapaPresentacion.ConsultaDescuentos;
+using BugTrackingSystem.CapaPresentacion.ConsultaSueldos;
 using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
 using BugTrackingSystem.Entidades;
 using System;
@@ -161,5 +162,10 @@ namespace BugTrackingSystem.Forms
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void tsiSueldos_Click(object sender, EventArgs e)
+        {
+            FrmSueldos ventana = new FrmSueldos();
+            MostrarVentana(ventana, "Consulta de Sueldos");
+        }
     }
 }

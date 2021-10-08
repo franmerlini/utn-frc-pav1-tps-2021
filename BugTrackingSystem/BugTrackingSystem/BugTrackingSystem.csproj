@@ -115,6 +115,18 @@
     <Compile Include="CapaPresentacion\ConsultaUsuarios\FrmUsuariosABM.Designer.cs">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\ConsultaSueldos\FrmSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaSueldos\FrmSueldos.designer.cs">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaSueldos\FrmSueldosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\ConsultaSueldos\FrmSueldosABM.designer.cs">
+      <DependentUpon>FrmSueldosABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Asignacion.cs" />
     <Compile Include="Entidades\AsistenciaUsuario.cs" />
     <Compile Include="Entidades\Descuento.cs" />
@@ -168,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ConsultaSueldos\FrmSueldos.resx">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\ConsultaSueldos\FrmSueldosABM.resx">
+      <DependentUpon>FrmSueldosABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

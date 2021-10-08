@@ -33,23 +33,28 @@ namespace BugTrackingSystem.CapaAccesoDatos
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
             {
-                if (parametros.ContainsKey("idUsuario"))
-                    consultaSQL += " AND (s.id_usuario = @idUsuario) ";
-                if (parametros.ContainsKey("fecha"))
-                    consultaSQL += " AND (s.fecha = @fecha) ";
+                if (parametros.ContainsKey("usuario"))
+                    consultaSQL += " AND (LOWER(u.usuario) LIKE '%' + LOWER(@usuario) + '%') ";
+                if (parametros.ContainsKey("fechaDesde"))
+                    consultaSQL += " AND (s.fecha >= @fechaDesde) ";
+                if (parametros.ContainsKey("fechaHasta"))
+                    consultaSQL += " AND (s.fecha <= @fechaHasta) ";
                 if (parametros.ContainsKey("fechaExacta"))
                     consultaSQL += " AND (s.fecha = @fechaExacta) ";
                 if (parametros.ContainsKey("sueldoBruto"))
                     consultaSQL += " AND (s.sueldo_bruto = @sueldoBruto) ";
                 if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (s.borrado = 0) ";
+                //Para consultar por el usuario exacto
+                if (parametros.ContainsKey("usuarioExacto"))
+                    consultaSQL += " AND (usuario = @usuarioExacto) ";
             }
             else
             {
                 consultaSQL += "AND (s.borrado = 0) ";
             }
 
-            consultaSQL += " ORDER BY s.fecha DESC";
+            consultaSQL += " ORDER BY s.fecha ASC";
 
             var resultados = DataManager.ObtenerInstancia().ConsultaSQL(consultaSQL, parametros);
 

@@ -81,7 +81,7 @@ namespace BugTrackingSystem.CapaPresentacion
 
         // Botones:
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
 
             AsistenciaUsuario asistenciaUsuario = new AsistenciaUsuario
@@ -183,12 +183,12 @@ namespace BugTrackingSystem.CapaPresentacion
             }
         }
 
-        private void BtnVolver_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
