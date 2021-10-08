@@ -23,9 +23,9 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         }
 
         //Actualizar un sueldo
-        internal bool ActualizarSueldo(Sueldo sueldo)
+        internal bool ActualizarSueldo(Sueldo sueldo, Dictionary<string, object> parametros)
         {
-            return sueldoDao.ActualizarSueldo(sueldo);
+            return sueldoDao.ActualizarSueldo(sueldo, parametros);
         }
 
         //Consultar varios sueldos por filtros

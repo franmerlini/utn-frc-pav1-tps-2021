@@ -11,27 +11,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
+namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 {
-    public partial class FrmAsignacionesABM : Form
+    public partial class FrmDescuentosABM : Form
     {
         private readonly UsuarioService usuarioService;
-        private readonly SueldoAsignacionService sueldoAsignacionService;
-        private readonly AsignacionService asignacionService;
+        private readonly SueldoDescuentoService sueldoDescuentoService;
+        private readonly DescuentoService descuentoService;
         private readonly SueldoService sueldoService;
-        private readonly SueldoAsignacion sueldoAsignacionSeleccionado;
+        private readonly SueldoDescuento sueldoDescuentoSeleccionado;
         public enum FormMode { nuevo, actualizar };
         private readonly FormMode formMode;
 
-        public FrmAsignacionesABM(FormMode formMode, SueldoAsignacion sueldoAsignacion = null)
+        public FrmDescuentosABM(FormMode formMode, SueldoDescuento sueldoDescuento = null)
         {
             InitializeComponent();
             usuarioService = new UsuarioService();
-            sueldoAsignacionService = new SueldoAsignacionService();
-            asignacionService = new AsignacionService();
+            sueldoDescuentoService = new SueldoDescuentoService();
+            descuentoService = new DescuentoService();
             sueldoService = new SueldoService();
             this.formMode = formMode;
-            sueldoAsignacionSeleccionado = sueldoAsignacion;
+            sueldoDescuentoSeleccionado = sueldoDescuento;
         }
 
         private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
@@ -46,10 +46,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             cbx.SelectedIndex = -1;
         }
 
-        private void FrmAsignacionesABM_Load(object sender, EventArgs e)
+        private void FrmDescuentosABM_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "IdUsuario");
-            LlenarCombo(cboAsignacion, asignacionService.ObtenerAsignaciones(), "Nombre", "IdAsignacion");
+            LlenarCombo(cboDescuento, descuentoService.ObtenerDescuentos(), "Nombre", "IdDescuento");
 
             switch (formMode)
             {
@@ -64,23 +64,23 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                     {
                         this.Text = "Actualizar un registro";
                         lblTitulo.Text = "Actualizar un registro";
-                        cboUsuario.SelectedValue = sueldoAsignacionSeleccionado.Usuario.IdUsuario;
-                        cboAsignacion.SelectedValue = sueldoAsignacionSeleccionado.Asignacion.IdAsignacion;
-                        dateFecha.Value = sueldoAsignacionSeleccionado.Fecha;
-                        nudCantidad.Value = sueldoAsignacionSeleccionado.Cantidad;
-                        nudMonto.Value = sueldoAsignacionSeleccionado.Monto;
-                        chkBorrado.Checked = sueldoAsignacionSeleccionado.Borrado;
+                        cboUsuario.SelectedValue = sueldoDescuentoSeleccionado.Usuario.IdUsuario;
+                        cboDescuento.SelectedValue = sueldoDescuentoSeleccionado.Descuento.IdDescuento;
+                        dateFecha.Value = sueldoDescuentoSeleccionado.Fecha;
+                        nudCantidad.Value = sueldoDescuentoSeleccionado.Cantidad;
+                        nudMonto.Value = sueldoDescuentoSeleccionado.Monto;
+                        chkBorrado.Checked = sueldoDescuentoSeleccionado.Borrado;
                         break;
                     }
             }
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            SueldoAsignacion sueldoAsignacion = new SueldoAsignacion
+            SueldoDescuento sueldoDescuento = new SueldoDescuento
             {
                 Usuario = new Usuario(),
-                Asignacion = new Asignacion()
+                Descuento = new Descuento()
             };
 
             if (cboUsuario.SelectedValue == null)
@@ -90,37 +90,37 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             }
             else
             {
-                sueldoAsignacion.Usuario.IdUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
+                sueldoDescuento.Usuario.IdUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
             }
 
-            sueldoAsignacion.Fecha = Convert.ToDateTime(dateFecha.Value);
+            sueldoDescuento.Fecha = Convert.ToDateTime(dateFecha.Value);
             var parametroSueldo = new Dictionary<string, object>
             {
-                { "fechaExacta", sueldoAsignacion.Fecha },
-                { "idUsuario", sueldoAsignacion.Usuario.IdUsuario }
+                { "fechaExacta", sueldoDescuento.Fecha },
+                { "idUsuario", sueldoDescuento.Usuario.IdUsuario }
             };
             if (sueldoService.ObtenerSueldos(parametroSueldo).Count == 0)
             {
-                MessageBox.Show("No existe ningún sueldo registrado con tal usuario y fecha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No existe ningún sueldo bruto registrado con tal usuario y fecha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (cboAsignacion.SelectedValue != null)
-                sueldoAsignacion.Asignacion.IdAsignacion = Convert.ToInt32(cboAsignacion.SelectedValue);
+            if (cboDescuento.SelectedValue != null)
+                sueldoDescuento.Descuento.IdDescuento = Convert.ToInt32(cboDescuento.SelectedValue);
             else
             {
-                MessageBox.Show("Debe seleccionar una asignación.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un descuento.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            sueldoAsignacion.Monto = nudMonto.Value;
-            sueldoAsignacion.Cantidad = Convert.ToInt32(nudCantidad.Value);
+            sueldoDescuento.Monto = nudMonto.Value;
+            sueldoDescuento.Cantidad = Convert.ToInt32(nudCantidad.Value);
 
             var parametrosRepeticion = new Dictionary<string, object>()
             {
-                {"idUsuarioBase", Convert.ToInt32(sueldoAsignacion.Usuario.IdUsuario) },
-                {"fechaBase", Convert.ToDateTime(sueldoAsignacion.Fecha) },
-                {"idAsignacionBase", Convert.ToInt32(sueldoAsignacion.Asignacion.IdAsignacion) },
+                {"idUsuario", Convert.ToInt32(sueldoDescuento.Usuario.IdUsuario) },
+                {"fechaExacta", Convert.ToDateTime(sueldoDescuento.Fecha) },
+                {"idDescuento", Convert.ToInt32(sueldoDescuento.Descuento.IdDescuento) },
                 {"borrado" , true}
             };
 
@@ -128,16 +128,16 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             {
                 case FormMode.nuevo:
                     {
-                        if (sueldoAsignacionService.ObtenerSueldoAsignaciones(parametrosRepeticion).Count > 0)
+                        if (sueldoDescuentoService.ObtenerSueldoDescuentos(parametrosRepeticion).Count > 0)
                         {
-                            MessageBox.Show("¡Ya existe un registro con tal usuario, fecha y asignación! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("¡Ya existe un registro con tal usuario, fecha y descuento! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
 
-                        if (sueldoAsignacionService.CrearSueldoAsignacion(sueldoAsignacion))
+                        if (sueldoDescuentoService.CrearSueldoDescuento(sueldoDescuento))
                         {
                             MessageBox.Show("¡Registro creado con éxito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            cboAsignacion.SelectedIndex = -1;
+                            cboDescuento.SelectedIndex = -1;
                             cboUsuario.SelectedIndex = -1;
                             dateFecha.Value = DateTime.Today;
                             nudCantidad.Value = 0;
@@ -150,44 +150,39 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
 
                 case FormMode.actualizar:
                     {
-                        if (sueldoAsignacionService.ObtenerSueldoAsignaciones(parametrosRepeticion).Count > 0 && (sueldoAsignacionSeleccionado.Fecha != sueldoAsignacion.Fecha || sueldoAsignacionSeleccionado.Usuario.IdUsuario != sueldoAsignacion.Usuario.IdUsuario || sueldoAsignacionSeleccionado.Asignacion.IdAsignacion != sueldoAsignacion.Asignacion.IdAsignacion))
+                        if ((sueldoDescuentoService.ObtenerSueldoDescuentos(parametrosRepeticion).Count > 0) && (sueldoDescuentoSeleccionado.Fecha != sueldoDescuento.Fecha || sueldoDescuentoSeleccionado.Usuario.IdUsuario != sueldoDescuento.Usuario.IdUsuario || sueldoDescuentoSeleccionado.Descuento.IdDescuento != sueldoDescuento.Descuento.IdDescuento))
                         {
-                            MessageBox.Show("¡Ya existe un registro con tal usuario, fecha y asignación! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("¡Ya existe un registro con tal usuario, fecha y descuento! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
 
-                        sueldoAsignacion.Borrado = chkBorrado.Checked;
+                        sueldoDescuento.Borrado = chkBorrado.Checked;
 
                         var parametros = new Dictionary<string, object>
                         {
-                            {"idUsuarioBase", Convert.ToInt32(sueldoAsignacion.Usuario.IdUsuario) },
-                            {"fechaBase", Convert.ToDateTime(sueldoAsignacion.Fecha) },
-                            {"idAsignacionBase", Convert.ToInt32(sueldoAsignacion.Asignacion.IdAsignacion) }
+                            {"idUsuarioBase", Convert.ToInt32(sueldoDescuentoSeleccionado.Usuario.IdUsuario) },
+                            {"fechaBase", Convert.ToDateTime(sueldoDescuentoSeleccionado.Fecha) },
+                            {"idDescuentoBase", Convert.ToInt32(sueldoDescuentoSeleccionado.Descuento.IdDescuento) }
                         };
 
-                        if (sueldoAsignacionService.ActualizarSueldoAsignacion(sueldoAsignacion, parametros))
+                        if (sueldoDescuentoService.ActualizarSueldoDescuento(sueldoDescuento, parametros))
                         {
-                            MessageBox.Show("Asignación actualizada!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Descuento actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Dispose();
                         }
                         else
-                            MessageBox.Show("Error al actualizar la asignación!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Error al actualizar el descuento!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
-
-
-
             }
-
-
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -77,7 +77,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
         internal bool CrearSueldoDescuento(SueldoDescuento sueldoDescuento)
         {
             string consultaSQL = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, cantidad, monto, borrado)" +
-                                 " VALUES (@idUsuario, @fecha, @idDescuento, cantidad, monto, 0)";
+                                 " VALUES (@idUsuario, @fecha, @idDescuento, @cantidad, @monto, 0)";
 
             var parametros = new Dictionary<string, object>
             {

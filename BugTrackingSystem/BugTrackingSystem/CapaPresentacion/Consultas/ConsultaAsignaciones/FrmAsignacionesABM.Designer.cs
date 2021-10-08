@@ -60,14 +60,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(440, -3);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(330, -2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(35, 30);
+            this.btnSalir.Size = new System.Drawing.Size(26, 24);
             this.btnSalir.TabIndex = 32;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // lblTitulo
             // 
@@ -76,10 +75,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitulo.Location = new System.Drawing.Point(115, 1);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(86, 1);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(259, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(198, 16);
             this.lblTitulo.TabIndex = 31;
             this.lblTitulo.Text = "Agregar un registro nuevo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -90,7 +88,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(475, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseDown);
@@ -99,9 +98,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             // 
             this.grpEntradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.grpEntradas.Controls.Add(this.tlpEntradas);
-            this.grpEntradas.Location = new System.Drawing.Point(0, 24);
+            this.grpEntradas.Location = new System.Drawing.Point(0, 20);
+            this.grpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.grpEntradas.Name = "grpEntradas";
-            this.grpEntradas.Size = new System.Drawing.Size(475, 251);
+            this.grpEntradas.Padding = new System.Windows.Forms.Padding(2);
+            this.grpEntradas.Size = new System.Drawing.Size(356, 204);
             this.grpEntradas.TabIndex = 33;
             this.grpEntradas.TabStop = false;
             // 
@@ -124,7 +125,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.tlpEntradas.Controls.Add(this.label1, 0, 2);
             this.tlpEntradas.Controls.Add(this.cboAsignacion, 1, 2);
             this.tlpEntradas.Controls.Add(this.btnAceptar, 2, 6);
-            this.tlpEntradas.Location = new System.Drawing.Point(6, 21);
+            this.tlpEntradas.Location = new System.Drawing.Point(4, 17);
+            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntradas.Name = "tlpEntradas";
             this.tlpEntradas.RowCount = 7;
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
@@ -134,7 +136,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tlpEntradas.Size = new System.Drawing.Size(460, 226);
+            this.tlpEntradas.Size = new System.Drawing.Size(345, 184);
             this.tlpEntradas.TabIndex = 59;
             // 
             // lblUsuario
@@ -142,20 +144,18 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(68, 0);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(51, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(61, 29);
+            this.lblUsuario.Size = new System.Drawing.Size(46, 23);
             this.lblUsuario.TabIndex = 58;
             this.lblUsuario.Text = "Usuario:";
             // 
             // chkBorrado
             // 
             this.chkBorrado.AutoSize = true;
-            this.chkBorrado.Location = new System.Drawing.Point(137, 149);
-            this.chkBorrado.Margin = new System.Windows.Forms.Padding(4);
+            this.chkBorrado.Location = new System.Drawing.Point(103, 118);
             this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(81, 21);
+            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
             this.chkBorrado.TabIndex = 52;
             this.chkBorrado.Text = "Borrado";
             this.chkBorrado.UseVisualStyleBackColor = true;
@@ -165,10 +165,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 116);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(57, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 29);
+            this.label2.Size = new System.Drawing.Size(40, 23);
             this.label2.TabIndex = 55;
             this.label2.Text = "Monto:";
             // 
@@ -177,10 +176,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 87);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(45, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 29);
+            this.label3.Size = new System.Drawing.Size(52, 23);
             this.label3.TabIndex = 56;
             this.label3.Text = "Cantidad:";
             // 
@@ -190,15 +188,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudMonto.DecimalPlaces = 2;
-            this.nudMonto.Location = new System.Drawing.Point(137, 120);
-            this.nudMonto.Margin = new System.Windows.Forms.Padding(4);
+            this.nudMonto.Location = new System.Drawing.Point(103, 95);
             this.nudMonto.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
             this.nudMonto.Name = "nudMonto";
-            this.nudMonto.Size = new System.Drawing.Size(268, 22);
+            this.nudMonto.Size = new System.Drawing.Size(201, 20);
             this.nudMonto.TabIndex = 58;
             // 
             // label6
@@ -206,10 +203,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(78, 29);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(57, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 29);
+            this.label6.Size = new System.Drawing.Size(40, 23);
             this.label6.TabIndex = 60;
             this.label6.Text = "Fecha:";
             // 
@@ -218,15 +214,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.nudCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudCantidad.Location = new System.Drawing.Point(137, 91);
-            this.nudCantidad.Margin = new System.Windows.Forms.Padding(4);
+            this.nudCantidad.Location = new System.Drawing.Point(103, 72);
             this.nudCantidad.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(268, 22);
+            this.nudCantidad.Size = new System.Drawing.Size(201, 20);
             this.nudCantidad.TabIndex = 57;
             // 
             // dateFecha
@@ -236,10 +231,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFecha.CustomFormat = "";
             this.dateFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFecha.Location = new System.Drawing.Point(137, 33);
-            this.dateFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dateFecha.Location = new System.Drawing.Point(103, 26);
             this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(268, 22);
+            this.dateFecha.Size = new System.Drawing.Size(201, 20);
             this.dateFecha.TabIndex = 61;
             // 
             // cboUsuario
@@ -249,11 +243,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(137, 4);
-            this.cboUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cboUsuario.Location = new System.Drawing.Point(103, 3);
             this.cboUsuario.MaxLength = 50;
             this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(268, 24);
+            this.cboUsuario.Size = new System.Drawing.Size(201, 21);
             this.cboUsuario.TabIndex = 59;
             // 
             // btnVolver
@@ -266,23 +259,21 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Location = new System.Drawing.Point(362, 178);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolver.Location = new System.Drawing.Point(272, 141);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(43, 44);
+            this.btnVolver.Size = new System.Drawing.Size(32, 40);
             this.btnVolver.TabIndex = 62;
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(35, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 29);
+            this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 53;
             this.label1.Text = "Asignación:";
             // 
@@ -293,11 +284,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboAsignacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAsignacion.FormattingEnabled = true;
-            this.cboAsignacion.Location = new System.Drawing.Point(137, 62);
-            this.cboAsignacion.Margin = new System.Windows.Forms.Padding(4);
+            this.cboAsignacion.Location = new System.Drawing.Point(103, 49);
             this.cboAsignacion.MaxLength = 50;
             this.cboAsignacion.Name = "cboAsignacion";
-            this.cboAsignacion.Size = new System.Drawing.Size(268, 24);
+            this.cboAsignacion.Size = new System.Drawing.Size(201, 21);
             this.cboAsignacion.TabIndex = 54;
             // 
             // btnAceptar
@@ -311,26 +301,24 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(413, 178);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(310, 141);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(43, 44);
+            this.btnAceptar.Size = new System.Drawing.Size(32, 40);
             this.btnAceptar.TabIndex = 57;
             this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // FrmAsignacionesABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(475, 276);
+            this.ClientSize = new System.Drawing.Size(356, 224);
             this.Controls.Add(this.grpEntradas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAsignacionesABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAsignacionesABM";

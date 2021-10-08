@@ -33,13 +33,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.tlpEntradas = new System.Windows.Forms.TableLayoutPanel();
             this.nudSueldo = new System.Windows.Forms.NumericUpDown();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.chkBorrado = new System.Windows.Forms.CheckBox();
             this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -52,11 +52,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             // 
             this.grpEntradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.grpEntradas.Controls.Add(this.tlpEntradas);
-            this.grpEntradas.Location = new System.Drawing.Point(1, 23);
-            this.grpEntradas.Margin = new System.Windows.Forms.Padding(4);
+            this.grpEntradas.Location = new System.Drawing.Point(1, 19);
             this.grpEntradas.Name = "grpEntradas";
-            this.grpEntradas.Padding = new System.Windows.Forms.Padding(4);
-            this.grpEntradas.Size = new System.Drawing.Size(475, 212);
+            this.grpEntradas.Size = new System.Drawing.Size(356, 172);
             this.grpEntradas.TabIndex = 2;
             this.grpEntradas.TabStop = false;
             // 
@@ -68,14 +66,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.tlpEntradas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
             this.tlpEntradas.Controls.Add(this.nudSueldo, 1, 2);
             this.tlpEntradas.Controls.Add(this.lblUsuario, 0, 0);
-            this.tlpEntradas.Controls.Add(this.label2, 0, 2);
             this.tlpEntradas.Controls.Add(this.lblFecha, 0, 1);
             this.tlpEntradas.Controls.Add(this.dateFecha, 1, 1);
             this.tlpEntradas.Controls.Add(this.chkBorrado, 1, 3);
             this.tlpEntradas.Controls.Add(this.cboUsuario, 1, 0);
             this.tlpEntradas.Controls.Add(this.btnVolver, 1, 4);
             this.tlpEntradas.Controls.Add(this.btnAceptar, 2, 4);
-            this.tlpEntradas.Location = new System.Drawing.Point(7, 22);
+            this.tlpEntradas.Controls.Add(this.label2, 0, 2);
+            this.tlpEntradas.Location = new System.Drawing.Point(5, 18);
+            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntradas.Name = "tlpEntradas";
             this.tlpEntradas.RowCount = 5;
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
@@ -83,7 +82,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpEntradas.Size = new System.Drawing.Size(460, 184);
+            this.tlpEntradas.Size = new System.Drawing.Size(345, 150);
             this.tlpEntradas.TabIndex = 0;
             // 
             // nudSueldo
@@ -92,15 +91,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSueldo.DecimalPlaces = 2;
-            this.nudSueldo.Location = new System.Drawing.Point(137, 70);
-            this.nudSueldo.Margin = new System.Windows.Forms.Padding(4);
+            this.nudSueldo.Location = new System.Drawing.Point(103, 57);
             this.nudSueldo.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
             this.nudSueldo.Name = "nudSueldo";
-            this.nudSueldo.Size = new System.Drawing.Size(268, 22);
+            this.nudSueldo.Size = new System.Drawing.Size(201, 20);
             this.nudSueldo.TabIndex = 65;
             // 
             // lblUsuario
@@ -108,34 +106,20 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(68, 0);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(51, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(61, 33);
+            this.lblUsuario.Size = new System.Drawing.Size(46, 27);
             this.lblUsuario.TabIndex = 58;
             this.lblUsuario.Text = "Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 66);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 33);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Sueldo bruto:";
             // 
             // lblFecha
             // 
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(78, 33);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFecha.Location = new System.Drawing.Point(57, 27);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(51, 33);
+            this.lblFecha.Size = new System.Drawing.Size(40, 27);
             this.lblFecha.TabIndex = 60;
             this.lblFecha.Text = "Fecha:";
             // 
@@ -146,19 +130,17 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFecha.CustomFormat = "";
             this.dateFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFecha.Location = new System.Drawing.Point(137, 37);
-            this.dateFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dateFecha.Location = new System.Drawing.Point(103, 30);
             this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(268, 22);
+            this.dateFecha.Size = new System.Drawing.Size(201, 20);
             this.dateFecha.TabIndex = 61;
             // 
             // chkBorrado
             // 
             this.chkBorrado.AutoSize = true;
-            this.chkBorrado.Location = new System.Drawing.Point(137, 103);
-            this.chkBorrado.Margin = new System.Windows.Forms.Padding(4);
+            this.chkBorrado.Location = new System.Drawing.Point(103, 84);
             this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(81, 21);
+            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
             this.chkBorrado.TabIndex = 63;
             this.chkBorrado.Text = "Borrado";
             this.chkBorrado.UseVisualStyleBackColor = true;
@@ -170,11 +152,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(137, 4);
-            this.cboUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cboUsuario.Location = new System.Drawing.Point(103, 3);
             this.cboUsuario.MaxLength = 50;
             this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(268, 24);
+            this.cboUsuario.Size = new System.Drawing.Size(201, 21);
             this.cboUsuario.TabIndex = 59;
             // 
             // btnVolver
@@ -187,13 +168,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Location = new System.Drawing.Point(362, 136);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolver.Location = new System.Drawing.Point(272, 111);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(43, 44);
+            this.btnVolver.Size = new System.Drawing.Size(32, 36);
             this.btnVolver.TabIndex = 62;
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // btnAceptar
             // 
@@ -206,13 +186,23 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(413, 136);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(310, 111);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(43, 44);
+            this.btnAceptar.Size = new System.Drawing.Size(32, 36);
             this.btnAceptar.TabIndex = 57;
             this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 27);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Sueldo bruto:";
             // 
             // btnSalir
             // 
@@ -221,14 +211,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(440, -3);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(330, -2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(35, 30);
+            this.btnSalir.Size = new System.Drawing.Size(26, 24);
             this.btnSalir.TabIndex = 38;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // lblTitulo
             // 
@@ -237,10 +226,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitulo.Location = new System.Drawing.Point(111, 1);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(83, 1);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(259, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(198, 16);
             this.lblTitulo.TabIndex = 37;
             this.lblTitulo.Text = "Agregar un registro nuevo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -251,26 +239,26 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(475, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
             this.menuStrip1.TabIndex = 36;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseMove);
             // 
             // FrmSueldosABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(475, 237);
+            this.ClientSize = new System.Drawing.Size(356, 193);
             this.Controls.Add(this.grpEntradas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(475, 237);
-            this.MinimumSize = new System.Drawing.Size(475, 237);
+            this.MaximumSize = new System.Drawing.Size(356, 193);
+            this.MinimumSize = new System.Drawing.Size(356, 193);
             this.Name = "FrmSueldosABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSueldosABM";

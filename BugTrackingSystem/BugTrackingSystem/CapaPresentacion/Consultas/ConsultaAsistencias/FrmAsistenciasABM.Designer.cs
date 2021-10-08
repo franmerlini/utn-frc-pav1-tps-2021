@@ -60,11 +60,9 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.grpEntradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.grpEntradas.Controls.Add(this.tlpEntradas);
-            this.grpEntradas.Location = new System.Drawing.Point(0, 24);
-            this.grpEntradas.Margin = new System.Windows.Forms.Padding(4);
+            this.grpEntradas.Location = new System.Drawing.Point(0, 20);
             this.grpEntradas.Name = "grpEntradas";
-            this.grpEntradas.Padding = new System.Windows.Forms.Padding(4);
-            this.grpEntradas.Size = new System.Drawing.Size(475, 354);
+            this.grpEntradas.Size = new System.Drawing.Size(356, 288);
             this.grpEntradas.TabIndex = 1;
             this.grpEntradas.TabStop = false;
             // 
@@ -89,7 +87,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tlpEntradas.Controls.Add(this.lblEstado, 0, 4);
             this.tlpEntradas.Controls.Add(this.lblHoraIngreso, 0, 2);
             this.tlpEntradas.Controls.Add(this.label1, 0, 3);
-            this.tlpEntradas.Location = new System.Drawing.Point(7, 22);
+            this.tlpEntradas.Location = new System.Drawing.Point(5, 18);
+            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntradas.Name = "tlpEntradas";
             this.tlpEntradas.RowCount = 8;
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -100,7 +99,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpEntradas.Size = new System.Drawing.Size(460, 325);
+            this.tlpEntradas.Size = new System.Drawing.Size(345, 264);
             this.tlpEntradas.TabIndex = 76;
             // 
             // label5
@@ -108,10 +107,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(78, 32);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(57, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 32);
+            this.label5.Size = new System.Drawing.Size(40, 26);
             this.label5.TabIndex = 64;
             this.label5.Text = "Fecha:";
             // 
@@ -125,14 +123,13 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(413, 277);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(310, 225);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(43, 44);
+            this.btnAceptar.Size = new System.Drawing.Size(32, 36);
             this.btnAceptar.TabIndex = 11;
             this.toolTip1.SetToolTip(this.btnAceptar, "Aceptar");
             this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnVolver
             // 
@@ -144,22 +141,20 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Location = new System.Drawing.Point(362, 277);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolver.Location = new System.Drawing.Point(272, 225);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(43, 44);
+            this.btnVolver.Size = new System.Drawing.Size(32, 36);
             this.btnVolver.TabIndex = 29;
             this.toolTip1.SetToolTip(this.btnVolver, "Volver");
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // chkBorrado
             // 
             this.chkBorrado.AutoSize = true;
-            this.chkBorrado.Location = new System.Drawing.Point(137, 245);
-            this.chkBorrado.Margin = new System.Windows.Forms.Padding(4);
+            this.chkBorrado.Location = new System.Drawing.Point(103, 199);
             this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(81, 21);
+            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
             this.chkBorrado.TabIndex = 30;
             this.chkBorrado.Text = "Borrado";
             this.chkBorrado.UseVisualStyleBackColor = true;
@@ -169,10 +164,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(51, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 32);
+            this.label6.Size = new System.Drawing.Size(46, 26);
             this.label6.TabIndex = 62;
             this.label6.Text = "Usuario:";
             // 
@@ -181,11 +175,10 @@ namespace BugTrackingSystem.CapaPresentacion
             this.rtxtComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtComentario.Location = new System.Drawing.Point(137, 164);
-            this.rtxtComentario.Margin = new System.Windows.Forms.Padding(4);
+            this.rtxtComentario.Location = new System.Drawing.Point(103, 133);
             this.rtxtComentario.MaxLength = 500;
             this.rtxtComentario.Name = "rtxtComentario";
-            this.rtxtComentario.Size = new System.Drawing.Size(268, 73);
+            this.rtxtComentario.Size = new System.Drawing.Size(201, 60);
             this.rtxtComentario.TabIndex = 26;
             this.rtxtComentario.Text = "";
             // 
@@ -196,11 +189,10 @@ namespace BugTrackingSystem.CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(137, 4);
-            this.cboUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cboUsuario.Location = new System.Drawing.Point(103, 3);
             this.cboUsuario.MaxLength = 50;
             this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(268, 24);
+            this.cboUsuario.Size = new System.Drawing.Size(201, 21);
             this.cboUsuario.TabIndex = 16;
             // 
             // cboEstado
@@ -210,11 +202,10 @@ namespace BugTrackingSystem.CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(137, 132);
-            this.cboEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.cboEstado.Location = new System.Drawing.Point(103, 107);
             this.cboEstado.MaxLength = 50;
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(268, 24);
+            this.cboEstado.Size = new System.Drawing.Size(201, 21);
             this.cboEstado.TabIndex = 24;
             // 
             // lblComentario
@@ -222,10 +213,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblComentario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblComentario.AutoSize = true;
-            this.lblComentario.Location = new System.Drawing.Point(45, 160);
-            this.lblComentario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblComentario.Location = new System.Drawing.Point(34, 130);
             this.lblComentario.Name = "lblComentario";
-            this.lblComentario.Size = new System.Drawing.Size(84, 81);
+            this.lblComentario.Size = new System.Drawing.Size(63, 66);
             this.lblComentario.TabIndex = 25;
             this.lblComentario.Text = "Comentario:";
             // 
@@ -237,11 +227,10 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dateHoraSalida.Checked = false;
             this.dateHoraSalida.CustomFormat = "HH:mm ";
             this.dateHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateHoraSalida.Location = new System.Drawing.Point(137, 100);
-            this.dateHoraSalida.Margin = new System.Windows.Forms.Padding(4);
+            this.dateHoraSalida.Location = new System.Drawing.Point(103, 81);
             this.dateHoraSalida.Name = "dateHoraSalida";
             this.dateHoraSalida.ShowUpDown = true;
-            this.dateHoraSalida.Size = new System.Drawing.Size(268, 22);
+            this.dateHoraSalida.Size = new System.Drawing.Size(201, 20);
             this.dateHoraSalida.TabIndex = 22;
             this.dateHoraSalida.Value = new System.DateTime(2021, 9, 21, 23, 58, 0, 0);
             // 
@@ -252,10 +241,9 @@ namespace BugTrackingSystem.CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFecha.CustomFormat = "";
             this.dateFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFecha.Location = new System.Drawing.Point(137, 36);
-            this.dateFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dateFecha.Location = new System.Drawing.Point(103, 29);
             this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(268, 22);
+            this.dateFecha.Size = new System.Drawing.Size(201, 20);
             this.dateFecha.TabIndex = 18;
             // 
             // dateHoraIngreso
@@ -266,11 +254,10 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dateHoraIngreso.Checked = false;
             this.dateHoraIngreso.CustomFormat = "HH:mm";
             this.dateHoraIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateHoraIngreso.Location = new System.Drawing.Point(137, 68);
-            this.dateHoraIngreso.Margin = new System.Windows.Forms.Padding(4);
+            this.dateHoraIngreso.Location = new System.Drawing.Point(103, 55);
             this.dateHoraIngreso.Name = "dateHoraIngreso";
             this.dateHoraIngreso.ShowUpDown = true;
-            this.dateHoraIngreso.Size = new System.Drawing.Size(268, 22);
+            this.dateHoraIngreso.Size = new System.Drawing.Size(201, 20);
             this.dateHoraIngreso.TabIndex = 20;
             this.dateHoraIngreso.Value = new System.DateTime(2021, 9, 22, 1, 0, 0, 0);
             // 
@@ -279,10 +266,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblEstado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(73, 128);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEstado.Location = new System.Drawing.Point(54, 104);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(56, 32);
+            this.lblEstado.Size = new System.Drawing.Size(43, 26);
             this.lblEstado.TabIndex = 23;
             this.lblEstado.Text = "Estado:";
             // 
@@ -291,10 +277,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblHoraIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHoraIngreso.AutoSize = true;
-            this.lblHoraIngreso.Location = new System.Drawing.Point(35, 64);
-            this.lblHoraIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHoraIngreso.Location = new System.Drawing.Point(26, 52);
             this.lblHoraIngreso.Name = "lblHoraIngreso";
-            this.lblHoraIngreso.Size = new System.Drawing.Size(94, 32);
+            this.lblHoraIngreso.Size = new System.Drawing.Size(71, 26);
             this.lblHoraIngreso.TabIndex = 19;
             this.lblHoraIngreso.Text = "Hora Ingreso:";
             // 
@@ -303,10 +288,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(32, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 32);
+            this.label1.Size = new System.Drawing.Size(65, 26);
             this.label1.TabIndex = 21;
             this.label1.Text = "Hora Salida:";
             // 
@@ -317,10 +301,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitulo.Location = new System.Drawing.Point(113, 2);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(85, 2);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(259, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(198, 16);
             this.lblTitulo.TabIndex = 27;
             this.lblTitulo.Text = "Agregar un registro nuevo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -331,7 +314,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(475, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseMove);
@@ -343,22 +327,21 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(440, -3);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(330, -2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(35, 30);
+            this.btnSalir.Size = new System.Drawing.Size(26, 24);
             this.btnSalir.TabIndex = 29;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // FrmAsistenciasABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(475, 378);
+            this.ClientSize = new System.Drawing.Size(356, 307);
             this.Controls.Add(this.grpEntradas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
@@ -367,7 +350,6 @@ namespace BugTrackingSystem.CapaPresentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAsistenciasABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar nuevo registro";

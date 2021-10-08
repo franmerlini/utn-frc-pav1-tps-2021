@@ -60,14 +60,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(440, -3);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(330, -2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(35, 30);
+            this.btnSalir.Size = new System.Drawing.Size(26, 24);
             this.btnSalir.TabIndex = 48;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // lblTitulo
             // 
@@ -76,10 +75,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitulo.Location = new System.Drawing.Point(116, 1);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(87, 1);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(259, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(198, 16);
             this.lblTitulo.TabIndex = 47;
             this.lblTitulo.Text = "Agregar un registro nuevo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -90,7 +88,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(475, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
             this.menuStrip1.TabIndex = 46;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseDown);
@@ -99,9 +98,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             // 
             this.grpEntradas.BackColor = System.Drawing.Color.SkyBlue;
             this.grpEntradas.Controls.Add(this.tlpEntradas);
-            this.grpEntradas.Location = new System.Drawing.Point(0, 24);
+            this.grpEntradas.Location = new System.Drawing.Point(0, 20);
+            this.grpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.grpEntradas.Name = "grpEntradas";
-            this.grpEntradas.Size = new System.Drawing.Size(475, 251);
+            this.grpEntradas.Padding = new System.Windows.Forms.Padding(2);
+            this.grpEntradas.Size = new System.Drawing.Size(356, 204);
             this.grpEntradas.TabIndex = 49;
             this.grpEntradas.TabStop = false;
             // 
@@ -124,7 +125,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tlpEntradas.Controls.Add(this.lblFecha, 0, 1);
             this.tlpEntradas.Controls.Add(this.cboUsuario, 1, 0);
             this.tlpEntradas.Controls.Add(this.lblUsuario, 0, 0);
-            this.tlpEntradas.Location = new System.Drawing.Point(6, 21);
+            this.tlpEntradas.Location = new System.Drawing.Point(4, 17);
+            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntradas.Name = "tlpEntradas";
             this.tlpEntradas.RowCount = 7;
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
@@ -134,7 +136,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tlpEntradas.Size = new System.Drawing.Size(460, 226);
+            this.tlpEntradas.Size = new System.Drawing.Size(345, 184);
             this.tlpEntradas.TabIndex = 75;
             // 
             // label2
@@ -142,20 +144,18 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 116);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(57, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 29);
+            this.label2.Size = new System.Drawing.Size(40, 23);
             this.label2.TabIndex = 71;
             this.label2.Text = "Monto:";
             // 
             // chkBorrado
             // 
             this.chkBorrado.AutoSize = true;
-            this.chkBorrado.Location = new System.Drawing.Point(137, 149);
-            this.chkBorrado.Margin = new System.Windows.Forms.Padding(4);
+            this.chkBorrado.Location = new System.Drawing.Point(103, 118);
             this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(81, 21);
+            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
             this.chkBorrado.TabIndex = 68;
             this.chkBorrado.Text = "Borrado";
             this.chkBorrado.UseVisualStyleBackColor = true;
@@ -165,10 +165,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 87);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(45, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 29);
+            this.label3.Size = new System.Drawing.Size(52, 23);
             this.label3.TabIndex = 72;
             this.label3.Text = "Cantidad:";
             // 
@@ -178,15 +177,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudMonto.DecimalPlaces = 2;
-            this.nudMonto.Location = new System.Drawing.Point(137, 120);
-            this.nudMonto.Margin = new System.Windows.Forms.Padding(4);
+            this.nudMonto.Location = new System.Drawing.Point(103, 95);
             this.nudMonto.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
             this.nudMonto.Name = "nudMonto";
-            this.nudMonto.Size = new System.Drawing.Size(268, 22);
+            this.nudMonto.Size = new System.Drawing.Size(201, 20);
             this.nudMonto.TabIndex = 74;
             // 
             // label1
@@ -194,10 +192,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(35, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 29);
+            this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 69;
             this.label1.Text = "Descuento:";
             // 
@@ -206,15 +203,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.nudCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudCantidad.Location = new System.Drawing.Point(137, 91);
-            this.nudCantidad.Margin = new System.Windows.Forms.Padding(4);
+            this.nudCantidad.Location = new System.Drawing.Point(103, 72);
             this.nudCantidad.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(268, 22);
+            this.nudCantidad.Size = new System.Drawing.Size(201, 20);
             this.nudCantidad.TabIndex = 73;
             // 
             // cboDescuento
@@ -224,11 +220,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDescuento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDescuento.FormattingEnabled = true;
-            this.cboDescuento.Location = new System.Drawing.Point(137, 62);
-            this.cboDescuento.Margin = new System.Windows.Forms.Padding(4);
+            this.cboDescuento.Location = new System.Drawing.Point(103, 49);
             this.cboDescuento.MaxLength = 50;
             this.cboDescuento.Name = "cboDescuento";
-            this.cboDescuento.Size = new System.Drawing.Size(268, 24);
+            this.cboDescuento.Size = new System.Drawing.Size(201, 21);
             this.cboDescuento.TabIndex = 70;
             // 
             // btnVolver
@@ -241,13 +236,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Location = new System.Drawing.Point(362, 178);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolver.Location = new System.Drawing.Point(272, 141);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(43, 44);
+            this.btnVolver.Size = new System.Drawing.Size(32, 40);
             this.btnVolver.TabIndex = 62;
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // dateFecha
             // 
@@ -256,10 +250,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFecha.CustomFormat = "";
             this.dateFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFecha.Location = new System.Drawing.Point(137, 33);
-            this.dateFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dateFecha.Location = new System.Drawing.Point(103, 26);
             this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(268, 22);
+            this.dateFecha.Size = new System.Drawing.Size(201, 20);
             this.dateFecha.TabIndex = 65;
             // 
             // btnAceptar
@@ -273,23 +266,21 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(413, 178);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(310, 141);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(43, 44);
+            this.btnAceptar.Size = new System.Drawing.Size(32, 40);
             this.btnAceptar.TabIndex = 57;
             this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // lblFecha
             // 
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(78, 29);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFecha.Location = new System.Drawing.Point(57, 23);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(51, 29);
+            this.lblFecha.Size = new System.Drawing.Size(40, 23);
             this.lblFecha.TabIndex = 64;
             this.lblFecha.Text = "Fecha:";
             // 
@@ -300,11 +291,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(137, 4);
-            this.cboUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.cboUsuario.Location = new System.Drawing.Point(103, 3);
             this.cboUsuario.MaxLength = 50;
             this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(268, 24);
+            this.cboUsuario.Size = new System.Drawing.Size(201, 21);
             this.cboUsuario.TabIndex = 63;
             // 
             // lblUsuario
@@ -312,25 +302,23 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(68, 0);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(51, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(61, 29);
+            this.lblUsuario.Size = new System.Drawing.Size(46, 23);
             this.lblUsuario.TabIndex = 62;
             this.lblUsuario.Text = "Usuario:";
             // 
             // FrmDescuentosABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(475, 276);
+            this.ClientSize = new System.Drawing.Size(356, 224);
             this.Controls.Add(this.grpEntradas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDescuentosABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDescuentosABM";

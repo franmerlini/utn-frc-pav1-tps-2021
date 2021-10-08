@@ -47,10 +47,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
 
             // Define el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(dgvSueldos, 0, "Usuario", "Usuario", 150);
-            CrearColumnas(dgvSueldos, 1, "Fecha", "Fecha", 70);
-            CrearColumnas(dgvSueldos, 2, "Sueldo bruto", "SueldoBruto", 100);
-            CrearColumnas(dgvSueldos, 3, "Borrado", "Borrado", 80);
+            CrearColumnas(dgvSueldos, 0, "Usuario", "Usuario", 238);
+            CrearColumnas(dgvSueldos, 1, "Fecha", "Fecha", 120);
+            CrearColumnas(dgvSueldos, 2, "Sueldo bruto", "SueldoBruto", 462);
+            CrearColumnas(dgvSueldos, 3, "Borrado", "Borrado", 110);
 
         }
 
@@ -84,7 +84,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
         }
 
         // Botones
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void BtnConsultar_Click(object sender, EventArgs e)
         {
             // Sección reviso de filtros
             parametros.Clear();
@@ -129,7 +129,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             cboUsuario.SelectedIndex = -1;
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void BtnNuevo_Click(object sender, EventArgs e)
         {
             FrmSueldosABM frmAgregar = new FrmSueldosABM(FrmSueldosABM.FormMode.nuevo);
             frmAgregar.ShowDialog();
@@ -139,7 +139,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             lblTotal.Text = "Registros encontrados: " + listadoSueldos.Count;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvSueldos.RowCount.Equals(0))
             {
@@ -159,7 +159,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             if (rta == DialogResult.Yes)
             {
                 sueldo.Borrado = true;
-                if (!sueldoService.ActualizarSueldo(sueldo))
+
+                var parametrosEliminacion = new Dictionary<string, object>
+                {
+                    {"idUsuarioBase", Convert.ToInt32(sueldo.Usuario.IdUsuario) },
+                    {"fechaBase", Convert.ToDateTime(sueldo.Fecha) }
+                };
+
+                if (!sueldoService.ActualizarSueldo(sueldo, parametrosEliminacion))
                     MessageBox.Show("El registro no se pudo borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 IList<Sueldo> listadoSueldos = sueldoService.ObtenerSueldos(parametros);
@@ -168,7 +175,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             if (dgvSueldos.RowCount.Equals(0))
             {

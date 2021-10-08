@@ -54,7 +54,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 consultaSQL += "AND (s.borrado = 0) ";
             }
 
-            consultaSQL += " ORDER BY s.fecha ASC";
+            consultaSQL += " ORDER BY s.fecha DESC";
 
             var resultados = DataManager.ObtenerInstancia().ConsultaSQL(consultaSQL, parametros);
 
@@ -82,22 +82,20 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal bool ActualizarSueldo(Sueldo sueldo)
+        internal bool ActualizarSueldo(Sueldo sueldo, Dictionary<string, object> parametros)
         {
             string consultaSQL = " UPDATE Sueldos" +
                                  " SET id_usuario = @idUsuario," +
                                  "     fecha = @fecha," +
                                  "     sueldo_bruto = @sueldoBruto," +
                                  "     borrado = @borrado" +
-                                 " WHERE id_usuario = @idUsuario";
+                                 " WHERE id_usuario = @idUsuarioBase" + 
+                                 " AND fecha = @fechaBase";
 
-            var parametros = new Dictionary<string, object>
-            {
-                { "idUsuario", sueldo.Usuario.IdUsuario },
-                { "fecha", sueldo.Fecha },
-                { "sueldoBruto", sueldo.SueldoBruto },
-                { "borrado", sueldo.Borrado }
-            };
+            parametros.Add("idUsuario", sueldo.Usuario.IdUsuario);
+            parametros.Add("fecha", sueldo.Fecha);
+            parametros.Add("sueldoBruto", sueldo.SueldoBruto);
+            parametros.Add("borrado", sueldo.Borrado);
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -121,7 +119,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 },
 
                 Fecha = Convert.ToDateTime(row["fecha"].ToString()),
-                SueldoBruto = (float)Convert.ToDouble(row["sueldo_bruto"].ToString()),
+                SueldoBruto = Convert.ToDecimal(row["sueldo_bruto"].ToString()),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
 

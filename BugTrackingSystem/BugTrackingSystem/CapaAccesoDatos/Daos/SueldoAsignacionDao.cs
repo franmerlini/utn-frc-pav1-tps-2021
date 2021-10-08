@@ -38,6 +38,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
             // Si parametros = null, no se hace ningún filtrado
             if (parametros != null)
             {
+                if (parametros.ContainsKey("idUsuario"))
+                    consultaSQL += " AND (s.id_usuario = @idUsuario) ";
                 if (parametros.ContainsKey("usuario"))
                     consultaSQL += " AND (LOWER(u.usuario) LIKE '%' + LOWER(@usuario) + '%') ";
                 if (parametros.ContainsKey("fechaDesde"))
@@ -75,7 +77,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
         internal bool CrearSueldoAsignacion(SueldoAsignacion sueldoAsignacion)
         {
             string consultaSQL = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad, borrado)" +
-                                 " VALUES (@idUsuario, @fecha, @idAsignacion, monto, cantidad, 0)";
+                                 " VALUES (@idUsuario, @fecha, @idAsignacion, @monto, @cantidad, 0)";
 
             var parametros = new Dictionary<string, object>
             {
