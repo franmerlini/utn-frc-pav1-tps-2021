@@ -123,7 +123,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
                         }
 
                         sueldo.Borrado = chkBorrado.Checked;
-                        sueldo.Usuario = sueldoSeleccionado.Usuario;
 
                         var parametros = new Dictionary<string, object>
                         {

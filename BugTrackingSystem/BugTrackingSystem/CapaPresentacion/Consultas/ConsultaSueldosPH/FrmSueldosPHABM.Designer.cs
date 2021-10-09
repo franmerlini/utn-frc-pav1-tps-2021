@@ -1,7 +1,7 @@
 ﻿
-namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
+namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
 {
-    partial class FrmSueldosABM
+    partial class FrmSueldosPHABM
     {
         /// <summary>
         /// Required designer variable.
@@ -29,35 +29,57 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpEntradas = new System.Windows.Forms.GroupBox();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.tlpEntradas = new System.Windows.Forms.TableLayoutPanel();
             this.nudSueldo = new System.Windows.Forms.NumericUpDown();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.chkBorrado = new System.Windows.Forms.CheckBox();
-            this.cboUsuario = new System.Windows.Forms.ComboBox();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblPerfil = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.grpEntradas.SuspendLayout();
             this.tlpEntradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSueldo)).BeginInit();
             this.SuspendLayout();
             // 
-            // grpEntradas
+            // btnVolver
             // 
-            this.grpEntradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.grpEntradas.Controls.Add(this.tlpEntradas);
-            this.grpEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpEntradas.Location = new System.Drawing.Point(1, 19);
-            this.grpEntradas.Name = "grpEntradas";
-            this.grpEntradas.Size = new System.Drawing.Size(356, 172);
-            this.grpEntradas.TabIndex = 2;
-            this.grpEntradas.TabStop = false;
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.Tan;
+            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Left;
+            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
+            this.btnVolver.Location = new System.Drawing.Point(272, 111);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(32, 36);
+            this.btnVolver.TabIndex = 62;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.BackColor = System.Drawing.Color.Tan;
+            this.btnAceptar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Valid_Green;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.Location = new System.Drawing.Point(310, 111);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(32, 36);
+            this.btnAceptar.TabIndex = 57;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // tlpEntradas
             // 
@@ -69,12 +91,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.tlpEntradas.Controls.Add(this.lblFecha, 0, 1);
             this.tlpEntradas.Controls.Add(this.dateFecha, 1, 1);
             this.tlpEntradas.Controls.Add(this.chkBorrado, 1, 3);
-            this.tlpEntradas.Controls.Add(this.cboUsuario, 1, 0);
+            this.tlpEntradas.Controls.Add(this.cboPerfil, 1, 0);
             this.tlpEntradas.Controls.Add(this.btnVolver, 1, 4);
             this.tlpEntradas.Controls.Add(this.btnAceptar, 2, 4);
             this.tlpEntradas.Controls.Add(this.label2, 0, 2);
-            this.tlpEntradas.Controls.Add(this.lblUsuario, 0, 0);
-            this.tlpEntradas.Location = new System.Drawing.Point(5, 18);
+            this.tlpEntradas.Controls.Add(this.lblPerfil, 0, 0);
+            this.tlpEntradas.Location = new System.Drawing.Point(5, 31);
             this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntradas.Name = "tlpEntradas";
             this.tlpEntradas.RowCount = 5;
@@ -84,13 +106,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
             this.tlpEntradas.Size = new System.Drawing.Size(345, 150);
-            this.tlpEntradas.TabIndex = 0;
+            this.tlpEntradas.TabIndex = 39;
             // 
             // nudSueldo
             // 
-            this.nudSueldo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSueldo.DecimalPlaces = 2;
             this.nudSueldo.Location = new System.Drawing.Point(103, 57);
             this.nudSueldo.Maximum = new decimal(new int[] {
@@ -116,9 +135,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             // 
             // dateFecha
             // 
-            this.dateFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFecha.CustomFormat = "";
             this.dateFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFecha.Location = new System.Drawing.Point(103, 30);
@@ -134,79 +150,42 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.chkBorrado.Size = new System.Drawing.Size(63, 17);
             this.chkBorrado.TabIndex = 63;
             this.chkBorrado.Text = "Borrado";
+            this.chkBorrado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkBorrado.UseVisualStyleBackColor = true;
             // 
-            // cboUsuario
+            // cboPerfil
             // 
-            this.cboUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(103, 3);
-            this.cboUsuario.MaxLength = 50;
-            this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(201, 21);
-            this.cboUsuario.TabIndex = 59;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Left;
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Location = new System.Drawing.Point(272, 111);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(32, 36);
-            this.btnVolver.TabIndex = 62;
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAceptar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Valid_Green;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(310, 111);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(32, 36);
-            this.btnAceptar.TabIndex = 57;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            this.cboPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPerfil.FormattingEnabled = true;
+            this.cboPerfil.Location = new System.Drawing.Point(103, 3);
+            this.cboPerfil.MaxLength = 50;
+            this.cboPerfil.Name = "cboPerfil";
+            this.cboPerfil.Size = new System.Drawing.Size(201, 21);
+            this.cboPerfil.TabIndex = 59;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 54);
+            this.label2.Location = new System.Drawing.Point(54, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 27);
+            this.label2.Size = new System.Drawing.Size(43, 27);
             this.label2.TabIndex = 64;
-            this.label2.Text = "Sueldo bruto:";
+            this.label2.Text = "Sueldo:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblUsuario
+            // lblPerfil
             // 
-            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(51, 0);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 27);
-            this.lblUsuario.TabIndex = 58;
-            this.lblUsuario.Text = "Usuario:";
-            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Location = new System.Drawing.Point(64, 0);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Size = new System.Drawing.Size(33, 27);
+            this.lblPerfil.TabIndex = 58;
+            this.lblPerfil.Text = "Perfil:";
+            this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSalir
             // 
@@ -215,10 +194,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(330, -2);
+            this.btnSalir.Location = new System.Drawing.Point(330, 0);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(26, 24);
-            this.btnSalir.TabIndex = 38;
+            this.btnSalir.TabIndex = 42;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -230,10 +209,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitulo.Location = new System.Drawing.Point(83, 1);
+            this.lblTitulo.Location = new System.Drawing.Point(83, 3);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(198, 16);
-            this.lblTitulo.TabIndex = 37;
+            this.lblTitulo.TabIndex = 41;
             this.lblTitulo.Text = "Agregar un registro nuevo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -245,29 +224,25 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(356, 24);
-            this.menuStrip1.TabIndex = 36;
+            this.menuStrip1.TabIndex = 40;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseMove);
+            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseDown);
             // 
-            // FrmSueldosABM
+            // FrmSueldosPHABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(356, 193);
-            this.Controls.Add(this.grpEntradas);
+            this.BackColor = System.Drawing.Color.Tan;
+            this.ClientSize = new System.Drawing.Size(356, 187);
+            this.Controls.Add(this.tlpEntradas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.menuStrip1);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(356, 193);
-            this.MinimumSize = new System.Drawing.Size(356, 193);
-            this.Name = "FrmSueldosABM";
+            this.Name = "FrmSueldosPHABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmSueldosABM";
-            this.Load += new System.EventHandler(this.FrmSueldosABM_Load);
-            this.grpEntradas.ResumeLayout(false);
+            this.Text = "FrmSueldosPHABM";
+            this.Load += new System.EventHandler(this.FrmSueldosPHABM_Load);
             this.tlpEntradas.ResumeLayout(false);
             this.tlpEntradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSueldo)).EndInit();
@@ -278,19 +253,18 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpEntradas;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.TableLayoutPanel tlpEntradas;
+        private System.Windows.Forms.NumericUpDown nudSueldo;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.DateTimePicker dateFecha;
+        private System.Windows.Forms.CheckBox chkBorrado;
+        private System.Windows.Forms.ComboBox cboPerfil;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.TableLayoutPanel tlpEntradas;
-        private System.Windows.Forms.NumericUpDown nudSueldo;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.CheckBox chkBorrado;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboUsuario;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DateTimePicker dateFecha;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnAceptar;
     }
 }

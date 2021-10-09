@@ -1,6 +1,7 @@
 ﻿using BugTrackingSystem.CapaPresentacion;
 using BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones;
 using BugTrackingSystem.CapaPresentacion.ConsultaDescuentos;
+using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH;
 using BugTrackingSystem.CapaPresentacion.ConsultaSueldos;
 using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
 using BugTrackingSystem.Entidades;
@@ -149,6 +150,18 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Consulta de Sueldos Descuentos");
         }
 
+        private void TsiSueldos_Click(object sender, EventArgs e)
+        {
+            FrmSueldos ventana = new FrmSueldos();
+            MostrarVentana(ventana, "Consulta de Sueldos");
+        }
+
+        private void TsiSueldosPorPefil_Click(object sender, EventArgs e)
+        {
+            FrmSueldosPH ventana = new FrmSueldosPH();
+            MostrarVentana(ventana, "Consulta de Sueldos Perfil Histórico");
+        }
+
         // Código para poder mover la ventana desde el menu strip
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -160,12 +173,6 @@ namespace BugTrackingSystem.Forms
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void tsiSueldos_Click(object sender, EventArgs e)
-        {
-            FrmSueldos ventana = new FrmSueldos();
-            MostrarVentana(ventana, "Consulta de Sueldos");
         }
     }
 }

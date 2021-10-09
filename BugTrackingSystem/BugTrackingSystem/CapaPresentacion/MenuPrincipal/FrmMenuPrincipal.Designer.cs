@@ -65,8 +65,8 @@ namespace BugTrackingSystem.Forms
             this.tsiAyuda});
             this.MnsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MnsPrincipal.Name = "MnsPrincipal";
-            this.MnsPrincipal.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.MnsPrincipal.Size = new System.Drawing.Size(1443, 24);
+            this.MnsPrincipal.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MnsPrincipal.Size = new System.Drawing.Size(1082, 24);
             this.MnsPrincipal.TabIndex = 0;
             this.MnsPrincipal.Text = "menuStrip1";
             this.MnsPrincipal.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MnsPrincipal_MouseMove);
@@ -113,7 +113,7 @@ namespace BugTrackingSystem.Forms
             this.tsiSueldos.Name = "tsiSueldos";
             this.tsiSueldos.Size = new System.Drawing.Size(196, 22);
             this.tsiSueldos.Text = "Sueldos";
-            this.tsiSueldos.Click += new System.EventHandler(this.tsiSueldos_Click);
+            this.tsiSueldos.Click += new System.EventHandler(this.TsiSueldos_Click);
             // 
             // tsiSueldosAsignaciones
             // 
@@ -134,6 +134,7 @@ namespace BugTrackingSystem.Forms
             this.tsiSueldosPorPefil.Name = "tsiSueldosPorPefil";
             this.tsiSueldosPorPefil.Size = new System.Drawing.Size(196, 22);
             this.tsiSueldosPorPefil.Text = "Sueldos Perfil Histórico";
+            this.tsiSueldosPorPefil.Click += new System.EventHandler(this.TsiSueldosPorPefil_Click);
             // 
             // tsiUsuarios
             // 
@@ -191,8 +192,7 @@ namespace BugTrackingSystem.Forms
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(628, 7);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(471, 6);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(144, 13);
             this.lblTitulo.TabIndex = 2;
@@ -206,10 +206,9 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.Brown;
-            this.btnMinimizar.Location = new System.Drawing.Point(1375, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizar.Location = new System.Drawing.Point(1031, 0);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(35, 30);
+            this.btnMinimizar.Size = new System.Drawing.Size(26, 24);
             this.btnMinimizar.TabIndex = 5;
             this.btnMinimizar.Text = "―";
             this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -223,10 +222,9 @@ namespace BugTrackingSystem.Forms
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(1408, 0);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(1056, 0);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(35, 30);
+            this.btnSalir.Size = new System.Drawing.Size(26, 24);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "X";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -239,8 +237,7 @@ namespace BugTrackingSystem.Forms
             this.LblNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
             this.LblNombre.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LblNombre.Location = new System.Drawing.Point(4, 620);
-            this.LblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblNombre.Location = new System.Drawing.Point(3, 504);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(186, 13);
             this.LblNombre.TabIndex = 11;
@@ -249,12 +246,12 @@ namespace BugTrackingSystem.Forms
             // 
             // FrmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.layered_peaks_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1443, 644);
+            this.ClientSize = new System.Drawing.Size(1082, 523);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnSalir);
@@ -266,7 +263,6 @@ namespace BugTrackingSystem.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MnsPrincipal;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Tracking System";

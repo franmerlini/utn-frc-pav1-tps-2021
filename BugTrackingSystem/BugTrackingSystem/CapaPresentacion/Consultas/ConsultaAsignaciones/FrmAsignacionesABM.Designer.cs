@@ -149,6 +149,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.lblUsuario.Size = new System.Drawing.Size(46, 23);
             this.lblUsuario.TabIndex = 58;
             this.lblUsuario.Text = "Usuario:";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // chkBorrado
             // 
@@ -170,6 +171,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.label2.Size = new System.Drawing.Size(40, 23);
             this.label2.TabIndex = 55;
             this.label2.Text = "Monto:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -181,6 +183,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.label3.Size = new System.Drawing.Size(52, 23);
             this.label3.TabIndex = 56;
             this.label3.Text = "Cantidad:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nudMonto
             // 
@@ -208,6 +211,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.label6.Size = new System.Drawing.Size(40, 23);
             this.label6.TabIndex = 60;
             this.label6.Text = "Fecha:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nudCantidad
             // 
@@ -276,6 +280,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 53;
             this.label1.Text = "Asignación:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cboAsignacion
             // 

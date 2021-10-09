@@ -112,6 +112,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label5.Size = new System.Drawing.Size(40, 26);
             this.label5.TabIndex = 64;
             this.label5.Text = "Fecha:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAceptar
             // 
@@ -169,6 +170,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label6.Size = new System.Drawing.Size(46, 26);
             this.label6.TabIndex = 62;
             this.label6.Text = "Usuario:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rtxtComentario
             // 
@@ -218,6 +220,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblComentario.Size = new System.Drawing.Size(63, 66);
             this.lblComentario.TabIndex = 25;
             this.lblComentario.Text = "Comentario:";
+            this.lblComentario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dateHoraSalida
             // 
@@ -271,6 +274,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblEstado.Size = new System.Drawing.Size(43, 26);
             this.lblEstado.TabIndex = 23;
             this.lblEstado.Text = "Estado:";
+            this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHoraIngreso
             // 
@@ -282,6 +286,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblHoraIngreso.Size = new System.Drawing.Size(71, 26);
             this.lblHoraIngreso.TabIndex = 19;
             this.lblHoraIngreso.Text = "Hora Ingreso:";
+            this.lblHoraIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -293,6 +298,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.label1.Size = new System.Drawing.Size(65, 26);
             this.label1.TabIndex = 21;
             this.label1.Text = "Hora Salida:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitulo
             // 

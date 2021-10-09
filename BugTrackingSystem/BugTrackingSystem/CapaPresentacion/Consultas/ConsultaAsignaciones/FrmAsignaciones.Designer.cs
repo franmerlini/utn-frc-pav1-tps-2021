@@ -36,7 +36,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.grpAcciones = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnNuevo = new System.Windows.Forms.Button();
-            this.BtnInformacion = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
@@ -111,14 +110,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel1.Controls.Add(this.BtnNuevo, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtnInformacion, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnEditar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnEliminar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 40);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(37, 41);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 52);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(152, 52);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // BtnNuevo
@@ -137,22 +135,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.toolTip1.SetToolTip(this.BtnNuevo, "Agregar un registro nuevo");
             this.BtnNuevo.UseVisualStyleBackColor = false;
             this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
-            // 
-            // BtnInformacion
-            // 
-            this.BtnInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.BtnInformacion.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Info;
-            this.BtnInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.BtnInformacion.FlatAppearance.BorderSize = 0;
-            this.BtnInformacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.BtnInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInformacion.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnInformacion.Location = new System.Drawing.Point(153, 3);
-            this.BtnInformacion.Name = "BtnInformacion";
-            this.BtnInformacion.Size = new System.Drawing.Size(45, 44);
-            this.BtnInformacion.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.BtnInformacion, "Ver detalles de registro solicitado");
-            this.BtnInformacion.UseVisualStyleBackColor = false;
             // 
             // BtnEditar
             // 
@@ -347,7 +329,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
         private System.Windows.Forms.GroupBox grpAcciones;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button BtnNuevo;
-        private System.Windows.Forms.Button BtnInformacion;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.GroupBox grpFiltros;
