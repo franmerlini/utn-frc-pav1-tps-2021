@@ -130,6 +130,7 @@
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </Compile>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +149,8 @@
     <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.Designer.cs">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     <Compile Include="Entidades\Asignacion.cs" />

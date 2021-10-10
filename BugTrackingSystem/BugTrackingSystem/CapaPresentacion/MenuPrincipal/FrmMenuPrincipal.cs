@@ -157,10 +157,16 @@ namespace BugTrackingSystem.Forms
         }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         private void generacionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGeneracionMensualSueldo ventana = new FrmGeneracionMensualSueldo();
             MostrarVentana(ventana, "Generación mensual de sueldos");
+=======
+        private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> Stashed changes
 =======
         private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -109,15 +109,19 @@ namespace BugTrackingSystem.Forms
             // tsiAsignaciones
             // 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.tsiSueldos.Name = "tsiSueldos";
             this.tsiSueldos.Size = new System.Drawing.Size(245, 26);
             this.tsiSueldos.Text = "Sueldos";
             this.tsiSueldos.Click += new System.EventHandler(this.TsiSueldos_Click);
 =======
+=======
+>>>>>>> Stashed changes
             this.tsiAsignaciones.Name = "tsiAsignaciones";
             this.tsiAsignaciones.Size = new System.Drawing.Size(196, 22);
             this.tsiAsignaciones.Text = "Asignaciones";
             this.tsiAsignaciones.Click += new System.EventHandler(this.TsiSueldosAsignaciones_Click);
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
             // 
             // tsiDescuentos
@@ -135,10 +139,18 @@ namespace BugTrackingSystem.Forms
             this.tsiSueldosDescuentos.Text = "Sueldos Descuentos";
             this.tsiSueldosDescuentos.Click += new System.EventHandler(this.TsiSueldosDescuentos_Click);
 =======
+=======
+            // 
+            // tsiDescuentos
+            // 
+>>>>>>> Stashed changes
             this.tsiDescuentos.Name = "tsiDescuentos";
             this.tsiDescuentos.Size = new System.Drawing.Size(196, 22);
             this.tsiDescuentos.Text = "Descuentos";
             this.tsiDescuentos.Click += new System.EventHandler(this.TsiSueldosDescuentos_Click);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             // 
             // tsiSueldosPorPefil
@@ -170,7 +182,11 @@ namespace BugTrackingSystem.Forms
             this.generacionMensualDeSueldosToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
             this.generacionMensualDeSueldosToolStripMenuItem.Text = "Generacion mensual de sueldos";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.generacionMensualDeSueldosToolStripMenuItem.Click += new System.EventHandler(this.generacionMensualDeSueldosToolStripMenuItem_Click);
+=======
+            this.generacionMensualDeSueldosToolStripMenuItem.Click += new System.EventHandler(this.GeneracionMensualDeSueldosToolStripMenuItem_Click);
+>>>>>>> Stashed changes
 =======
             this.generacionMensualDeSueldosToolStripMenuItem.Click += new System.EventHandler(this.GeneracionMensualDeSueldosToolStripMenuItem_Click);
 >>>>>>> Stashed changes
