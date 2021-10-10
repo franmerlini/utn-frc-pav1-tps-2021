@@ -162,6 +162,18 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Generación mensual de sueldos");
         }
 
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tsiReportes.Enabled = false;
+            tsiArchivo.Enabled = false;
+            tsiGestion.Enabled = false;
+            tsiTransaccion.Enabled = false;
+            LblNombre.Visible = false;
+            login = new FrmLogin();
+            login.FormClosing += Login_FormClosing;
+            MostrarVentana(login, "Bug Tracking System");
+        }
+
         // Código para poder mover la ventana desde el menu strip
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
