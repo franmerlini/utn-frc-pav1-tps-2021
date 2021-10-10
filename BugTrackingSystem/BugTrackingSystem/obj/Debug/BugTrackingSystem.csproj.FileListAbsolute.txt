@@ -75,3 +75,4 @@ C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\
 C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
 C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
 C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources

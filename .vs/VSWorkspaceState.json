@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BugTrackingSystem",
-    "\\BugTrackingSystem\\BugTrackingSystem",
-    "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion",
-    "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion\\Login",
-    "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion\\MenuPrincipal"
+    ""
   ],
-  "SelectedNode": "\\BugTrackingSystem\\BugTrackingSystem\\CapaPresentacion\\MenuPrincipal\\FrmMenuPrincipal.cs",
+  "SelectedNode": "\\BugTrackingSystem.sln",
   "PreviewInSolutionExplorer": false
 }

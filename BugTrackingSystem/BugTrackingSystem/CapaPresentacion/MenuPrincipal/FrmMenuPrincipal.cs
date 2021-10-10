@@ -156,22 +156,10 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Consulta de Sueldos Perfil Histórico");
         }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         private void generacionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGeneracionMensualSueldo ventana = new FrmGeneracionMensualSueldo();
             MostrarVentana(ventana, "Generación mensual de sueldos");
-=======
-        private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
->>>>>>> Stashed changes
-=======
-        private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
->>>>>>> Stashed changes
         }
 
         // Código para poder mover la ventana desde el menu strip

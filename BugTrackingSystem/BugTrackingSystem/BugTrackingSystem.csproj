@@ -129,30 +129,12 @@
     <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.Designer.cs">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.designer.cs">
-      <DependentUpon>FrmSueldos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosABM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosABM.designer.cs">
-      <DependentUpon>FrmSueldosABM.cs</DependentUpon>
-    </Compile>
     <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.Designer.cs">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     <Compile Include="Entidades\Asignacion.cs" />
     <Compile Include="Entidades\AsistenciaUsuario.cs" />
     <Compile Include="Entidades\Descuento.cs" />

@@ -58,10 +58,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(440, -2);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(330, -2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(35, 30);
+            this.btnSalir.Size = new System.Drawing.Size(26, 24);
             this.btnSalir.TabIndex = 32;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -74,10 +73,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.LblTitulo.Enabled = false;
             this.LblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LblTitulo.Location = new System.Drawing.Point(113, 2);
-            this.LblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTitulo.Location = new System.Drawing.Point(85, 2);
             this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(259, 20);
+            this.LblTitulo.Size = new System.Drawing.Size(198, 16);
             this.LblTitulo.TabIndex = 31;
             this.LblTitulo.Text = "Agregar un registro nuevo";
             this.LblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -88,8 +86,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(475, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseDown);
@@ -98,11 +96,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             this.grpEntradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpEntradas.Controls.Add(this.tlpEntradas);
-            this.grpEntradas.Location = new System.Drawing.Point(0, 25);
-            this.grpEntradas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpEntradas.Location = new System.Drawing.Point(0, 20);
+            this.grpEntradas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpEntradas.Name = "grpEntradas";
-            this.grpEntradas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpEntradas.Size = new System.Drawing.Size(475, 255);
+            this.grpEntradas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEntradas.Size = new System.Drawing.Size(356, 207);
             this.grpEntradas.TabIndex = 77;
             this.grpEntradas.TabStop = false;
             // 
@@ -125,8 +123,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.tlpEntradas.Controls.Add(this.lblFecha, 0, 1);
             this.tlpEntradas.Controls.Add(this.lblUsuario, 0, 0);
             this.tlpEntradas.Controls.Add(this.TxtUsuario, 1, 0);
-            this.tlpEntradas.Location = new System.Drawing.Point(5, 21);
-            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpEntradas.Location = new System.Drawing.Point(4, 17);
+            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpEntradas.Name = "tlpEntradas";
             this.tlpEntradas.RowCount = 7;
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
@@ -136,7 +134,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tlpEntradas.Size = new System.Drawing.Size(460, 226);
+            this.tlpEntradas.Size = new System.Drawing.Size(345, 184);
             this.tlpEntradas.TabIndex = 77;
             // 
             // label6
@@ -144,10 +142,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(83, 116);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(62, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 29);
+            this.label6.Size = new System.Drawing.Size(35, 23);
             this.label6.TabIndex = 71;
             this.label6.Text = "Email:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,20 +154,18 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.TxtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtEmail.Location = new System.Drawing.Point(137, 120);
-            this.TxtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtEmail.Location = new System.Drawing.Point(103, 95);
             this.TxtEmail.MaxLength = 50;
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(268, 22);
+            this.TxtEmail.Size = new System.Drawing.Size(201, 20);
             this.TxtEmail.TabIndex = 44;
             // 
             // ChkBorrado
             // 
             this.ChkBorrado.AutoSize = true;
-            this.ChkBorrado.Location = new System.Drawing.Point(137, 149);
-            this.ChkBorrado.Margin = new System.Windows.Forms.Padding(4);
+            this.ChkBorrado.Location = new System.Drawing.Point(103, 118);
             this.ChkBorrado.Name = "ChkBorrado";
-            this.ChkBorrado.Size = new System.Drawing.Size(81, 21);
+            this.ChkBorrado.Size = new System.Drawing.Size(63, 17);
             this.ChkBorrado.TabIndex = 45;
             this.ChkBorrado.Text = "Borrado";
             this.ChkBorrado.UseVisualStyleBackColor = true;
@@ -185,10 +180,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Location = new System.Drawing.Point(362, 178);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolver.Location = new System.Drawing.Point(272, 141);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(43, 44);
+            this.btnVolver.Size = new System.Drawing.Size(32, 40);
             this.btnVolver.TabIndex = 47;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -198,11 +192,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.TxtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtPassword.Location = new System.Drawing.Point(137, 91);
-            this.TxtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtPassword.Location = new System.Drawing.Point(103, 72);
             this.TxtPassword.MaxLength = 10;
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(268, 22);
+            this.TxtPassword.Size = new System.Drawing.Size(201, 20);
             this.TxtPassword.TabIndex = 40;
             // 
             // TxtEstado
@@ -210,11 +203,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.TxtEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtEstado.Location = new System.Drawing.Point(137, 62);
-            this.TxtEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtEstado.Location = new System.Drawing.Point(103, 49);
             this.TxtEstado.MaxLength = 1;
             this.TxtEstado.Name = "TxtEstado";
-            this.TxtEstado.Size = new System.Drawing.Size(268, 22);
+            this.TxtEstado.Size = new System.Drawing.Size(201, 20);
             this.TxtEstado.TabIndex = 38;
             // 
             // CboPerfil
@@ -224,11 +216,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CboPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboPerfil.FormattingEnabled = true;
-            this.CboPerfil.Location = new System.Drawing.Point(137, 33);
-            this.CboPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.CboPerfil.Location = new System.Drawing.Point(103, 26);
             this.CboPerfil.MaxLength = 50;
             this.CboPerfil.Name = "CboPerfil";
-            this.CboPerfil.Size = new System.Drawing.Size(268, 24);
+            this.CboPerfil.Size = new System.Drawing.Size(201, 21);
             this.CboPerfil.TabIndex = 36;
             // 
             // label7
@@ -236,10 +227,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 87);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(33, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 29);
+            this.label7.Size = new System.Drawing.Size(64, 23);
             this.label7.TabIndex = 72;
             this.label7.Text = "Contraseña:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,10 +244,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.Location = new System.Drawing.Point(413, 178);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(310, 141);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(43, 44);
+            this.btnAceptar.Size = new System.Drawing.Size(32, 40);
             this.btnAceptar.TabIndex = 46;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -267,10 +256,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(73, 58);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(54, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 29);
+            this.label8.Size = new System.Drawing.Size(43, 23);
             this.label8.TabIndex = 69;
             this.label8.Text = "Estado:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,10 +268,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(85, 29);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFecha.Location = new System.Drawing.Point(64, 23);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(44, 29);
+            this.lblFecha.Size = new System.Drawing.Size(33, 23);
             this.lblFecha.TabIndex = 64;
             this.lblFecha.Text = "Perfil:";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,10 +280,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(68, 0);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(51, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(61, 29);
+            this.lblUsuario.Size = new System.Drawing.Size(46, 23);
             this.lblUsuario.TabIndex = 62;
             this.lblUsuario.Text = "Usuario:";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -306,25 +292,23 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.TxtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtUsuario.Location = new System.Drawing.Point(137, 4);
-            this.TxtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtUsuario.Location = new System.Drawing.Point(103, 3);
             this.TxtUsuario.MaxLength = 50;
             this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(268, 22);
+            this.TxtUsuario.Size = new System.Drawing.Size(201, 20);
             this.TxtUsuario.TabIndex = 42;
             // 
             // FrmUsuariosABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(475, 279);
+            this.ClientSize = new System.Drawing.Size(356, 227);
             this.Controls.Add(this.grpEntradas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmUsuariosABM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUsuariosABM";
