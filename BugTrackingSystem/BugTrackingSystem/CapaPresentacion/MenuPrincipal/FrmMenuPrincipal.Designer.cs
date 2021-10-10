@@ -32,6 +32,7 @@ namespace BugTrackingSystem.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.MnsPrincipal = new System.Windows.Forms.MenuStrip();
             this.tsiArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiGestion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiAsistencias = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,7 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.LblNombre = new System.Windows.Forms.Label();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,11 +76,19 @@ namespace BugTrackingSystem.Forms
             // 
             this.tsiArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cerrarSesiónToolStripMenuItem,
+            this.toolStripSeparator1,
             this.tsiSalir});
             this.tsiArchivo.Enabled = false;
             this.tsiArchivo.Name = "tsiArchivo";
             this.tsiArchivo.Size = new System.Drawing.Size(60, 20);
             this.tsiArchivo.Text = "Archivo";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // tsiSalir
             // 
@@ -238,12 +247,10 @@ namespace BugTrackingSystem.Forms
             this.LblNombre.Text = "Usuario Conectado: - Perfil:";
             this.LblNombre.Visible = false;
             // 
-            // cerrarSesiónToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // FrmMenuPrincipal
             // 
@@ -298,5 +305,6 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -265,6 +265,7 @@ namespace BugTrackingSystem.CapaPresentacion
             {
                 SueldoDescuento sueldoDescuento = (SueldoDescuento)dgvDescuentos.CurrentRow.DataBoundItem;
                 listaSueldoDescuento.Remove(sueldoDescuento);
+                CalcularTotales();
                 return;
             };
 
@@ -272,8 +273,10 @@ namespace BugTrackingSystem.CapaPresentacion
             {
                 SueldoAsignacion sueldoAsignacion = (SueldoAsignacion)dgvAsignaciones.CurrentRow.DataBoundItem;
                 listaSueldoAsignacion.Remove(sueldoAsignacion);
+                CalcularTotales();
                 return;
             };
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
