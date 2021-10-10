@@ -49,6 +49,7 @@ namespace BugTrackingSystem.Forms
                             tsiArchivo.Enabled = true;
                             tsiGestion.Enabled = true;
                             tsiTransaccion.Enabled = true;
+                            tsiUsuarios.Enabled = true;
                             break;
                         }
                     case "Tester":
@@ -164,14 +165,23 @@ namespace BugTrackingSystem.Forms
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tsiReportes.Enabled = false;
-            tsiArchivo.Enabled = false;
-            tsiGestion.Enabled = false;
-            tsiTransaccion.Enabled = false;
-            LblNombre.Visible = false;
-            login = new FrmLogin();
-            login.FormClosing += Login_FormClosing;
-            MostrarVentana(login, "Bug Tracking System");
+            DialogResult rta;
+            rta = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rta == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                tsiReportes.Enabled = false;
+                tsiArchivo.Enabled = false;
+                tsiGestion.Enabled = false;
+                tsiTransaccion.Enabled = false;
+                LblNombre.Visible = false;
+                login = new FrmLogin();
+                login.FormClosing += Login_FormClosing;
+                MostrarVentana(login, "Bug Tracking System");
+            }
         }
 
         // Código para poder mover la ventana desde el menu strip
