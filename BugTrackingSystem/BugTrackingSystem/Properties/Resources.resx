@@ -118,43 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Knob Snapback" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnDeshacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoUsuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="editaar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BtnEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Knob Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnInformacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Knob Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BtnVolver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVolver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="recuperar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnRecuperar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnGuardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnGuardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Knob Remove Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Knob Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnConsultar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Knob Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnAgregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Knob Snapforward" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnRehacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Knob Valid Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BtnAceptar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnAceptar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="layered_peaks_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BtnDeshacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnDeshacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnGuardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnInformacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnInformacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnRecuperar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnRecuperar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnConsultar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnConsultar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoUsuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnAgregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnAgregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnRehacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnRehacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnLimpiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnLimpiar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -245,7 +245,7 @@ namespace BugTrackingSystem.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
-            this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.layered_peaks_bg;
+            this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1443, 644);
             this.Controls.Add(this.LblNombre);

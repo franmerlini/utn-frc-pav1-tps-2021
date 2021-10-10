@@ -69,7 +69,7 @@ namespace BugTrackingSystem
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::BugTrackingSystem.Properties.Resources.user_logo;
+            this.pictureBox2.Image = global::BugTrackingSystem.Properties.Resources.LogoUsuario;
             this.pictureBox2.Location = new System.Drawing.Point(117, 85);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";

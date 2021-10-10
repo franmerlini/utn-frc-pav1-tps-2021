@@ -63,9 +63,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap editaar {
+        internal static System.Drawing.Bitmap Background {
             get {
-                object obj = ResourceManager.GetObject("editaar", resourceCulture);
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap guardar {
+        internal static System.Drawing.Bitmap BtnAceptar {
             get {
-                object obj = ResourceManager.GetObject("guardar", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnAceptar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Add {
+        internal static System.Drawing.Bitmap BtnAgregar {
             get {
-                object obj = ResourceManager.GetObject("Knob Add", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnAgregar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Info {
+        internal static System.Drawing.Bitmap BtnConsultar {
             get {
-                object obj = ResourceManager.GetObject("Knob Info", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnConsultar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Left {
+        internal static System.Drawing.Bitmap BtnDeshacer {
             get {
-                object obj = ResourceManager.GetObject("Knob Left", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnDeshacer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Remove_Red {
+        internal static System.Drawing.Bitmap BtnEditar {
             get {
-                object obj = ResourceManager.GetObject("Knob Remove Red", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnEditar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Search {
+        internal static System.Drawing.Bitmap BtnEliminar {
             get {
-                object obj = ResourceManager.GetObject("Knob Search", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnEliminar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Snapback {
+        internal static System.Drawing.Bitmap BtnGuardar {
             get {
-                object obj = ResourceManager.GetObject("Knob Snapback", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnGuardar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Snapforward {
+        internal static System.Drawing.Bitmap BtnInformacion {
             get {
-                object obj = ResourceManager.GetObject("Knob Snapforward", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnInformacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Knob_Valid_Green {
+        internal static System.Drawing.Bitmap BtnLimpiar {
             get {
-                object obj = ResourceManager.GetObject("Knob Valid Green", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnLimpiar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap layered_peaks_bg {
+        internal static System.Drawing.Bitmap BtnRecuperar {
             get {
-                object obj = ResourceManager.GetObject("layered_peaks_bg", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnRecuperar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap recuperar {
+        internal static System.Drawing.Bitmap BtnRehacer {
             get {
-                object obj = ResourceManager.GetObject("recuperar", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnRehacer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,19 @@ namespace BugTrackingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_logo {
+        internal static System.Drawing.Bitmap BtnVolver {
             get {
-                object obj = ResourceManager.GetObject("user_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("BtnVolver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoUsuario {
+            get {
+                object obj = ResourceManager.GetObject("LogoUsuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

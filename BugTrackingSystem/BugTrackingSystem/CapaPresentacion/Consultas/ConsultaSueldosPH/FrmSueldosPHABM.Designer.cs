@@ -51,7 +51,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVolver.BackColor = System.Drawing.Color.Tan;
-            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Left;
             this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -69,7 +68,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAceptar.BackColor = System.Drawing.Color.Tan;
-            this.btnAceptar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Valid_Green;
             this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

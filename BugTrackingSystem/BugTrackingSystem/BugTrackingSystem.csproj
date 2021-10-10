@@ -129,10 +129,10 @@
     <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.Designer.cs">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.cs">
+    <Compile Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.Designer.cs">
+    <Compile Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.Designer.cs">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Asignacion.cs" />
@@ -189,7 +189,7 @@
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.resx">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\FrmGeneracionMensualSueldo.resx">
+    <EmbeddedResource Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.resx">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Login\FrmLogin.resx">
@@ -200,18 +200,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -261,11 +261,12 @@
     <None Include="Resources\BtnGuardar.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BtnLimpiar.png" />
+    <None Include="Resources\BtnLimpiar1.png" />
     <Content Include="Resources\Diagrama.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CapaPresentacion\Reportes\" />
-    <Folder Include="CapaPresentacion\Transacciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

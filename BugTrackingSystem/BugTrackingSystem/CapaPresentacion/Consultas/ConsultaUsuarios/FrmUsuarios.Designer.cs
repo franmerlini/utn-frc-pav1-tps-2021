@@ -130,7 +130,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnNuevo.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Add;
+            this.btnNuevo.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnAgregar;
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
@@ -148,7 +148,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEditar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.editaar;
+            this.btnEditar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnEditar;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
@@ -166,7 +166,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEliminar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Remove_Red;
+            this.btnEliminar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnEliminar;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
@@ -296,7 +296,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnConsultar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Knob_Search;
+            this.btnConsultar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnConsultar;
             this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
