@@ -141,6 +141,12 @@
     <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosABM.designer.cs">
       <DependentUpon>FrmSueldosABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.Designer.cs">
+      <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Asignacion.cs" />
     <Compile Include="Entidades\AsistenciaUsuario.cs" />
     <Compile Include="Entidades\Descuento.cs" />
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.resx">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FrmGeneracionMensualSueldo.resx">
+      <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

@@ -63,20 +63,24 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.AllowUserToOrderColumns = true;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 142);
+            this.dgvUsuarios.Location = new System.Drawing.Point(16, 175);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(971, 296);
+            this.dgvUsuarios.RowHeadersWidth = 51;
+            this.dgvUsuarios.Size = new System.Drawing.Size(1295, 364);
             this.dgvUsuarios.TabIndex = 3;
             // 
             // grpInformacion
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(723, 12);
+            this.grpInformacion.Location = new System.Drawing.Point(964, 15);
+            this.grpInformacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(260, 124);
+            this.grpInformacion.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpInformacion.Size = new System.Drawing.Size(347, 153);
             this.grpInformacion.TabIndex = 6;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -84,9 +88,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 22);
+            this.lblTotal.Location = new System.Drawing.Point(8, 27);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(116, 13);
+            this.lblTotal.Size = new System.Drawing.Size(155, 17);
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Registros encontrados:";
             // 
@@ -94,9 +99,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             this.grpAcciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
-            this.grpAcciones.Location = new System.Drawing.Point(497, 12);
+            this.grpAcciones.Location = new System.Drawing.Point(663, 15);
+            this.grpAcciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(220, 124);
+            this.grpAcciones.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAcciones.Size = new System.Drawing.Size(293, 153);
             this.grpAcciones.TabIndex = 5;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
@@ -105,18 +112,19 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEditar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 40);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(45, 49);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(151, 52);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(201, 64);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // btnNuevo
@@ -128,9 +136,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.Location = new System.Drawing.Point(3, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(4, 4);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(44, 44);
+            this.btnNuevo.Size = new System.Drawing.Size(59, 54);
             this.btnNuevo.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnNuevo, "Añadir registro");
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -145,9 +154,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnEditar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEditar.Location = new System.Drawing.Point(103, 3);
+            this.btnEditar.Location = new System.Drawing.Point(138, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(44, 44);
+            this.btnEditar.Size = new System.Drawing.Size(59, 54);
             this.btnEditar.TabIndex = 11;
             this.toolTip1.SetToolTip(this.btnEditar, "Editar registro seleccionado");
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -162,9 +172,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnEliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.Location = new System.Drawing.Point(53, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(71, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(44, 44);
+            this.btnEliminar.Size = new System.Drawing.Size(59, 54);
             this.btnEliminar.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar registro seleccionado");
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -183,54 +194,61 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.grpFiltros.Controls.Add(this.cboUsuario);
             this.grpFiltros.Controls.Add(this.label3);
             this.grpFiltros.Controls.Add(this.btnConsultar);
-            this.grpFiltros.Location = new System.Drawing.Point(12, 12);
+            this.grpFiltros.Location = new System.Drawing.Point(16, 15);
+            this.grpFiltros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpFiltros.Name = "grpFiltros";
-            this.grpFiltros.Size = new System.Drawing.Size(479, 124);
+            this.grpFiltros.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpFiltros.Size = new System.Drawing.Size(639, 153);
             this.grpFiltros.TabIndex = 4;
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros";
             // 
             // TxtEstado
             // 
-            this.TxtEstado.Location = new System.Drawing.Point(300, 53);
+            this.TxtEstado.Location = new System.Drawing.Point(400, 65);
+            this.TxtEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtEstado.MaxLength = 1;
             this.TxtEstado.Name = "TxtEstado";
-            this.TxtEstado.Size = new System.Drawing.Size(163, 20);
+            this.TxtEstado.Size = new System.Drawing.Size(216, 22);
             this.TxtEstado.TabIndex = 14;
             // 
             // cboEmail
             // 
             this.cboEmail.FormattingEnabled = true;
-            this.cboEmail.Location = new System.Drawing.Point(76, 53);
+            this.cboEmail.Location = new System.Drawing.Point(101, 65);
+            this.cboEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboEmail.MaxLength = 50;
             this.cboEmail.Name = "cboEmail";
-            this.cboEmail.Size = new System.Drawing.Size(141, 21);
+            this.cboEmail.Size = new System.Drawing.Size(187, 24);
             this.cboEmail.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 56);
+            this.label2.Location = new System.Drawing.Point(47, 69);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 12;
             this.label2.Text = "Email:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(251, 56);
+            this.label1.Location = new System.Drawing.Point(335, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "Estado:";
             // 
             // ChkBaja
             // 
             this.ChkBaja.AutoSize = true;
-            this.ChkBaja.Location = new System.Drawing.Point(264, 98);
+            this.ChkBaja.Location = new System.Drawing.Point(352, 121);
+            this.ChkBaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ChkBaja.Name = "ChkBaja";
-            this.ChkBaja.Size = new System.Drawing.Size(124, 17);
+            this.ChkBaja.Size = new System.Drawing.Size(161, 21);
             this.ChkBaja.TabIndex = 9;
             this.ChkBaja.Text = "Incluir dados de baja";
             this.ChkBaja.UseVisualStyleBackColor = true;
@@ -239,35 +257,39 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             this.cboPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPerfil.FormattingEnabled = true;
-            this.cboPerfil.Location = new System.Drawing.Point(300, 19);
+            this.cboPerfil.Location = new System.Drawing.Point(400, 23);
+            this.cboPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboPerfil.Name = "cboPerfil";
-            this.cboPerfil.Size = new System.Drawing.Size(163, 21);
+            this.cboPerfil.Size = new System.Drawing.Size(216, 24);
             this.cboPerfil.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(261, 22);
+            this.label4.Location = new System.Drawing.Point(348, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Perfil:";
             // 
             // cboUsuario
             // 
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(76, 19);
+            this.cboUsuario.Location = new System.Drawing.Point(101, 23);
+            this.cboUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboUsuario.MaxLength = 50;
             this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(141, 21);
+            this.cboUsuario.Size = new System.Drawing.Size(187, 24);
             this.cboUsuario.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 22);
+            this.label3.Location = new System.Drawing.Point(32, 27);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Usuario:";
             // 
@@ -280,9 +302,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConsultar.Location = new System.Drawing.Point(429, 80);
+            this.btnConsultar.Location = new System.Drawing.Point(572, 98);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(44, 44);
+            this.btnConsultar.Size = new System.Drawing.Size(59, 54);
             this.btnConsultar.TabIndex = 5;
             this.toolTip1.SetToolTip(this.btnConsultar, "Realizar consulta");
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -290,16 +313,17 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             // FrmUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(995, 450);
+            this.ClientSize = new System.Drawing.Size(1327, 554);
             this.Controls.Add(this.grpInformacion);
             this.Controls.Add(this.grpAcciones);
             this.Controls.Add(this.grpFiltros);
             this.Controls.Add(this.dgvUsuarios);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUsuarios";

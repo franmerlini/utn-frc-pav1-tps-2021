@@ -162,6 +162,12 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Consulta de Sueldos Perfil Histórico");
         }
 
+        private void generacionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGeneracionMensualSueldo ventana = new FrmGeneracionMensualSueldo();
+            MostrarVentana(ventana, "Generación mensual de sueldos");
+        }
+
         // Código para poder mover la ventana desde el menu strip
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
