@@ -48,6 +48,39 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return listadoDescuentos;
         }
 
+        internal bool CrearDescuento(Descuento descuento)
+        {
+            string consultaSQL = " INSERT INTO Descuentos (n_descuento, monto, borrado)" +
+                                 " Values (@nombre, @monto, 0)";
+
+            var parametros = new Dictionary<string, object>
+            {
+                {"nombre", descuento.Nombre },
+                {"monto", descuento.Monto }
+            };
+
+            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
+        }
+
+        internal bool ActualizarDescuento(Descuento descuento)
+        {
+            string consultaSQL = " UPDATE Descuentos " +
+                                " SET n_descuento = @nombre, " +
+                                "     monto = @monto, " +
+                                "     borrado = @borrado " +
+                                " WHERE id_descuento = @idDescuento ";
+
+            var parametros = new Dictionary<string, object>
+            {
+                {"idDescuento", descuento.IdDescuento },
+                {"nombre", descuento.Nombre },
+                {"monto", descuento.Monto },
+                {"borrado", descuento.Borrado }
+            };
+
+            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
+        }
+
         private Descuento MapeoObjeto(DataRow row)
         {
             Descuento Descuento = new Descuento

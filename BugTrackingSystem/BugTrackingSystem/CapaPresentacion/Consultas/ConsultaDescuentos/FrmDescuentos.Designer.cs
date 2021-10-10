@@ -38,30 +38,20 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.BtnNuevo = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.ChkBaja = new System.Windows.Forms.CheckBox();
-            this.CboDescuento = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.CboUsuario = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.BtnConsultar = new System.Windows.Forms.Button();
-            this.DateFechaHasta = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DateFechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grpInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDescuentos)).BeginInit();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.grpFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInformacion
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.SkyBlue;
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(723, 12);
+            this.grpInformacion.Location = new System.Drawing.Point(239, 12);
             this.grpInformacion.Name = "grpInformacion";
             this.grpInformacion.Size = new System.Drawing.Size(260, 124);
             this.grpInformacion.TabIndex = 9;
@@ -88,14 +78,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.DgvDescuentos.Name = "DgvDescuentos";
             this.DgvDescuentos.ReadOnly = true;
             this.DgvDescuentos.RowHeadersWidth = 51;
-            this.DgvDescuentos.Size = new System.Drawing.Size(971, 296);
+            this.DgvDescuentos.Size = new System.Drawing.Size(487, 296);
             this.DgvDescuentos.TabIndex = 10;
             // 
             // grpAcciones
             // 
             this.grpAcciones.BackColor = System.Drawing.Color.SkyBlue;
+            this.grpAcciones.Controls.Add(this.ChkBaja);
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
-            this.grpAcciones.Location = new System.Drawing.Point(497, 12);
+            this.grpAcciones.Location = new System.Drawing.Point(13, 12);
             this.grpAcciones.Name = "grpAcciones";
             this.grpAcciones.Size = new System.Drawing.Size(220, 124);
             this.grpAcciones.TabIndex = 8;
@@ -113,11 +104,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tableLayoutPanel1.Controls.Add(this.BtnNuevo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnEditar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnEliminar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 38);
+            this.tableLayoutPanel1.Controls.Add(this.BtnConsultar, 3, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 33);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(150, 52);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(199, 52);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // BtnNuevo
@@ -171,71 +163,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // grpFiltros
-            // 
-            this.grpFiltros.BackColor = System.Drawing.Color.SkyBlue;
-            this.grpFiltros.Controls.Add(this.ChkBaja);
-            this.grpFiltros.Controls.Add(this.CboDescuento);
-            this.grpFiltros.Controls.Add(this.label4);
-            this.grpFiltros.Controls.Add(this.CboUsuario);
-            this.grpFiltros.Controls.Add(this.label3);
-            this.grpFiltros.Controls.Add(this.BtnConsultar);
-            this.grpFiltros.Controls.Add(this.DateFechaHasta);
-            this.grpFiltros.Controls.Add(this.label2);
-            this.grpFiltros.Controls.Add(this.DateFechaDesde);
-            this.grpFiltros.Controls.Add(this.label1);
-            this.grpFiltros.Location = new System.Drawing.Point(12, 12);
-            this.grpFiltros.Name = "grpFiltros";
-            this.grpFiltros.Size = new System.Drawing.Size(479, 124);
-            this.grpFiltros.TabIndex = 7;
-            this.grpFiltros.TabStop = false;
-            this.grpFiltros.Text = "Filtros";
-            // 
             // ChkBaja
             // 
             this.ChkBaja.AutoSize = true;
-            this.ChkBaja.Location = new System.Drawing.Point(264, 98);
+            this.ChkBaja.Location = new System.Drawing.Point(6, 101);
             this.ChkBaja.Name = "ChkBaja";
             this.ChkBaja.Size = new System.Drawing.Size(124, 17);
             this.ChkBaja.TabIndex = 9;
             this.ChkBaja.Text = "Incluir dados de baja";
             this.ChkBaja.UseVisualStyleBackColor = true;
-            // 
-            // CboDescuento
-            // 
-            this.CboDescuento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboDescuento.FormattingEnabled = true;
-            this.CboDescuento.Location = new System.Drawing.Point(310, 54);
-            this.CboDescuento.Name = "CboDescuento";
-            this.CboDescuento.Size = new System.Drawing.Size(163, 21);
-            this.CboDescuento.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(242, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Descuento:";
-            // 
-            // CboUsuario
-            // 
-            this.CboUsuario.FormattingEnabled = true;
-            this.CboUsuario.Location = new System.Drawing.Point(86, 54);
-            this.CboUsuario.MaxLength = 50;
-            this.CboUsuario.Name = "CboUsuario";
-            this.CboUsuario.Size = new System.Drawing.Size(141, 21);
-            this.CboUsuario.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Usuario:";
             // 
             // BtnConsultar
             // 
@@ -246,7 +182,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.BtnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.BtnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConsultar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnConsultar.Location = new System.Drawing.Point(429, 77);
+            this.BtnConsultar.Location = new System.Drawing.Point(153, 3);
             this.BtnConsultar.Name = "BtnConsultar";
             this.BtnConsultar.Size = new System.Drawing.Size(44, 44);
             this.BtnConsultar.TabIndex = 5;
@@ -254,58 +190,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.BtnConsultar.UseVisualStyleBackColor = false;
             this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
-            // DateFechaHasta
-            // 
-            this.DateFechaHasta.Checked = false;
-            this.DateFechaHasta.CustomFormat = "";
-            this.DateFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFechaHasta.Location = new System.Drawing.Point(310, 25);
-            this.DateFechaHasta.Name = "DateFechaHasta";
-            this.DateFechaHasta.ShowCheckBox = true;
-            this.DateFechaHasta.Size = new System.Drawing.Size(163, 20);
-            this.DateFechaHasta.TabIndex = 3;
-            this.DateFechaHasta.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(233, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fecha Hasta:";
-            // 
-            // DateFechaDesde
-            // 
-            this.DateFechaDesde.Checked = false;
-            this.DateFechaDesde.CustomFormat = "";
-            this.DateFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateFechaDesde.Location = new System.Drawing.Point(86, 25);
-            this.DateFechaDesde.Name = "DateFechaDesde";
-            this.DateFechaDesde.ShowCheckBox = true;
-            this.DateFechaDesde.Size = new System.Drawing.Size(141, 20);
-            this.DateFechaDesde.TabIndex = 1;
-            this.DateFechaDesde.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fecha Desde:";
-            // 
             // FrmDescuentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(995, 450);
+            this.ClientSize = new System.Drawing.Size(511, 450);
             this.Controls.Add(this.grpInformacion);
             this.Controls.Add(this.DgvDescuentos);
             this.Controls.Add(this.grpAcciones);
-            this.Controls.Add(this.grpFiltros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDescuentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -315,9 +208,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.grpInformacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDescuentos)).EndInit();
             this.grpAcciones.ResumeLayout(false);
+            this.grpAcciones.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.grpFiltros.ResumeLayout(false);
-            this.grpFiltros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,17 +224,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
         private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.GroupBox grpFiltros;
         private System.Windows.Forms.CheckBox ChkBaja;
-        private System.Windows.Forms.ComboBox CboDescuento;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox CboUsuario;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnConsultar;
-        private System.Windows.Forms.DateTimePicker DateFechaHasta;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker DateFechaDesde;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

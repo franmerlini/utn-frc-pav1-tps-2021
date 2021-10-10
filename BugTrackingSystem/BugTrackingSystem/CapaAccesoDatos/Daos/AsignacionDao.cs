@@ -48,6 +48,39 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return listadoAsignaciones;
         }
 
+        internal bool CrearAsignacion(Asignacion asignacion)
+        {
+            string consultaSQL = " INSERT INTO Asignaciones (n_asignacion, monto, borrado)" +
+                                 " Values (@nombre, @monto, 0)";
+
+            var parametros = new Dictionary<string, object>
+            {
+                {"nombre", asignacion.Nombre },
+                {"monto", asignacion.Monto }
+            };
+
+            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
+        }
+
+        internal bool ActualizarAsignacion(Asignacion asignacion)
+        {
+            string consultaSQL = " UPDATE Asignaciones " +
+                                " SET n_asignacion = @nombre, " +
+                                "     monto = @monto, " +
+                                "     borrado = @borrado " +
+                                " WHERE id_asignacion = @idAsignacion ";
+
+            var parametros = new Dictionary<string, object>
+            {
+                {"idAsignacion", asignacion.IdAsignacion },
+                {"nombre", asignacion.Nombre },
+                {"monto", asignacion.Monto },
+                {"borrado", asignacion.Borrado }
+            };
+
+            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
+        }
+
         private Asignacion MapeoObjeto(DataRow row)
         {
             Asignacion Asignacion = new Asignacion

@@ -15,61 +15,36 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 {
     public partial class FrmDescuentosABM : Form
     {
-        private readonly UsuarioService usuarioService;
-        private readonly SueldoDescuentoService sueldoDescuentoService;
         private readonly DescuentoService descuentoService;
-        private readonly SueldoService sueldoService;
-        private readonly SueldoDescuento sueldoDescuentoSeleccionado;
+        private readonly Descuento descuentoSeleccionado;
         public enum FormMode { nuevo, actualizar };
         private readonly FormMode formMode;
 
-        public FrmDescuentosABM(FormMode formMode, SueldoDescuento sueldoDescuento = null)
+        public FrmDescuentosABM(FormMode formMode, Descuento descuento = null)
         {
             InitializeComponent();
-            usuarioService = new UsuarioService();
-            sueldoDescuentoService = new SueldoDescuentoService();
             descuentoService = new DescuentoService();
-            sueldoService = new SueldoService();
             this.formMode = formMode;
-            sueldoDescuentoSeleccionado = sueldoDescuento;
-        }
-
-        private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
-        {
-            // Datasource: establece el origen de datos de este objeto.
-            cbx.DataSource = source;
-            // DisplayMember: establece la propiedad que se va a mostrar para este ListControl.
-            cbx.DisplayMember = display;
-            // ValueMember: establece la ruta de acceso de la propiedad que se utilizará como valor real para los elementos de ListControl.
-            cbx.ValueMember = value;
-            // SelectedIndex: establece el índice que especifica el elemento seleccionado actualmente.
-            cbx.SelectedIndex = -1;
+            descuentoSeleccionado = descuento;
         }
 
         private void FrmDescuentosABM_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "IdUsuario");
-            LlenarCombo(cboDescuento, descuentoService.ObtenerDescuentos(), "Nombre", "IdDescuento");
-
             switch (formMode)
             {
                 case FormMode.nuevo:
                     {
                         this.Text = "Agregar un registro nuevo";
                         chkBorrado.Visible = false;
-                        dateFecha.Value = DateTime.Today;
                         break;
                     }
                 case FormMode.actualizar:
                     {
                         this.Text = "Actualizar un registro";
                         lblTitulo.Text = "Actualizar un registro";
-                        cboUsuario.SelectedValue = sueldoDescuentoSeleccionado.Usuario.IdUsuario;
-                        cboDescuento.SelectedValue = sueldoDescuentoSeleccionado.Descuento.IdDescuento;
-                        dateFecha.Value = sueldoDescuentoSeleccionado.Fecha;
-                        nudCantidad.Value = sueldoDescuentoSeleccionado.Cantidad;
-                        nudMonto.Value = sueldoDescuentoSeleccionado.Monto;
-                        chkBorrado.Checked = sueldoDescuentoSeleccionado.Borrado;
+                        TxtNombre.Text = descuentoSeleccionado.Nombre;
+                        nudMonto.Value = descuentoSeleccionado.Monto;
+                        chkBorrado.Checked = descuentoSeleccionado.Borrado;
                         break;
                     }
             }
@@ -77,71 +52,28 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            SueldoDescuento sueldoDescuento = new SueldoDescuento
-            {
-                Usuario = new Usuario(),
-                Descuento = new Descuento()
-            };
+            Descuento descuento = new Descuento();
 
-            if (cboUsuario.SelectedValue == null)
+            if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                MessageBox.Show("Debe seleccionar un usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe ingresar un nombre para el descuento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
-            {
-                sueldoDescuento.Usuario.IdUsuario = Convert.ToInt32(cboUsuario.SelectedValue);
-            }
+                descuento.Nombre = TxtNombre.Text;
 
-            sueldoDescuento.Fecha = Convert.ToDateTime(dateFecha.Value);
-            var parametroSueldo = new Dictionary<string, object>
-            {
-                { "fechaExacta", sueldoDescuento.Fecha },
-                { "idUsuario", sueldoDescuento.Usuario.IdUsuario }
-            };
-            if (sueldoService.ObtenerSueldos(parametroSueldo).Count == 0)
-            {
-                MessageBox.Show("No existe ningún sueldo bruto registrado con tal usuario y fecha.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (cboDescuento.SelectedValue != null)
-                sueldoDescuento.Descuento.IdDescuento = Convert.ToInt32(cboDescuento.SelectedValue);
-            else
-            {
-                MessageBox.Show("Debe seleccionar un descuento.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            sueldoDescuento.Monto = nudMonto.Value;
-            sueldoDescuento.Cantidad = Convert.ToInt32(nudCantidad.Value);
-
-            var parametrosRepeticion = new Dictionary<string, object>()
-            {
-                {"idUsuario", Convert.ToInt32(sueldoDescuento.Usuario.IdUsuario) },
-                {"fechaExacta", Convert.ToDateTime(sueldoDescuento.Fecha) },
-                {"idDescuento", Convert.ToInt32(sueldoDescuento.Descuento.IdDescuento) },
-                {"borrado" , true}
-            };
+            descuento.Monto = nudMonto.Value;
 
             switch (formMode)
             {
                 case FormMode.nuevo:
                     {
-                        if (sueldoDescuentoService.ObtenerSueldoDescuentos(parametrosRepeticion).Count > 0)
-                        {
-                            MessageBox.Show("¡Ya existe un registro con tal usuario, fecha y descuento! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
 
-                        if (sueldoDescuentoService.CrearSueldoDescuento(sueldoDescuento))
+                        if (descuentoService.CrearDescuento(descuento))
                         {
                             MessageBox.Show("¡Registro creado con éxito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            cboDescuento.SelectedIndex = -1;
-                            cboUsuario.SelectedIndex = -1;
-                            dateFecha.Value = DateTime.Today;
-                            nudCantidad.Value = 0;
                             nudMonto.Value = 0;
+                            TxtNombre.Text = "";
                         }
                         else
                             MessageBox.Show("El registro no se ha podido crear", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -150,22 +82,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 
                 case FormMode.actualizar:
                     {
-                        if ((sueldoDescuentoService.ObtenerSueldoDescuentos(parametrosRepeticion).Count > 0) && (sueldoDescuentoSeleccionado.Fecha != sueldoDescuento.Fecha || sueldoDescuentoSeleccionado.Usuario.IdUsuario != sueldoDescuento.Usuario.IdUsuario || sueldoDescuentoSeleccionado.Descuento.IdDescuento != sueldoDescuento.Descuento.IdDescuento))
-                        {
-                            MessageBox.Show("¡Ya existe un registro con tal usuario, fecha y descuento! En caso de no encontrarlo, revise entre los registros borrados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
 
-                        sueldoDescuento.Borrado = chkBorrado.Checked;
+                        descuento.Borrado = chkBorrado.Checked;
+                        descuento.IdDescuento = descuentoSeleccionado.IdDescuento;
 
-                        var parametros = new Dictionary<string, object>
-                        {
-                            {"idUsuarioBase", Convert.ToInt32(sueldoDescuentoSeleccionado.Usuario.IdUsuario) },
-                            {"fechaBase", Convert.ToDateTime(sueldoDescuentoSeleccionado.Fecha) },
-                            {"idDescuentoBase", Convert.ToInt32(sueldoDescuentoSeleccionado.Descuento.IdDescuento) }
-                        };
-
-                        if (sueldoDescuentoService.ActualizarSueldoDescuento(sueldoDescuento, parametros))
+                        if (descuentoService.ActualizarDescuento(descuento))
                         {
                             MessageBox.Show("Descuento actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Dispose();

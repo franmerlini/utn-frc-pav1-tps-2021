@@ -35,9 +35,8 @@ namespace BugTrackingSystem.Forms
             this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiGestion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiAsistencias = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiSueldos = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiSueldosAsignaciones = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiSueldosDescuentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiAsignaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiDescuentos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSueldosPorPefil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiTransaccion = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,9 +90,8 @@ namespace BugTrackingSystem.Forms
             // 
             this.tsiGestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiAsistencias,
-            this.tsiSueldos,
-            this.tsiSueldosAsignaciones,
-            this.tsiSueldosDescuentos,
+            this.tsiAsignaciones,
+            this.tsiDescuentos,
             this.tsiSueldosPorPefil,
             this.tsiUsuarios});
             this.tsiGestion.Enabled = false;
@@ -108,15 +106,23 @@ namespace BugTrackingSystem.Forms
             this.tsiAsistencias.Text = "Asistencias";
             this.tsiAsistencias.Click += new System.EventHandler(this.TsiAsignaciones_Click);
             // 
-            // tsiSueldos
+            // tsiAsignaciones
             // 
+<<<<<<< Updated upstream
             this.tsiSueldos.Name = "tsiSueldos";
             this.tsiSueldos.Size = new System.Drawing.Size(245, 26);
             this.tsiSueldos.Text = "Sueldos";
             this.tsiSueldos.Click += new System.EventHandler(this.TsiSueldos_Click);
+=======
+            this.tsiAsignaciones.Name = "tsiAsignaciones";
+            this.tsiAsignaciones.Size = new System.Drawing.Size(196, 22);
+            this.tsiAsignaciones.Text = "Asignaciones";
+            this.tsiAsignaciones.Click += new System.EventHandler(this.TsiSueldosAsignaciones_Click);
+>>>>>>> Stashed changes
             // 
-            // tsiSueldosAsignaciones
+            // tsiDescuentos
             // 
+<<<<<<< Updated upstream
             this.tsiSueldosAsignaciones.Name = "tsiSueldosAsignaciones";
             this.tsiSueldosAsignaciones.Size = new System.Drawing.Size(245, 26);
             this.tsiSueldosAsignaciones.Text = "Sueldos Asignaciones";
@@ -128,6 +134,12 @@ namespace BugTrackingSystem.Forms
             this.tsiSueldosDescuentos.Size = new System.Drawing.Size(245, 26);
             this.tsiSueldosDescuentos.Text = "Sueldos Descuentos";
             this.tsiSueldosDescuentos.Click += new System.EventHandler(this.TsiSueldosDescuentos_Click);
+=======
+            this.tsiDescuentos.Name = "tsiDescuentos";
+            this.tsiDescuentos.Size = new System.Drawing.Size(196, 22);
+            this.tsiDescuentos.Text = "Descuentos";
+            this.tsiDescuentos.Click += new System.EventHandler(this.TsiSueldosDescuentos_Click);
+>>>>>>> Stashed changes
             // 
             // tsiSueldosPorPefil
             // 
@@ -157,7 +169,11 @@ namespace BugTrackingSystem.Forms
             this.generacionMensualDeSueldosToolStripMenuItem.Name = "generacionMensualDeSueldosToolStripMenuItem";
             this.generacionMensualDeSueldosToolStripMenuItem.Size = new System.Drawing.Size(301, 26);
             this.generacionMensualDeSueldosToolStripMenuItem.Text = "Generacion mensual de sueldos";
+<<<<<<< Updated upstream
             this.generacionMensualDeSueldosToolStripMenuItem.Click += new System.EventHandler(this.generacionMensualDeSueldosToolStripMenuItem_Click);
+=======
+            this.generacionMensualDeSueldosToolStripMenuItem.Click += new System.EventHandler(this.GeneracionMensualDeSueldosToolStripMenuItem_Click);
+>>>>>>> Stashed changes
             // 
             // tsiReportes
             // 
@@ -287,7 +303,6 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.ToolStripMenuItem tsiSalir;
         private System.Windows.Forms.ToolStripMenuItem tsiGestion;
         private System.Windows.Forms.ToolStripMenuItem tsiAsistencias;
-        private System.Windows.Forms.ToolStripMenuItem tsiSueldos;
         private System.Windows.Forms.ToolStripMenuItem tsiTransaccion;
         private System.Windows.Forms.ToolStripMenuItem tsiAyuda;
         private System.Windows.Forms.ToolStripMenuItem mostrarAyudaToolStripMenuItem;
@@ -298,8 +313,8 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.Button btnMinimizar;
         public System.Windows.Forms.MenuStrip MnsPrincipal;
         private System.Windows.Forms.ToolStripMenuItem tsiSueldosPorPefil;
-        private System.Windows.Forms.ToolStripMenuItem tsiSueldosAsignaciones;
-        private System.Windows.Forms.ToolStripMenuItem tsiSueldosDescuentos;
+        private System.Windows.Forms.ToolStripMenuItem tsiAsignaciones;
+        private System.Windows.Forms.ToolStripMenuItem tsiDescuentos;
         private System.Windows.Forms.ToolStripMenuItem tsiReportes;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label LblNombre;

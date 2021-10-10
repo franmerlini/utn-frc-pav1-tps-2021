@@ -129,6 +129,7 @@
     <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.Designer.cs">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +148,8 @@
     <Compile Include="CapaPresentacion\FrmGeneracionMensualSueldo.Designer.cs">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> Stashed changes
     <Compile Include="Entidades\Asignacion.cs" />
     <Compile Include="Entidades\AsistenciaUsuario.cs" />
     <Compile Include="Entidades\Descuento.cs" />
@@ -210,12 +213,6 @@
     <EmbeddedResource Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.resx">
-      <DependentUpon>FrmSueldos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosABM.resx">
-      <DependentUpon>FrmSueldosABM.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -240,43 +237,43 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\editaar.png" />
+    <None Include="Resources\BtnEditar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Add.png" />
+    <None Include="Resources\BtnAgregar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Info.png" />
+    <None Include="Resources\BtnInformacion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Left.png" />
+    <None Include="Resources\BtnVolver.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Remove Red.png" />
+    <None Include="Resources\BtnEliminar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Search.png" />
+    <None Include="Resources\BtnConsultar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Snapback.png" />
+    <None Include="Resources\BtnDeshacer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Snapforward.png" />
+    <None Include="Resources\BtnRehacer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Knob Valid Green.png" />
+    <None Include="Resources\BtnAceptar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\layered_peaks_bg.png" />
+    <None Include="Resources\Background.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user_logo.png" />
+    <None Include="Resources\LogoUsuario.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\recuperar.png" />
+    <None Include="Resources\BtnRecuperar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\guardar.png" />
+    <None Include="Resources\BtnGuardar.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Diagrama.png" />

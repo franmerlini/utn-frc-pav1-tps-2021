@@ -2,7 +2,6 @@
 using BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones;
 using BugTrackingSystem.CapaPresentacion.ConsultaDescuentos;
 using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH;
-using BugTrackingSystem.CapaPresentacion.ConsultaSueldos;
 using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
 using BugTrackingSystem.Entidades;
 using System;
@@ -21,7 +20,7 @@ namespace BugTrackingSystem.Forms
     public partial class FrmMenuPrincipal : Form
     {
         private Usuario usuario;
-        private readonly FrmLogin login = new FrmLogin();
+        private FrmLogin login;
 
         public FrmMenuPrincipal()
         {
@@ -31,6 +30,7 @@ namespace BugTrackingSystem.Forms
         // Se inicia la ventana de login apenas se muestra el menú principal
         private void FrmMenuPrincipal_Shown(object sender, EventArgs e)
         {
+            login = new FrmLogin();
             login.FormClosing += Login_FormClosing;
             MostrarVentana(login, "Bug Tracking System");
         }
@@ -141,19 +141,13 @@ namespace BugTrackingSystem.Forms
         private void TsiSueldosAsignaciones_Click(object sender, EventArgs e)
         {
             FrmAsignaciones ventana = new FrmAsignaciones();
-            MostrarVentana(ventana, "Consulta de Sueldos Asignaciones");
+            MostrarVentana(ventana, "Consulta de Asignaciones");
         }
 
         private void TsiSueldosDescuentos_Click(object sender, EventArgs e)
         {
             FrmDescuentos ventana = new FrmDescuentos();
-            MostrarVentana(ventana, "Consulta de Sueldos Descuentos");
-        }
-
-        private void TsiSueldos_Click(object sender, EventArgs e)
-        {
-            FrmSueldos ventana = new FrmSueldos();
-            MostrarVentana(ventana, "Consulta de Sueldos");
+            MostrarVentana(ventana, "Consulta de Descuentos");
         }
 
         private void TsiSueldosPorPefil_Click(object sender, EventArgs e)
@@ -162,10 +156,16 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Consulta de Sueldos Perfil Histórico");
         }
 
+<<<<<<< Updated upstream
         private void generacionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGeneracionMensualSueldo ventana = new FrmGeneracionMensualSueldo();
             MostrarVentana(ventana, "Generación mensual de sueldos");
+=======
+        private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> Stashed changes
         }
 
         // Código para poder mover la ventana desde el menu strip
@@ -180,5 +180,6 @@ namespace BugTrackingSystem.Forms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
     }
 }

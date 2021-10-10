@@ -21,5 +21,15 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         {
             return descuentoDao.ObtenerDescuentos(parametros);
         }
+
+        internal bool CrearDescuento(Descuento descuento)
+        {
+            return descuentoDao.CrearDescuento(descuento);
+        }
+
+        internal bool ActualizarDescuento(Descuento descuento)
+        {
+            return descuentoDao.ActualizarDescuento(descuento);
+        }
     }
 }

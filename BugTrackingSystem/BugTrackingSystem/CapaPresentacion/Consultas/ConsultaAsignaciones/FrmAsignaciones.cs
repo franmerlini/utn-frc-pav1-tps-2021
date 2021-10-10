@@ -9,8 +9,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
 {
     public partial class FrmAsignaciones : Form
     {
-        private readonly SueldoAsignacionService sueldoAsignacionService;
-        private readonly UsuarioService usuarioService;
         private readonly AsignacionService asignacionService;
         private readonly Dictionary<string, object> parametros;
 
@@ -18,8 +16,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
         {
             InitializeComponent();
             InitializeDataGridView();
-            sueldoAsignacionService = new SueldoAsignacionService();
-            usuarioService = new UsuarioService();
             asignacionService = new AsignacionService();
             parametros = new Dictionary<string, object>();
         }
@@ -27,7 +23,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
         private void InitializeDataGridView()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            DgvAsignaciones.ColumnCount = 6;
+            DgvAsignaciones.ColumnCount = 3;
             DgvAsignaciones.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -43,13 +39,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(DgvAsignaciones, 0, "Nombre", "Usuario", 170);
-            CrearColumnas(DgvAsignaciones, 1, "Fecha", "Fecha", 120);
-            CrearColumnas(DgvAsignaciones, 2, "Asignación", "Asignacion", 260);
-            CrearColumnas(DgvAsignaciones, 3, "Monto", "Monto", 150);
-            CrearColumnas(DgvAsignaciones, 4, "Cantidad", "Cantidad", 120);
-            CrearColumnas(DgvAsignaciones, 5, "Borrado", "Borrado", 110);
-
+            CrearColumnas(DgvAsignaciones, 0, "Nombre", "Nombre", 210);
+            CrearColumnas(DgvAsignaciones, 1, "Monto", "Monto", 120);
+            CrearColumnas(DgvAsignaciones, 2, "Borrado", "Borrado", 120);
         }
 
         private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
@@ -60,24 +52,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             tabla.Columns[columna].Width = tamaño;
         }
 
-        private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
-        {
-            // Datasource: establece el origen de datos de este objeto.
-            cbx.DataSource = source;
-            // DisplayMember: establece la propiedad que se va a mostrar para este ListControl.
-            cbx.DisplayMember = display;
-            // ValueMember: establece la ruta de acceso de la propiedad que se utilizará como valor real para los elementos de ListControl.
-            cbx.ValueMember = value;
-            //SelectedIndex: establece el índice que especifica el elemento seleccionado actualmente.
-            cbx.SelectedIndex = -1;
-        }
-
         private void FrmAsignaciones_Load(object sender, EventArgs e)
         {
-            LlenarCombo(CboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "Nombre");
-            LlenarCombo(CboAsignacion, asignacionService.ObtenerAsignaciones(), "Nombre", "IdAsignacion");
-
-            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones();
+            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones();
             DgvAsignaciones.DataSource = listadoAsignaciones;
             lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
         }
@@ -88,40 +65,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
         {
             parametros.Clear();
 
-            if (DateTime.TryParse(DateFechaDesde.Text, out DateTime fechaDesde) && DateFechaDesde.Checked)
-            {
-                parametros.Add("fechaDesde", fechaDesde);
-            }
-
-            if (DateTime.TryParse(DateFechaHasta.Text, out DateTime fechaHasta) && DateFechaHasta.Checked)
-            {
-                parametros.Add("fechaHasta", fechaHasta);
-            }
-
-            string usuario;
-            if (CboUsuario.SelectedValue == null && !string.IsNullOrEmpty(CboUsuario.Text))
-            {
-                usuario = CboUsuario.Text;
-                parametros.Add("usuario", usuario);
-            }
-            else if (CboUsuario.SelectedValue != null)
-            {
-                usuario = CboUsuario.SelectedValue.ToString();
-                parametros.Add("usuarioExacto", usuario);
-            }
-
-            if (CboAsignacion.SelectedValue != null)
-            {
-                var idAsignacion = CboAsignacion.SelectedValue.ToString();
-                parametros.Add("idAsignacion", idAsignacion);
-            }
-
             if (ChkBaja.Checked)
             {
                 parametros.Add("borrado", true);
             }
 
-            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones(parametros);
+            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
             DgvAsignaciones.DataSource = listadoAsignaciones;
             lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
 
@@ -129,9 +78,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            CboUsuario.SelectedIndex = -1;
-            CboAsignacion.SelectedIndex = -1;
         }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
@@ -139,7 +85,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             FrmAsignacionesABM frmAgregar = new FrmAsignacionesABM(FrmAsignacionesABM.FormMode.nuevo);
             frmAgregar.ShowDialog();
 
-            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones(parametros);
+            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
             DgvAsignaciones.DataSource = listadoAsignaciones;
             lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
         }
@@ -152,11 +98,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                 return;
             }
 
-            SueldoAsignacion sueldoAsignacion = (SueldoAsignacion)DgvAsignaciones.CurrentRow.DataBoundItem;
-            FrmAsignacionesABM frmEditar = new FrmAsignacionesABM(FrmAsignacionesABM.FormMode.actualizar, sueldoAsignacion);
+            Asignacion asignacion = (Asignacion)DgvAsignaciones.CurrentRow.DataBoundItem;
+            FrmAsignacionesABM frmEditar = new FrmAsignacionesABM(FrmAsignacionesABM.FormMode.actualizar, asignacion);
             frmEditar.ShowDialog();
 
-            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones(parametros);
+            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
             DgvAsignaciones.DataSource = listadoAsignaciones;
             lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
         }
@@ -169,9 +115,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                 return;
             }
 
-            SueldoAsignacion sueldoAsignacion = (SueldoAsignacion)DgvAsignaciones.CurrentRow.DataBoundItem;
+            Asignacion asignacion = (Asignacion)DgvAsignaciones.CurrentRow.DataBoundItem;
 
-            if (sueldoAsignacion.Borrado == true)
+            if (asignacion.Borrado == true)
             {
                 MessageBox.Show("¡No puede eliminar un registro ya borrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -180,20 +126,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             DialogResult rta = MessageBox.Show("¿Seguro que desea borrar el registro seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (rta == DialogResult.Yes)
             {
-                sueldoAsignacion.Borrado = true;
+                asignacion.Borrado = true;
 
-                var parametrosEliminacion = new Dictionary<string, object>
-                {
-                    {"idUsuarioBase", Convert.ToInt32(sueldoAsignacion.Usuario.IdUsuario) },
-                    {"fechaBase", Convert.ToDateTime(sueldoAsignacion.Fecha) },
-                    {"idAsignacionBase", Convert.ToInt32(sueldoAsignacion.Asignacion.IdAsignacion) }
-                };
-
-                if (!sueldoAsignacionService.ActualizarSueldoAsignacion(sueldoAsignacion, parametrosEliminacion))
+                if (!asignacionService.ActualizarAsignacion(asignacion))
                     MessageBox.Show("El registro no se pudo borrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones(parametros);
+            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
             DgvAsignaciones.DataSource = listadoAsignaciones;
             lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
         }

@@ -21,5 +21,15 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         {
             return asignacionDao.ObtenerAsignaciones(parametros);
         }
+
+        internal bool CrearAsignacion(Asignacion asignacion)
+        {
+            return asignacionDao.CrearAsignacion(asignacion);
+        }
+
+        internal bool ActualizarAsignacion(Asignacion asignacion)
+        {
+            return asignacionDao.ActualizarAsignacion(asignacion);
+        }
     }
 }

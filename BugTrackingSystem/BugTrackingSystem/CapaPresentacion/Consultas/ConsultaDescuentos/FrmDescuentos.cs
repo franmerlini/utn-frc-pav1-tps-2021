@@ -14,8 +14,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 {
     public partial class FrmDescuentos : Form
     {
-        private readonly SueldoDescuentoService sueldoDescuentoService;
-        private readonly UsuarioService usuarioService;
         private readonly DescuentoService descuentoService;
         private readonly Dictionary<string, object> parametros;
 
@@ -23,8 +21,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
         {
             InitializeComponent();
             InitializeDataGridView();
-            sueldoDescuentoService = new SueldoDescuentoService();
-            usuarioService = new UsuarioService();
             descuentoService = new DescuentoService();
             parametros = new Dictionary<string, object>();
         }
@@ -32,7 +28,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
         private void InitializeDataGridView()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            DgvDescuentos.ColumnCount = 6;
+            DgvDescuentos.ColumnCount = 3;
             DgvDescuentos.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -48,12 +44,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(DgvDescuentos, 0, "Nombre", "Usuario", 170);
-            CrearColumnas(DgvDescuentos, 1, "Fecha", "Fecha", 120);
-            CrearColumnas(DgvDescuentos, 2, "Descuento", "Descuento", 260);
-            CrearColumnas(DgvDescuentos, 3, "Monto", "Monto", 150);
-            CrearColumnas(DgvDescuentos, 4, "Cantidad", "Cantidad", 120);
-            CrearColumnas(DgvDescuentos, 5, "Borrado", "Borrado", 110);
+            CrearColumnas(DgvDescuentos, 0, "Nombre", "Nombre", 210);
+            CrearColumnas(DgvDescuentos, 1, "Monto", "Monto", 120);
+            CrearColumnas(DgvDescuentos, 2, "Borrado", "Borrado", 110);
 
         }
 
@@ -65,24 +58,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             tabla.Columns[columna].Width = tamaño;
         }
 
-        private void LlenarCombo(ComboBox cbx, Object source, string display, String value)
-        {
-            // Datasource: establece el origen de datos de este objeto.
-            cbx.DataSource = source;
-            // DisplayMember: establece la propiedad que se va a mostrar para este ListControl.
-            cbx.DisplayMember = display;
-            // ValueMember: establece la ruta de acceso de la propiedad que se utilizará como valor real para los elementos de ListControl.
-            cbx.ValueMember = value;
-            //SelectedIndex: establece el índice que especifica el elemento seleccionado actualmente.
-            cbx.SelectedIndex = -1;
-        }
-
         private void FrmDescuentos_Load(object sender, EventArgs e)
         {
-            LlenarCombo(CboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "Nombre");
-            LlenarCombo(CboDescuento, descuentoService.ObtenerDescuentos(), "Nombre", "IdDescuento");
-
-            IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos();
+            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos();
             DgvDescuentos.DataSource = listadoDescuentos;
             lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
         }
@@ -93,50 +71,20 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
         {
             parametros.Clear();
 
-            if (DateTime.TryParse(DateFechaDesde.Text, out DateTime fechaDesde) && DateFechaDesde.Checked)
-            {
-                parametros.Add("fechaDesde", fechaDesde);
-            }
-
-            if (DateTime.TryParse(DateFechaHasta.Text, out DateTime fechaHasta) && DateFechaHasta.Checked)
-            {
-                parametros.Add("fechaHasta", fechaHasta);
-            }
-
-            string usuario;
-            if (CboUsuario.SelectedValue == null && !string.IsNullOrEmpty(CboUsuario.Text))
-            {
-                usuario = CboUsuario.Text;
-                parametros.Add("usuario", usuario);
-            }
-            else if (CboUsuario.SelectedValue != null)
-            {
-                usuario = CboUsuario.SelectedValue.ToString();
-                parametros.Add("usuarioExacto", usuario);
-            }
-
-            if (CboDescuento.SelectedValue != null)
-            {
-                var idDescuento = CboDescuento.SelectedValue.ToString();
-                parametros.Add("idDescuento", idDescuento);
-            }
-
             if (ChkBaja.Checked)
             {
                 parametros.Add("borrado", true);
             }
 
-            IList<SueldoDescuento> listadoAsignaciones = sueldoDescuentoService.ObtenerSueldoDescuentos(parametros);
-            DgvDescuentos.DataSource = listadoAsignaciones;
-            lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
+            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
+            DgvDescuentos.DataSource = listadoDescuentos;
+            lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
 
-            if (listadoAsignaciones.Count == 0)
+            if (listadoDescuentos.Count == 0)
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            CboUsuario.SelectedIndex = -1;
-            CboDescuento.SelectedIndex = -1;
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -147,9 +95,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
                 return;
             }
 
-            SueldoDescuento sueldoDescuento = (SueldoDescuento)DgvDescuentos.CurrentRow.DataBoundItem;
+            Descuento descuento = (Descuento)DgvDescuentos.CurrentRow.DataBoundItem;
 
-            if (sueldoDescuento.Borrado == true)
+            if (descuento.Borrado == true)
             {
                 MessageBox.Show("¡No puede eliminar un registro ya borrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -158,20 +106,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             DialogResult rta = MessageBox.Show("¿Seguro que desea borrar el registro seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (rta == DialogResult.Yes)
             {
-                sueldoDescuento.Borrado = true;
+                descuento.Borrado = true;
 
-                var parametrosEliminacion = new Dictionary<string, object>
-                {
-                    {"idUsuarioBase", Convert.ToInt32(sueldoDescuento.Usuario.IdUsuario) },
-                    {"fechaBase", Convert.ToDateTime(sueldoDescuento.Fecha) },
-                    {"idDescuentoBase", Convert.ToInt32(sueldoDescuento.Descuento.IdDescuento) }
-                };
-
-                if (!sueldoDescuentoService.ActualizarSueldoDescuento(sueldoDescuento, parametrosEliminacion))
+                if (!descuentoService.ActualizarDescuento(descuento))
                     MessageBox.Show("El registro no se pudo borrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos();
+            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
             DgvDescuentos.DataSource = listadoDescuentos;
             lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
         }
@@ -181,7 +122,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             FrmDescuentosABM frmAgregar = new FrmDescuentosABM(FrmDescuentosABM.FormMode.nuevo);
             frmAgregar.ShowDialog();
 
-            IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos(parametros);
+            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
             DgvDescuentos.DataSource = listadoDescuentos;
             lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
         }
@@ -194,11 +135,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
                 return;
             }
 
-            SueldoDescuento sueldoDescuento = (SueldoDescuento)DgvDescuentos.CurrentRow.DataBoundItem;
-            FrmDescuentosABM frmEditar = new FrmDescuentosABM(FrmDescuentosABM.FormMode.actualizar, sueldoDescuento);
+            Descuento descuento = (Descuento)DgvDescuentos.CurrentRow.DataBoundItem;
+            FrmDescuentosABM frmEditar = new FrmDescuentosABM(FrmDescuentosABM.FormMode.actualizar, descuento);
             frmEditar.ShowDialog();
 
-            IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos();
+            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
             DgvDescuentos.DataSource = listadoDescuentos;
             lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
         }
