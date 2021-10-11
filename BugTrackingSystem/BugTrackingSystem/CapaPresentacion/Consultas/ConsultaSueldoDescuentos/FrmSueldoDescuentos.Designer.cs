@@ -50,6 +50,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.DateFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.BtnDetalles = new System.Windows.Forms.Button();
             this.grpInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDescuentos)).BeginInit();
             this.grpAcciones.SuspendLayout();
@@ -110,14 +111,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.Controls.Add(this.BtnDetalles, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnNuevo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnEditar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnEliminar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 38);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 38);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(150, 52);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(199, 52);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // BtnNuevo
@@ -296,16 +298,36 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha Desde:";
             // 
+            // BtnDetalles
+            // 
+            this.BtnDetalles.BackColor = System.Drawing.Color.Khaki;
+            this.BtnDetalles.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnInformacion;
+            this.BtnDetalles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnDetalles.FlatAppearance.BorderSize = 0;
+            this.BtnDetalles.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BtnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDetalles.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnDetalles.Location = new System.Drawing.Point(153, 3);
+            this.BtnDetalles.Name = "BtnDetalles";
+            this.BtnDetalles.Size = new System.Drawing.Size(44, 44);
+            this.BtnDetalles.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.BtnDetalles, "Ver detalles de registro seleccionado");
+            this.BtnDetalles.UseVisualStyleBackColor = false;
+            this.BtnDetalles.Click += new System.EventHandler(this.BtnDetalles_Click);
+            // 
             // FrmSueldoDescuentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(995, 450);
             this.Controls.Add(this.grpInformacion);
             this.Controls.Add(this.DgvDescuentos);
             this.Controls.Add(this.grpAcciones);
             this.Controls.Add(this.grpFiltros);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSueldoDescuentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -344,5 +366,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
         private System.Windows.Forms.DateTimePicker DateFechaDesde;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button BtnDetalles;
     }
 }

@@ -221,8 +221,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCantidad.Location = new System.Drawing.Point(103, 72);
             this.nudCantidad.Maximum = new decimal(new int[] {
-            9999,
-            0,
+            1410065407,
+            2,
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";

@@ -154,7 +154,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnEliminar;
+            this.btnVolver.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnVolver;
             this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

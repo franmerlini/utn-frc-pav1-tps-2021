@@ -660,6 +660,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
+            this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(995, 451);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
@@ -667,6 +669,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGeneracionMensualSueldo";

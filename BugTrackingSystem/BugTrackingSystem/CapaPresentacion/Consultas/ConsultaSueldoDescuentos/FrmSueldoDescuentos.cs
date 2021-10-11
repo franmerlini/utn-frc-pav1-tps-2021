@@ -1,4 +1,5 @@
 ﻿using BugTrackingSystem.CapaLogicaNegocio;
+using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos;
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
@@ -201,6 +202,25 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos();
             DgvDescuentos.DataSource = listadoDescuentos;
             lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
+        }
+
+        private void BtnDetalles_Click(object sender, EventArgs e)
+        {
+            if (DgvDescuentos.RowCount.Equals(0))
+            {
+                MessageBox.Show("Debe seleccionar un registro antes de ver sus detalles", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SueldoDescuento sueldoDescuento = (SueldoDescuento)DgvDescuentos.CurrentRow.DataBoundItem;
+            var parametrosDetalles = new Dictionary<string, object>
+            {
+                {"usuarioExacto", sueldoDescuento.Usuario.Nombre },
+                {"fechaExacta", sueldoDescuento.Fecha},
+                {"borrado", true }
+            };
+            FrmSueldosDetalles frmDetalles = new FrmSueldosDetalles(parametrosDetalles, Color.Khaki);
+            frmDetalles.ShowDialog();
         }
     }
 }

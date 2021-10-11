@@ -47,6 +47,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (s.sueldo_bruto = @sueldoBruto) ";
                 if (!parametros.ContainsKey("borrado"))
                     consultaSQL += " AND (s.borrado = 0) ";
+                if (parametros.ContainsKey("id_usuario"))
+                    consultaSQL += " AND (id_usuario = @idUsuario) ";
                 //Para consultar por el usuario exacto
                 if (parametros.ContainsKey("usuarioExacto"))
                     consultaSQL += " AND (usuario = @usuarioExacto) ";

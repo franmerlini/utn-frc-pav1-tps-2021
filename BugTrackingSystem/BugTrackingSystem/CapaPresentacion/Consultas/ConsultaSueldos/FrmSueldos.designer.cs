@@ -35,6 +35,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.dgvSueldos = new System.Windows.Forms.DataGridView();
             this.grpAcciones = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnDetalles = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -107,16 +108,34 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel1.Controls.Add(this.BtnDetalles, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEditar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 40);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(150, 52);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(201, 52);
             this.tableLayoutPanel1.TabIndex = 14;
+            // 
+            // BtnDetalles
+            // 
+            this.BtnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnDetalles.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnInformacion;
+            this.BtnDetalles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnDetalles.FlatAppearance.BorderSize = 0;
+            this.BtnDetalles.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BtnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDetalles.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnDetalles.Location = new System.Drawing.Point(153, 3);
+            this.BtnDetalles.Name = "BtnDetalles";
+            this.BtnDetalles.Size = new System.Drawing.Size(44, 44);
+            this.BtnDetalles.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.BtnDetalles, "Ver detalles de registro seleccionado");
+            this.BtnDetalles.UseVisualStyleBackColor = false;
+            this.BtnDetalles.Click += new System.EventHandler(this.BtnDetalles_Click);
             // 
             // btnNuevo
             // 
@@ -171,7 +190,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             // 
             // grpFiltros
             // 
-            this.grpFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.grpFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.grpFiltros.Controls.Add(this.cboUsuario);
             this.grpFiltros.Controls.Add(this.label3);
             this.grpFiltros.Controls.Add(this.dateFechaHasta);
@@ -322,5 +341,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
         private System.Windows.Forms.DateTimePicker dateFechaDesde;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button BtnDetalles;
     }
 }

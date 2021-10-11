@@ -1,4 +1,5 @@
 ﻿using BugTrackingSystem.CapaLogicaNegocio;
+using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos;
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
@@ -190,6 +191,25 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             IList<Sueldo> listadoSueldos = sueldoService.ObtenerSueldos(parametros);
             dgvSueldos.DataSource = listadoSueldos;
             lblTotal.Text = "Registros encontrados: " + listadoSueldos.Count;
+        }
+
+        private void BtnDetalles_Click(object sender, EventArgs e)
+        {
+            if (dgvSueldos.RowCount.Equals(0))
+            {
+                MessageBox.Show("Debe seleccionar un registro antes de ver sus detalles", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Sueldo sueldo = (Sueldo)dgvSueldos.CurrentRow.DataBoundItem;
+            var parametrosDetalles = new Dictionary<string, object>
+            {
+                {"usuarioExacto", sueldo.Usuario.Nombre },
+                {"fechaExacta", sueldo.Fecha},
+                {"borrado", true }
+            };
+            FrmSueldosDetalles frmDetalles = new FrmSueldosDetalles(parametrosDetalles, Color.FromArgb(191, 255, 192));
+            frmDetalles.ShowDialog();
         }
     }
 }
