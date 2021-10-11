@@ -2,6 +2,7 @@
 using BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones;
 using BugTrackingSystem.CapaPresentacion.ConsultaDescuentos;
 using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH;
+using BugTrackingSystem.CapaPresentacion.ConsultaSueldos;
 using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
 using BugTrackingSystem.Entidades;
 using System;
@@ -163,6 +164,24 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Generación mensual de sueldos");
         }
 
+        private void sueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSueldos ventana = new FrmSueldos();
+            MostrarVentana(ventana, "Consulta de Sueldos");
+        }
+
+        private void sueldosAsignacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSueldoAsignaciones ventana = new FrmSueldoAsignaciones();
+            MostrarVentana(ventana, "Consulta de Sueldos Asignaciones");
+        }
+
+        private void sueldosDescuentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSueldoDescuentos ventana = new FrmSueldoDescuentos();
+            MostrarVentana(ventana, "Consulta de Sueldos Descuentos");
+        }
+
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult rta;
@@ -196,6 +215,5 @@ namespace BugTrackingSystem.Forms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
     }
 }

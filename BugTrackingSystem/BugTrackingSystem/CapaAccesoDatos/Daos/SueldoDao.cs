@@ -103,7 +103,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal bool CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento)
+        internal int CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento)
         {
             var string_conexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=BugTrackerTPI;Integrated Security=True";
 
@@ -173,10 +173,10 @@ namespace BugTrackingSystem.CapaAccesoDatos
             {
                 dbTransaction.Rollback();
                 if (ex.Message.Contains("Arithmetic overflow"))
-                    return false;
+                    return 1;
                 throw ex;
             }
-            return true;
+            return 0;
         }
 
         private Sueldo MapeoObjeto(DataRow row)

@@ -51,6 +51,9 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.LblNombre = new System.Windows.Forms.Label();
+            this.sueldosAsignacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sueldosDescuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sueldosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,19 +89,19 @@ namespace BugTrackingSystem.Forms
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // tsiSalir
             // 
             this.tsiSalir.Name = "tsiSalir";
-            this.tsiSalir.Size = new System.Drawing.Size(143, 22);
+            this.tsiSalir.Size = new System.Drawing.Size(180, 22);
             this.tsiSalir.Text = "Salir";
             this.tsiSalir.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -108,6 +111,9 @@ namespace BugTrackingSystem.Forms
             this.tsiAsistencias,
             this.tsiAsignaciones,
             this.tsiDescuentos,
+            this.sueldosToolStripMenuItem,
+            this.sueldosAsignacionesToolStripMenuItem,
+            this.sueldosDescuentosToolStripMenuItem,
             this.tsiSueldosPorPefil,
             this.tsiUsuarios});
             this.tsiGestion.Enabled = false;
@@ -253,6 +259,27 @@ namespace BugTrackingSystem.Forms
             this.LblNombre.Text = "Usuario Conectado: - Perfil:";
             this.LblNombre.Visible = false;
             // 
+            // sueldosAsignacionesToolStripMenuItem
+            // 
+            this.sueldosAsignacionesToolStripMenuItem.Name = "sueldosAsignacionesToolStripMenuItem";
+            this.sueldosAsignacionesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.sueldosAsignacionesToolStripMenuItem.Text = "Sueldos Asignaciones";
+            this.sueldosAsignacionesToolStripMenuItem.Click += new System.EventHandler(this.sueldosAsignacionesToolStripMenuItem_Click);
+            // 
+            // sueldosDescuentosToolStripMenuItem
+            // 
+            this.sueldosDescuentosToolStripMenuItem.Name = "sueldosDescuentosToolStripMenuItem";
+            this.sueldosDescuentosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.sueldosDescuentosToolStripMenuItem.Text = "Sueldos Descuentos";
+            this.sueldosDescuentosToolStripMenuItem.Click += new System.EventHandler(this.sueldosDescuentosToolStripMenuItem_Click);
+            // 
+            // sueldosToolStripMenuItem
+            // 
+            this.sueldosToolStripMenuItem.Name = "sueldosToolStripMenuItem";
+            this.sueldosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.sueldosToolStripMenuItem.Text = "Sueldos";
+            this.sueldosToolStripMenuItem.Click += new System.EventHandler(this.sueldosToolStripMenuItem_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,5 +334,8 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem sueldosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sueldosAsignacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sueldosDescuentosToolStripMenuItem;
     }
 }

@@ -322,9 +322,10 @@ namespace BugTrackingSystem.CapaPresentacion
                 s.Usuario = (Usuario)cboUsuario.SelectedItem;
             }
 
-            if (sueldoService.CrearSueldoTransaccion(sueldo, listaSueldoAsignacion, listaSueldoDescuento))
+            var n = sueldoService.CrearSueldoTransaccion(sueldo, listaSueldoAsignacion, listaSueldoDescuento);
+            if (n == 0)
             {
-                DialogResult rta = MessageBox.Show("Sueldo generado correctamente. ¿Desea limpiar la transacción?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult rta = MessageBox.Show("Sueldo generado correctamente. \n ¿Desea limpiar la transacción?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (rta == DialogResult.Yes)
                 {
                     cboUsuario.SelectedIndex = -1;
@@ -338,7 +339,7 @@ namespace BugTrackingSystem.CapaPresentacion
                     CalcularTotales();
                 }
             }
-            else
+            else if (n == 1)
                 MessageBox.Show("Algunos montos o cantidades exceden valores máximos disponibles. Reintente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 

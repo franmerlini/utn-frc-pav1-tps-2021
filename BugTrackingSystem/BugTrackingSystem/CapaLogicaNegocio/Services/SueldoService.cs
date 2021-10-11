@@ -35,7 +35,7 @@ namespace BugTrackingSystem.CapaLogicaNegocio
             return sueldoDao.ObtenerSueldos(parametros);
         }
 
-        internal bool CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento)
+        internal int CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento)
         {
             return sueldoDao.CrearSueldoTransaccion(sueldo, listaSueldoAsignacion, listaSueldoDescuento);
         }

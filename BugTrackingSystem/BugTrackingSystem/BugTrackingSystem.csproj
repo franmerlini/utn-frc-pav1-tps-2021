@@ -105,6 +105,30 @@
     <Compile Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentosABM.Designer.cs">
       <DependentUpon>FrmDescuentosABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoAsignaciones\FrmSueldoAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoAsignaciones\FrmSueldoAsignaciones.Designer.cs">
+      <DependentUpon>FrmSueldoAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoAsignaciones\FrmSueldoAsignacionesABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoAsignaciones\FrmSueldoAsignacionesABM.Designer.cs">
+      <DependentUpon>FrmSueldoAsignacionesABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoDescuentos\FrmSueldoDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoDescuentos\FrmSueldoDescuentos.Designer.cs">
+      <DependentUpon>FrmSueldoDescuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoDescuentos\FrmSueldoDescuentosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldoDescuentos\FrmSueldoDescuentosABM.Designer.cs">
+      <DependentUpon>FrmSueldoDescuentosABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\Consultas\ConsultaSueldosPH\FrmSueldosPH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +140,18 @@
     </Compile>
     <Compile Include="CapaPresentacion\Consultas\ConsultaSueldosPH\FrmSueldosPHABM.Designer.cs">
       <DependentUpon>FrmSueldosPHABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.designer.cs">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosABM.designer.cs">
+      <DependentUpon>FrmSueldosABM.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuarios.cs">
       <SubType>Form</SubType>
@@ -177,11 +213,29 @@
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentosABM.resx">
       <DependentUpon>FrmDescuentosABM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldoAsignaciones\FrmSueldoAsignaciones.resx">
+      <DependentUpon>FrmSueldoAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldoAsignaciones\FrmSueldoAsignacionesABM.resx">
+      <DependentUpon>FrmSueldoAsignacionesABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldoDescuentos\FrmSueldoDescuentos.resx">
+      <DependentUpon>FrmSueldoDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldoDescuentos\FrmSueldoDescuentosABM.resx">
+      <DependentUpon>FrmSueldoDescuentosABM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldosPH\FrmSueldosPH.resx">
       <DependentUpon>FrmSueldosPH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldosPH\FrmSueldosPHABM.resx">
       <DependentUpon>FrmSueldosPHABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.resx">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosABM.resx">
+      <DependentUpon>FrmSueldosABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
