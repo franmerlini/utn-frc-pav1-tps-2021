@@ -211,7 +211,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             SueldoAsignacion sueldoAsignacion = (SueldoAsignacion)DgvAsignaciones.CurrentRow.DataBoundItem;
             var parametrosDetalles = new Dictionary<string, object>
             {
-                {"usuarioExacto", sueldoAsignacion.Usuario.Nombre },
+                {"idUsuario", sueldoAsignacion.Usuario.IdUsuario },
                 {"fechaExacta", sueldoAsignacion.Fecha},
                 {"borrado", true }
             };

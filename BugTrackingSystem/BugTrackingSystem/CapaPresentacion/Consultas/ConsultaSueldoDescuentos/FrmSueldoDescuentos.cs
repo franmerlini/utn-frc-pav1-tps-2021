@@ -216,7 +216,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             SueldoDescuento sueldoDescuento = (SueldoDescuento)DgvDescuentos.CurrentRow.DataBoundItem;
             var parametrosDetalles = new Dictionary<string, object>
             {
-                {"usuarioExacto", sueldoDescuento.Usuario.Nombre },
+                {"idUsuario", sueldoDescuento.Usuario.IdUsuario },
                 {"fechaExacta", sueldoDescuento.Fecha},
                 {"borrado", true }
             };

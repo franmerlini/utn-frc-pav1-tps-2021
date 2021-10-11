@@ -205,7 +205,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             Sueldo sueldo = (Sueldo)dgvSueldos.CurrentRow.DataBoundItem;
             var parametrosDetalles = new Dictionary<string, object>
             {
-                {"usuarioExacto", sueldo.Usuario.Nombre },
+                {"idUsuario", sueldo.Usuario.IdUsuario },
                 {"fechaExacta", sueldo.Fecha},
                 {"borrado", true }
             };

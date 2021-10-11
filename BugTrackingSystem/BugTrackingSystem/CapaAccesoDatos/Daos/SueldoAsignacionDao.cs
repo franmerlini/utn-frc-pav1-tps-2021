@@ -48,6 +48,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (s.fecha <= @fechaHasta) ";
                 if (parametros.ContainsKey("monto"))
                     consultaSQL += " AND (s.monto = @monto) ";
+                if (parametros.ContainsKey("fechaExacta"))
+                    consultaSQL += " AND (s.fecha = @fechaExacta) ";
                 if (parametros.ContainsKey("cantidad"))
                     consultaSQL += " AND (s.cantidad = @cantidad) ";
                 if (!parametros.ContainsKey("borrado"))
