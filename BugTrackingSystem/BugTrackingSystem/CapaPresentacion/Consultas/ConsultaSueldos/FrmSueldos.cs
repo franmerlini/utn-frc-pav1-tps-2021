@@ -51,6 +51,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             CrearColumnas(dgvSueldos, 0, "Usuario", "Usuario", 238);
             CrearColumnas(dgvSueldos, 1, "Fecha", "Fecha", 120);
             CrearColumnas(dgvSueldos, 2, "Sueldo bruto", "SueldoBruto", 462);
+            dgvSueldos.Columns[2].DefaultCellStyle.Format = "C";
             CrearColumnas(dgvSueldos, 3, "Borrado", "Borrado", 110);
 
         }

@@ -48,6 +48,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             CrearColumnas(DgvAsignaciones, 1, "Fecha", "Fecha", 120);
             CrearColumnas(DgvAsignaciones, 2, "Asignación", "Asignacion", 260);
             CrearColumnas(DgvAsignaciones, 3, "Monto", "Monto", 150);
+            DgvAsignaciones.Columns[3].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvAsignaciones, 4, "Cantidad", "Cantidad", 120);
             CrearColumnas(DgvAsignaciones, 5, "Borrado", "Borrado", 110);
 

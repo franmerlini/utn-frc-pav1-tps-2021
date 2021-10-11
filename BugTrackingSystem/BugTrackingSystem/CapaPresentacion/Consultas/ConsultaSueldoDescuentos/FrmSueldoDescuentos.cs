@@ -53,6 +53,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             CrearColumnas(DgvDescuentos, 1, "Fecha", "Fecha", 120);
             CrearColumnas(DgvDescuentos, 2, "Descuento", "Descuento", 260);
             CrearColumnas(DgvDescuentos, 3, "Monto", "Monto", 150);
+            DgvDescuentos.Columns[3].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvDescuentos, 4, "Cantidad", "Cantidad", 120);
             CrearColumnas(DgvDescuentos, 5, "Borrado", "Borrado", 110);
 

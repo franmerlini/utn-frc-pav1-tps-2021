@@ -33,11 +33,11 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.lblTitulo = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.DgvAsignaciones = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.DgvDescuentos = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.DgvAsignaciones = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.chkBorrado = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,10 +52,10 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.label4 = new System.Windows.Forms.Label();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvAsignaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDescuentos)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAsignaciones)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -110,6 +110,17 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Descuentos";
             // 
+            // DgvDescuentos
+            // 
+            this.DgvDescuentos.AllowUserToAddRows = false;
+            this.DgvDescuentos.AllowUserToDeleteRows = false;
+            this.DgvDescuentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDescuentos.Location = new System.Drawing.Point(0, 0);
+            this.DgvDescuentos.Name = "DgvDescuentos";
+            this.DgvDescuentos.ReadOnly = true;
+            this.DgvDescuentos.Size = new System.Drawing.Size(563, 222);
+            this.DgvDescuentos.TabIndex = 1;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Silver;
@@ -121,6 +132,17 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Asignaciones";
             // 
+            // DgvAsignaciones
+            // 
+            this.DgvAsignaciones.AllowUserToAddRows = false;
+            this.DgvAsignaciones.AllowUserToDeleteRows = false;
+            this.DgvAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvAsignaciones.Location = new System.Drawing.Point(0, 0);
+            this.DgvAsignaciones.Name = "DgvAsignaciones";
+            this.DgvAsignaciones.ReadOnly = true;
+            this.DgvAsignaciones.Size = new System.Drawing.Size(563, 222);
+            this.DgvAsignaciones.TabIndex = 0;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -130,14 +152,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(571, 248);
             this.tabControl1.TabIndex = 42;
-            // 
-            // DgvAsignaciones
-            // 
-            this.DgvAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvAsignaciones.Location = new System.Drawing.Point(0, 0);
-            this.DgvAsignaciones.Name = "DgvAsignaciones";
-            this.DgvAsignaciones.Size = new System.Drawing.Size(563, 222);
-            this.DgvAsignaciones.TabIndex = 0;
             // 
             // btnVolver
             // 
@@ -155,14 +169,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.btnVolver.TabIndex = 63;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // DgvDescuentos
-            // 
-            this.DgvDescuentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvDescuentos.Location = new System.Drawing.Point(0, 0);
-            this.DgvDescuentos.Name = "DgvDescuentos";
-            this.DgvDescuentos.Size = new System.Drawing.Size(563, 222);
-            this.DgvDescuentos.TabIndex = 1;
             // 
             // lblFecha
             // 
@@ -331,10 +337,10 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles de sueldo";
             this.tabPage2.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvAsignaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDescuentos)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAsignaciones)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

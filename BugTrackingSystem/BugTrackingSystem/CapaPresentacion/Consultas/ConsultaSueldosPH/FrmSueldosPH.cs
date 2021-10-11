@@ -41,6 +41,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             CrearColumnas(DgvSueldosPH, 0, "Perfil", "Perfil", 238);
             CrearColumnas(DgvSueldosPH, 1, "Fecha", "Fecha", 120);
             CrearColumnas(DgvSueldosPH, 2, "Sueldo", "Sueldo", 462);
+            DgvSueldosPH.Columns[2].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvSueldosPH, 3, "Borrado", "Borrado", 110);
         }
 
