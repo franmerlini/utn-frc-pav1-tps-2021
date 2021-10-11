@@ -68,6 +68,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
 
             CrearColumnas(DgvDescuentos, 0, "Descuento", "Descuento", 170);
             CrearColumnas(DgvDescuentos, 1, "Monto", "Monto", 150);
+            DgvDescuentos.Columns[1].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvDescuentos, 2, "Cantidad", "Cantidad", 120);
             CrearColumnas(DgvDescuentos, 3, "Borrado", "Borrado", 80);
         }
@@ -93,6 +94,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
 
             CrearColumnas(DgvAsignaciones, 0, "Asignación", "Asignacion", 170);
             CrearColumnas(DgvAsignaciones, 1, "Monto", "Monto", 150);
+            DgvAsignaciones.Columns[1].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvAsignaciones, 2, "Cantidad", "Cantidad", 120);
             CrearColumnas(DgvAsignaciones, 3, "Borrado", "Borrado", 80);
 
