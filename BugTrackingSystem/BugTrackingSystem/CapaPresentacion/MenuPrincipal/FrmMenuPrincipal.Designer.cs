@@ -33,6 +33,7 @@ namespace BugTrackingSystem.Forms
             this.MnsPrincipal = new System.Windows.Forms.MenuStrip();
             this.tsiArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiGestion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiAsistencias = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,6 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.LblNombre = new System.Windows.Forms.Label();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,14 +86,19 @@ namespace BugTrackingSystem.Forms
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
             // 
             // tsiSalir
             // 
             this.tsiSalir.Name = "tsiSalir";
-            this.tsiSalir.Size = new System.Drawing.Size(180, 22);
+            this.tsiSalir.Size = new System.Drawing.Size(143, 22);
             this.tsiSalir.Text = "Salir";
             this.tsiSalir.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -193,6 +198,7 @@ namespace BugTrackingSystem.Forms
             // 
             this.lblTitulo.AutoEllipsis = true;
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Salmon;
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(471, 6);
@@ -247,16 +253,11 @@ namespace BugTrackingSystem.Forms
             this.LblNombre.Text = "Usuario Conectado: - Perfil:";
             this.LblNombre.Visible = false;
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Salmon;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 523);

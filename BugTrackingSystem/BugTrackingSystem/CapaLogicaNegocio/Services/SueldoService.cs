@@ -1,6 +1,7 @@
 ﻿using BugTrackingSystem.CapaAccesoDatos;
 using BugTrackingSystem.Entidades;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BugTrackingSystem.CapaLogicaNegocio
 {
@@ -32,6 +33,11 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         internal IList<Sueldo> ObtenerSueldos(Dictionary<string, object> parametros = null)
         {
             return sueldoDao.ObtenerSueldos(parametros);
+        }
+
+        internal bool CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento)
+        {
+            return sueldoDao.CrearSueldoTransaccion(sueldo, listaSueldoAsignacion, listaSueldoDescuento);
         }
     }
 }

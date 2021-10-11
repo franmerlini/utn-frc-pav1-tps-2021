@@ -34,11 +34,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.lblTotal = new System.Windows.Forms.Label();
             this.DgvAsignaciones = new System.Windows.Forms.DataGridView();
             this.grpAcciones = new System.Windows.Forms.GroupBox();
+            this.ChkBaja = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnNuevo = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.ChkBaja = new System.Windows.Forms.CheckBox();
             this.BtnConsultar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grpInformacion.SuspendLayout();
@@ -53,7 +53,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.grpInformacion.Controls.Add(this.lblTotal);
             this.grpInformacion.Location = new System.Drawing.Point(238, 12);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(260, 124);
+            this.grpInformacion.Size = new System.Drawing.Size(260, 105);
             this.grpInformacion.TabIndex = 5;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -73,11 +73,11 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.DgvAsignaciones.AllowUserToDeleteRows = false;
             this.DgvAsignaciones.AllowUserToOrderColumns = true;
             this.DgvAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvAsignaciones.Location = new System.Drawing.Point(12, 142);
+            this.DgvAsignaciones.Location = new System.Drawing.Point(12, 123);
             this.DgvAsignaciones.MultiSelect = false;
             this.DgvAsignaciones.Name = "DgvAsignaciones";
             this.DgvAsignaciones.ReadOnly = true;
-            this.DgvAsignaciones.Size = new System.Drawing.Size(486, 296);
+            this.DgvAsignaciones.Size = new System.Drawing.Size(486, 315);
             this.DgvAsignaciones.TabIndex = 6;
             // 
             // grpAcciones
@@ -87,10 +87,20 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
             this.grpAcciones.Location = new System.Drawing.Point(12, 12);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(220, 124);
+            this.grpAcciones.Size = new System.Drawing.Size(220, 105);
             this.grpAcciones.TabIndex = 4;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
+            // 
+            // ChkBaja
+            // 
+            this.ChkBaja.AutoSize = true;
+            this.ChkBaja.Location = new System.Drawing.Point(9, 86);
+            this.ChkBaja.Name = "ChkBaja";
+            this.ChkBaja.Size = new System.Drawing.Size(124, 17);
+            this.ChkBaja.TabIndex = 9;
+            this.ChkBaja.Text = "Incluir dados de baja";
+            this.ChkBaja.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -161,16 +171,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.toolTip1.SetToolTip(this.BtnEliminar, "Eliminar registro seleccionado");
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // ChkBaja
-            // 
-            this.ChkBaja.AutoSize = true;
-            this.ChkBaja.Location = new System.Drawing.Point(9, 101);
-            this.ChkBaja.Name = "ChkBaja";
-            this.ChkBaja.Size = new System.Drawing.Size(124, 17);
-            this.ChkBaja.TabIndex = 9;
-            this.ChkBaja.Text = "Incluir dados de baja";
-            this.ChkBaja.UseVisualStyleBackColor = true;
             // 
             // BtnConsultar
             // 

@@ -121,8 +121,6 @@ namespace BugTrackingSystem.CapaPresentacion
                 {
                     listaSueldoAsignacion.Add(new SueldoAsignacion()
                     {
-                        // Usuario = (Usuario)cboUsuario.SelectedItem, --> Deberían ser agregados al final de la transacción, dentro del foreach
-                        // Fecha = (DateTime)dtpFecha.Value,
                         Asignacion = (Asignacion)cboDtoAsig.SelectedItem,
                         Monto = Convert.ToDecimal(txtImporte.Text),
                         Cantidad = Convert.ToInt32(nudCantidad.Value)
@@ -150,8 +148,6 @@ namespace BugTrackingSystem.CapaPresentacion
                 {
                     listaSueldoDescuento.Add(new SueldoDescuento()
                     {
-                        // Usuario = (Usuario)cboUsuario.SelectedItem, --> Deberían ser agregados al final de la transacción, dentro del foreach
-                        // Fecha = (DateTime)dtpFecha.Value,
                         Descuento = (Descuento)cboDtoAsig.SelectedItem,
                         Monto = Convert.ToDecimal(txtImporte.Text),
                         Cantidad = Convert.ToInt32(nudCantidad.Value)
@@ -314,9 +310,19 @@ namespace BugTrackingSystem.CapaPresentacion
                 return;
             }
 
-            // A partir de acá se realiza la transaction
+            foreach (SueldoAsignacion s in listaSueldoAsignacion)
+            {
+                s.Fecha = dtpFecha.Value;
+                s.Usuario = (Usuario)cboUsuario.SelectedItem;
+            }
 
-            if (true) // Si la transaccion se genera correctamente (cambiar el true por lo que corresponda)
+            foreach (SueldoDescuento s in listaSueldoDescuento)
+            {
+                s.Fecha = dtpFecha.Value;
+                s.Usuario = (Usuario)cboUsuario.SelectedItem;
+            }
+
+            if (sueldoService.CrearSueldoTransaccion(sueldo, listaSueldoAsignacion, listaSueldoDescuento))
             {
                 DialogResult rta = MessageBox.Show("Sueldo generado correctamente. ¿Desea limpiar la transacción?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (rta == DialogResult.Yes)
@@ -341,8 +347,6 @@ namespace BugTrackingSystem.CapaPresentacion
             var parametro = new Dictionary<string, object>()
             {
                 { "borrado", true },
-                { "idUsuario", ((Usuario)cboUsuario.SelectedItem).IdUsuario },
-                { "fechaExacta", (dtpFecha.Value) }
             };
 
             IList<Sueldo> listadoSueldos = sueldoService.ObtenerSueldos(parametro);

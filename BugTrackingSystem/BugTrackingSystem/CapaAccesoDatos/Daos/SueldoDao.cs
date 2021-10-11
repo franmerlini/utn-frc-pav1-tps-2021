@@ -2,7 +2,9 @@
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace BugTrackingSystem.CapaAccesoDatos
 {
@@ -99,6 +101,80 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
+        }
+
+        internal bool CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento)
+        {
+            var string_conexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=BugTrackerTPI;Integrated Security=True";
+
+            SqlConnection dbConnection = new SqlConnection();
+            SqlTransaction dbTransaction = null;
+            try
+            {
+                dbConnection.ConnectionString = string_conexion;
+                dbConnection.Open();
+                dbTransaction = dbConnection.BeginTransaction();
+
+                SqlCommand insertSueldo = new SqlCommand();
+                insertSueldo.Connection = dbConnection;
+                insertSueldo.CommandType = CommandType.Text;
+                insertSueldo.Transaction = dbTransaction;
+
+                insertSueldo.CommandText = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto, borrado)" +
+                                           " VALUES (@id_usuario, @fecha, @sueldo_bruto, 0) ";
+
+                insertSueldo.Parameters.AddWithValue("id_usuario", sueldo.Usuario.IdUsuario);
+                insertSueldo.Parameters.AddWithValue("fecha", sueldo.Fecha);
+                insertSueldo.Parameters.AddWithValue("sueldo_bruto", sueldo.SueldoBruto);
+
+                insertSueldo.ExecuteNonQuery();
+
+                foreach (SueldoAsignacion s in listaSueldoAsignacion)
+                {
+                    SqlCommand insertAsignacion = new SqlCommand();
+                    insertAsignacion.Connection = dbConnection;
+                    insertAsignacion.CommandType = CommandType.Text;
+                    insertAsignacion.Transaction = dbTransaction;
+
+                    insertAsignacion.CommandText = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad, borrado) " +
+                                                   " VALUES (@id_usuario, @fecha, @id_asignacion, @monto, @cantidad, 0) ";
+
+                    insertAsignacion.Parameters.AddWithValue("id_usuario", s.Usuario.IdUsuario);
+                    insertAsignacion.Parameters.AddWithValue("fecha", s.Fecha);
+                    insertAsignacion.Parameters.AddWithValue("id_asignacion", s.Asignacion.IdAsignacion);
+                    insertAsignacion.Parameters.AddWithValue("monto", s.Monto);
+                    insertAsignacion.Parameters.AddWithValue("cantidad", s.Cantidad);
+
+                    insertAsignacion.ExecuteNonQuery();
+                }
+
+                foreach (SueldoDescuento s in listaSueldoDescuento)
+                {
+                    SqlCommand insertDescuento = new SqlCommand();
+                    insertDescuento.Connection = dbConnection;
+                    insertDescuento.CommandType = CommandType.Text;
+                    insertDescuento.Transaction = dbTransaction;
+
+                    insertDescuento.CommandText = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, monto, cantidad, borrado) " +
+                                                   " VALUES (@id_usuario, @fecha, @id_descuento, @monto, @cantidad, 0) ";
+
+                    insertDescuento.Parameters.AddWithValue("id_usuario", s.Usuario.IdUsuario);
+                    insertDescuento.Parameters.AddWithValue("fecha", s.Fecha);
+                    insertDescuento.Parameters.AddWithValue("id_descuento", s.Descuento.IdDescuento);
+                    insertDescuento.Parameters.AddWithValue("monto", s.Monto);
+                    insertDescuento.Parameters.AddWithValue("cantidad", s.Cantidad);
+
+                    insertDescuento.ExecuteNonQuery();
+                }
+
+                dbTransaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                dbTransaction.Rollback();
+                throw ex;
+            }
+            return true;
         }
 
         private Sueldo MapeoObjeto(DataRow row)
