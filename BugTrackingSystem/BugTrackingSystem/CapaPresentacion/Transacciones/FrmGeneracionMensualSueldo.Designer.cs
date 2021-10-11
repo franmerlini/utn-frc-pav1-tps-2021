@@ -368,7 +368,7 @@ namespace BugTrackingSystem.CapaPresentacion
             1410065407,
             2,
             0,
-            0});
+            131072});
             this.nudSueldoBruto.Name = "nudSueldoBruto";
             this.nudSueldoBruto.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.nudSueldoBruto.Size = new System.Drawing.Size(170, 20);

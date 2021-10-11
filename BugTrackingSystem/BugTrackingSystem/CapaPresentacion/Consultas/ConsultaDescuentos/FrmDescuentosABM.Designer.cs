@@ -159,7 +159,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             1410065407,
             2,
             0,
-            0});
+            131072});
             this.nudMonto.Name = "nudMonto";
             this.nudMonto.Size = new System.Drawing.Size(201, 20);
             this.nudMonto.TabIndex = 74;

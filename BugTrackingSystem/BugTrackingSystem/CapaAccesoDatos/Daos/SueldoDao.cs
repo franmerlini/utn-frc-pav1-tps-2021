@@ -169,9 +169,11 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
                 dbTransaction.Commit();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 dbTransaction.Rollback();
+                if (ex.Message.Contains("Arithmetic overflow"))
+                    return false;
                 throw ex;
             }
             return true;

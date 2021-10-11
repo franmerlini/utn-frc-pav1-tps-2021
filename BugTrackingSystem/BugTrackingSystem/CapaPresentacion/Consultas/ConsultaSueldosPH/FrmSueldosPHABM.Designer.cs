@@ -114,7 +114,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             1410065407,
             2,
             0,
-            0});
+            131072});
             this.nudSueldo.Name = "nudSueldo";
             this.nudSueldo.Size = new System.Drawing.Size(201, 20);
             this.nudSueldo.TabIndex = 65;

@@ -279,13 +279,6 @@ namespace BugTrackingSystem.CapaPresentacion
         {
             Sueldo sueldo = new Sueldo();
 
-            if (txtSueldoTotal.Text.Contains("-"))
-            {
-                DialogResult rta = MessageBox.Show("El sueldo total es menor a 0. ¿Seguro que desea continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (rta == DialogResult.No)
-                    return;
-            }
-
             if (cboUsuario.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar un usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -308,6 +301,13 @@ namespace BugTrackingSystem.CapaPresentacion
             {
                 MessageBox.Show("Ya existe una transacción con tal fecha y usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
+            }
+
+            if (txtSueldoTotal.Text.Contains("-"))
+            {
+                DialogResult rta = MessageBox.Show("El sueldo total es menor a 0. ¿Seguro que desea continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (rta == DialogResult.No)
+                    return;
             }
 
             foreach (SueldoAsignacion s in listaSueldoAsignacion)
@@ -339,7 +339,7 @@ namespace BugTrackingSystem.CapaPresentacion
                 }
             }
             else
-                MessageBox.Show("Hubo un error al generar la transacción. Por favor revise los datos nuevamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Algunos montos o cantidades exceden valores máximos disponibles. Reintente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private bool Existe(Sueldo sueldo)

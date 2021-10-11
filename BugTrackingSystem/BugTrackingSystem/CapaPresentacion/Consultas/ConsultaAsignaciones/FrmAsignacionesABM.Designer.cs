@@ -35,10 +35,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.grpEntradas = new System.Windows.Forms.GroupBox();
             this.tlpEntradas = new System.Windows.Forms.TableLayoutPanel();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudMonto = new System.Windows.Forms.NumericUpDown();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nudMonto = new System.Windows.Forms.NumericUpDown();
             this.chkBorrado = new System.Windows.Forms.CheckBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.grpEntradas.SuspendLayout();
@@ -138,34 +138,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.lblUsuario.Text = "Nombre:";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 26);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Monto:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nudMonto
-            // 
-            this.nudMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudMonto.DecimalPlaces = 2;
-            this.nudMonto.Location = new System.Drawing.Point(103, 29);
-            this.nudMonto.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.nudMonto.Name = "nudMonto";
-            this.nudMonto.Size = new System.Drawing.Size(201, 20);
-            this.nudMonto.TabIndex = 58;
-            // 
             // btnVolver
             // 
             this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -200,6 +172,34 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.btnAceptar.TabIndex = 57;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(57, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 26);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Monto:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nudMonto
+            // 
+            this.nudMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudMonto.DecimalPlaces = 2;
+            this.nudMonto.Location = new System.Drawing.Point(103, 29);
+            this.nudMonto.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            131072});
+            this.nudMonto.Name = "nudMonto";
+            this.nudMonto.Size = new System.Drawing.Size(201, 20);
+            this.nudMonto.TabIndex = 58;
             // 
             // chkBorrado
             // 
