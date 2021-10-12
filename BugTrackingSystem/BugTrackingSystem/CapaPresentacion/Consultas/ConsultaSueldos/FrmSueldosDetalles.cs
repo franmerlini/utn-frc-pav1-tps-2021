@@ -39,9 +39,9 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             TxtFecha.Text = sueldo.Fecha.ToString("dd/MM/yyyy");
             TxtSueldoBruto.Text = sueldo.SueldoBruto.ToString("C");
             chkBorrado.Checked = sueldo.Borrado;
-            decimal totalAsignaciones = listadoAsignaciones.Sum(a => a.Monto);
+            decimal totalAsignaciones = listadoAsignaciones.Where(a => !a.Borrado).Sum(a => a.Monto);
             TxtAsignaciones.Text = totalAsignaciones.ToString("C");
-            decimal totalDescuentos = listadoDescuentos.Sum(d => d.Monto);
+            decimal totalDescuentos = listadoDescuentos.Where(d => !d.Borrado).Sum(d => d.Monto);
             TxtDescuentos.Text = totalDescuentos.ToString("C");
             var importeTotal = sueldo.SueldoBruto + totalAsignaciones - totalDescuentos;
             TxtTotal.Text = importeTotal.ToString("C");
@@ -67,7 +67,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
             CrearColumnas(DgvDescuentos, 0, "Descuento", "Descuento", 170);
-            CrearColumnas(DgvDescuentos, 1, "Monto", "Monto", 150);
+            CrearColumnas(DgvDescuentos, 1, "Importe", "Monto", 150);
             DgvDescuentos.Columns[1].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvDescuentos, 2, "Cantidad", "Cantidad", 120);
             CrearColumnas(DgvDescuentos, 3, "Borrado", "Borrado", 80);
@@ -93,7 +93,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
             CrearColumnas(DgvAsignaciones, 0, "Asignación", "Asignacion", 170);
-            CrearColumnas(DgvAsignaciones, 1, "Monto", "Monto", 150);
+            CrearColumnas(DgvAsignaciones, 1, "Importe", "Monto", 150);
             DgvAsignaciones.Columns[1].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvAsignaciones, 2, "Cantidad", "Cantidad", 120);
             CrearColumnas(DgvAsignaciones, 3, "Borrado", "Borrado", 80);

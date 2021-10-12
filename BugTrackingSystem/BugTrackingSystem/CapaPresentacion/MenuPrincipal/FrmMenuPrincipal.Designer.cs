@@ -39,6 +39,9 @@ namespace BugTrackingSystem.Forms
             this.tsiAsistencias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiAsignaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiDescuentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.sueldosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sueldosAsignacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sueldosDescuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSueldosPorPefil = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiTransaccion = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +54,6 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.LblNombre = new System.Windows.Forms.Label();
-            this.sueldosAsignacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sueldosDescuentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sueldosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,27 +89,27 @@ namespace BugTrackingSystem.Forms
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
             // 
             // tsiSalir
             // 
             this.tsiSalir.Name = "tsiSalir";
-            this.tsiSalir.Size = new System.Drawing.Size(180, 22);
+            this.tsiSalir.Size = new System.Drawing.Size(143, 22);
             this.tsiSalir.Text = "Salir";
             this.tsiSalir.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // tsiGestion
             // 
             this.tsiGestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiAsistencias,
             this.tsiAsignaciones,
+            this.tsiAsistencias,
             this.tsiDescuentos,
             this.sueldosToolStripMenuItem,
             this.sueldosAsignacionesToolStripMenuItem,
@@ -141,6 +141,27 @@ namespace BugTrackingSystem.Forms
             this.tsiDescuentos.Size = new System.Drawing.Size(196, 22);
             this.tsiDescuentos.Text = "Descuentos";
             this.tsiDescuentos.Click += new System.EventHandler(this.TsiSueldosDescuentos_Click);
+            // 
+            // sueldosToolStripMenuItem
+            // 
+            this.sueldosToolStripMenuItem.Name = "sueldosToolStripMenuItem";
+            this.sueldosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.sueldosToolStripMenuItem.Text = "Sueldos";
+            this.sueldosToolStripMenuItem.Click += new System.EventHandler(this.sueldosToolStripMenuItem_Click);
+            // 
+            // sueldosAsignacionesToolStripMenuItem
+            // 
+            this.sueldosAsignacionesToolStripMenuItem.Name = "sueldosAsignacionesToolStripMenuItem";
+            this.sueldosAsignacionesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.sueldosAsignacionesToolStripMenuItem.Text = "Sueldos Asignaciones";
+            this.sueldosAsignacionesToolStripMenuItem.Click += new System.EventHandler(this.sueldosAsignacionesToolStripMenuItem_Click);
+            // 
+            // sueldosDescuentosToolStripMenuItem
+            // 
+            this.sueldosDescuentosToolStripMenuItem.Name = "sueldosDescuentosToolStripMenuItem";
+            this.sueldosDescuentosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.sueldosDescuentosToolStripMenuItem.Text = "Sueldos Descuentos";
+            this.sueldosDescuentosToolStripMenuItem.Click += new System.EventHandler(this.sueldosDescuentosToolStripMenuItem_Click);
             // 
             // tsiSueldosPorPefil
             // 
@@ -191,13 +212,13 @@ namespace BugTrackingSystem.Forms
             // mostrarAyudaToolStripMenuItem
             // 
             this.mostrarAyudaToolStripMenuItem.Name = "mostrarAyudaToolStripMenuItem";
-            this.mostrarAyudaToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.mostrarAyudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mostrarAyudaToolStripMenuItem.Text = "Mostrar ayuda";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
             // lblTitulo
@@ -258,27 +279,6 @@ namespace BugTrackingSystem.Forms
             this.LblNombre.TabIndex = 11;
             this.LblNombre.Text = "Usuario Conectado: - Perfil:";
             this.LblNombre.Visible = false;
-            // 
-            // sueldosAsignacionesToolStripMenuItem
-            // 
-            this.sueldosAsignacionesToolStripMenuItem.Name = "sueldosAsignacionesToolStripMenuItem";
-            this.sueldosAsignacionesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.sueldosAsignacionesToolStripMenuItem.Text = "Sueldos Asignaciones";
-            this.sueldosAsignacionesToolStripMenuItem.Click += new System.EventHandler(this.sueldosAsignacionesToolStripMenuItem_Click);
-            // 
-            // sueldosDescuentosToolStripMenuItem
-            // 
-            this.sueldosDescuentosToolStripMenuItem.Name = "sueldosDescuentosToolStripMenuItem";
-            this.sueldosDescuentosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.sueldosDescuentosToolStripMenuItem.Text = "Sueldos Descuentos";
-            this.sueldosDescuentosToolStripMenuItem.Click += new System.EventHandler(this.sueldosDescuentosToolStripMenuItem_Click);
-            // 
-            // sueldosToolStripMenuItem
-            // 
-            this.sueldosToolStripMenuItem.Name = "sueldosToolStripMenuItem";
-            this.sueldosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.sueldosToolStripMenuItem.Text = "Sueldos";
-            this.sueldosToolStripMenuItem.Click += new System.EventHandler(this.sueldosToolStripMenuItem_Click);
             // 
             // FrmMenuPrincipal
             // 
