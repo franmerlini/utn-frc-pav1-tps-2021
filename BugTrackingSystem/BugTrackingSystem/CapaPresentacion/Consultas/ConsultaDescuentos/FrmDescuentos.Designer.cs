@@ -80,6 +80,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.DgvDescuentos.RowHeadersWidth = 51;
             this.DgvDescuentos.Size = new System.Drawing.Size(435, 310);
             this.DgvDescuentos.TabIndex = 10;
+            this.DgvDescuentos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvDescuentos_DataBindingComplete);
             // 
             // grpAcciones
             // 

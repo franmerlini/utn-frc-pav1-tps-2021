@@ -79,6 +79,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.DgvAsignaciones.ReadOnly = true;
             this.DgvAsignaciones.Size = new System.Drawing.Size(434, 315);
             this.DgvAsignaciones.TabIndex = 6;
+            this.DgvAsignaciones.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvAsignaciones_DataBindingComplete);
             // 
             // grpAcciones
             // 

@@ -38,9 +38,9 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
                 Font = new Font("Verdana", 8, FontStyle.Bold)
             };
             DgvSueldosPH.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-            CrearColumnas(DgvSueldosPH, 0, "Perfil", "Perfil", 238);
-            CrearColumnas(DgvSueldosPH, 1, "Fecha", "Fecha", 120);
-            CrearColumnas(DgvSueldosPH, 2, "Sueldo", "Sueldo", 462);
+            CrearColumnas(DgvSueldosPH, 0, "Perfil", "Perfil", 217);
+            CrearColumnas(DgvSueldosPH, 1, "Fecha", "Fecha", 217);
+            CrearColumnas(DgvSueldosPH, 2, "Sueldo", "Sueldo", 217);
             DgvSueldosPH.Columns[2].DefaultCellStyle.Format = "C";
         }
 
@@ -65,13 +65,10 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             LlenarCombo(CboPerfil, perfilService.ObtenerPerfiles(), "Nombre", "IdPerfil");
             dateFechaDesde.Value = DateTime.Today.AddMonths(-1);
             dateFechaDesde.Checked = true;
-            dateFechaHasta.Value = DateTime.Today;
-            dateFechaHasta.Checked = true;
 
             var parametros = new Dictionary<string, object>
             {
-                {"fechaDesde", DateTime.Today.AddMonths(-1)},
-                { "fechaHasta", DateTime.Today }
+                {"fechaDesde", DateTime.Today.AddMonths(-1)}
             };
 
             Consultar(parametros, false);

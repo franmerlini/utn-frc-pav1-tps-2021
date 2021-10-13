@@ -44,6 +44,7 @@ namespace BugTrackingSystem.CapaPresentacion
 
             dgvAsignaciones.DataSource = listaSueldoAsignacion;
             dgvDescuentos.DataSource = listaSueldoDescuento;
+            CalcularTotales();
         }
 
         private void InitializeDataGridView()   

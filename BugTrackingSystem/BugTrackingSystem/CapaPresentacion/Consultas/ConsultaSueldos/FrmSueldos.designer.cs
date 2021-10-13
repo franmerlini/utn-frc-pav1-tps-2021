@@ -61,6 +61,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.dgvSueldos.RowHeadersWidth = 51;
             this.dgvSueldos.Size = new System.Drawing.Size(705, 324);
             this.dgvSueldos.TabIndex = 3;
+            this.dgvSueldos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSueldos_DataBindingComplete);
             // 
             // grpFiltros
             // 
@@ -93,7 +94,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.BtnDetalles.Name = "BtnDetalles";
             this.BtnDetalles.Size = new System.Drawing.Size(44, 44);
             this.BtnDetalles.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.BtnDetalles, "Ver detalles de registro seleccionado");
+            this.toolTip1.SetToolTip(this.BtnDetalles, "Ver información de sueldos");
             this.BtnDetalles.UseVisualStyleBackColor = false;
             this.BtnDetalles.Click += new System.EventHandler(this.BtnDetalles_Click);
             // 

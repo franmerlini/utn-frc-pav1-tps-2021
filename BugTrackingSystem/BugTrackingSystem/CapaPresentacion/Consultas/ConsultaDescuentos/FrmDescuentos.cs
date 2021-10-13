@@ -140,7 +140,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
 
+        private void DgvDescuentos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
             foreach (DataGridViewRow a in DgvDescuentos.Rows)
             {
                 if ((bool)a.Cells[2].Value)

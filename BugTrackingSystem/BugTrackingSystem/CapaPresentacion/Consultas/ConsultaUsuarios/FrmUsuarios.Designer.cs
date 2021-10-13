@@ -70,6 +70,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.Size = new System.Drawing.Size(971, 296);
             this.dgvUsuarios.TabIndex = 3;
+            this.dgvUsuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvUsuarios_DataBindingComplete);
             // 
             // grpInformacion
             // 

@@ -17,6 +17,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
     {
         private readonly SueldoService sueldoService;
         private readonly UsuarioService usuarioService;
+        private readonly SueldoAsignacionService sueldoAsignacionService;
+        private readonly SueldoDescuentoService sueldoDescuentoService;
         private readonly Dictionary<string, object> parametros = new Dictionary<string, object>();
 
         // Métodos de carga e inicialización
@@ -27,12 +29,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
 
             sueldoService = new SueldoService();
             usuarioService = new UsuarioService();
+            sueldoAsignacionService = new SueldoAsignacionService();
+            sueldoDescuentoService = new SueldoDescuentoService();
         }
 
         private void InitializeDataGridView()
         {
             // Crea un DataGridView no vinculado declarando un recuento de columnas.
-            dgvSueldos.ColumnCount = 3;
+            dgvSueldos.ColumnCount = 4;
             dgvSueldos.ColumnHeadersVisible = true;
 
             // Configura la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -48,11 +52,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
 
             // Define el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(dgvSueldos, 0, "Usuario", "Usuario", 238);
-            CrearColumnas(dgvSueldos, 1, "Fecha", "Fecha", 120);
-            CrearColumnas(dgvSueldos, 2, "Sueldo bruto", "SueldoBruto", 462);
+            CrearColumnas(dgvSueldos, 0, "Usuario", "Usuario", 163);
+            CrearColumnas(dgvSueldos, 1, "Fecha", "Fecha", 163);
+            CrearColumnas(dgvSueldos, 2, "Sueldo Bruto", "SueldoBruto", 163);
             dgvSueldos.Columns[2].DefaultCellStyle.Format = "C";
-
+            CrearColumnas(dgvSueldos, 3, "Sueldo Neto", "", 163);
+            dgvSueldos.Columns[3].DefaultCellStyle.Format = "C";
         }
 
         private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
@@ -68,13 +73,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "Nombre");
             dateFechaDesde.Checked = true;
             dateFechaDesde.Value = DateTime.Today.AddMonths(-1);
-            dateFechaHasta.Checked = true;
-            dateFechaHasta.Value = DateTime.Today;
 
             var parametros = new Dictionary<string, object>
             {
-                {"fechaDesde", DateTime.Today.AddMonths(-1)},
-                {"fechaHasta", DateTime.Today }
+                {"fechaDesde", DateTime.Today.AddMonths(-1)}
             };
 
             Consultar(parametros, false);
@@ -135,6 +137,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void BtnDetalles_Click(object sender, EventArgs e)
@@ -153,6 +156,27 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             };
             FrmSueldosDetalles frmDetalles = new FrmSueldosDetalles(parametrosDetalles);
             frmDetalles.ShowDialog();
+        }
+
+        private void dgvSueldos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvSueldos.Rows)
+            {
+                var parametrosSueldoNeto = new Dictionary<string, object>
+                {
+                    {"idUsuario", ((Usuario)row.Cells[0].Value).IdUsuario },
+                    {"fechaExacta", ((DateTime)row.Cells[1].Value).ToString("yyyy-MM-dd")},
+                };
+
+                IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones(parametrosSueldoNeto);
+                IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos(parametrosSueldoNeto);
+
+                decimal totalAsignaciones = listadoAsignaciones.Sum(a => a.Monto);
+                decimal totalDescuentos = listadoDescuentos.Sum(d => d.Monto);
+                var importeTotal = (decimal)row.Cells[2].Value + totalAsignaciones - totalDescuentos;
+
+                row.Cells[3].Value = importeTotal;
+            }
         }
     }
 }

@@ -198,7 +198,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
 
+        private void dgvUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
             foreach (DataGridViewRow a in dgvUsuarios.Rows)
             {
                 if ((bool)a.Cells[5].Value)

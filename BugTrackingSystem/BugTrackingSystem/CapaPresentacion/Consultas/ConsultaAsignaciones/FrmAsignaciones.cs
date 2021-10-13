@@ -134,7 +134,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
 
+        private void DgvAsignaciones_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
             foreach (DataGridViewRow a in DgvAsignaciones.Rows)
             {
                 if ((bool)a.Cells[2].Value)
@@ -144,7 +147,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
 
             }
         }
-
     }
 
 
