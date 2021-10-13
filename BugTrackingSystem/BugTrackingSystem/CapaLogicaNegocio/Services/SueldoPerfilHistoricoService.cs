@@ -22,9 +22,9 @@ namespace BugTrackingSystem.CapaLogicaNegocio.Services
             return sueldoPerfilHistoricoDao.CrearSueldoPerfilHistorico(sueldoPerfilHistorico);
         }
 
-        internal bool ActualizarSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico, Dictionary<string, object> parametros)
+        internal bool ActualizarSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico)
         {
-            return sueldoPerfilHistoricoDao.ActualizarSueldoPerfilHistorico(sueldoPerfilHistorico, parametros);
+            return sueldoPerfilHistoricoDao.ActualizarSueldoPerfilHistorico(sueldoPerfilHistorico);
         }
 
         internal IList<SueldoPerfilHistorico> ObtenerSueldosPerfilHistorico(Dictionary<string, object> parametros = null)

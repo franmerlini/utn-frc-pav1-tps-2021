@@ -143,9 +143,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.chkBorrado.AutoSize = true;
             this.chkBorrado.Location = new System.Drawing.Point(103, 53);
             this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
+            this.chkBorrado.Size = new System.Drawing.Size(64, 17);
             this.chkBorrado.TabIndex = 68;
-            this.chkBorrado.Text = "Borrado";
+            this.chkBorrado.Text = "Inactivo";
             this.chkBorrado.UseVisualStyleBackColor = true;
             // 
             // nudMonto

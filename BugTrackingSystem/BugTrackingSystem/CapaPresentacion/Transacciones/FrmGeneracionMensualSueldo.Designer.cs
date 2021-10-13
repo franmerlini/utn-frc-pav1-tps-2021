@@ -485,7 +485,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(976, 54);
+            this.groupBox4.Size = new System.Drawing.Size(978, 54);
             this.groupBox4.TabIndex = 48;
             this.groupBox4.TabStop = false;
             // 
@@ -535,7 +535,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(51, 46);
             this.btnAceptar.TabIndex = 49;
-            this.toolTip1.SetToolTip(this.btnAceptar, "Guardar transacción");
+            this.toolTip1.SetToolTip(this.btnAceptar, "Guardar recibo de sueldo");
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -575,7 +575,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(50, 46);
             this.btnLimpiar.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.btnLimpiar, "Limpiar transacción actual");
+            this.toolTip1.SetToolTip(this.btnLimpiar, "Limpiar recibo");
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 

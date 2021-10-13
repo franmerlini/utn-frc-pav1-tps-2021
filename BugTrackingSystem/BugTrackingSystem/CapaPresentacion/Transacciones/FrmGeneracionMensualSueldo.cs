@@ -1,4 +1,5 @@
 ﻿using BugTrackingSystem.CapaLogicaNegocio;
+using BugTrackingSystem.CapaLogicaNegocio.Services;
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace BugTrackingSystem.CapaPresentacion
         private readonly SueldoService sueldoService;
         private readonly DescuentoService descuentoService;
         private readonly AsignacionService asignacionService;
+        private readonly SueldoPerfilHistoricoService sueldoPerfilHistoricoService;
 
         public FrmGeneracionMensualSueldo()
         {
@@ -30,6 +32,7 @@ namespace BugTrackingSystem.CapaPresentacion
             sueldoService = new SueldoService();
             descuentoService = new DescuentoService();
             asignacionService = new AsignacionService();
+            sueldoPerfilHistoricoService = new SueldoPerfilHistoricoService();
 
             listaSueldoAsignacion = new BindingList<SueldoAsignacion>();
             listaSueldoDescuento = new BindingList<SueldoDescuento>();
@@ -233,15 +236,7 @@ namespace BugTrackingSystem.CapaPresentacion
             DialogResult rta = MessageBox.Show("¿Seguro que desea limpiar la transacción?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (rta == DialogResult.Yes)
             {
-                cboUsuario.SelectedIndex = -1;
-                dtpFecha.Value = DateTime.Today;
-                nudSueldoBruto.Value = 0;
-                nudCantidad.Value = 1;
-                cboDtoAsig.SelectedIndex = -1;
-                ActualizarMontoEImporte();
-                listaSueldoAsignacion.Clear();
-                listaSueldoDescuento.Clear();
-                CalcularTotales();
+                LimpiarTransaccion();
             }
         }
 
@@ -297,15 +292,33 @@ namespace BugTrackingSystem.CapaPresentacion
             else
                 sueldo.SueldoBruto = nudSueldoBruto.Value;
 
-            if (Existe(sueldo))
+            if (Existe(sueldo) == 1)
             {
                 MessageBox.Show("Ya existe una transacción con tal fecha y usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            else if (Existe(sueldo) == 2)
+            {
+                DialogResult rta = MessageBox.Show("Ya se ha registrado un recibo de sueldo en este mes para el usuario. ¿Seguro que desea continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (rta == DialogResult.No)
+                    return;
 
-            if (txtSueldoTotal.Text.Contains("-"))
+                if (txtSueldoTotal.Text.Contains("-"))
+                {
+                    DialogResult respuesta = MessageBox.Show("El sueldo total es menor a 0. ¿Continuar de todas formas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (respuesta == DialogResult.No)
+                        return;
+                }
+            }
+            else if (txtSueldoTotal.Text.Contains("-"))
             {
                 DialogResult rta = MessageBox.Show("El sueldo total es menor a 0. ¿Seguro que desea continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (rta == DialogResult.No)
+                    return;
+            }
+            else
+            {
+                DialogResult rta = MessageBox.Show("¿Está seguro que desea continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (rta == DialogResult.No)
                     return;
             }
@@ -322,42 +335,82 @@ namespace BugTrackingSystem.CapaPresentacion
                 s.Usuario = (Usuario)cboUsuario.SelectedItem;
             }
 
-            var n = sueldoService.CrearSueldoTransaccion(sueldo, listaSueldoAsignacion, listaSueldoDescuento);
-            if (n == 0)
+            var sueldoPerfilHistorico = new SueldoPerfilHistorico()
+            {
+                Sueldo = sueldo.SueldoBruto,
+                Perfil = sueldo.Usuario.Perfil,
+                Fecha = sueldo.Fecha
+            };
+
+            IList<SueldoPerfilHistorico> listaSueldosHistoricos = sueldoPerfilHistoricoService.ObtenerSueldosPerfilHistorico();
+            foreach (SueldoPerfilHistorico s in listaSueldosHistoricos)
+            {
+                if (s.Perfil.IdPerfil == sueldoPerfilHistorico.Perfil.IdPerfil && s.Fecha.ToString("dd/MM/yyyy") == sueldoPerfilHistorico.Fecha.ToString("dd/MM/yyyy"))
+                {
+                    if (s.Sueldo == sueldoPerfilHistorico.Sueldo)
+                    {
+                        sueldoPerfilHistorico = null;
+                        break;
+                    }
+
+                    DialogResult rta = MessageBox.Show("Ya existe en el sistema un sueldo histórico con perfil " + s.Perfil.Nombre + " y fecha " + s.Fecha.ToString("dd/MM/yyyy") + ", cuyo sueldo bruto es " + s.Sueldo.ToString("C") + ". ¿Desea reemplazarlo?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (rta == DialogResult.Yes)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        sueldoPerfilHistorico = null;
+                        break;
+                    }                   
+                }
+            }
+
+            var n = sueldoService.CrearSueldoTransaccion(sueldo, listaSueldoAsignacion, listaSueldoDescuento, sueldoPerfilHistorico);
+            if (n == 1)
+            {
+                MessageBox.Show("Algunos montos o cantidades exceden valores máximos disponibles. Reintente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (n == 0)
             {
                 DialogResult rta = MessageBox.Show("Sueldo generado correctamente. \n ¿Desea limpiar la transacción?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (rta == DialogResult.Yes)
                 {
-                    cboUsuario.SelectedIndex = -1;
-                    dtpFecha.Value = DateTime.Today;
-                    nudSueldoBruto.Value = 0;
-                    nudCantidad.Value = 1;
-                    cboDtoAsig.SelectedIndex = -1;
-                    ActualizarMontoEImporte();
-                    listaSueldoAsignacion.Clear();
-                    listaSueldoDescuento.Clear();
-                    CalcularTotales();
+                    LimpiarTransaccion();
                 }
             }
-            else if (n == 1)
-                MessageBox.Show("Algunos montos o cantidades exceden valores máximos disponibles. Reintente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private bool Existe(Sueldo sueldo)
+        private int Existe(Sueldo sueldo)
         {
-            var parametro = new Dictionary<string, object>()
-            {
-                { "borrado", true },
-            };
-
-            IList<Sueldo> listadoSueldos = sueldoService.ObtenerSueldos(parametro);
+            IList<Sueldo> listadoSueldos = sueldoService.ObtenerSueldos();
 
             foreach (Sueldo s in listadoSueldos)
             {
                 if (s.Usuario.IdUsuario.Equals(sueldo.Usuario.IdUsuario) && (s.Fecha.ToString("dd/MM/yyyy")).Equals(sueldo.Fecha.ToString("dd/MM/yyyy")))
-                    return true;
+                    return 1;
             }
-            return false;
+
+            foreach (Sueldo s in listadoSueldos)
+            {
+                if (s.Usuario.IdUsuario.Equals(sueldo.Usuario.IdUsuario) && (s.Fecha.Month.Equals(sueldo.Fecha.Month)))
+                    return 2;
+            }
+
+            return 0;
+        }
+
+        private void LimpiarTransaccion()
+        {
+            cboUsuario.SelectedIndex = -1;
+            dtpFecha.Value = DateTime.Today;
+            nudSueldoBruto.Value = 0;
+            nudCantidad.Value = 1;
+            cboDtoAsig.SelectedIndex = -1;
+            ActualizarMontoEImporte();
+            listaSueldoAsignacion.Clear();
+            listaSueldoDescuento.Clear();
+            CalcularTotales();
         }
     }
 }

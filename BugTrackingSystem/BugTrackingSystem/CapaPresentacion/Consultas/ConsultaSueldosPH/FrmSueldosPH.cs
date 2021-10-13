@@ -29,7 +29,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
 
         private void InitializeDataGridView()
         {
-            DgvSueldosPH.ColumnCount = 4;
+            DgvSueldosPH.ColumnCount = 3;
             DgvSueldosPH.ColumnHeadersVisible = true;
             DgvSueldosPH.AutoGenerateColumns = false;
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle
@@ -42,7 +42,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             CrearColumnas(DgvSueldosPH, 1, "Fecha", "Fecha", 120);
             CrearColumnas(DgvSueldosPH, 2, "Sueldo", "Sueldo", 462);
             DgvSueldosPH.Columns[2].DefaultCellStyle.Format = "C";
-            CrearColumnas(DgvSueldosPH, 3, "Borrado", "Borrado", 110);
         }
 
         private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
@@ -64,10 +63,18 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
         private void FrmSueldosPH_Load(object sender, EventArgs e)
         {
             LlenarCombo(CboPerfil, perfilService.ObtenerPerfiles(), "Nombre", "IdPerfil");
+            dateFechaDesde.Value = DateTime.Today.AddMonths(-1);
+            dateFechaDesde.Checked = true;
+            dateFechaHasta.Value = DateTime.Today;
+            dateFechaHasta.Checked = true;
 
-            IList<SueldoPerfilHistorico> listadoSueldos = sueldoPerfilHistoricoService.ObtenerSueldosPerfilHistorico();
-            DgvSueldosPH.DataSource = listadoSueldos;
-            lblTotal.Text = "Registros encontrados: " + listadoSueldos.Count;
+            var parametros = new Dictionary<string, object>
+            {
+                {"fechaDesde", DateTime.Today.AddMonths(-1)},
+                { "fechaHasta", DateTime.Today }
+            };
+
+            Consultar(parametros, false);
         }
 
         private void BtnConsultar_Click(object sender, EventArgs e)
@@ -90,11 +97,11 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
                 parametros.Add("idPerfil", perfil);
             }
 
-            if (ChkBaja.Checked)
-            {
-                parametros.Add("borrado", true);
-            }
+            Consultar(parametros, true);
+        }
 
+        private void Consultar(Dictionary<string, object> parametros = null, bool mostrarMensaje = true)
+        {
             IList<SueldoPerfilHistorico> listadoSueldos = sueldoPerfilHistoricoService.ObtenerSueldosPerfilHistorico(parametros);
             DgvSueldosPH.DataSource = listadoSueldos;
             lblTotal.Text = "Registros encontrados: " + listadoSueldos.Count;
@@ -105,70 +112,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             }
 
             CboPerfil.SelectedIndex = -1;
-        }
-
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            if (DgvSueldosPH.RowCount.Equals(0))
-            {
-                MessageBox.Show("Debe seleccionar un registro antes de eliminarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            SueldoPerfilHistorico sueldoPerfilHistorico = (SueldoPerfilHistorico)DgvSueldosPH.CurrentRow.DataBoundItem;
-
-            if (sueldoPerfilHistorico.Borrado == true)
-            {
-                MessageBox.Show("¡No puede eliminar un registro ya borrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            DialogResult rta = MessageBox.Show("¿Seguro que desea borrar el registro seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (rta == DialogResult.Yes)
-            {
-                sueldoPerfilHistorico.Borrado = true;
-
-                var parametrosEliminacion = new Dictionary<string, object>
-                {
-                    {"idPerfilBase", Convert.ToInt32(sueldoPerfilHistorico.Perfil.IdPerfil) },
-                    {"fechaBase", Convert.ToDateTime(sueldoPerfilHistorico.Fecha) }
-                };
-
-                if (!sueldoPerfilHistoricoService.ActualizarSueldoPerfilHistorico(sueldoPerfilHistorico, parametrosEliminacion))
-                    MessageBox.Show("El registro no se pudo borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                IList<SueldoPerfilHistorico> listadoSueldos = sueldoPerfilHistoricoService.ObtenerSueldosPerfilHistorico(parametros);
-                DgvSueldosPH.DataSource = listadoSueldos;
-                lblTotal.Text = "Registros encontrados: " + listadoSueldos.Count;
-            }
-        }
-
-        private void BtnNuevo_Click(object sender, EventArgs e)
-        {
-            FrmSueldosPHABM frmAgregar = new FrmSueldosPHABM(FrmSueldosPHABM.FormMode.nuevo);
-            frmAgregar.ShowDialog();
-
-            IList<SueldoPerfilHistorico> listadoSueldos = sueldoPerfilHistoricoService.ObtenerSueldosPerfilHistorico(parametros);
-            DgvSueldosPH.DataSource = listadoSueldos;
-            lblTotal.Text = "Registros encontrados: " + listadoSueldos.Count;
-        }
-
-
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            if (DgvSueldosPH.RowCount.Equals(0))
-            {
-                MessageBox.Show("Debe seleccionar un registro antes de editarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            SueldoPerfilHistorico sueldoPerfilHistorico = (SueldoPerfilHistorico)DgvSueldosPH.CurrentRow.DataBoundItem;
-            FrmSueldosPHABM frmEditar = new FrmSueldosPHABM(FrmSueldosPHABM.FormMode.actualizar, sueldoPerfilHistorico);
-            frmEditar.ShowDialog();
-
-            IList<SueldoPerfilHistorico> listadoSueldos = sueldoPerfilHistoricoService.ObtenerSueldosPerfilHistorico(parametros);
-            DgvSueldosPH.DataSource = listadoSueldos;
-            lblTotal.Text = "Registros encontrados: " + listadoSueldos.Count;
         }
     }
 }

@@ -17,7 +17,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                             "         s.id_descuento, ",
                                             "         s.cantidad, ",
                                             "         s.monto, ",
-                                            "         s.borrado, ",
                                             "         u.id_usuario, ",
                                             "         u.id_perfil, ",
                                             "         u.usuario, ",
@@ -52,16 +51,10 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (s.monto = @monto) ";
                 if (parametros.ContainsKey("cantidad"))
                     consultaSQL += " AND (s.cantidad = @cantidad) ";
-                if (!parametros.ContainsKey("borrado"))
-                    consultaSQL += " AND (s.borrado = 0) ";
                 if (parametros.ContainsKey("usuarioExacto"))
                     consultaSQL += " AND (u.usuario = @usuarioExacto) ";
                 if (parametros.ContainsKey("idDescuento"))
                     consultaSQL += " AND (s.id_descuento = @idDescuento) ";
-            }
-            else
-            {
-                consultaSQL += "AND (s.borrado = 0) ";
             }
 
             consultaSQL += " ORDER BY s.fecha DESC";
@@ -78,13 +71,13 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
         internal bool CrearSueldoDescuento(SueldoDescuento sueldoDescuento)
         {
-            string consultaSQL = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, cantidad, monto, borrado)" +
-                                 " VALUES (@idUsuario, @fecha, @idDescuento, @cantidad, @monto, 0)";
+            string consultaSQL = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, cantidad, monto)" +
+                                 " VALUES (@idUsuario, @fecha, @idDescuento, @cantidad, @monto)";
 
             var parametros = new Dictionary<string, object>
             {
                 { "idUsuario", sueldoDescuento.Usuario.IdUsuario },
-                { "fecha", sueldoDescuento.Fecha },
+                { "fecha", sueldoDescuento.Fecha.ToString("yyyy-MM-dd") },
                 { "idDescuento", sueldoDescuento.Descuento.IdDescuento },
                 { "cantidad", sueldoDescuento.Cantidad },
                 { "monto", sueldoDescuento.Monto }
@@ -102,17 +95,15 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "     id_descuento = @idDescuento," +
                                  "     cantidad = @cantidad," +
                                  "     monto = @monto," +
-                                 "     borrado = @borrado" +
                                  " WHERE id_usuario = @idUsuarioBase " +
                                  " AND fecha = @fechaBase " +
                                  " AND id_descuento = @idDescuentoBase";
 
             parametros.Add("idUsuario", sueldoDescuento.Usuario.IdUsuario);
-            parametros.Add("fecha", sueldoDescuento.Fecha);
+            parametros.Add("fecha", sueldoDescuento.Fecha.ToString("yyyy-MM-dd"));
             parametros.Add("idDescuento", sueldoDescuento.Descuento.IdDescuento);
             parametros.Add("cantidad", sueldoDescuento.Cantidad);
             parametros.Add("monto", sueldoDescuento.Monto);
-            parametros.Add("borrado", sueldoDescuento.Borrado);
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -147,7 +138,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
                 Monto = Convert.ToDecimal(row["monto"].ToString()),
                 Cantidad = Convert.ToInt32(row["cantidad"].ToString()),
-                Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
 
             return sueldoDescuento;

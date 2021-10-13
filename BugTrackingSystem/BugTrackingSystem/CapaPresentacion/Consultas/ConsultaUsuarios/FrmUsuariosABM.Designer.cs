@@ -97,9 +97,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.grpEntradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpEntradas.Controls.Add(this.tlpEntradas);
             this.grpEntradas.Location = new System.Drawing.Point(0, 20);
-            this.grpEntradas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.grpEntradas.Name = "grpEntradas";
-            this.grpEntradas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpEntradas.Padding = new System.Windows.Forms.Padding(2);
             this.grpEntradas.Size = new System.Drawing.Size(356, 207);
             this.grpEntradas.TabIndex = 77;
             this.grpEntradas.TabStop = false;
@@ -124,7 +124,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.tlpEntradas.Controls.Add(this.lblUsuario, 0, 0);
             this.tlpEntradas.Controls.Add(this.TxtUsuario, 1, 0);
             this.tlpEntradas.Location = new System.Drawing.Point(4, 17);
-            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpEntradas.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEntradas.Name = "tlpEntradas";
             this.tlpEntradas.RowCount = 7;
             this.tlpEntradas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
@@ -165,9 +165,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.ChkBorrado.AutoSize = true;
             this.ChkBorrado.Location = new System.Drawing.Point(103, 118);
             this.ChkBorrado.Name = "ChkBorrado";
-            this.ChkBorrado.Size = new System.Drawing.Size(63, 17);
+            this.ChkBorrado.Size = new System.Drawing.Size(64, 17);
             this.ChkBorrado.TabIndex = 45;
-            this.ChkBorrado.Text = "Borrado";
+            this.ChkBorrado.Text = "Inactivo";
             this.ChkBorrado.UseVisualStyleBackColor = true;
             // 
             // btnVolver

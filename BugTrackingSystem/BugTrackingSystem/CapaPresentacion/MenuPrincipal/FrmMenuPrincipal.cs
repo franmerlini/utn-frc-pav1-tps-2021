@@ -170,18 +170,6 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Consulta de Sueldos");
         }
 
-        private void sueldosAsignacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmSueldoAsignaciones ventana = new FrmSueldoAsignaciones();
-            MostrarVentana(ventana, "Consulta de Sueldos Asignaciones");
-        }
-
-        private void sueldosDescuentosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmSueldoDescuentos ventana = new FrmSueldoDescuentos();
-            MostrarVentana(ventana, "Consulta de Sueldos Descuentos");
-        }
-
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult rta;

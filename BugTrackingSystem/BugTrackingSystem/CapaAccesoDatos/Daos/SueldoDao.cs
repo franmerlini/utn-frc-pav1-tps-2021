@@ -17,7 +17,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
             String consultaSQL = string.Concat(" SELECT s.id_usuario, ",
                                                 "         s.fecha, ",
                                                 "         s.sueldo_bruto, ",
-                                                "         s.borrado, ",
                                                 "         u.id_usuario, ",
                                                 "         u.id_perfil, ",
                                                 "         u.usuario, ",
@@ -45,17 +44,11 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (s.fecha = @fechaExacta) ";
                 if (parametros.ContainsKey("sueldoBruto"))
                     consultaSQL += " AND (s.sueldo_bruto = @sueldoBruto) ";
-                if (!parametros.ContainsKey("borrado"))
-                    consultaSQL += " AND (s.borrado = 0) ";
                 if (parametros.ContainsKey("idUsuario"))
                     consultaSQL += " AND (s.id_usuario = @idUsuario) ";
                 //Para consultar por el usuario exacto
                 if (parametros.ContainsKey("usuarioExacto"))
                     consultaSQL += " AND (usuario = @usuarioExacto) ";
-            }
-            else
-            {
-                consultaSQL += "AND (s.borrado = 0) ";
             }
 
             consultaSQL += " ORDER BY s.fecha DESC";
@@ -72,8 +65,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
         internal bool CrearSueldo(Sueldo sueldo)
         {
-            string consultaSQL = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto, borrado)" +
-                                 " VALUES (@idUsuario, @fecha, @sueldoBruto, 0)";
+            string consultaSQL = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto)" +
+                                 " VALUES (@idUsuario, @fecha, @sueldoBruto)";
 
             var parametros = new Dictionary<string, object>
             {
@@ -91,21 +84,19 @@ namespace BugTrackingSystem.CapaAccesoDatos
             string consultaSQL = " UPDATE Sueldos" +
                                  " SET id_usuario = @idUsuario," +
                                  "     fecha = @fecha," +
-                                 "     sueldo_bruto = @sueldoBruto," +
-                                 "     borrado = @borrado" +
+                                 "     sueldo_bruto = @sueldoBruto" +
                                  " WHERE id_usuario = @idUsuarioBase" + 
                                  " AND fecha = @fechaBase";
 
             parametros.Add("idUsuario", sueldo.Usuario.IdUsuario);
             parametros.Add("fecha", sueldo.Fecha);
             parametros.Add("sueldoBruto", sueldo.SueldoBruto);
-            parametros.Add("borrado", sueldo.Borrado);
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal int CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento)
+        internal int CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento, SueldoPerfilHistorico sueldoPerfilHistorico)
         {
             var string_conexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=BugTrackerTPI;Integrated Security=True";
 
@@ -122,11 +113,11 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 insertSueldo.CommandType = CommandType.Text;
                 insertSueldo.Transaction = dbTransaction;
 
-                insertSueldo.CommandText = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto, borrado)" +
-                                           " VALUES (@id_usuario, @fecha, @sueldo_bruto, 0) ";
+                insertSueldo.CommandText = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto)" +
+                                           " VALUES (@id_usuario, @fecha, @sueldo_bruto) ";
 
                 insertSueldo.Parameters.AddWithValue("id_usuario", sueldo.Usuario.IdUsuario);
-                insertSueldo.Parameters.AddWithValue("fecha", sueldo.Fecha);
+                insertSueldo.Parameters.AddWithValue("fecha", sueldo.Fecha.ToString("yyyy-MM-dd"));
                 insertSueldo.Parameters.AddWithValue("sueldo_bruto", sueldo.SueldoBruto);
 
                 insertSueldo.ExecuteNonQuery();
@@ -138,11 +129,11 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     insertAsignacion.CommandType = CommandType.Text;
                     insertAsignacion.Transaction = dbTransaction;
 
-                    insertAsignacion.CommandText = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad, borrado) " +
-                                                   " VALUES (@id_usuario, @fecha, @id_asignacion, @monto, @cantidad, 0) ";
+                    insertAsignacion.CommandText = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad) " +
+                                                   " VALUES (@id_usuario, @fecha, @id_asignacion, @monto, @cantidad) ";
 
                     insertAsignacion.Parameters.AddWithValue("id_usuario", s.Usuario.IdUsuario);
-                    insertAsignacion.Parameters.AddWithValue("fecha", s.Fecha);
+                    insertAsignacion.Parameters.AddWithValue("fecha", s.Fecha.ToString("yyyy-MM-dd"));
                     insertAsignacion.Parameters.AddWithValue("id_asignacion", s.Asignacion.IdAsignacion);
                     insertAsignacion.Parameters.AddWithValue("monto", s.Monto);
                     insertAsignacion.Parameters.AddWithValue("cantidad", s.Cantidad);
@@ -157,16 +148,45 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     insertDescuento.CommandType = CommandType.Text;
                     insertDescuento.Transaction = dbTransaction;
 
-                    insertDescuento.CommandText = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, monto, cantidad, borrado) " +
-                                                   " VALUES (@id_usuario, @fecha, @id_descuento, @monto, @cantidad, 0) ";
+                    insertDescuento.CommandText = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, monto, cantidad) " +
+                                                   " VALUES (@id_usuario, @fecha, @id_descuento, @monto, @cantidad) ";
 
                     insertDescuento.Parameters.AddWithValue("id_usuario", s.Usuario.IdUsuario);
-                    insertDescuento.Parameters.AddWithValue("fecha", s.Fecha);
+                    insertDescuento.Parameters.AddWithValue("fecha", s.Fecha.ToString("yyyy-MM-dd"));
                     insertDescuento.Parameters.AddWithValue("id_descuento", s.Descuento.IdDescuento);
                     insertDescuento.Parameters.AddWithValue("monto", s.Monto);
                     insertDescuento.Parameters.AddWithValue("cantidad", s.Cantidad);
 
                     insertDescuento.ExecuteNonQuery();
+                }
+
+                if (sueldoPerfilHistorico != null)
+                {
+                    SqlCommand insertSPH = new SqlCommand();
+                    insertSPH.Connection = dbConnection;
+                    insertSPH.CommandType = CommandType.Text;
+                    insertSPH.Transaction = dbTransaction;
+
+                    insertSPH.CommandText =  "IF NOT EXISTS (SELECT * FROM SueldoPerfilHistorico " +
+                                                "WHERE id_perfil = @idPerfil " +
+                                                "AND fecha = @fecha) " +
+                                             "BEGIN " +
+                                                "INSERT INTO SueldoPerfilHistorico (id_perfil, fecha, sueldo) " +
+                                                "VALUES (@idPerfil, @fecha, @sueldo) " +
+                                             "END " +
+                                             "ELSE " +
+                                             "BEGIN " +
+                                                "UPDATE SueldoPerfilHistorico " +
+                                                "SET sueldo = @sueldo " +
+                                                "WHERE id_perfil = @idPerfil " +
+                                                "AND fecha = @fecha " +
+                                             "END";
+
+                    insertSPH.Parameters.AddWithValue("idPerfil", sueldoPerfilHistorico.Perfil.IdPerfil);
+                    insertSPH.Parameters.AddWithValue("fecha", sueldoPerfilHistorico.Fecha.ToString("yyyy-MM-dd"));
+                    insertSPH.Parameters.AddWithValue("sueldo", sueldoPerfilHistorico.Sueldo);
+
+                    insertSPH.ExecuteNonQuery();
                 }
 
                 dbTransaction.Commit();
@@ -200,7 +220,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
                 Fecha = Convert.ToDateTime(row["fecha"].ToString()),
                 SueldoBruto = Convert.ToDecimal(row["sueldo_bruto"].ToString()),
-                Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
 
             return sueldo;

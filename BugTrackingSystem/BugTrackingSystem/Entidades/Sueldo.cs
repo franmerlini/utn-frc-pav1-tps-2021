@@ -7,6 +7,5 @@ namespace BugTrackingSystem.Entidades
         public Usuario Usuario { get; set; }
         public DateTime Fecha { get; set; }
         public decimal SueldoBruto { get; set; }
-        public bool Borrado { get; set; }
     }
 }

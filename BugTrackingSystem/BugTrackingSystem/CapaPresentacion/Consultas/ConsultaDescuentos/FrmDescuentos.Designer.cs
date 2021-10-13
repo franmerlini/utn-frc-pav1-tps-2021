@@ -53,7 +53,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.grpInformacion.Controls.Add(this.lblTotal);
             this.grpInformacion.Location = new System.Drawing.Point(239, 12);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(260, 110);
+            this.grpInformacion.Size = new System.Drawing.Size(208, 110);
             this.grpInformacion.TabIndex = 9;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -78,7 +78,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.DgvDescuentos.Name = "DgvDescuentos";
             this.DgvDescuentos.ReadOnly = true;
             this.DgvDescuentos.RowHeadersWidth = 51;
-            this.DgvDescuentos.Size = new System.Drawing.Size(487, 310);
+            this.DgvDescuentos.Size = new System.Drawing.Size(435, 310);
             this.DgvDescuentos.TabIndex = 10;
             // 
             // grpAcciones
@@ -98,9 +98,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.ChkBaja.AutoSize = true;
             this.ChkBaja.Location = new System.Drawing.Point(6, 91);
             this.ChkBaja.Name = "ChkBaja";
-            this.ChkBaja.Size = new System.Drawing.Size(124, 17);
+            this.ChkBaja.Size = new System.Drawing.Size(99, 17);
             this.ChkBaja.TabIndex = 9;
-            this.ChkBaja.Text = "Incluir dados de baja";
+            this.ChkBaja.Text = "Incluir inactivos";
             this.ChkBaja.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -197,7 +197,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(511, 450);
+            this.ClientSize = new System.Drawing.Size(460, 450);
             this.Controls.Add(this.grpInformacion);
             this.Controls.Add(this.DgvDescuentos);
             this.Controls.Add(this.grpAcciones);

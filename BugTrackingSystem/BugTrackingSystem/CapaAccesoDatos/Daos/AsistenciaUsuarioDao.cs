@@ -81,7 +81,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
             var parametros = new Dictionary<string, object>
             {
                 { "idUsuario", asistenciaUsuario.Usuario.IdUsuario },
-                { "fecha", asistenciaUsuario.Fecha },
+                { "fecha", asistenciaUsuario.Fecha.ToString("yyyy-MM-dd") },
                 { "horaIngreso", asistenciaUsuario.HoraIngreso },
                 { "horaSalida", asistenciaUsuario.HoraSalida },
                 { "idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia },
@@ -109,7 +109,7 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "  AND id_usuario = @idUsuarioBase ";
 
             parametros.Add("idUsuario", asistenciaUsuario.Usuario.IdUsuario);
-            parametros.Add("fecha", asistenciaUsuario.Fecha);
+            parametros.Add("fecha", asistenciaUsuario.Fecha.ToString("yyyy-MM-dd"));
             parametros.Add("horaIngreso", asistenciaUsuario.HoraIngreso);
             parametros.Add("horaSalida", asistenciaUsuario.HoraSalida);
             parametros.Add("idEstadoAsistencia", asistenciaUsuario.EstadoAsistencia.IdEstadoAsistencia);

@@ -7,6 +7,5 @@ namespace BugTrackingSystem.Entidades
         public Perfil Perfil { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Sueldo { get; set; }
-        public bool Borrado { get; set; }
     }
 }

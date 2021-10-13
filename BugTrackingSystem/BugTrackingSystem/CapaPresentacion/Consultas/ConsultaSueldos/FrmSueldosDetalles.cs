@@ -19,7 +19,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
         private readonly SueldoDescuentoService sueldoDescuentosService;
         private readonly SueldoService sueldoService;
 
-        public FrmSueldosDetalles(Dictionary<string, object> parametros, Color color)
+        public FrmSueldosDetalles(Dictionary<string, object> parametros)
         {
             InitializeComponent();
             InitializeDataGridViewDescuentos();
@@ -27,7 +27,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             sueldoAsignacionesService = new SueldoAsignacionService();
             sueldoDescuentosService = new SueldoDescuentoService();
             sueldoService = new SueldoService();
-            this.BackColor = color;
 
             Sueldo sueldo = (sueldoService.ObtenerSueldos(parametros)).First();
             IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionesService.ObtenerSueldoAsignaciones(parametros);
@@ -38,10 +37,9 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             TxtUsuario.Text = sueldo.Usuario.Nombre;
             TxtFecha.Text = sueldo.Fecha.ToString("dd/MM/yyyy");
             TxtSueldoBruto.Text = sueldo.SueldoBruto.ToString("C");
-            chkBorrado.Checked = sueldo.Borrado;
-            decimal totalAsignaciones = listadoAsignaciones.Where(a => !a.Borrado).Sum(a => a.Monto);
+            decimal totalAsignaciones = listadoAsignaciones.Sum(a => a.Monto);
             TxtAsignaciones.Text = totalAsignaciones.ToString("C");
-            decimal totalDescuentos = listadoDescuentos.Where(d => !d.Borrado).Sum(d => d.Monto);
+            decimal totalDescuentos = listadoDescuentos.Sum(d => d.Monto);
             TxtDescuentos.Text = totalDescuentos.ToString("C");
             var importeTotal = sueldo.SueldoBruto + totalAsignaciones - totalDescuentos;
             TxtTotal.Text = importeTotal.ToString("C");
@@ -50,7 +48,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
         private void InitializeDataGridViewDescuentos()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            DgvDescuentos.ColumnCount = 4;
+            DgvDescuentos.ColumnCount = 3;
             DgvDescuentos.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -66,17 +64,16 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(DgvDescuentos, 0, "Descuento", "Descuento", 170);
-            CrearColumnas(DgvDescuentos, 1, "Importe", "Monto", 150);
+            CrearColumnas(DgvDescuentos, 0, "Descuento", "Descuento", 190);
+            CrearColumnas(DgvDescuentos, 1, "Importe Total", "Monto", 170);
             DgvDescuentos.Columns[1].DefaultCellStyle.Format = "C";
-            CrearColumnas(DgvDescuentos, 2, "Cantidad", "Cantidad", 120);
-            CrearColumnas(DgvDescuentos, 3, "Borrado", "Borrado", 80);
+            CrearColumnas(DgvDescuentos, 2, "Cantidad", "Cantidad", 160);
         }
 
         private void InitializeDataGridViewAsignaciones()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            DgvAsignaciones.ColumnCount = 4;
+            DgvAsignaciones.ColumnCount = 3;
             DgvAsignaciones.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -92,12 +89,10 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(DgvAsignaciones, 0, "Asignación", "Asignacion", 170);
-            CrearColumnas(DgvAsignaciones, 1, "Importe", "Monto", 150);
+            CrearColumnas(DgvAsignaciones, 0, "Asignación", "Asignacion", 190);
+            CrearColumnas(DgvAsignaciones, 1, "Importe Total", "Monto", 170);
             DgvAsignaciones.Columns[1].DefaultCellStyle.Format = "C";
-            CrearColumnas(DgvAsignaciones, 2, "Cantidad", "Cantidad", 120);
-            CrearColumnas(DgvAsignaciones, 3, "Borrado", "Borrado", 80);
-
+            CrearColumnas(DgvAsignaciones, 2, "Cantidad", "Cantidad", 160);
         }
 
         private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)

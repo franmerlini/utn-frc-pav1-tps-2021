@@ -39,7 +39,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.chkBorrado = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
@@ -183,18 +182,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.lblFecha.Text = "Fecha:";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chkBorrado
-            // 
-            this.chkBorrado.AutoCheck = false;
-            this.chkBorrado.AutoSize = true;
-            this.chkBorrado.BackColor = System.Drawing.Color.Transparent;
-            this.chkBorrado.Location = new System.Drawing.Point(466, 353);
-            this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
-            this.chkBorrado.TabIndex = 67;
-            this.chkBorrado.Text = "Borrado";
-            this.chkBorrado.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -324,7 +311,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.Controls.Add(this.TxtFecha);
             this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.chkBorrado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnVolver);
@@ -358,7 +344,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridView DgvDescuentos;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.CheckBox chkBorrado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox TxtUsuario;

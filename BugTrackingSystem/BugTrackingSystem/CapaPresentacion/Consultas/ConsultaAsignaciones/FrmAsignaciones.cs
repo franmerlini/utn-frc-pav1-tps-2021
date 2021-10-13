@@ -40,9 +40,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
             CrearColumnas(DgvAsignaciones, 0, "Nombre", "Nombre", 210);
-            CrearColumnas(DgvAsignaciones, 1, "Monto", "Monto", 120);
+            CrearColumnas(DgvAsignaciones, 1, "Monto", "Monto", 180);
             DgvAsignaciones.Columns[1].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvAsignaciones, 2, "Borrado", "Borrado", 120);
+            DgvAsignaciones.Columns[2].Visible = false;
         }
 
         private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
@@ -55,9 +56,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
 
         private void FrmAsignaciones_Load(object sender, EventArgs e)
         {
-            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones();
-            DgvAsignaciones.DataSource = listadoAsignaciones;
-            lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
+            Consultar(parametros, false);
         }
 
         // Botones:
@@ -71,14 +70,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                 parametros.Add("borrado", true);
             }
 
-            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
-            DgvAsignaciones.DataSource = listadoAsignaciones;
-            lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
-
-            if (listadoAsignaciones.Count == 0)
-            {
-                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Consultar(parametros, true);
         }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
@@ -86,9 +78,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             FrmAsignacionesABM frmAgregar = new FrmAsignacionesABM(FrmAsignacionesABM.FormMode.nuevo);
             frmAgregar.ShowDialog();
 
-            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
-            DgvAsignaciones.DataSource = listadoAsignaciones;
-            lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
+            Consultar(parametros, false);
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -103,9 +93,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             FrmAsignacionesABM frmEditar = new FrmAsignacionesABM(FrmAsignacionesABM.FormMode.actualizar, asignacion);
             frmEditar.ShowDialog();
 
-            IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
-            DgvAsignaciones.DataSource = listadoAsignaciones;
-            lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
+            Consultar(parametros, false);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -133,9 +121,28 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
                     MessageBox.Show("El registro no se pudo borrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
+            Consultar(parametros, false);
+        }
+
+        private void Consultar(Dictionary<string, object> parametros = null, bool mostrarMensaje = true)
+        {
             IList<Asignacion> listadoAsignaciones = asignacionService.ObtenerAsignaciones(parametros);
             DgvAsignaciones.DataSource = listadoAsignaciones;
             lblTotal.Text = "Registros encontrados: " + listadoAsignaciones.Count;
+
+            if (listadoAsignaciones.Count == 0 && mostrarMensaje)
+            {
+                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            foreach (DataGridViewRow a in DgvAsignaciones.Rows)
+            {
+                if ((bool)a.Cells[2].Value)
+                {
+                    a.DefaultCellStyle.BackColor = Color.LightGray;
+                }
+
+            }
         }
 
     }

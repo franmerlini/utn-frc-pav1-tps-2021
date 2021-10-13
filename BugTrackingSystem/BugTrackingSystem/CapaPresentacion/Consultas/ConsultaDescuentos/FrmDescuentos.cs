@@ -45,9 +45,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
             CrearColumnas(DgvDescuentos, 0, "Nombre", "Nombre", 210);
-            CrearColumnas(DgvDescuentos, 1, "Monto", "Monto", 120);
+            CrearColumnas(DgvDescuentos, 1, "Monto", "Monto", 180);
             DgvDescuentos.Columns[1].DefaultCellStyle.Format = "C";
             CrearColumnas(DgvDescuentos, 2, "Borrado", "Borrado", 110);
+            DgvDescuentos.Columns[2].Visible = false;
 
         }
 
@@ -61,9 +62,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 
         private void FrmDescuentos_Load(object sender, EventArgs e)
         {
-            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos();
-            DgvDescuentos.DataSource = listadoDescuentos;
-            lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
+            Consultar(parametros, false);
         }
 
         // Botones:
@@ -77,15 +76,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
                 parametros.Add("borrado", true);
             }
 
-            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
-            DgvDescuentos.DataSource = listadoDescuentos;
-            lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
-
-            if (listadoDescuentos.Count == 0)
-            {
-                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
+            Consultar(parametros, true);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -113,9 +104,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
                     MessageBox.Show("El registro no se pudo borrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
-            DgvDescuentos.DataSource = listadoDescuentos;
-            lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
+            Consultar(parametros, false);
         }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
@@ -123,9 +112,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             FrmDescuentosABM frmAgregar = new FrmDescuentosABM(FrmDescuentosABM.FormMode.nuevo);
             frmAgregar.ShowDialog();
 
-            IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
-            DgvDescuentos.DataSource = listadoDescuentos;
-            lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
+            Consultar(parametros, false);
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -140,9 +127,28 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             FrmDescuentosABM frmEditar = new FrmDescuentosABM(FrmDescuentosABM.FormMode.actualizar, descuento);
             frmEditar.ShowDialog();
 
+            Consultar(parametros, false);
+        }
+
+        private void Consultar(Dictionary<string, object> parametros = null, bool mostrarMensaje = true)
+        {
             IList<Descuento> listadoDescuentos = descuentoService.ObtenerDescuentos(parametros);
             DgvDescuentos.DataSource = listadoDescuentos;
             lblTotal.Text = "Registros encontrados: " + listadoDescuentos.Count;
+
+            if (listadoDescuentos.Count == 0 && mostrarMensaje)
+            {
+                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            foreach (DataGridViewRow a in DgvDescuentos.Rows)
+            {
+                if ((bool)a.Cells[2].Value)
+                {
+                    a.DefaultCellStyle.BackColor = Color.LightGray;
+                }
+
+            }
         }
     }
 }

@@ -51,12 +51,13 @@ namespace BugTrackingSystem.CapaPresentacion
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
             CrearColumnas(dgvAsistencias, 0, "Nombre", "Usuario", 150);
-            CrearColumnas(dgvAsistencias, 1, "Fecha", "Fecha", 70);
+            CrearColumnas(dgvAsistencias, 1, "Fecha", "Fecha", 80);
             CrearColumnas(dgvAsistencias, 2, "Hora Ingreso", "HoraIngreso", 100);
             CrearColumnas(dgvAsistencias, 3, "Hora Salida", "HoraSalida", 100);
             CrearColumnas(dgvAsistencias, 4, "Estado", "EstadoAsistencia", 110);
-            CrearColumnas(dgvAsistencias, 5, "Comentario", "Comentario", 320);
+            CrearColumnas(dgvAsistencias, 5, "Comentario", "Comentario", 390);
             CrearColumnas(dgvAsistencias, 6, "Borrado", "Borrado", 80);
+            dgvAsistencias.Columns[6].Visible = false;
 
         }
 
@@ -65,9 +66,7 @@ namespace BugTrackingSystem.CapaPresentacion
             LlenarCombo(cboUsuario, usuarioService.ObtenerUsuarios(), "Nombre", "Nombre");
             LlenarCombo(cboEstado, estadoAsistenciaService.ObtenerEstadosAsistencia(), "Nombre", "IdEstadoAsistencia");
 
-            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario();
-            dgvAsistencias.DataSource = listadoAsistencias;
-            lblTotal.Text = "Registros encontrados: " + listadoAsistencias.Count;
+            Consultar(parametros, false);
         }
 
         private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
@@ -132,14 +131,7 @@ namespace BugTrackingSystem.CapaPresentacion
             }
 
             // Solicitamos la lista de bugs que cumplan con los filtros:
-            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
-            dgvAsistencias.DataSource = listadoAsistencias;
-            lblTotal.Text = "Registros encontrados: " + listadoAsistencias.Count;
-
-            if (listadoAsistencias.Count == 0)
-            {
-                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Consultar(parametros, true);
 
             cboEstado.SelectedIndex = -1;
             cboUsuario.SelectedIndex = -1;
@@ -151,9 +143,7 @@ namespace BugTrackingSystem.CapaPresentacion
             FrmAsistenciasABM frmAgregar = new FrmAsistenciasABM(FrmAsistenciasABM.FormMode.nuevo);
             frmAgregar.ShowDialog();
 
-            IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
-            dgvAsistencias.DataSource = listadoAsistencias;
-            lblTotal.Text = "Registros encontrados: " + listadoAsistencias.Count;
+            Consultar(parametros, false);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -186,9 +176,7 @@ namespace BugTrackingSystem.CapaPresentacion
                 if (!asistenciaService.ActualizarAsistenciaUsuario(asistenciaUsuario, parametrosEliminacion))
                     MessageBox.Show("El registro no se pudo borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
-                dgvAsistencias.DataSource = listadoAsistencias;
-                lblTotal.Text = "Registros encontrados: " + listadoAsistencias.Count;
+                Consultar(parametros, false);
             }
         }
 
@@ -205,9 +193,28 @@ namespace BugTrackingSystem.CapaPresentacion
             FrmAsistenciasABM frmEditar = new FrmAsistenciasABM(FrmAsistenciasABM.FormMode.actualizar, asistenciaUsuario);
             frmEditar.ShowDialog();
 
+            Consultar(parametros, false);
+        }
+
+        private void Consultar(Dictionary<string, object> parametros = null, bool mostrarMensaje = true)
+        {
             IList<AsistenciaUsuario> listadoAsistencias = asistenciaService.ObtenerAsistenciasUsuario(parametros);
             dgvAsistencias.DataSource = listadoAsistencias;
             lblTotal.Text = "Registros encontrados: " + listadoAsistencias.Count;
+
+            if (listadoAsistencias.Count == 0 && mostrarMensaje)
+            {
+                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            foreach (DataGridViewRow a in dgvAsistencias.Rows)
+            {
+                if ((bool)a.Cells[6].Value)
+                {
+                    a.DefaultCellStyle.BackColor = Color.LightGray;
+                }
+
+            }
         }
     }
 }

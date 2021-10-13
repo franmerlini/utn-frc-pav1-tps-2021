@@ -18,7 +18,6 @@ namespace BugTrackingSystem.CapaAccesoDatos.Daos
             String consultaSQL = string.Concat(" SELECT SueldoPerfilHistorico.id_perfil, ",
                                                "        SueldoPerfilHistorico.fecha, ",
                                                "        SueldoPerfilHistorico.sueldo, ",
-                                               "        SueldoPerfilHistorico.borrado, ",
                                                "        Perfiles.id_perfil, ",
                                                "        Perfiles.nombre ",
                                                " FROM SueldoPerfilHistorico ",
@@ -35,12 +34,6 @@ namespace BugTrackingSystem.CapaAccesoDatos.Daos
                     consultaSQL += " AND (SueldoPerfilHistorico.fecha <= @fechaHasta) ";
                 if (parametros.ContainsKey("fechaExacta"))
                     consultaSQL += " AND (SueldoPerfilHistorico.fecha = @fechaExacta) ";
-                if (!parametros.ContainsKey("borrado"))
-                    consultaSQL += " AND (SueldoPerfilHistorico.borrado = 0) ";
-            }
-            else
-            {
-                consultaSQL += " AND (SueldoPerfilHistorico.borrado = 0) ";
             }
             
             consultaSQL += " ORDER BY SueldoPerfilHistorico.fecha DESC";
@@ -55,33 +48,34 @@ namespace BugTrackingSystem.CapaAccesoDatos.Daos
 
         internal bool CrearSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico)
         {
-            string consultaSQL = " INSERT INTO SueldoPerfilHistorico (id_perfil, fecha, sueldo, borrado) " +
-                                 " VALUES (@idPerfil, @fecha, @sueldo, 0)";
+            string consultaSQL = " INSERT INTO SueldoPerfilHistorico (id_perfil, fecha, sueldo) " +
+                                 " VALUES (@idPerfil, @fecha, @sueldo)";
 
             var parametros = new Dictionary<string, object>
             {
                 {"idPerfil", sueldoPerfilHistorico.Perfil.IdPerfil },
-                {"fecha", sueldoPerfilHistorico.Fecha },
+                {"fecha", sueldoPerfilHistorico.Fecha.ToString("yyyy-MM-dd") },
                 {"sueldo", sueldoPerfilHistorico.Sueldo }
             };
 
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
 
-        internal bool ActualizarSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico, Dictionary<string, object> parametros)
+        internal bool ActualizarSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico)
         {
             string consultaSQL = " UPDATE SueldoPerfilHistorico " +
                                  " SET id_perfil = @idPerfil, " +
                                  "     fecha = @fecha, " +
-                                 "     sueldo = @sueldo, " +
-                                 "     borrado = @borrado " +
-                                 " WHERE id_perfil = @idPerfilBase " +
-                                 " AND fecha = @fechaBase";
+                                 "     sueldo = @sueldo " +
+                                 " WHERE id_perfil = @idPerfil " +
+                                 " AND fecha = @fecha";
 
-            parametros.Add("idPerfil", sueldoPerfilHistorico.Perfil.IdPerfil);
-            parametros.Add("fecha", sueldoPerfilHistorico.Fecha);
-            parametros.Add("sueldo", sueldoPerfilHistorico.Sueldo);
-            parametros.Add("borrado", sueldoPerfilHistorico.Borrado);
+            var parametros = new Dictionary<string, object>
+            {
+                {"idPerfil", sueldoPerfilHistorico.Perfil.IdPerfil },
+                {"fecha", sueldoPerfilHistorico.Fecha.ToString("yyyy-MM-dd") },
+                {"sueldo", sueldoPerfilHistorico.Sueldo}
+            };
 
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
         }
@@ -92,7 +86,6 @@ namespace BugTrackingSystem.CapaAccesoDatos.Daos
             {
                 Fecha = Convert.ToDateTime(row["fecha"].ToString()),
                 Sueldo = Convert.ToDecimal(row["sueldo"].ToString()),
-                Borrado = Convert.ToBoolean(row["borrado"].ToString()),
                 Perfil = new Perfil()
                 {
                     IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),

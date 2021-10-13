@@ -50,7 +50,6 @@ C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debu
 C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
 C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
 D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPH.resources
-D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPHABM.resources
 C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
 C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
 C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
@@ -98,10 +97,5 @@ C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Deb
 C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
 C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
 C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
-D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmSueldoAsignaciones.resources
-D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmSueldoAsignacionesABM.resources
-D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmSueldoDescuentos.resources
-D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmSueldoDescuentosABM.resources
 D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldos.resources
-D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldosABM.resources
 D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos.FrmSueldosDetalles.resources

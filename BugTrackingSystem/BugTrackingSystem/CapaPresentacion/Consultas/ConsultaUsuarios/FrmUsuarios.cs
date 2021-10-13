@@ -43,12 +43,13 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(dgvUsuarios, 0, "Nombre", "nombre", 170);
-            CrearColumnas(dgvUsuarios, 1, "Perfil", "Perfil", 150);
-            CrearColumnas(dgvUsuarios, 2, "Contraseña", "Contrasena", 170);
-            CrearColumnas(dgvUsuarios, 3, "Email", "Email", 240);
-            CrearColumnas(dgvUsuarios, 4, "Estado", "Estado", 100);
+            CrearColumnas(dgvUsuarios, 0, "Nombre", "nombre", 190);
+            CrearColumnas(dgvUsuarios, 1, "Perfil", "Perfil", 170);
+            CrearColumnas(dgvUsuarios, 2, "Contraseña", "Contrasena", 190);
+            CrearColumnas(dgvUsuarios, 3, "Email", "Email", 260);
+            CrearColumnas(dgvUsuarios, 4, "Estado", "Estado", 120);
             CrearColumnas(dgvUsuarios, 5, "Borrado", "Borrado", 100);
+            dgvUsuarios.Columns[5].Visible = false;
 
         }
 
@@ -78,9 +79,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             LlenarCombo(cboEmail, usuarioService.ObtenerUsuarios(), "Email", "Email");
             LlenarCombo(cboPerfil, perfilService.ObtenerPerfiles(), "Nombre", "IdPerfil");
 
-            IList<Usuario> listadoUsuarios = usuarioService.ObtenerUsuarios();
-            dgvUsuarios.DataSource = listadoUsuarios;
-            lblTotal.Text = "Registros encontrados: " + listadoUsuarios.Count;
+            Consultar(parametros, false);
         }
 
         // Botones:
@@ -130,14 +129,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
                 parametros.Add("borrado", true);
             }
 
-            IList<Usuario> listadoUsuarios = usuarioService.ObtenerUsuarios(parametros);
-            dgvUsuarios.DataSource = listadoUsuarios;
-            lblTotal.Text = "Registros encontrados: " + listadoUsuarios.Count;
-
-            if (listadoUsuarios.Count == 0)
-            {
-                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            Consultar(parametros, true);
 
             cboPerfil.SelectedIndex = -1;
             cboUsuario.SelectedIndex = -1;
@@ -150,9 +142,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             FrmUsuariosABM frmAgregar = new FrmUsuariosABM(FrmUsuariosABM.FormMode.nuevo);
             frmAgregar.ShowDialog();
 
-            IList<Usuario> listadoUsuarios = usuarioService.ObtenerUsuarios(parametros);
-            dgvUsuarios.DataSource = listadoUsuarios;
-            lblTotal.Text = "Registros encontrados: " + listadoUsuarios.Count;
+            Consultar(parametros, false);
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -168,9 +158,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             FrmUsuariosABM frmEditar = new FrmUsuariosABM(FrmUsuariosABM.FormMode.actualizar, usuario);
             frmEditar.ShowDialog();
 
-            IList<Usuario> listadoUsuarios = usuarioService.ObtenerUsuarios(parametros);
-            dgvUsuarios.DataSource = listadoUsuarios;
-            lblTotal.Text = "Registros encontrados: " + listadoUsuarios.Count;
+            Consultar(parametros, false);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -196,10 +184,29 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
                 if (!usuarioService.ActualizarUsuario(usuario))
                     MessageBox.Show("El registro no se pudo borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                IList<Usuario> listadoUsuarios = usuarioService.ObtenerUsuarios(parametros);
-                dgvUsuarios.DataSource = listadoUsuarios;
-                lblTotal.Text = "Registros encontrados: " + listadoUsuarios.Count;
+                Consultar(parametros, false);
             }   
+        }
+
+        private void Consultar(Dictionary<string, object> parametros = null, bool mostrarMensaje = true)
+        {
+            IList<Usuario> listadoUsuarios = usuarioService.ObtenerUsuarios(parametros);
+            dgvUsuarios.DataSource = listadoUsuarios;
+            lblTotal.Text = "Registros encontrados: " + listadoUsuarios.Count;
+
+            if (listadoUsuarios.Count == 0 && mostrarMensaje)
+            {
+                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            foreach (DataGridViewRow a in dgvUsuarios.Rows)
+            {
+                if ((bool)a.Cells[5].Value)
+                {
+                    a.DefaultCellStyle.BackColor = Color.LightGray;
+                }
+
+            }
         }
     }
 }

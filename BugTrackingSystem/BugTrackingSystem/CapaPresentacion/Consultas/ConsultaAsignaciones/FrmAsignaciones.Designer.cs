@@ -53,7 +53,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.grpInformacion.Controls.Add(this.lblTotal);
             this.grpInformacion.Location = new System.Drawing.Point(238, 12);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(260, 105);
+            this.grpInformacion.Size = new System.Drawing.Size(208, 105);
             this.grpInformacion.TabIndex = 5;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -77,7 +77,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.DgvAsignaciones.MultiSelect = false;
             this.DgvAsignaciones.Name = "DgvAsignaciones";
             this.DgvAsignaciones.ReadOnly = true;
-            this.DgvAsignaciones.Size = new System.Drawing.Size(486, 315);
+            this.DgvAsignaciones.Size = new System.Drawing.Size(434, 315);
             this.DgvAsignaciones.TabIndex = 6;
             // 
             // grpAcciones
@@ -97,9 +97,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.ChkBaja.AutoSize = true;
             this.ChkBaja.Location = new System.Drawing.Point(9, 86);
             this.ChkBaja.Name = "ChkBaja";
-            this.ChkBaja.Size = new System.Drawing.Size(124, 17);
+            this.ChkBaja.Size = new System.Drawing.Size(99, 17);
             this.ChkBaja.TabIndex = 9;
-            this.ChkBaja.Text = "Incluir dados de baja";
+            this.ChkBaja.Text = "Incluir inactivos";
             this.ChkBaja.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -196,7 +196,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(510, 450);
+            this.ClientSize = new System.Drawing.Size(459, 450);
             this.Controls.Add(this.grpInformacion);
             this.Controls.Add(this.DgvAsignaciones);
             this.Controls.Add(this.grpAcciones);

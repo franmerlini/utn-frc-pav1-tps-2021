@@ -17,7 +17,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                             "        s.id_asignacion, ",
                                             "        s.monto, ",
                                             "        s.cantidad, ",
-                                            "        s.borrado, ",
                                             "        u.id_usuario, ",
                                             "        u.id_perfil, ",
                                             "        u.usuario, ",
@@ -52,16 +51,10 @@ namespace BugTrackingSystem.CapaAccesoDatos
                     consultaSQL += " AND (s.fecha = @fechaExacta) ";
                 if (parametros.ContainsKey("cantidad"))
                     consultaSQL += " AND (s.cantidad = @cantidad) ";
-                if (!parametros.ContainsKey("borrado"))
-                    consultaSQL += " AND (s.borrado = 0) ";
                 if (parametros.ContainsKey("usuarioExacto"))
                     consultaSQL += " AND (u.usuario = @usuarioExacto) ";
                 if (parametros.ContainsKey("idAsignacion"))
                     consultaSQL += " AND (s.id_asignacion = @idAsignacion) ";
-            }
-            else
-            {
-                consultaSQL += "AND (s.borrado = 0) ";
             }
 
             consultaSQL += " ORDER BY s.fecha DESC";
@@ -78,13 +71,13 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
         internal bool CrearSueldoAsignacion(SueldoAsignacion sueldoAsignacion)
         {
-            string consultaSQL = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad, borrado)" +
-                                 " VALUES (@idUsuario, @fecha, @idAsignacion, @monto, @cantidad, 0)";
+            string consultaSQL = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad)" +
+                                 " VALUES (@idUsuario, @fecha, @idAsignacion, @monto, @cantidad)";
 
             var parametros = new Dictionary<string, object>
             {
                 { "idUsuario", sueldoAsignacion.Usuario.IdUsuario },
-                { "fecha", sueldoAsignacion.Fecha },
+                { "fecha", sueldoAsignacion.Fecha.ToString("yyyy-MM-dd") },
                 { "idAsignacion", sueldoAsignacion.Asignacion.IdAsignacion },
                 { "monto", sueldoAsignacion.Monto },
                 { "cantidad", sueldoAsignacion.Cantidad }
@@ -102,17 +95,15 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                  "     id_asignacion = @idAsignacion," +
                                  "     monto = @monto," +
                                  "     cantidad = @cantidad," +
-                                 "     borrado = @borrado" +
                                  " WHERE id_usuario = @idUsuarioBase " +
                                  " AND fecha = @fechaBase " +
                                  " AND id_asignacion = @idAsignacionBase";
 
             parametros.Add("idUsuario", sueldoAsignacion.Usuario.IdUsuario);
-            parametros.Add("fecha", sueldoAsignacion.Fecha);
+            parametros.Add("fecha", sueldoAsignacion.Fecha.ToString("yyyy-MM-dd"));
             parametros.Add("idAsignacion", sueldoAsignacion.Asignacion.IdAsignacion);
             parametros.Add("monto", sueldoAsignacion.Monto);
             parametros.Add("cantidad", sueldoAsignacion.Cantidad);
-            parametros.Add("borrado", sueldoAsignacion.Borrado);
 
             // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
             return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
@@ -146,7 +137,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
                 Monto = Convert.ToDecimal(row["monto"].ToString()),
                 Cantidad = Convert.ToInt32(row["cantidad"].ToString()),
-                Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
 
             return sueldoAsignacion;

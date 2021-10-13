@@ -206,9 +206,9 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.chkBorrado.AutoSize = true;
             this.chkBorrado.Location = new System.Drawing.Point(103, 55);
             this.chkBorrado.Name = "chkBorrado";
-            this.chkBorrado.Size = new System.Drawing.Size(63, 17);
+            this.chkBorrado.Size = new System.Drawing.Size(64, 17);
             this.chkBorrado.TabIndex = 52;
-            this.chkBorrado.Text = "Borrado";
+            this.chkBorrado.Text = "Inactivo";
             this.chkBorrado.UseVisualStyleBackColor = true;
             // 
             // TxtNombre

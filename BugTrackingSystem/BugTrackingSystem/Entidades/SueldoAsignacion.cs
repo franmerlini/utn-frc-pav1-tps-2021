@@ -9,6 +9,5 @@ namespace BugTrackingSystem.Entidades
         public Asignacion Asignacion { get; set; }
         public decimal Monto { get; set; }
         public int Cantidad { get; set; }
-        public bool Borrado { get; set; }
     }
 }

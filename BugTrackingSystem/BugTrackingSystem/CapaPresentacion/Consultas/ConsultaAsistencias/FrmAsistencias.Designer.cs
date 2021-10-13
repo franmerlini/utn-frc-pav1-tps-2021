@@ -82,9 +82,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.ChkBaja.AutoSize = true;
             this.ChkBaja.Location = new System.Drawing.Point(264, 98);
             this.ChkBaja.Name = "ChkBaja";
-            this.ChkBaja.Size = new System.Drawing.Size(124, 17);
+            this.ChkBaja.Size = new System.Drawing.Size(99, 17);
             this.ChkBaja.TabIndex = 9;
-            this.ChkBaja.Text = "Incluir dados de baja";
+            this.ChkBaja.Text = "Incluir inactivos";
             this.ChkBaja.UseVisualStyleBackColor = true;
             // 
             // cboEstado
