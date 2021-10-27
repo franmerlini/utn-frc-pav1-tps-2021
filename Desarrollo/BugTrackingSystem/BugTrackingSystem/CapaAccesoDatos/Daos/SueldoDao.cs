@@ -63,39 +63,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return listadoSueldos;
         }
 
-        internal bool CrearSueldo(Sueldo sueldo)
-        {
-            string consultaSQL = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto)" +
-                                 " VALUES (@idUsuario, @fecha, @sueldoBruto)";
-
-            var parametros = new Dictionary<string, object>
-            {
-                { "idUsuario", sueldo.Usuario.IdUsuario },
-                { "fecha", sueldo.Fecha },
-                { "sueldoBruto", sueldo.SueldoBruto }
-            };
-
-            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario retorna FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
-        internal bool ActualizarSueldo(Sueldo sueldo, Dictionary<string, object> parametros)
-        {
-            string consultaSQL = " UPDATE Sueldos" +
-                                 " SET id_usuario = @idUsuario," +
-                                 "     fecha = @fecha," +
-                                 "     sueldo_bruto = @sueldoBruto" +
-                                 " WHERE id_usuario = @idUsuarioBase" + 
-                                 " AND fecha = @fechaBase";
-
-            parametros.Add("idUsuario", sueldo.Usuario.IdUsuario);
-            parametros.Add("fecha", sueldo.Fecha);
-            parametros.Add("sueldoBruto", sueldo.SueldoBruto);
-
-            // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
         internal int CrearSueldoTransaccion(Sueldo sueldo, BindingList<SueldoAsignacion> listaSueldoAsignacion, BindingList<SueldoDescuento> listaSueldoDescuento, SueldoPerfilHistorico sueldoPerfilHistorico)
         {
             var string_conexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=BugTrackerTPI;Integrated Security=True";
@@ -108,13 +75,15 @@ namespace BugTrackingSystem.CapaAccesoDatos
                 dbConnection.Open();
                 dbTransaction = dbConnection.BeginTransaction();
 
-                SqlCommand insertSueldo = new SqlCommand();
-                insertSueldo.Connection = dbConnection;
-                insertSueldo.CommandType = CommandType.Text;
-                insertSueldo.Transaction = dbTransaction;
+                SqlCommand insertSueldo = new SqlCommand
+                {
+                    Connection = dbConnection,
+                    CommandType = CommandType.Text,
+                    Transaction = dbTransaction,
 
-                insertSueldo.CommandText = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto)" +
-                                           " VALUES (@id_usuario, @fecha, @sueldo_bruto) ";
+                    CommandText = " INSERT INTO Sueldos (id_usuario, fecha, sueldo_bruto)" +
+                                           " VALUES (@id_usuario, @fecha, @sueldo_bruto) "
+                };
 
                 insertSueldo.Parameters.AddWithValue("id_usuario", sueldo.Usuario.IdUsuario);
                 insertSueldo.Parameters.AddWithValue("fecha", sueldo.Fecha.ToString("yyyy-MM-dd"));
@@ -124,13 +93,15 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
                 foreach (SueldoAsignacion s in listaSueldoAsignacion)
                 {
-                    SqlCommand insertAsignacion = new SqlCommand();
-                    insertAsignacion.Connection = dbConnection;
-                    insertAsignacion.CommandType = CommandType.Text;
-                    insertAsignacion.Transaction = dbTransaction;
+                    SqlCommand insertAsignacion = new SqlCommand
+                    {
+                        Connection = dbConnection,
+                        CommandType = CommandType.Text,
+                        Transaction = dbTransaction,
 
-                    insertAsignacion.CommandText = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad) " +
-                                                   " VALUES (@id_usuario, @fecha, @id_asignacion, @monto, @cantidad) ";
+                        CommandText = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad) " +
+                                                   " VALUES (@id_usuario, @fecha, @id_asignacion, @monto, @cantidad) "
+                    };
 
                     insertAsignacion.Parameters.AddWithValue("id_usuario", s.Usuario.IdUsuario);
                     insertAsignacion.Parameters.AddWithValue("fecha", s.Fecha.ToString("yyyy-MM-dd"));
@@ -143,13 +114,15 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
                 foreach (SueldoDescuento s in listaSueldoDescuento)
                 {
-                    SqlCommand insertDescuento = new SqlCommand();
-                    insertDescuento.Connection = dbConnection;
-                    insertDescuento.CommandType = CommandType.Text;
-                    insertDescuento.Transaction = dbTransaction;
+                    SqlCommand insertDescuento = new SqlCommand
+                    {
+                        Connection = dbConnection,
+                        CommandType = CommandType.Text,
+                        Transaction = dbTransaction,
 
-                    insertDescuento.CommandText = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, monto, cantidad) " +
-                                                   " VALUES (@id_usuario, @fecha, @id_descuento, @monto, @cantidad) ";
+                        CommandText = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, monto, cantidad) " +
+                                                   " VALUES (@id_usuario, @fecha, @id_descuento, @monto, @cantidad) "
+                    };
 
                     insertDescuento.Parameters.AddWithValue("id_usuario", s.Usuario.IdUsuario);
                     insertDescuento.Parameters.AddWithValue("fecha", s.Fecha.ToString("yyyy-MM-dd"));
@@ -162,12 +135,13 @@ namespace BugTrackingSystem.CapaAccesoDatos
 
                 if (sueldoPerfilHistorico != null)
                 {
-                    SqlCommand insertSPH = new SqlCommand();
-                    insertSPH.Connection = dbConnection;
-                    insertSPH.CommandType = CommandType.Text;
-                    insertSPH.Transaction = dbTransaction;
+                    SqlCommand insertSPH = new SqlCommand
+                    {
+                        Connection = dbConnection,
+                        CommandType = CommandType.Text,
+                        Transaction = dbTransaction,
 
-                    insertSPH.CommandText =  "IF NOT EXISTS (SELECT * FROM SueldoPerfilHistorico " +
+                        CommandText = "IF NOT EXISTS (SELECT * FROM SueldoPerfilHistorico " +
                                                 "WHERE id_perfil = @idPerfil " +
                                                 "AND fecha = @fecha) " +
                                              "BEGIN " +
@@ -180,7 +154,8 @@ namespace BugTrackingSystem.CapaAccesoDatos
                                                 "SET sueldo = @sueldo " +
                                                 "WHERE id_perfil = @idPerfil " +
                                                 "AND fecha = @fecha " +
-                                             "END";
+                                             "END"
+                    };
 
                     insertSPH.Parameters.AddWithValue("idPerfil", sueldoPerfilHistorico.Perfil.IdPerfil);
                     insertSPH.Parameters.AddWithValue("fecha", sueldoPerfilHistorico.Fecha.ToString("yyyy-MM-dd"));

@@ -200,7 +200,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             }
         }
 
-        private void dgvUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void DgvUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow a in dgvUsuarios.Rows)
             {

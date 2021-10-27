@@ -61,7 +61,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             this.dgvSueldos.RowHeadersWidth = 51;
             this.dgvSueldos.Size = new System.Drawing.Size(705, 324);
             this.dgvSueldos.TabIndex = 3;
-            this.dgvSueldos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSueldos_DataBindingComplete);
+            this.dgvSueldos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvSueldos_DataBindingComplete);
             // 
             // grpFiltros
             // 

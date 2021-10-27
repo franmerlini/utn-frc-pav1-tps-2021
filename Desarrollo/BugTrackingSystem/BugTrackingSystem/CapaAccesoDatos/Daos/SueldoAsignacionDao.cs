@@ -69,46 +69,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return listadoSueldoAsignaciones;
         }
 
-        internal bool CrearSueldoAsignacion(SueldoAsignacion sueldoAsignacion)
-        {
-            string consultaSQL = " INSERT INTO SueldoAsignaciones (id_usuario, fecha, id_asignacion, monto, cantidad)" +
-                                 " VALUES (@idUsuario, @fecha, @idAsignacion, @monto, @cantidad)";
-
-            var parametros = new Dictionary<string, object>
-            {
-                { "idUsuario", sueldoAsignacion.Usuario.IdUsuario },
-                { "fecha", sueldoAsignacion.Fecha.ToString("yyyy-MM-dd") },
-                { "idAsignacion", sueldoAsignacion.Asignacion.IdAsignacion },
-                { "monto", sueldoAsignacion.Monto },
-                { "cantidad", sueldoAsignacion.Cantidad }
-            };
-
-            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario retorna FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
-        internal bool ActualizarSueldoAsignacion(SueldoAsignacion sueldoAsignacion, Dictionary<string, object> parametros)
-        {
-            string consultaSQL = " UPDATE SueldoAsignaciones" +
-                                 " SET id_usuario = @idUsuario," +
-                                 "     fecha = @fecha," +
-                                 "     id_asignacion = @idAsignacion," +
-                                 "     monto = @monto," +
-                                 "     cantidad = @cantidad," +
-                                 " WHERE id_usuario = @idUsuarioBase " +
-                                 " AND fecha = @fechaBase " +
-                                 " AND id_asignacion = @idAsignacionBase";
-
-            parametros.Add("idUsuario", sueldoAsignacion.Usuario.IdUsuario);
-            parametros.Add("fecha", sueldoAsignacion.Fecha.ToString("yyyy-MM-dd"));
-            parametros.Add("idAsignacion", sueldoAsignacion.Asignacion.IdAsignacion);
-            parametros.Add("monto", sueldoAsignacion.Monto);
-            parametros.Add("cantidad", sueldoAsignacion.Cantidad);
-
-            // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
         private SueldoAsignacion MapeoObjeto(DataRow row)
         {
             SueldoAsignacion sueldoAsignacion = new SueldoAsignacion

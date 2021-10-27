@@ -16,18 +16,6 @@ namespace BugTrackingSystem.CapaLogicaNegocio
             sueldoAsignacionDao = new SueldoAsignacionDao();
         }
 
-        //Crear una asignacion de sueldo
-        internal bool CrearSueldoAsignacion(SueldoAsignacion sueldoAsignacion)
-        {
-            return sueldoAsignacionDao.CrearSueldoAsignacion(sueldoAsignacion);
-        }
-
-        //Actualizar una asignacion de sueldo
-        internal bool ActualizarSueldoAsignacion(SueldoAsignacion sueldoAsignacion, Dictionary<string, object> parametros)
-        {
-            return sueldoAsignacionDao.ActualizarSueldoAsignacion(sueldoAsignacion, parametros);
-        }
-
         //Consultar varias asignaciones de sueldo por filtros
         internal IList<SueldoAsignacion> ObtenerSueldoAsignaciones(Dictionary<string, object> parametros = null)
         {

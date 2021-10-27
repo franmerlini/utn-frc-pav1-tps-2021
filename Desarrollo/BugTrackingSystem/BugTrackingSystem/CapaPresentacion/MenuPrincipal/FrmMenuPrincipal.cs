@@ -158,19 +158,19 @@ namespace BugTrackingSystem.Forms
             MostrarVentana(ventana, "Consulta de Sueldos Perfil Histórico");
         }
 
-        private void generacionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGeneracionMensualSueldo ventana = new FrmGeneracionMensualSueldo();
             MostrarVentana(ventana, "Generación mensual de sueldos");
         }
 
-        private void sueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmSueldos ventana = new FrmSueldos();
             MostrarVentana(ventana, "Consulta de Sueldos");
         }
 
-        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult rta;
             rta = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

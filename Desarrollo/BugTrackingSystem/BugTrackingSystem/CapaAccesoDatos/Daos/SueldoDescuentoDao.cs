@@ -69,46 +69,6 @@ namespace BugTrackingSystem.CapaAccesoDatos
             return listadoSueldoDescuentos;
         }
 
-        internal bool CrearSueldoDescuento(SueldoDescuento sueldoDescuento)
-        {
-            string consultaSQL = " INSERT INTO SueldoDescuentos (id_usuario, fecha, id_descuento, cantidad, monto)" +
-                                 " VALUES (@idUsuario, @fecha, @idDescuento, @cantidad, @monto)";
-
-            var parametros = new Dictionary<string, object>
-            {
-                { "idUsuario", sueldoDescuento.Usuario.IdUsuario },
-                { "fecha", sueldoDescuento.Fecha.ToString("yyyy-MM-dd") },
-                { "idDescuento", sueldoDescuento.Descuento.IdDescuento },
-                { "cantidad", sueldoDescuento.Cantidad },
-                { "monto", sueldoDescuento.Monto }
-            };
-
-            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario retorna FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
-        internal bool ActualizarSueldoDescuento(SueldoDescuento sueldoDescuento, Dictionary<string, object> parametros)
-        {
-            string consultaSQL = " UPDATE SueldoDescuentos" +
-                                 " SET id_usuario = @idUsuario," +
-                                 "     fecha = @fecha," +
-                                 "     id_descuento = @idDescuento," +
-                                 "     cantidad = @cantidad," +
-                                 "     monto = @monto," +
-                                 " WHERE id_usuario = @idUsuarioBase " +
-                                 " AND fecha = @fechaBase " +
-                                 " AND id_descuento = @idDescuentoBase";
-
-            parametros.Add("idUsuario", sueldoDescuento.Usuario.IdUsuario);
-            parametros.Add("fecha", sueldoDescuento.Fecha.ToString("yyyy-MM-dd"));
-            parametros.Add("idDescuento", sueldoDescuento.Descuento.IdDescuento);
-            parametros.Add("cantidad", sueldoDescuento.Cantidad);
-            parametros.Add("monto", sueldoDescuento.Monto);
-
-            // Si una fila es afectada por la actualizacion retorna TRUE, de lo contrario FALSE
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
         private SueldoDescuento MapeoObjeto(DataRow row)
         {
             SueldoDescuento sueldoDescuento = new SueldoDescuento

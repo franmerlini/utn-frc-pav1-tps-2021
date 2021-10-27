@@ -17,16 +17,6 @@ namespace BugTrackingSystem.CapaLogicaNegocio.Services
             sueldoPerfilHistoricoDao = new SueldoPerfilHistoricoDao();
         }
 
-        internal bool CrearSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico)
-        {
-            return sueldoPerfilHistoricoDao.CrearSueldoPerfilHistorico(sueldoPerfilHistorico);
-        }
-
-        internal bool ActualizarSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico)
-        {
-            return sueldoPerfilHistoricoDao.ActualizarSueldoPerfilHistorico(sueldoPerfilHistorico);
-        }
-
         internal IList<SueldoPerfilHistorico> ObtenerSueldosPerfilHistorico(Dictionary<string, object> parametros = null)
         {
             return sueldoPerfilHistoricoDao.ObtenerSueldosPerfilHistorico(parametros);

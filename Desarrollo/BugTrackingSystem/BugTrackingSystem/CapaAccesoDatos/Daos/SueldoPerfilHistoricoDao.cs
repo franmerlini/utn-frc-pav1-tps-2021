@@ -46,40 +46,6 @@ namespace BugTrackingSystem.CapaAccesoDatos.Daos
             return listadoSueldos;
         }
 
-        internal bool CrearSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico)
-        {
-            string consultaSQL = " INSERT INTO SueldoPerfilHistorico (id_perfil, fecha, sueldo) " +
-                                 " VALUES (@idPerfil, @fecha, @sueldo)";
-
-            var parametros = new Dictionary<string, object>
-            {
-                {"idPerfil", sueldoPerfilHistorico.Perfil.IdPerfil },
-                {"fecha", sueldoPerfilHistorico.Fecha.ToString("yyyy-MM-dd") },
-                {"sueldo", sueldoPerfilHistorico.Sueldo }
-            };
-
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
-        internal bool ActualizarSueldoPerfilHistorico(SueldoPerfilHistorico sueldoPerfilHistorico)
-        {
-            string consultaSQL = " UPDATE SueldoPerfilHistorico " +
-                                 " SET id_perfil = @idPerfil, " +
-                                 "     fecha = @fecha, " +
-                                 "     sueldo = @sueldo " +
-                                 " WHERE id_perfil = @idPerfil " +
-                                 " AND fecha = @fecha";
-
-            var parametros = new Dictionary<string, object>
-            {
-                {"idPerfil", sueldoPerfilHistorico.Perfil.IdPerfil },
-                {"fecha", sueldoPerfilHistorico.Fecha.ToString("yyyy-MM-dd") },
-                {"sueldo", sueldoPerfilHistorico.Sueldo}
-            };
-
-            return (DataManager.ObtenerInstancia().EjecutarSQL(consultaSQL, parametros) == 1);
-        }
-
         private SueldoPerfilHistorico MapeoObjeto(DataRow row)
         {
             SueldoPerfilHistorico sueldoPerfilHistorico = new SueldoPerfilHistorico

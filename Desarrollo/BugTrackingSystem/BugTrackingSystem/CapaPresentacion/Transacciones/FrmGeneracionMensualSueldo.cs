@@ -15,8 +15,8 @@ namespace BugTrackingSystem.CapaPresentacion
 {
     public partial class FrmGeneracionMensualSueldo : Form
     {
-        private BindingList<SueldoAsignacion> listaSueldoAsignacion;
-        private BindingList<SueldoDescuento> listaSueldoDescuento;
+        private readonly BindingList<SueldoAsignacion> listaSueldoAsignacion;
+        private readonly BindingList<SueldoDescuento> listaSueldoDescuento;
         private readonly UsuarioService usuarioService;
         private readonly SueldoService sueldoService;
         private readonly DescuentoService descuentoService;
@@ -97,7 +97,7 @@ namespace BugTrackingSystem.CapaPresentacion
             cbx.SelectedIndex = -1;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
 
             if (cboDtoAsig.SelectedItem == null)
@@ -182,7 +182,7 @@ namespace BugTrackingSystem.CapaPresentacion
             txtSueldoTotal.Text = importeTotal.ToString("C");
         }
 
-        private void cboDtoAsig_SelectedIndexChanged(object sender, EventArgs e)
+        private void CboDtoAsig_SelectedIndexChanged(object sender, EventArgs e)
         {
             ActualizarMontoEImporte();
         }
@@ -210,29 +210,29 @@ namespace BugTrackingSystem.CapaPresentacion
             }
         }
 
-        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        private void NudCantidad_ValueChanged(object sender, EventArgs e)
         {
             ActualizarMontoEImporte();
         }
 
-        private void rbDescuento_Click(object sender, EventArgs e)
+        private void RbDescuento_Click(object sender, EventArgs e)
         {
             LlenarCombo(cboDtoAsig, descuentoService.ObtenerDescuentos(), "Nombre");
             ActualizarMontoEImporte();
         }
 
-        private void rbAsignacion_Click(object sender, EventArgs e)
+        private void RbAsignacion_Click(object sender, EventArgs e)
         {
             LlenarCombo(cboDtoAsig, asignacionService.ObtenerAsignaciones(), "Nombre");
             ActualizarMontoEImporte();
         }
 
-        private void nudSueldoBruto_ValueChanged(object sender, EventArgs e)
+        private void NudSueldoBruto_ValueChanged(object sender, EventArgs e)
         {
             CalcularTotales();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             DialogResult rta = MessageBox.Show("¿Seguro que desea limpiar la transacción?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (rta == DialogResult.Yes)
@@ -241,17 +241,17 @@ namespace BugTrackingSystem.CapaPresentacion
             }
         }
 
-        private void dgvAsignaciones_Click(object sender, EventArgs e)
+        private void DgvAsignaciones_Click(object sender, EventArgs e)
         {
             dgvDescuentos.ClearSelection();
         }
 
-        private void dgvDescuentos_Click(object sender, EventArgs e)
+        private void DgvDescuentos_Click(object sender, EventArgs e)
         {
             dgvAsignaciones.ClearSelection();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvDescuentos.SelectedCells.Count > 0)
             {
@@ -271,7 +271,7 @@ namespace BugTrackingSystem.CapaPresentacion
 
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             Sueldo sueldo = new Sueldo();
 

@@ -89,7 +89,7 @@ namespace BugTrackingSystem.Forms
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.CerrarSesiónToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -143,7 +143,7 @@ namespace BugTrackingSystem.Forms
             this.sueldosToolStripMenuItem.Name = "sueldosToolStripMenuItem";
             this.sueldosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.sueldosToolStripMenuItem.Text = "Sueldos";
-            this.sueldosToolStripMenuItem.Click += new System.EventHandler(this.sueldosToolStripMenuItem_Click);
+            this.sueldosToolStripMenuItem.Click += new System.EventHandler(this.SueldosToolStripMenuItem_Click);
             // 
             // tsiSueldosPorPefil
             // 
@@ -173,7 +173,7 @@ namespace BugTrackingSystem.Forms
             this.generacionMensualDeSueldosToolStripMenuItem.Name = "generacionMensualDeSueldosToolStripMenuItem";
             this.generacionMensualDeSueldosToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.generacionMensualDeSueldosToolStripMenuItem.Text = "Generacion mensual de sueldos";
-            this.generacionMensualDeSueldosToolStripMenuItem.Click += new System.EventHandler(this.generacionMensualDeSueldosToolStripMenuItem_Click);
+            this.generacionMensualDeSueldosToolStripMenuItem.Click += new System.EventHandler(this.GeneracionMensualDeSueldosToolStripMenuItem_Click);
             // 
             // tsiReportes
             // 

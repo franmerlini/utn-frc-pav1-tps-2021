@@ -158,25 +158,20 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
             frmDetalles.ShowDialog();
         }
 
-        private void dgvSueldos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void DgvSueldos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            // Ciclo que implementa los sueldos netos dentro de cada fila.
-            // TODO: Refactorizar, ya que el modelo actual tiene un orden de O(n*n)
+            // Ciclo que implementa los sueldos netos dentro de cada fila, una vez que se hayan cargado las filas en la tabla.
+
+            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones();
+            IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos();
 
             foreach (DataGridViewRow row in dgvSueldos.Rows)
             {
-                var parametrosSueldoNeto = new Dictionary<string, object>
-                {
-                    {"idUsuario", ((Usuario)row.Cells[0].Value).IdUsuario },
-                    {"fechaExacta", ((DateTime)row.Cells[1].Value).ToString("yyyy-MM-dd")},
-                };
+                var sueldo = (Sueldo)row.DataBoundItem;
 
-                IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones(parametrosSueldoNeto);
-                IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos(parametrosSueldoNeto);
-
-                decimal totalAsignaciones = listadoAsignaciones.Sum(a => a.Monto);
-                decimal totalDescuentos = listadoDescuentos.Sum(d => d.Monto);
-                var importeTotal = (decimal)row.Cells[2].Value + totalAsignaciones - totalDescuentos;
+                decimal totalAsignaciones = listadoAsignaciones.Where(a => a.Usuario.IdUsuario.Equals(sueldo.Usuario.IdUsuario) && a.Fecha.ToString("yyyy-MM-dd").Equals(sueldo.Fecha.ToString("yyyy-MM-dd"))).Sum(a => a.Monto);
+                decimal totalDescuentos = listadoDescuentos.Where(d => d.Usuario.IdUsuario.Equals(sueldo.Usuario.IdUsuario) && d.Fecha.ToString("yyyy-MM-dd").Equals(sueldo.Fecha.ToString("yyyy-MM-dd"))).Sum(d => d.Monto);
+                decimal importeTotal = sueldo.SueldoBruto + totalAsignaciones - totalDescuentos;
 
                 row.Cells[3].Value = importeTotal;
             }

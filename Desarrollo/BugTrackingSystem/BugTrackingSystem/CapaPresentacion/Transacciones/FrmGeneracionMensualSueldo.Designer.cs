@@ -112,7 +112,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.cboDtoAsig.Name = "cboDtoAsig";
             this.cboDtoAsig.Size = new System.Drawing.Size(168, 21);
             this.cboDtoAsig.TabIndex = 10;
-            this.cboDtoAsig.SelectedIndexChanged += new System.EventHandler(this.cboDtoAsig_SelectedIndexChanged);
+            this.cboDtoAsig.SelectedIndexChanged += new System.EventHandler(this.CboDtoAsig_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -201,7 +201,7 @@ namespace BugTrackingSystem.CapaPresentacion
             0,
             0,
             0});
-            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
+            this.nudCantidad.ValueChanged += new System.EventHandler(this.NudCantidad_ValueChanged);
             // 
             // txtImporte
             // 
@@ -240,7 +240,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.rbDescuento.TabStop = true;
             this.rbDescuento.Text = "Descuento";
             this.rbDescuento.UseVisualStyleBackColor = true;
-            this.rbDescuento.Click += new System.EventHandler(this.rbDescuento_Click);
+            this.rbDescuento.Click += new System.EventHandler(this.RbDescuento_Click);
             // 
             // rbAsignacion
             // 
@@ -253,7 +253,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.rbAsignacion.TabStop = true;
             this.rbAsignacion.Text = "Asignación";
             this.rbAsignacion.UseVisualStyleBackColor = true;
-            this.rbAsignacion.Click += new System.EventHandler(this.rbAsignacion_Click);
+            this.rbAsignacion.Click += new System.EventHandler(this.RbAsignacion_Click);
             // 
             // label4
             // 
@@ -373,7 +373,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.nudSueldoBruto.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.nudSueldoBruto.Size = new System.Drawing.Size(170, 20);
             this.nudSueldoBruto.TabIndex = 31;
-            this.nudSueldoBruto.ValueChanged += new System.EventHandler(this.nudSueldoBruto_ValueChanged);
+            this.nudSueldoBruto.ValueChanged += new System.EventHandler(this.NudSueldoBruto_ValueChanged);
             // 
             // label6
             // 
@@ -537,7 +537,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnAceptar.TabIndex = 49;
             this.toolTip1.SetToolTip(this.btnAceptar, "Guardar recibo de sueldo");
             this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnAgregar
             // 
@@ -557,7 +557,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnAgregar.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnAgregar, "Agregar asignación/descuento");
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnLimpiar
             // 
@@ -577,7 +577,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnLimpiar.TabIndex = 11;
             this.toolTip1.SetToolTip(this.btnLimpiar, "Limpiar recibo");
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -597,7 +597,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.btnEliminar.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar asignación/descuento seleccionado");
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // groupBox3
             // 
@@ -625,7 +625,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvAsignaciones.RowHeadersWidth = 51;
             this.dgvAsignaciones.Size = new System.Drawing.Size(476, 245);
             this.dgvAsignaciones.TabIndex = 33;
-            this.dgvAsignaciones.Click += new System.EventHandler(this.dgvAsignaciones_Click);
+            this.dgvAsignaciones.Click += new System.EventHandler(this.DgvAsignaciones_Click);
             // 
             // groupBox5
             // 
@@ -653,7 +653,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvDescuentos.RowHeadersWidth = 51;
             this.dgvDescuentos.Size = new System.Drawing.Size(476, 245);
             this.dgvDescuentos.TabIndex = 33;
-            this.dgvDescuentos.Click += new System.EventHandler(this.dgvDescuentos_Click);
+            this.dgvDescuentos.Click += new System.EventHandler(this.DgvDescuentos_Click);
             // 
             // FrmGeneracionMensualSueldo
             // 

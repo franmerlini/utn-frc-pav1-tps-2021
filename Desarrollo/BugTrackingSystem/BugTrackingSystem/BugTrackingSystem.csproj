@@ -272,7 +272,6 @@
   <ItemGroup>
     <None Include="Resources\BtnLimpiar.png" />
     <None Include="Resources\BtnLimpiar1.png" />
-    <Content Include="Resources\Diagrama.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CapaPresentacion\Reportes\" />
