@@ -162,8 +162,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
         {
             // Ciclo que implementa los sueldos netos dentro de cada fila, una vez que se hayan cargado las filas en la tabla.
 
-            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones();
-            IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos();
+            IList<SueldoAsignacion> listadoAsignaciones = sueldoAsignacionService.ObtenerSueldoAsignaciones(parametros);
+            IList<SueldoDescuento> listadoDescuentos = sueldoDescuentoService.ObtenerSueldoDescuentos(parametros);
 
             foreach (DataGridViewRow row in dgvSueldos.Rows)
             {

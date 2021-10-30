@@ -42,16 +42,20 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.label1 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.grpInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSueldosPH)).BeginInit();
             this.grpFiltros.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInformacion
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.Tan;
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(497, 12);
+            this.grpInformacion.Location = new System.Drawing.Point(492, 10);
             this.grpInformacion.Name = "grpInformacion";
             this.grpInformacion.Size = new System.Drawing.Size(220, 105);
             this.grpInformacion.TabIndex = 9;
@@ -73,7 +77,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.DgvSueldosPH.AllowUserToDeleteRows = false;
             this.DgvSueldosPH.AllowUserToOrderColumns = true;
             this.DgvSueldosPH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvSueldosPH.Location = new System.Drawing.Point(12, 123);
+            this.DgvSueldosPH.Location = new System.Drawing.Point(7, 121);
             this.DgvSueldosPH.MultiSelect = false;
             this.DgvSueldosPH.Name = "DgvSueldosPH";
             this.DgvSueldosPH.ReadOnly = true;
@@ -91,7 +95,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.grpFiltros.Controls.Add(this.dateFechaDesde);
             this.grpFiltros.Controls.Add(this.label1);
             this.grpFiltros.Controls.Add(this.btnConsultar);
-            this.grpFiltros.Location = new System.Drawing.Point(12, 12);
+            this.grpFiltros.Location = new System.Drawing.Point(7, 10);
             this.grpFiltros.Name = "grpFiltros";
             this.grpFiltros.Size = new System.Drawing.Size(479, 105);
             this.grpFiltros.TabIndex = 7;
@@ -178,16 +182,42 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 725F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 462);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.grpFiltros);
+            this.panel1.Controls.Add(this.grpInformacion);
+            this.panel1.Controls.Add(this.DgvSueldosPH);
+            this.panel1.Location = new System.Drawing.Point(18, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(719, 444);
+            this.panel1.TabIndex = 0;
+            // 
             // FrmSueldosPH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(729, 450);
-            this.Controls.Add(this.grpInformacion);
-            this.Controls.Add(this.DgvSueldosPH);
-            this.Controls.Add(this.grpFiltros);
+            this.ClientSize = new System.Drawing.Size(755, 462);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSueldosPH";
@@ -199,6 +229,8 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             ((System.ComponentModel.ISupportInitialize)(this.DgvSueldosPH)).EndInit();
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -217,5 +249,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
         private System.Windows.Forms.ComboBox CboPerfil;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -52,6 +52,7 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.LblNombre = new System.Windows.Forms.Label();
+            this.PnlPrincipal = new System.Windows.Forms.Panel();
             this.MnsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@ namespace BugTrackingSystem.Forms
             this.MnsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MnsPrincipal.Name = "MnsPrincipal";
             this.MnsPrincipal.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.MnsPrincipal.Size = new System.Drawing.Size(1082, 24);
+            this.MnsPrincipal.Size = new System.Drawing.Size(995, 24);
             this.MnsPrincipal.TabIndex = 0;
             this.MnsPrincipal.Text = "menuStrip1";
             this.MnsPrincipal.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MnsPrincipal_MouseMove);
@@ -210,7 +211,7 @@ namespace BugTrackingSystem.Forms
             this.lblTitulo.BackColor = System.Drawing.Color.Salmon;
             this.lblTitulo.Enabled = false;
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(471, 6);
+            this.lblTitulo.Location = new System.Drawing.Point(430, 5);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(144, 13);
             this.lblTitulo.TabIndex = 2;
@@ -224,7 +225,7 @@ namespace BugTrackingSystem.Forms
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.Brown;
-            this.btnMinimizar.Location = new System.Drawing.Point(1031, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(944, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(26, 24);
             this.btnMinimizar.TabIndex = 5;
@@ -240,7 +241,7 @@ namespace BugTrackingSystem.Forms
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Brown;
-            this.btnSalir.Location = new System.Drawing.Point(1056, 0);
+            this.btnSalir.Location = new System.Drawing.Point(969, 0);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(26, 24);
             this.btnSalir.TabIndex = 4;
@@ -255,36 +256,44 @@ namespace BugTrackingSystem.Forms
             this.LblNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
             this.LblNombre.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LblNombre.Location = new System.Drawing.Point(3, 504);
+            this.LblNombre.Location = new System.Drawing.Point(3, 472);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(186, 13);
             this.LblNombre.TabIndex = 11;
             this.LblNombre.Text = "Usuario Conectado: - Perfil:";
             this.LblNombre.Visible = false;
             // 
+            // PnlPrincipal
+            // 
+            this.PnlPrincipal.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
+            this.PnlPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlPrincipal.Location = new System.Drawing.Point(0, 22);
+            this.PnlPrincipal.Name = "PnlPrincipal";
+            this.PnlPrincipal.Size = new System.Drawing.Size(995, 447);
+            this.PnlPrincipal.TabIndex = 13;
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkRed;
-            this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1082, 523);
+            this.ClientSize = new System.Drawing.Size(995, 491);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.MnsPrincipal);
+            this.Controls.Add(this.PnlPrincipal);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.MnsPrincipal;
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Tracking System";
-            this.TransparencyKey = System.Drawing.Color.Brown;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Shown += new System.EventHandler(this.FrmMenuPrincipal_Shown);
             this.MnsPrincipal.ResumeLayout(false);
@@ -317,5 +326,6 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem sueldosToolStripMenuItem;
+        private System.Windows.Forms.Panel PnlPrincipal;
     }
 }

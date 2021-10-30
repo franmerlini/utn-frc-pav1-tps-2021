@@ -22,6 +22,7 @@ namespace BugTrackingSystem.Forms
     {
         private Usuario usuario;
         private FrmLogin login;
+        private Form formActivo = null;
 
         public FrmMenuPrincipal()
         {
@@ -83,16 +84,17 @@ namespace BugTrackingSystem.Forms
         // Método para iniciar las ventanas dentro del menú principal.
         private void MostrarVentana(Form ventana, string titulo)
         {
-            if (this.ActiveMdiChild != null)
+            if (formActivo != null)
             {
-                if (this.ActiveMdiChild.GetType() == ventana.GetType())
-                {
-                    return;
-                }
-                this.MdiChildren[0].Close();
+                formActivo.Close();
             }
+            formActivo = ventana;
             lblTitulo.Text = titulo;
-            ventana.MdiParent = this;
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            PnlPrincipal.Controls.Add(ventana);
+            PnlPrincipal.Tag = ventana;
+            ventana.BringToFront();
             ventana.Show();
         }
 
@@ -130,44 +132,37 @@ namespace BugTrackingSystem.Forms
 
         private void TsiAsignaciones_Click(object sender, EventArgs e)
         {
-            FrmAsistencias ventana = new FrmAsistencias();
-            MostrarVentana(ventana, "Consulta de Asistencias");
+            MostrarVentana(new FrmAsistencias(), "Consulta de Asistencias");
         }
 
         private void TsiUsuarios_Click(object sender, EventArgs e)
         {
-            FrmUsuarios ventana = new FrmUsuarios();
-            MostrarVentana(ventana, "Consulta de Usuarios");
+            MostrarVentana(new FrmUsuarios(), "Consulta de Usuarios");
         }
 
         private void TsiSueldosAsignaciones_Click(object sender, EventArgs e)
         {
-            FrmAsignaciones ventana = new FrmAsignaciones();
-            MostrarVentana(ventana, "Consulta de Asignaciones");
+            MostrarVentana(new FrmAsignaciones(), "Consulta de Asignaciones");
         }
 
         private void TsiSueldosDescuentos_Click(object sender, EventArgs e)
         {
-            FrmDescuentos ventana = new FrmDescuentos();
-            MostrarVentana(ventana, "Consulta de Descuentos");
+            MostrarVentana(new FrmDescuentos(), "Consulta de Descuentos");
         }
 
         private void TsiSueldosPorPefil_Click(object sender, EventArgs e)
         {
-            FrmSueldosPH ventana = new FrmSueldosPH();
-            MostrarVentana(ventana, "Consulta de Sueldos Perfil Histórico");
+            MostrarVentana(new FrmSueldosPH(), "Consulta de Sueldos Perfil Histórico");
         }
 
         private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmGeneracionMensualSueldo ventana = new FrmGeneracionMensualSueldo();
-            MostrarVentana(ventana, "Generación mensual de sueldos");
+            MostrarVentana(new FrmGeneracionMensualSueldo(), "Generación mensual de sueldos");
         }
 
         private void SueldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmSueldos ventana = new FrmSueldos();
-            MostrarVentana(ventana, "Consulta de Sueldos");
+            MostrarVentana(new FrmSueldos(), "Consulta de Sueldos");
         }
 
         private void CerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)

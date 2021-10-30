@@ -70,7 +70,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.btnSalir.TabIndex = 41;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // lblTitulo
             // 
@@ -96,7 +96,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.menuStrip1.Size = new System.Drawing.Size(595, 24);
             this.menuStrip1.TabIndex = 39;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
+            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuStrip1_MouseDown);
             // 
             // tabPage2
             // 
@@ -167,7 +167,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             this.btnVolver.Size = new System.Drawing.Size(45, 46);
             this.btnVolver.TabIndex = 63;
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // lblFecha
             // 

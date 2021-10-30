@@ -103,12 +103,12 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
             tabla.Columns[columna].Width = tamaño;
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
@@ -119,7 +119,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
+        private void MenuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
