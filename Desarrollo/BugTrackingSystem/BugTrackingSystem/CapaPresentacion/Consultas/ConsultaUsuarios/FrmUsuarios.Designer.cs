@@ -297,7 +297,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(995, 450);
+            this.ClientSize = new System.Drawing.Size(995, 447);
             this.Controls.Add(this.grpInformacion);
             this.Controls.Add(this.grpAcciones);
             this.Controls.Add(this.grpFiltros);

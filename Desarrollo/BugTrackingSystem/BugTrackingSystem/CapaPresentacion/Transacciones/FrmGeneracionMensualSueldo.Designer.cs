@@ -662,7 +662,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.BackColor = System.Drawing.Color.DarkRed;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(995, 451);
+            this.ClientSize = new System.Drawing.Size(995, 447);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.grpAcciones);

@@ -197,7 +197,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 462);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 447);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // panel1
@@ -205,7 +205,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.panel1.Controls.Add(this.grpFiltros);
             this.panel1.Controls.Add(this.grpInformacion);
             this.panel1.Controls.Add(this.DgvSueldosPH);
-            this.panel1.Location = new System.Drawing.Point(18, 9);
+            this.panel1.Location = new System.Drawing.Point(138, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(719, 444);
             this.panel1.TabIndex = 0;
@@ -216,7 +216,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(755, 462);
+            this.ClientSize = new System.Drawing.Size(995, 447);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -210,7 +210,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(482, 487);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(995, 447);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // panel1
@@ -218,7 +218,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.panel1.Controls.Add(this.grpAcciones);
             this.panel1.Controls.Add(this.grpInformacion);
             this.panel1.Controls.Add(this.DgvDescuentos);
-            this.panel1.Location = new System.Drawing.Point(19, 21);
+            this.panel1.Location = new System.Drawing.Point(275, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 444);
             this.panel1.TabIndex = 0;
@@ -230,7 +230,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(482, 487);
+            this.ClientSize = new System.Drawing.Size(995, 447);
             this.Controls.Add(this.tableLayoutPanel2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
