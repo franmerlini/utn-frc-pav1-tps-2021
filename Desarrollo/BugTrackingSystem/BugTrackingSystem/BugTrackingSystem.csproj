@@ -276,5 +276,8 @@
   <ItemGroup>
     <Folder Include="CapaPresentacion\Reportes\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bug.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

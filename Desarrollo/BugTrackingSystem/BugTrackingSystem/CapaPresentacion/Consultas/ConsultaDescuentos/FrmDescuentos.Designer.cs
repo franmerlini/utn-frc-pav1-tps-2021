@@ -42,22 +42,23 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.BtnConsultar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.grpInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDescuentos)).BeginInit();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInformacion
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.SkyBlue;
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(229, 11);
+            this.grpInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpInformacion.Location = new System.Drawing.Point(228, 3);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(208, 110);
+            this.grpInformacion.Size = new System.Drawing.Size(758, 118);
             this.grpInformacion.TabIndex = 9;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -76,13 +77,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.DgvDescuentos.AllowUserToAddRows = false;
             this.DgvDescuentos.AllowUserToDeleteRows = false;
             this.DgvDescuentos.AllowUserToOrderColumns = true;
+            this.DgvDescuentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvDescuentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvDescuentos.Location = new System.Drawing.Point(2, 127);
+            this.DgvDescuentos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvDescuentos.Location = new System.Drawing.Point(3, 133);
             this.DgvDescuentos.MultiSelect = false;
             this.DgvDescuentos.Name = "DgvDescuentos";
             this.DgvDescuentos.ReadOnly = true;
             this.DgvDescuentos.RowHeadersWidth = 51;
-            this.DgvDescuentos.Size = new System.Drawing.Size(435, 310);
+            this.DgvDescuentos.Size = new System.Drawing.Size(989, 311);
             this.DgvDescuentos.TabIndex = 10;
             this.DgvDescuentos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvDescuentos_DataBindingComplete);
             // 
@@ -91,9 +94,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.grpAcciones.BackColor = System.Drawing.Color.SkyBlue;
             this.grpAcciones.Controls.Add(this.ChkBaja);
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
-            this.grpAcciones.Location = new System.Drawing.Point(3, 11);
+            this.grpAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpAcciones.Location = new System.Drawing.Point(3, 3);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(220, 110);
+            this.grpAcciones.Size = new System.Drawing.Size(219, 118);
             this.grpAcciones.TabIndex = 8;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
@@ -198,30 +202,34 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.DgvDescuentos, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(995, 447);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
-            // panel1
+            // tableLayoutPanel3
             // 
-            this.panel1.Controls.Add(this.grpAcciones);
-            this.panel1.Controls.Add(this.grpInformacion);
-            this.panel1.Controls.Add(this.DgvDescuentos);
-            this.panel1.Location = new System.Drawing.Point(275, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 444);
-            this.panel1.TabIndex = 0;
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.grpAcciones, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.grpInformacion, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 124);
+            this.tableLayoutPanel3.TabIndex = 12;
             // 
             // FrmDescuentos
             // 
@@ -245,7 +253,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.grpAcciones.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -264,6 +272,6 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
         private System.Windows.Forms.Button BtnConsultar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

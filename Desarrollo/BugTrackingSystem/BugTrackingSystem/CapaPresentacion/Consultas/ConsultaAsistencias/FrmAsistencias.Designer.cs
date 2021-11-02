@@ -50,11 +50,15 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpInformacion = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.grpFiltros.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsistencias)).BeginInit();
             this.grpInformacion.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpFiltros
@@ -70,9 +74,10 @@ namespace BugTrackingSystem.CapaPresentacion
             this.grpFiltros.Controls.Add(this.label2);
             this.grpFiltros.Controls.Add(this.dateFechaDesde);
             this.grpFiltros.Controls.Add(this.label1);
-            this.grpFiltros.Location = new System.Drawing.Point(12, 12);
+            this.grpFiltros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpFiltros.Location = new System.Drawing.Point(3, 3);
             this.grpFiltros.Name = "grpFiltros";
-            this.grpFiltros.Size = new System.Drawing.Size(479, 124);
+            this.grpFiltros.Size = new System.Drawing.Size(494, 123);
             this.grpFiltros.TabIndex = 0;
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros";
@@ -186,9 +191,10 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.grpAcciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
-            this.grpAcciones.Location = new System.Drawing.Point(497, 12);
+            this.grpAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpAcciones.Location = new System.Drawing.Point(503, 3);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(220, 124);
+            this.grpAcciones.Size = new System.Drawing.Size(219, 123);
             this.grpAcciones.TabIndex = 1;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
@@ -267,21 +273,24 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvAsistencias.AllowUserToAddRows = false;
             this.dgvAsistencias.AllowUserToDeleteRows = false;
             this.dgvAsistencias.AllowUserToOrderColumns = true;
+            this.dgvAsistencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAsistencias.Location = new System.Drawing.Point(12, 142);
+            this.dgvAsistencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAsistencias.Location = new System.Drawing.Point(3, 138);
             this.dgvAsistencias.MultiSelect = false;
             this.dgvAsistencias.Name = "dgvAsistencias";
             this.dgvAsistencias.ReadOnly = true;
-            this.dgvAsistencias.Size = new System.Drawing.Size(971, 296);
+            this.dgvAsistencias.Size = new System.Drawing.Size(1254, 501);
             this.dgvAsistencias.TabIndex = 2;
             // 
             // grpInformacion
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(723, 12);
+            this.grpInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpInformacion.Location = new System.Drawing.Point(728, 3);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(260, 124);
+            this.grpInformacion.Size = new System.Drawing.Size(523, 123);
             this.grpInformacion.TabIndex = 2;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -295,6 +304,39 @@ namespace BugTrackingSystem.CapaPresentacion
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Registros encontrados:";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dgvAsistencias, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1260, 642);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 500F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.grpFiltros, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.grpInformacion, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.grpAcciones, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1254, 129);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
             // FrmAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,11 +344,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(995, 447);
-            this.Controls.Add(this.grpInformacion);
-            this.Controls.Add(this.dgvAsistencias);
-            this.Controls.Add(this.grpAcciones);
-            this.Controls.Add(this.grpFiltros);
+            this.ClientSize = new System.Drawing.Size(1260, 642);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAsistencias";
@@ -321,6 +360,8 @@ namespace BugTrackingSystem.CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsistencias)).EndInit();
             this.grpInformacion.ResumeLayout(false);
             this.grpInformacion.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -347,5 +388,7 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateFechaDesde;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

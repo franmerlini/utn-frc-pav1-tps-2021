@@ -133,6 +133,9 @@
   <data name="BtnDeshacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnDeshacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BtnLimpiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnLimpiar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,13 +154,13 @@
   <data name="BtnEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnAgregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnAgregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BtnRehacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnRehacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnLimpiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnLimpiar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnAgregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnAgregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bug" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bug.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

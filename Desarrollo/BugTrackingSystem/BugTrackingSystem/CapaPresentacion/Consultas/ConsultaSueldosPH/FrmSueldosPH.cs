@@ -38,18 +38,17 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
                 Font = new Font("Verdana", 8, FontStyle.Bold)
             };
             DgvSueldosPH.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-            CrearColumnas(DgvSueldosPH, 0, "Perfil", "Perfil", 217);
-            CrearColumnas(DgvSueldosPH, 1, "Fecha", "Fecha", 217);
-            CrearColumnas(DgvSueldosPH, 2, "Sueldo Bruto", "Sueldo", 217);
+            CrearColumnas(DgvSueldosPH, 0, "Perfil", "Perfil");
+            CrearColumnas(DgvSueldosPH, 1, "Fecha", "Fecha");
+            CrearColumnas(DgvSueldosPH, 2, "Sueldo Bruto", "Sueldo");
             DgvSueldosPH.Columns[2].DefaultCellStyle.Format = "C";
         }
 
-        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
+        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad)
         {
             tabla.Columns[columna].Name = nombre;
             tabla.Columns[columna].DataPropertyName = propiedad;
             tabla.Columns[columna].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tabla.Columns[columna].Width = tamaño;
         }
 
         private void LlenarCombo(ComboBox cbx, Object source, string display, String value)

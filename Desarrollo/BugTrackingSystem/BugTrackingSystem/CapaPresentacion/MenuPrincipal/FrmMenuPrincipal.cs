@@ -32,9 +32,11 @@ namespace BugTrackingSystem.Forms
         // Se inicia la ventana de login apenas se muestra el menú principal
         private void FrmMenuPrincipal_Shown(object sender, EventArgs e)
         {
+            ReiniciarMenu();
             login = new FrmLogin();
             login.FormClosing += Login_FormClosing;
             MostrarVentana(login, "Bug Tracking System");
+            Console.WriteLine(this.DoubleBuffered);
         }
 
         // Event handler del form login para extraer el usuario
@@ -47,37 +49,39 @@ namespace BugTrackingSystem.Forms
                 {
                     case "Administrador":
                         {
-                            tsiReportes.Enabled = true;
-                            tsiArchivo.Enabled = true;
-                            tsiGestion.Enabled = true;
-                            tsiTransaccion.Enabled = true;
-                            tsiUsuarios.Enabled = true;
+                            BtnReportes.Visible = true;
+                            BtnCuenta.Visible = true;
+                            BtnGestion.Visible = true;
+                            BtnTransacciones.Visible = true;
+                            BtnUsuarios.Enabled = true;
+                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                     case "Tester":
                         {
-                            tsiArchivo.Enabled = true;
-                            tsiGestion.Enabled = true;
-                            tsiUsuarios.Enabled = false;
+                            BtnCuenta.Visible = true;
+                            BtnGestion.Visible = true;
+                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                     case "Desarrollador":
                         {
-                            tsiArchivo.Enabled = true;
-                            tsiGestion.Enabled = true;
-                            tsiUsuarios.Enabled = false;
+                            BtnCuenta.Visible = true;
+                            BtnGestion.Visible = true;
+                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                     case "Responsable de Reportes":
                         {
-                            tsiArchivo.Enabled = true;
-                            tsiTransaccion.Enabled = true;
-                            tsiReportes.Enabled = true;
+                            BtnCuenta.Visible = true;
+                            BtnTransacciones.Visible = true;
+                            BtnReportes.Visible = true;
+                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                 }
-                LblNombre.Text = "Usuario: " + usuario.Nombre + " - Perfil: " + usuario.Perfil.Nombre;
-                LblNombre.Visible = true;
+                BtnNombreUsuario.Text = "Usuario: " + usuario.Nombre;
+                BtnPerfilNombre.Text = "Perfil: " + usuario.Perfil.Nombre;
             }
         }
 
@@ -86,10 +90,12 @@ namespace BugTrackingSystem.Forms
         {
             if (formActivo != null)
             {
+                if (ventana.GetType() == formActivo.GetType() && titulo != "Bug Tracking System")
+                    return;
                 formActivo.Close();
             }
             formActivo = ventana;
-            lblTitulo.Text = titulo;
+            this.Text = titulo;
             ventana.TopLevel = false;
             ventana.Dock = DockStyle.Fill;
             PnlPrincipal.Controls.Add(ventana);
@@ -113,59 +119,12 @@ namespace BugTrackingSystem.Forms
             }
         }
 
-        // Botones:
-
-        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void BtnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void TsiAsignaciones_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmAsistencias(), "Consulta de Asistencias");
-        }
-
-        private void TsiUsuarios_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmUsuarios(), "Consulta de Usuarios");
-        }
-
-        private void TsiSueldosAsignaciones_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmAsignaciones(), "Consulta de Asignaciones");
-        }
-
-        private void TsiSueldosDescuentos_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmDescuentos(), "Consulta de Descuentos");
-        }
-
-        private void TsiSueldosPorPefil_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmSueldosPH(), "Consulta de Sueldos Perfil Histórico");
-        }
-
-        private void GeneracionMensualDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmGeneracionMensualSueldo(), "Generación mensual de sueldos");
-        }
-
-        private void SueldosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmSueldos(), "Consulta de Sueldos");
-        }
-
-        private void CerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
             DialogResult rta;
             rta = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -175,28 +134,87 @@ namespace BugTrackingSystem.Forms
             }
             else
             {
-                tsiReportes.Enabled = false;
-                tsiArchivo.Enabled = false;
-                tsiGestion.Enabled = false;
-                tsiTransaccion.Enabled = false;
-                LblNombre.Visible = false;
+                ReiniciarMenu();
                 login = new FrmLogin();
                 login.FormClosing += Login_FormClosing;
                 MostrarVentana(login, "Bug Tracking System");
             }
         }
 
-        // Código para poder mover la ventana desde el menu strip
-
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void MnsPrincipal_MouseMove(object sender, MouseEventArgs e)
+        private void ReiniciarMenu()
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            BtnReportes.Visible = false;
+            BtnCuenta.Visible = false;
+            BtnGestion.Visible = false;
+            BtnTransacciones.Visible = false;
+            BtnUsuarios.Enabled = false;
+            PnlCuenta.Visible = false;
+            PnlGestion.Visible = false;
+            PnlTransacciones.Visible = false;
+            PnlReportes.Visible = false;
+            BtnCerrarSesion.Visible = false;
+            BtnPerfilNombre.Text = "Perfil: -";
+            BtnNombreUsuario.Text = "Usuario: -";
+        }
+
+        private void BtnAsignaciones_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmAsignaciones(), "Consulta de Asignaciones");
+        }
+
+        private void BtnAsistencias_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmAsistencias(), "Consulta de Asistencias");
+        }
+
+        private void Descuentos_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmDescuentos(), "Consulta de Descuentos");
+        }
+
+        private void BtnSueldos_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmSueldos(), "Consulta de Sueldos");
+        }
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmUsuarios(), "Consulta de Usuarios");
+        }
+        private void BtnTransaccionSueldo_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmGeneracionMensualSueldo(), "Generación mensual de sueldos");
+        }
+        private void BtnSueldosPH_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmSueldosPH(), "Consulta de Sueldos Perfil Histórico");
+        }
+        private void BtnCuenta_Click(object sender, EventArgs e)
+        {
+            if (PnlCuenta.Visible)
+                PnlCuenta.Visible = false;
+            else
+                PnlCuenta.Visible = true;
+        }
+        private void BtnGestion_Click(object sender, EventArgs e)
+        {
+            if (PnlGestion.Visible)
+                PnlGestion.Visible = false;
+            else
+                PnlGestion.Visible = true;
+        }
+        private void BtnTransacciones_Click(object sender, EventArgs e)
+        {
+            if (PnlTransacciones.Visible)
+                PnlTransacciones.Visible = false;
+            else
+                PnlTransacciones.Visible = true;
+        }
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            if (PnlReportes.Visible)
+                PnlReportes.Visible = false;
+            else
+                PnlReportes.Visible = true;
         }
     }
 }

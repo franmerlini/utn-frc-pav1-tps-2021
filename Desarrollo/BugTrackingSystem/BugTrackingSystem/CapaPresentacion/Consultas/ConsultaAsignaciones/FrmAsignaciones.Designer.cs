@@ -35,20 +35,20 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnNuevo = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.grpAcciones = new System.Windows.Forms.GroupBox();
             this.ChkBaja = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.DgvAsignaciones = new System.Windows.Forms.DataGridView();
             this.grpInformacion = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAsignaciones)).BeginInit();
             this.grpInformacion.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnConsultar
@@ -119,42 +119,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.BtnNuevo.UseVisualStyleBackColor = false;
             this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(995, 447);
-            this.tableLayoutPanel2.TabIndex = 7;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.grpAcciones);
-            this.panel1.Controls.Add(this.DgvAsignaciones);
-            this.panel1.Controls.Add(this.grpInformacion);
-            this.panel1.Location = new System.Drawing.Point(275, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 444);
-            this.panel1.TabIndex = 9;
-            // 
             // grpAcciones
             // 
             this.grpAcciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.grpAcciones.Controls.Add(this.ChkBaja);
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
-            this.grpAcciones.Location = new System.Drawing.Point(4, 10);
+            this.grpAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpAcciones.Location = new System.Drawing.Point(3, 3);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(220, 105);
+            this.grpAcciones.Size = new System.Drawing.Size(219, 108);
             this.grpAcciones.TabIndex = 4;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
@@ -193,12 +166,14 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.DgvAsignaciones.AllowUserToAddRows = false;
             this.DgvAsignaciones.AllowUserToDeleteRows = false;
             this.DgvAsignaciones.AllowUserToOrderColumns = true;
+            this.DgvAsignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvAsignaciones.Location = new System.Drawing.Point(4, 121);
+            this.DgvAsignaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvAsignaciones.Location = new System.Drawing.Point(3, 123);
             this.DgvAsignaciones.MultiSelect = false;
             this.DgvAsignaciones.Name = "DgvAsignaciones";
             this.DgvAsignaciones.ReadOnly = true;
-            this.DgvAsignaciones.Size = new System.Drawing.Size(434, 315);
+            this.DgvAsignaciones.Size = new System.Drawing.Size(989, 321);
             this.DgvAsignaciones.TabIndex = 6;
             this.DgvAsignaciones.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvAsignaciones_DataBindingComplete);
             // 
@@ -206,9 +181,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(230, 10);
+            this.grpInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpInformacion.Location = new System.Drawing.Point(228, 3);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(208, 105);
+            this.grpInformacion.Size = new System.Drawing.Size(758, 108);
             this.grpInformacion.TabIndex = 5;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -221,6 +197,37 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.lblTotal.Size = new System.Drawing.Size(116, 13);
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Registros encontrados:";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.DgvAsignaciones, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(995, 447);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.grpAcciones, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.grpInformacion, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 114);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // FrmAsignaciones
             // 
@@ -237,22 +244,20 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAsignaciones";
             this.Load += new System.EventHandler(this.FrmAsignaciones_Load);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.grpAcciones.ResumeLayout(false);
             this.grpAcciones.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvAsignaciones)).EndInit();
             this.grpInformacion.ResumeLayout(false);
             this.grpInformacion.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grpAcciones;
         private System.Windows.Forms.CheckBox ChkBaja;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -263,5 +268,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
         private System.Windows.Forms.DataGridView DgvAsignaciones;
         private System.Windows.Forms.GroupBox grpInformacion;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

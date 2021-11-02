@@ -52,20 +52,19 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaSueldos
 
             // Define el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(dgvSueldos, 0, "Usuario", "Usuario", 163);
-            CrearColumnas(dgvSueldos, 1, "Fecha", "Fecha", 163);
-            CrearColumnas(dgvSueldos, 2, "Sueldo Bruto", "SueldoBruto", 163);
+            CrearColumnas(dgvSueldos, 0, "Usuario", "Usuario");
+            CrearColumnas(dgvSueldos, 1, "Fecha", "Fecha");
+            CrearColumnas(dgvSueldos, 2, "Sueldo Bruto", "SueldoBruto");
             dgvSueldos.Columns[2].DefaultCellStyle.Format = "C";
-            CrearColumnas(dgvSueldos, 3, "Sueldo Neto", "", 163);
+            CrearColumnas(dgvSueldos, 3, "Sueldo Neto", "");
             dgvSueldos.Columns[3].DefaultCellStyle.Format = "C";
         }
 
-        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
+        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad)
         {
             tabla.Columns[columna].Name = nombre;
             tabla.Columns[columna].DataPropertyName = propiedad;
             tabla.Columns[columna].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tabla.Columns[columna].Width = tamaño;
         }
 
         private void FrmSueldos_Load(object sender, EventArgs e)

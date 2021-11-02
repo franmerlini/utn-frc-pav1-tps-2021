@@ -70,21 +70,20 @@ namespace BugTrackingSystem.CapaPresentacion
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(dgvAsignaciones, 0, "Asignación", "Asignacion", 210, "");
-            CrearColumnas(dgvAsignaciones, 1, "Cantidad", "Cantidad", 110, "");
-            CrearColumnas(dgvAsignaciones, 2, "Monto Total", "Monto", 110, "C");
-            CrearColumnas(dgvDescuentos, 0, "Descuento", "Descuento", 210, "");
-            CrearColumnas(dgvDescuentos, 1, "Cantidad", "Cantidad", 110, "");
-            CrearColumnas(dgvDescuentos, 2, "Monto Total", "Monto", 110, "C");
+            CrearColumnas(dgvAsignaciones, 0, "Asignación", "Asignacion", "");
+            CrearColumnas(dgvAsignaciones, 1, "Cantidad", "Cantidad", "");
+            CrearColumnas(dgvAsignaciones, 2, "Monto Total", "Monto", "C");
+            CrearColumnas(dgvDescuentos, 0, "Descuento", "Descuento", "");
+            CrearColumnas(dgvDescuentos, 1, "Cantidad", "Cantidad", "");
+            CrearColumnas(dgvDescuentos, 2, "Monto Total", "Monto", "C");
         }
 
-        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño, string formato)
+        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, string formato)
         {
             tabla.Columns[columna].Name = nombre;
             tabla.Columns[columna].DataPropertyName = propiedad;
             tabla.Columns[columna].DefaultCellStyle.Format = formato;
             tabla.Columns[columna].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tabla.Columns[columna].Width = tamaño;
         }
 
         private void LlenarCombo(ComboBox cbx, Object source, string display)

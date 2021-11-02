@@ -50,11 +50,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.label3 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grpInformacion.SuspendLayout();
             this.grpAcciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.grpFiltros.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvUsuarios
@@ -62,13 +66,15 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.AllowUserToOrderColumns = true;
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 142);
+            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUsuarios.Location = new System.Drawing.Point(3, 138);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersWidth = 51;
-            this.dgvUsuarios.Size = new System.Drawing.Size(971, 296);
+            this.dgvUsuarios.Size = new System.Drawing.Size(1020, 306);
             this.dgvUsuarios.TabIndex = 3;
             this.dgvUsuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvUsuarios_DataBindingComplete);
             // 
@@ -76,9 +82,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(723, 12);
+            this.grpInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpInformacion.Location = new System.Drawing.Point(728, 3);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(260, 124);
+            this.grpInformacion.Size = new System.Drawing.Size(289, 123);
             this.grpInformacion.TabIndex = 6;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -96,9 +103,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             // 
             this.grpAcciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.grpAcciones.Controls.Add(this.tableLayoutPanel1);
-            this.grpAcciones.Location = new System.Drawing.Point(497, 12);
+            this.grpAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpAcciones.Location = new System.Drawing.Point(503, 3);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(220, 124);
+            this.grpAcciones.Size = new System.Drawing.Size(219, 123);
             this.grpAcciones.TabIndex = 5;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
@@ -185,9 +193,10 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.grpFiltros.Controls.Add(this.cboUsuario);
             this.grpFiltros.Controls.Add(this.label3);
             this.grpFiltros.Controls.Add(this.btnConsultar);
-            this.grpFiltros.Location = new System.Drawing.Point(12, 12);
+            this.grpFiltros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpFiltros.Location = new System.Drawing.Point(3, 3);
             this.grpFiltros.Name = "grpFiltros";
-            this.grpFiltros.Size = new System.Drawing.Size(479, 124);
+            this.grpFiltros.Size = new System.Drawing.Size(494, 123);
             this.grpFiltros.TabIndex = 4;
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros";
@@ -290,6 +299,38 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dgvUsuarios, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1026, 447);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 500F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.grpFiltros, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.grpInformacion, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.grpAcciones, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1020, 129);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,11 +338,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(995, 447);
-            this.Controls.Add(this.grpInformacion);
-            this.Controls.Add(this.grpAcciones);
-            this.Controls.Add(this.grpFiltros);
-            this.Controls.Add(this.dgvUsuarios);
+            this.ClientSize = new System.Drawing.Size(1026, 447);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUsuarios";
@@ -315,6 +353,8 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -341,5 +381,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaUsuarios
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtEstado;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

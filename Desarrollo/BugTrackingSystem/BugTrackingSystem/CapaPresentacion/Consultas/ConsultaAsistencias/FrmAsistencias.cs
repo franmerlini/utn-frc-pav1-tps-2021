@@ -50,13 +50,13 @@ namespace BugTrackingSystem.CapaPresentacion
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(dgvAsistencias, 0, "Nombre", "Usuario", 150);
-            CrearColumnas(dgvAsistencias, 1, "Fecha", "Fecha", 80);
-            CrearColumnas(dgvAsistencias, 2, "Hora Ingreso", "HoraIngreso", 100);
-            CrearColumnas(dgvAsistencias, 3, "Hora Salida", "HoraSalida", 100);
-            CrearColumnas(dgvAsistencias, 4, "Estado", "EstadoAsistencia", 110);
-            CrearColumnas(dgvAsistencias, 5, "Comentario", "Comentario", 390);
-            CrearColumnas(dgvAsistencias, 6, "Borrado", "Borrado", 80);
+            CrearColumnas(dgvAsistencias, 0, "Nombre", "Usuario");
+            CrearColumnas(dgvAsistencias, 1, "Fecha", "Fecha");
+            CrearColumnas(dgvAsistencias, 2, "Hora Ingreso", "HoraIngreso");
+            CrearColumnas(dgvAsistencias, 3, "Hora Salida", "HoraSalida");
+            CrearColumnas(dgvAsistencias, 4, "Estado", "EstadoAsistencia");
+            CrearColumnas(dgvAsistencias, 5, "Comentario", "Comentario");
+            CrearColumnas(dgvAsistencias, 6, "Borrado", "Borrado");
             dgvAsistencias.Columns[6].Visible = false;
 
         }
@@ -69,12 +69,11 @@ namespace BugTrackingSystem.CapaPresentacion
             Consultar(parametros, false);
         }
 
-        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
+        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad)
         {
             tabla.Columns[columna].Name = nombre;
             tabla.Columns[columna].DataPropertyName = propiedad;
             tabla.Columns[columna].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tabla.Columns[columna].Width = tamaño;
         }
 
         private void LlenarCombo(ComboBox cbx, Object source, string display, String value)

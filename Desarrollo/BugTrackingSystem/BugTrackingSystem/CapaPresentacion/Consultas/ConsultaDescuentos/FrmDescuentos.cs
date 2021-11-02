@@ -44,20 +44,19 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(DgvDescuentos, 0, "Nombre", "Nombre", 210);
-            CrearColumnas(DgvDescuentos, 1, "Monto", "Monto", 180);
+            CrearColumnas(DgvDescuentos, 0, "Nombre", "Nombre");
+            CrearColumnas(DgvDescuentos, 1, "Monto", "Monto");
             DgvDescuentos.Columns[1].DefaultCellStyle.Format = "C";
-            CrearColumnas(DgvDescuentos, 2, "Borrado", "Borrado", 110);
+            CrearColumnas(DgvDescuentos, 2, "Borrado", "Borrado");
             DgvDescuentos.Columns[2].Visible = false;
 
         }
 
-        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
+        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad)
         {
             tabla.Columns[columna].Name = nombre;
             tabla.Columns[columna].DataPropertyName = propiedad;
             tabla.Columns[columna].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tabla.Columns[columna].Width = tamaño;
         }
 
         private void FrmDescuentos_Load(object sender, EventArgs e)

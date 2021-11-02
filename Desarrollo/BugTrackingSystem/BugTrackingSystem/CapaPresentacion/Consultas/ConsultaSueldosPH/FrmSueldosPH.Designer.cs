@@ -43,21 +43,22 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.btnConsultar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grpInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSueldosPH)).BeginInit();
             this.grpFiltros.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInformacion
             // 
             this.grpInformacion.BackColor = System.Drawing.Color.Tan;
             this.grpInformacion.Controls.Add(this.lblTotal);
-            this.grpInformacion.Location = new System.Drawing.Point(492, 10);
+            this.grpInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpInformacion.Location = new System.Drawing.Point(503, 3);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(220, 105);
+            this.grpInformacion.Size = new System.Drawing.Size(483, 113);
             this.grpInformacion.TabIndex = 9;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -76,13 +77,15 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.DgvSueldosPH.AllowUserToAddRows = false;
             this.DgvSueldosPH.AllowUserToDeleteRows = false;
             this.DgvSueldosPH.AllowUserToOrderColumns = true;
+            this.DgvSueldosPH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvSueldosPH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvSueldosPH.Location = new System.Drawing.Point(7, 121);
+            this.DgvSueldosPH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvSueldosPH.Location = new System.Drawing.Point(3, 128);
             this.DgvSueldosPH.MultiSelect = false;
             this.DgvSueldosPH.Name = "DgvSueldosPH";
             this.DgvSueldosPH.ReadOnly = true;
             this.DgvSueldosPH.RowHeadersWidth = 51;
-            this.DgvSueldosPH.Size = new System.Drawing.Size(705, 315);
+            this.DgvSueldosPH.Size = new System.Drawing.Size(989, 316);
             this.DgvSueldosPH.TabIndex = 6;
             // 
             // grpFiltros
@@ -95,9 +98,10 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.grpFiltros.Controls.Add(this.dateFechaDesde);
             this.grpFiltros.Controls.Add(this.label1);
             this.grpFiltros.Controls.Add(this.btnConsultar);
-            this.grpFiltros.Location = new System.Drawing.Point(7, 10);
+            this.grpFiltros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpFiltros.Location = new System.Drawing.Point(3, 3);
             this.grpFiltros.Name = "grpFiltros";
-            this.grpFiltros.Size = new System.Drawing.Size(479, 105);
+            this.grpFiltros.Size = new System.Drawing.Size(494, 113);
             this.grpFiltros.TabIndex = 7;
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros";
@@ -185,30 +189,33 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 725F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.DgvSueldosPH, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 447);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
-            // panel1
+            // tableLayoutPanel2
             // 
-            this.panel1.Controls.Add(this.grpFiltros);
-            this.panel1.Controls.Add(this.grpInformacion);
-            this.panel1.Controls.Add(this.DgvSueldosPH);
-            this.panel1.Location = new System.Drawing.Point(138, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(719, 444);
-            this.panel1.TabIndex = 0;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 500F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.grpFiltros, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.grpInformacion, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(989, 119);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // FrmSueldosPH
             // 
@@ -230,7 +237,7 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -250,6 +257,6 @@ namespace BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

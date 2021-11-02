@@ -39,19 +39,18 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
 
-            CrearColumnas(DgvAsignaciones, 0, "Nombre", "Nombre", 210);
-            CrearColumnas(DgvAsignaciones, 1, "Monto", "Monto", 180);
+            CrearColumnas(DgvAsignaciones, 0, "Nombre", "Nombre");
+            CrearColumnas(DgvAsignaciones, 1, "Monto", "Monto");
             DgvAsignaciones.Columns[1].DefaultCellStyle.Format = "C";
-            CrearColumnas(DgvAsignaciones, 2, "Borrado", "Borrado", 120);
+            CrearColumnas(DgvAsignaciones, 2, "Borrado", "Borrado");
             DgvAsignaciones.Columns[2].Visible = false;
         }
 
-        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad, int tamaño)
+        private void CrearColumnas(DataGridView tabla, int columna, string nombre, string propiedad)
         {
             tabla.Columns[columna].Name = nombre;
             tabla.Columns[columna].DataPropertyName = propiedad;
             tabla.Columns[columna].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tabla.Columns[columna].Width = tamaño;
         }
 
         private void FrmAsignaciones_Load(object sender, EventArgs e)

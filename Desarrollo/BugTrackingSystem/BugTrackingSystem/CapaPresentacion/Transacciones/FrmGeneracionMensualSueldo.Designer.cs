@@ -68,6 +68,9 @@ namespace BugTrackingSystem.CapaPresentacion
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvDescuentos = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -82,6 +85,9 @@ namespace BugTrackingSystem.CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaciones)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescuentos)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,11 +97,12 @@ namespace BugTrackingSystem.CapaPresentacion
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.rbDescuento);
             this.groupBox1.Controls.Add(this.rbAsignacion);
-            this.groupBox1.Location = new System.Drawing.Point(271, 10);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(302, 2);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(485, 102);
+            this.groupBox1.Size = new System.Drawing.Size(496, 110);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle Sueldo";
@@ -107,10 +114,10 @@ namespace BugTrackingSystem.CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDtoAsig.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDtoAsig.FormattingEnabled = true;
-            this.cboDtoAsig.Location = new System.Drawing.Point(21, 46);
+            this.cboDtoAsig.Location = new System.Drawing.Point(21, 57);
             this.cboDtoAsig.Margin = new System.Windows.Forms.Padding(2);
             this.cboDtoAsig.Name = "cboDtoAsig";
-            this.cboDtoAsig.Size = new System.Drawing.Size(168, 21);
+            this.cboDtoAsig.Size = new System.Drawing.Size(170, 21);
             this.cboDtoAsig.TabIndex = 10;
             this.cboDtoAsig.SelectedIndexChanged += new System.EventHandler(this.CboDtoAsig_SelectedIndexChanged);
             // 
@@ -326,11 +333,12 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Pink;
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox2.Location = new System.Drawing.Point(9, 10);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(2, 2);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(257, 102);
+            this.groupBox2.Size = new System.Drawing.Size(296, 110);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sueldo";
@@ -346,7 +354,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 17);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(22, 17);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -377,28 +385,27 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label6.Location = new System.Drawing.Point(33, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 23);
+            this.label6.Size = new System.Drawing.Size(73, 29);
             this.label6.TabIndex = 35;
             this.label6.Text = "Asignaciones:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.Location = new System.Drawing.Point(248, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 23);
+            this.label5.Size = new System.Drawing.Size(67, 29);
             this.label5.TabIndex = 33;
             this.label5.Text = "Descuentos:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -418,35 +425,33 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel4.Controls.Add(this.txtAsigSueldo, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label5, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(342, 17);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(937, 15);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(630, 23);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(630, 29);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
             this.label7.Location = new System.Drawing.Point(479, 0);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 23);
+            this.label7.Size = new System.Drawing.Size(45, 29);
             this.label7.TabIndex = 37;
             this.label7.Text = "TOTAL:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSueldoTotal
             // 
-            this.txtSueldoTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSueldoTotal.Location = new System.Drawing.Point(528, 2);
+            this.txtSueldoTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSueldoTotal.Location = new System.Drawing.Point(528, 4);
             this.txtSueldoTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtSueldoTotal.Name = "txtSueldoTotal";
             this.txtSueldoTotal.ReadOnly = true;
@@ -455,10 +460,8 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             // txtDtoSueldo
             // 
-            this.txtDtoSueldo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDtoSueldo.Location = new System.Drawing.Point(319, 2);
+            this.txtDtoSueldo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDtoSueldo.Location = new System.Drawing.Point(319, 4);
             this.txtDtoSueldo.Margin = new System.Windows.Forms.Padding(2);
             this.txtDtoSueldo.Name = "txtDtoSueldo";
             this.txtDtoSueldo.ReadOnly = true;
@@ -467,10 +470,8 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             // txtAsigSueldo
             // 
-            this.txtAsigSueldo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAsigSueldo.Location = new System.Drawing.Point(110, 2);
+            this.txtAsigSueldo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAsigSueldo.Location = new System.Drawing.Point(110, 4);
             this.txtAsigSueldo.Margin = new System.Windows.Forms.Padding(2);
             this.txtAsigSueldo.Name = "txtAsigSueldo";
             this.txtAsigSueldo.ReadOnly = true;
@@ -481,11 +482,12 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Pink;
             this.groupBox4.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox4.Location = new System.Drawing.Point(9, 388);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(2, 399);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(978, 54);
+            this.groupBox4.Size = new System.Drawing.Size(1569, 46);
             this.groupBox4.TabIndex = 48;
             this.groupBox4.TabStop = false;
             // 
@@ -493,9 +495,11 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.grpAcciones.BackColor = System.Drawing.Color.Pink;
             this.grpAcciones.Controls.Add(this.tableLayoutPanel3);
-            this.grpAcciones.Location = new System.Drawing.Point(761, 10);
+            this.grpAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpAcciones.Location = new System.Drawing.Point(802, 2);
+            this.grpAcciones.Margin = new System.Windows.Forms.Padding(2);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(225, 102);
+            this.grpAcciones.Size = new System.Drawing.Size(763, 110);
             this.grpAcciones.TabIndex = 49;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
@@ -513,7 +517,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel3.Controls.Add(this.btnAgregar, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnLimpiar, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnEliminar, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(16, 32);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
@@ -603,11 +607,12 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Pink;
             this.groupBox3.Controls.Add(this.dgvAsignaciones);
-            this.groupBox3.Location = new System.Drawing.Point(9, 116);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(2, 2);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(487, 268);
+            this.groupBox3.Size = new System.Drawing.Size(779, 267);
             this.groupBox3.TabIndex = 51;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Asignaciones";
@@ -617,13 +622,15 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvAsignaciones.AllowUserToAddRows = false;
             this.dgvAsignaciones.AllowUserToDeleteRows = false;
             this.dgvAsignaciones.AllowUserToOrderColumns = true;
+            this.dgvAsignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAsignaciones.Location = new System.Drawing.Point(6, 18);
+            this.dgvAsignaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAsignaciones.Location = new System.Drawing.Point(2, 15);
             this.dgvAsignaciones.MultiSelect = false;
             this.dgvAsignaciones.Name = "dgvAsignaciones";
             this.dgvAsignaciones.ReadOnly = true;
             this.dgvAsignaciones.RowHeadersWidth = 51;
-            this.dgvAsignaciones.Size = new System.Drawing.Size(476, 245);
+            this.dgvAsignaciones.Size = new System.Drawing.Size(775, 250);
             this.dgvAsignaciones.TabIndex = 33;
             this.dgvAsignaciones.Click += new System.EventHandler(this.DgvAsignaciones_Click);
             // 
@@ -631,11 +638,12 @@ namespace BugTrackingSystem.CapaPresentacion
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Pink;
             this.groupBox5.Controls.Add(this.dgvDescuentos);
-            this.groupBox5.Location = new System.Drawing.Point(500, 116);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(785, 2);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(487, 268);
+            this.groupBox5.Size = new System.Drawing.Size(780, 267);
             this.groupBox5.TabIndex = 52;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Descuentos";
@@ -645,15 +653,67 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvDescuentos.AllowUserToAddRows = false;
             this.dgvDescuentos.AllowUserToDeleteRows = false;
             this.dgvDescuentos.AllowUserToOrderColumns = true;
+            this.dgvDescuentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDescuentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDescuentos.Location = new System.Drawing.Point(6, 18);
+            this.dgvDescuentos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDescuentos.Location = new System.Drawing.Point(2, 15);
             this.dgvDescuentos.MultiSelect = false;
             this.dgvDescuentos.Name = "dgvDescuentos";
             this.dgvDescuentos.ReadOnly = true;
             this.dgvDescuentos.RowHeadersWidth = 51;
-            this.dgvDescuentos.Size = new System.Drawing.Size(476, 245);
+            this.dgvDescuentos.Size = new System.Drawing.Size(776, 250);
             this.dgvDescuentos.TabIndex = 33;
             this.dgvDescuentos.Click += new System.EventHandler(this.DgvDescuentos_Click);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox4, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1573, 447);
+            this.tableLayoutPanel5.TabIndex = 53;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 500F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.Controls.Add(this.groupBox2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.grpAcciones, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.groupBox1, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1567, 114);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.groupBox5, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 123);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1567, 271);
+            this.tableLayoutPanel7.TabIndex = 1;
             // 
             // FrmGeneracionMensualSueldo
             // 
@@ -662,13 +722,8 @@ namespace BugTrackingSystem.CapaPresentacion
             this.BackColor = System.Drawing.Color.DarkRed;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(995, 447);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.grpAcciones);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1573, 447);
+            this.Controls.Add(this.tableLayoutPanel5);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -694,6 +749,9 @@ namespace BugTrackingSystem.CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaciones)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescuentos)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -737,5 +795,8 @@ namespace BugTrackingSystem.CapaPresentacion
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dgvDescuentos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
     }
 }
