@@ -45,43 +45,36 @@ namespace BugTrackingSystem.Forms
             if (login.Usuario != null)
             {
                 usuario = login.Usuario;
+                BtnNombreUsuario.Text = "Usuario: " + usuario.Nombre;
+                BtnPerfilNombre.Text = "Perfil: " + usuario.Perfil.Nombre;
+                PnlMenuLateral.Visible = true;
                 switch (usuario.Perfil.Nombre)
                 {
                     case "Administrador":
                         {
                             BtnReportes.Visible = true;
-                            BtnCuenta.Visible = true;
                             BtnGestion.Visible = true;
                             BtnTransacciones.Visible = true;
                             BtnUsuarios.Enabled = true;
-                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                     case "Tester":
                         {
-                            BtnCuenta.Visible = true;
                             BtnGestion.Visible = true;
-                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                     case "Desarrollador":
                         {
-                            BtnCuenta.Visible = true;
                             BtnGestion.Visible = true;
-                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                     case "Responsable de Reportes":
                         {
-                            BtnCuenta.Visible = true;
                             BtnTransacciones.Visible = true;
                             BtnReportes.Visible = true;
-                            BtnCerrarSesion.Visible = true;
                             break;
                         }
                 }
-                BtnNombreUsuario.Text = "Usuario: " + usuario.Nombre;
-                BtnPerfilNombre.Text = "Perfil: " + usuario.Perfil.Nombre;
             }
         }
 
@@ -144,7 +137,6 @@ namespace BugTrackingSystem.Forms
         private void ReiniciarMenu()
         {
             BtnReportes.Visible = false;
-            BtnCuenta.Visible = false;
             BtnGestion.Visible = false;
             BtnTransacciones.Visible = false;
             BtnUsuarios.Enabled = false;
@@ -152,9 +144,7 @@ namespace BugTrackingSystem.Forms
             PnlGestion.Visible = false;
             PnlTransacciones.Visible = false;
             PnlReportes.Visible = false;
-            BtnCerrarSesion.Visible = false;
-            BtnPerfilNombre.Text = "Perfil: -";
-            BtnNombreUsuario.Text = "Usuario: -";
+            PnlMenuLateral.Visible = false;
         }
 
         private void BtnAsignaciones_Click(object sender, EventArgs e)
@@ -215,6 +205,17 @@ namespace BugTrackingSystem.Forms
                 PnlReportes.Visible = false;
             else
                 PnlReportes.Visible = true;
+        }
+
+        // Método para remover el flickering en los formularios
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
         }
     }
 }

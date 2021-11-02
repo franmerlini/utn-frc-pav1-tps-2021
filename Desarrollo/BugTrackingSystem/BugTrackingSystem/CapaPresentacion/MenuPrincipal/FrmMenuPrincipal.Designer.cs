@@ -105,7 +105,7 @@ namespace BugTrackingSystem.Forms
             this.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.BtnCerrarSesion.Location = new System.Drawing.Point(0, 550);
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(0, 582);
             this.BtnCerrarSesion.Name = "BtnCerrarSesion";
             this.BtnCerrarSesion.Size = new System.Drawing.Size(168, 31);
             this.BtnCerrarSesion.TabIndex = 3;
@@ -116,12 +116,12 @@ namespace BugTrackingSystem.Forms
             // 
             // BtnAyuda
             // 
-            this.BtnAyuda.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnAyuda.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnAyuda.FlatAppearance.BorderSize = 0;
             this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAyuda.ForeColor = System.Drawing.Color.White;
-            this.BtnAyuda.Location = new System.Drawing.Point(0, 581);
+            this.BtnAyuda.Location = new System.Drawing.Point(0, 550);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.Size = new System.Drawing.Size(168, 32);
             this.BtnAyuda.TabIndex = 11;

@@ -22,4 +22,5 @@ namespace BugTrackingSystem
             Application.Run(new FrmMenuPrincipal());
         }
     }
+
 }

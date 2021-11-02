@@ -426,12 +426,12 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel4.Controls.Add(this.label5, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(937, 15);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(433, 15);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(630, 29);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
@@ -487,7 +487,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(1569, 46);
+            this.groupBox4.Size = new System.Drawing.Size(1065, 46);
             this.groupBox4.TabIndex = 48;
             this.groupBox4.TabStop = false;
             // 
@@ -612,7 +612,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(779, 267);
+            this.groupBox3.Size = new System.Drawing.Size(527, 267);
             this.groupBox3.TabIndex = 51;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Asignaciones";
@@ -630,7 +630,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvAsignaciones.Name = "dgvAsignaciones";
             this.dgvAsignaciones.ReadOnly = true;
             this.dgvAsignaciones.RowHeadersWidth = 51;
-            this.dgvAsignaciones.Size = new System.Drawing.Size(775, 250);
+            this.dgvAsignaciones.Size = new System.Drawing.Size(523, 250);
             this.dgvAsignaciones.TabIndex = 33;
             this.dgvAsignaciones.Click += new System.EventHandler(this.DgvAsignaciones_Click);
             // 
@@ -639,11 +639,11 @@ namespace BugTrackingSystem.CapaPresentacion
             this.groupBox5.BackColor = System.Drawing.Color.Pink;
             this.groupBox5.Controls.Add(this.dgvDescuentos);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(785, 2);
+            this.groupBox5.Location = new System.Drawing.Point(533, 2);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(780, 267);
+            this.groupBox5.Size = new System.Drawing.Size(528, 267);
             this.groupBox5.TabIndex = 52;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Descuentos";
@@ -661,7 +661,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvDescuentos.Name = "dgvDescuentos";
             this.dgvDescuentos.ReadOnly = true;
             this.dgvDescuentos.RowHeadersWidth = 51;
-            this.dgvDescuentos.Size = new System.Drawing.Size(776, 250);
+            this.dgvDescuentos.Size = new System.Drawing.Size(524, 250);
             this.dgvDescuentos.TabIndex = 33;
             this.dgvDescuentos.Click += new System.EventHandler(this.DgvDescuentos_Click);
             // 
@@ -680,7 +680,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1573, 447);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1069, 447);
             this.tableLayoutPanel5.TabIndex = 53;
             // 
             // tableLayoutPanel6
@@ -697,7 +697,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1567, 114);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1063, 114);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // tableLayoutPanel7
@@ -712,7 +712,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1567, 271);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1063, 271);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // FrmGeneracionMensualSueldo
@@ -722,7 +722,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.BackColor = System.Drawing.Color.DarkRed;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1573, 447);
+            this.ClientSize = new System.Drawing.Size(1069, 447);
             this.Controls.Add(this.tableLayoutPanel5);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

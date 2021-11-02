@@ -30,7 +30,6 @@ namespace BugTrackingSystem
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gBxLogin = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,28 +40,11 @@ namespace BugTrackingSystem
             this.txtContra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gBxLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.gBxLogin, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 430F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 447);
-            this.tableLayoutPanel1.TabIndex = 13;
             // 
             // gBxLogin
             // 
@@ -77,7 +59,6 @@ namespace BugTrackingSystem
             this.gBxLogin.Controls.Add(this.txtContra);
             this.gBxLogin.Controls.Add(this.label4);
             this.gBxLogin.Controls.Add(this.btnIniciarSesion);
-            this.gBxLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gBxLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gBxLogin.Location = new System.Drawing.Point(337, 10);
             this.gBxLogin.Margin = new System.Windows.Forms.Padding(2);
@@ -129,7 +110,7 @@ namespace BugTrackingSystem
             this.chkContra.Location = new System.Drawing.Point(95, 339);
             this.chkContra.Margin = new System.Windows.Forms.Padding(2);
             this.chkContra.Name = "chkContra";
-            this.chkContra.Size = new System.Drawing.Size(141, 20);
+            this.chkContra.Size = new System.Drawing.Size(142, 20);
             this.chkContra.TabIndex = 3;
             this.chkContra.Text = "Mostrar contraseña";
             this.chkContra.UseVisualStyleBackColor = true;
@@ -194,6 +175,24 @@ namespace BugTrackingSystem
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
             this.btnIniciarSesion.Click += new System.EventHandler(this.BtnIniciarSesion_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.gBxLogin, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 430F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 447);
+            this.tableLayoutPanel1.TabIndex = 13;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,17 +211,15 @@ namespace BugTrackingSystem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
             this.TransparencyKey = System.Drawing.Color.Maroon;
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.gBxLogin.ResumeLayout(false);
             this.gBxLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox gBxLogin;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
@@ -233,6 +230,7 @@ namespace BugTrackingSystem
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnIniciarSesion;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
