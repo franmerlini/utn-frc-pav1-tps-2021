@@ -35,7 +35,7 @@ namespace BugTrackingSystem.Forms
             this.BtnCerrarSesion = new System.Windows.Forms.Button();
             this.BtnAyuda = new System.Windows.Forms.Button();
             this.PnlReportes = new System.Windows.Forms.Panel();
-            this.BtnReporte1 = new System.Windows.Forms.Button();
+            this.BtnListadoSueldos = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnReportes = new System.Windows.Forms.Button();
             this.PnlTransacciones = new System.Windows.Forms.Panel();
@@ -52,9 +52,9 @@ namespace BugTrackingSystem.Forms
             this.PnlCuenta = new System.Windows.Forms.Panel();
             this.BtnPerfilNombre = new System.Windows.Forms.Button();
             this.BtnNombreUsuario = new System.Windows.Forms.Button();
-            this.BtnCuenta = new System.Windows.Forms.Button();
             this.PnlLogo = new System.Windows.Forms.Panel();
             this.PicLogo = new System.Windows.Forms.PictureBox();
+            this.BtnReporteSueldos = new System.Windows.Forms.Button();
             this.PnlMenuLateral.SuspendLayout();
             this.PnlReportes.SuspendLayout();
             this.PnlTransacciones.SuspendLayout();
@@ -68,6 +68,7 @@ namespace BugTrackingSystem.Forms
             // 
             this.PnlPrincipal.AutoSize = true;
             this.PnlPrincipal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PnlPrincipal.BackColor = System.Drawing.Color.Maroon;
             this.PnlPrincipal.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.PnlPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,6 +80,8 @@ namespace BugTrackingSystem.Forms
             // PnlMenuLateral
             // 
             this.PnlMenuLateral.AutoScroll = true;
+            this.PnlMenuLateral.BackColor = System.Drawing.Color.Maroon;
+            this.PnlMenuLateral.Controls.Add(this.PnlCuenta);
             this.PnlMenuLateral.Controls.Add(this.BtnCerrarSesion);
             this.PnlMenuLateral.Controls.Add(this.BtnAyuda);
             this.PnlMenuLateral.Controls.Add(this.PnlReportes);
@@ -88,8 +91,6 @@ namespace BugTrackingSystem.Forms
             this.PnlMenuLateral.Controls.Add(this.BtnTransacciones);
             this.PnlMenuLateral.Controls.Add(this.PnlGestion);
             this.PnlMenuLateral.Controls.Add(this.BtnGestion);
-            this.PnlMenuLateral.Controls.Add(this.PnlCuenta);
-            this.PnlMenuLateral.Controls.Add(this.BtnCuenta);
             this.PnlMenuLateral.Controls.Add(this.PnlLogo);
             this.PnlMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlMenuLateral.Location = new System.Drawing.Point(0, 0);
@@ -99,13 +100,13 @@ namespace BugTrackingSystem.Forms
             // 
             // BtnCerrarSesion
             // 
-            this.BtnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(20)))), ((int)(((byte)(0)))));
+            this.BtnCerrarSesion.BackColor = System.Drawing.Color.Maroon;
             this.BtnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.BtnCerrarSesion.Location = new System.Drawing.Point(0, 582);
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(0, 597);
             this.BtnCerrarSesion.Name = "BtnCerrarSesion";
             this.BtnCerrarSesion.Size = new System.Drawing.Size(168, 31);
             this.BtnCerrarSesion.TabIndex = 3;
@@ -116,84 +117,88 @@ namespace BugTrackingSystem.Forms
             // 
             // BtnAyuda
             // 
+            this.BtnAyuda.BackColor = System.Drawing.Color.Maroon;
             this.BtnAyuda.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnAyuda.FlatAppearance.BorderSize = 0;
             this.BtnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAyuda.ForeColor = System.Drawing.Color.White;
-            this.BtnAyuda.Location = new System.Drawing.Point(0, 550);
+            this.BtnAyuda.Location = new System.Drawing.Point(0, 508);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.Size = new System.Drawing.Size(168, 32);
             this.BtnAyuda.TabIndex = 11;
             this.BtnAyuda.Text = "Ayuda";
             this.BtnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAyuda.UseVisualStyleBackColor = true;
+            this.BtnAyuda.UseVisualStyleBackColor = false;
             // 
             // PnlReportes
             // 
             this.PnlReportes.AutoSize = true;
-            this.PnlReportes.Controls.Add(this.BtnReporte1);
+            this.PnlReportes.Controls.Add(this.BtnReporteSueldos);
+            this.PnlReportes.Controls.Add(this.BtnListadoSueldos);
             this.PnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlReportes.Location = new System.Drawing.Point(0, 519);
+            this.PnlReportes.Location = new System.Drawing.Point(0, 430);
             this.PnlReportes.Name = "PnlReportes";
-            this.PnlReportes.Size = new System.Drawing.Size(168, 31);
+            this.PnlReportes.Size = new System.Drawing.Size(168, 78);
             this.PnlReportes.TabIndex = 13;
             this.PnlReportes.Visible = false;
             // 
-            // BtnReporte1
+            // BtnListadoSueldos
             // 
-            this.BtnReporte1.BackColor = System.Drawing.Color.Firebrick;
-            this.BtnReporte1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnReporte1.FlatAppearance.BorderSize = 0;
-            this.BtnReporte1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReporte1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporte1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnReporte1.Location = new System.Drawing.Point(0, 0);
-            this.BtnReporte1.Name = "BtnReporte1";
-            this.BtnReporte1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnReporte1.Size = new System.Drawing.Size(168, 31);
-            this.BtnReporte1.TabIndex = 1;
-            this.BtnReporte1.Text = "Reporte 1";
-            this.BtnReporte1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnReporte1.UseVisualStyleBackColor = false;
+            this.BtnListadoSueldos.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnListadoSueldos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnListadoSueldos.FlatAppearance.BorderSize = 0;
+            this.BtnListadoSueldos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnListadoSueldos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnListadoSueldos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnListadoSueldos.Location = new System.Drawing.Point(0, 0);
+            this.BtnListadoSueldos.Name = "BtnListadoSueldos";
+            this.BtnListadoSueldos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnListadoSueldos.Size = new System.Drawing.Size(168, 46);
+            this.BtnListadoSueldos.TabIndex = 1;
+            this.BtnListadoSueldos.Text = "Listado de Sueldos por Perfil";
+            this.BtnListadoSueldos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnListadoSueldos.UseVisualStyleBackColor = false;
             // 
             // BtnSalir
             // 
+            this.BtnSalir.BackColor = System.Drawing.Color.Maroon;
             this.BtnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnSalir.FlatAppearance.BorderSize = 0;
             this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(0, 613);
+            this.BtnSalir.Location = new System.Drawing.Point(0, 628);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(168, 32);
             this.BtnSalir.TabIndex = 12;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // BtnReportes
             // 
+            this.BtnReportes.BackColor = System.Drawing.Color.Maroon;
             this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnReportes.FlatAppearance.BorderSize = 0;
             this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReportes.ForeColor = System.Drawing.Color.White;
-            this.BtnReportes.Location = new System.Drawing.Point(0, 487);
+            this.BtnReportes.Location = new System.Drawing.Point(0, 398);
             this.BtnReportes.Name = "BtnReportes";
             this.BtnReportes.Size = new System.Drawing.Size(168, 32);
             this.BtnReportes.TabIndex = 9;
             this.BtnReportes.Text = "Reportes";
             this.BtnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.UseVisualStyleBackColor = false;
             this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // PnlTransacciones
             // 
             this.PnlTransacciones.Controls.Add(this.BtnTransaccionSueldo);
             this.PnlTransacciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlTransacciones.Location = new System.Drawing.Point(0, 441);
+            this.PnlTransacciones.Location = new System.Drawing.Point(0, 352);
             this.PnlTransacciones.Name = "PnlTransacciones";
             this.PnlTransacciones.Size = new System.Drawing.Size(168, 46);
             this.PnlTransacciones.TabIndex = 8;
@@ -219,18 +224,19 @@ namespace BugTrackingSystem.Forms
             // 
             // BtnTransacciones
             // 
+            this.BtnTransacciones.BackColor = System.Drawing.Color.Maroon;
             this.BtnTransacciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnTransacciones.FlatAppearance.BorderSize = 0;
             this.BtnTransacciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTransacciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnTransacciones.ForeColor = System.Drawing.Color.White;
-            this.BtnTransacciones.Location = new System.Drawing.Point(0, 409);
+            this.BtnTransacciones.Location = new System.Drawing.Point(0, 320);
             this.BtnTransacciones.Name = "BtnTransacciones";
             this.BtnTransacciones.Size = new System.Drawing.Size(168, 32);
             this.BtnTransacciones.TabIndex = 7;
             this.BtnTransacciones.Text = "Transacciones";
             this.BtnTransacciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnTransacciones.UseVisualStyleBackColor = true;
+            this.BtnTransacciones.UseVisualStyleBackColor = false;
             this.BtnTransacciones.Click += new System.EventHandler(this.BtnTransacciones_Click);
             // 
             // PnlGestion
@@ -242,7 +248,7 @@ namespace BugTrackingSystem.Forms
             this.PnlGestion.Controls.Add(this.BtnAsistencias);
             this.PnlGestion.Controls.Add(this.BtnAsignaciones);
             this.PnlGestion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlGestion.Location = new System.Drawing.Point(0, 223);
+            this.PnlGestion.Location = new System.Drawing.Point(0, 134);
             this.PnlGestion.Name = "PnlGestion";
             this.PnlGestion.Size = new System.Drawing.Size(168, 186);
             this.PnlGestion.TabIndex = 6;
@@ -359,18 +365,19 @@ namespace BugTrackingSystem.Forms
             // 
             // BtnGestion
             // 
+            this.BtnGestion.BackColor = System.Drawing.Color.Maroon;
             this.BtnGestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnGestion.FlatAppearance.BorderSize = 0;
             this.BtnGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGestion.ForeColor = System.Drawing.Color.White;
-            this.BtnGestion.Location = new System.Drawing.Point(0, 191);
+            this.BtnGestion.Location = new System.Drawing.Point(0, 102);
             this.BtnGestion.Name = "BtnGestion";
             this.BtnGestion.Size = new System.Drawing.Size(168, 32);
             this.BtnGestion.TabIndex = 5;
             this.BtnGestion.Text = "Gestión";
             this.BtnGestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGestion.UseVisualStyleBackColor = true;
+            this.BtnGestion.UseVisualStyleBackColor = false;
             this.BtnGestion.Click += new System.EventHandler(this.BtnGestion_Click);
             // 
             // PnlCuenta
@@ -379,27 +386,26 @@ namespace BugTrackingSystem.Forms
             this.PnlCuenta.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlCuenta.Controls.Add(this.BtnPerfilNombre);
             this.PnlCuenta.Controls.Add(this.BtnNombreUsuario);
-            this.PnlCuenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlCuenta.Location = new System.Drawing.Point(0, 134);
+            this.PnlCuenta.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PnlCuenta.ForeColor = System.Drawing.Color.White;
+            this.PnlCuenta.Location = new System.Drawing.Point(0, 540);
             this.PnlCuenta.Name = "PnlCuenta";
             this.PnlCuenta.Size = new System.Drawing.Size(168, 57);
             this.PnlCuenta.TabIndex = 4;
-            this.PnlCuenta.Visible = false;
             // 
             // BtnPerfilNombre
             // 
             this.BtnPerfilNombre.AutoEllipsis = true;
             this.BtnPerfilNombre.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnPerfilNombre.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnPerfilNombre.BackColor = System.Drawing.Color.Maroon;
             this.BtnPerfilNombre.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnPerfilNombre.Enabled = false;
             this.BtnPerfilNombre.FlatAppearance.BorderSize = 0;
             this.BtnPerfilNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPerfilNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPerfilNombre.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnPerfilNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPerfilNombre.ForeColor = System.Drawing.Color.White;
             this.BtnPerfilNombre.Location = new System.Drawing.Point(0, 31);
             this.BtnPerfilNombre.Name = "BtnPerfilNombre";
-            this.BtnPerfilNombre.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnPerfilNombre.Size = new System.Drawing.Size(168, 26);
             this.BtnPerfilNombre.TabIndex = 2;
             this.BtnPerfilNombre.Text = "Perfil: -";
@@ -410,41 +416,24 @@ namespace BugTrackingSystem.Forms
             // 
             this.BtnNombreUsuario.AutoEllipsis = true;
             this.BtnNombreUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnNombreUsuario.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnNombreUsuario.BackColor = System.Drawing.Color.Maroon;
             this.BtnNombreUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnNombreUsuario.Enabled = false;
             this.BtnNombreUsuario.FlatAppearance.BorderSize = 0;
             this.BtnNombreUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNombreUsuario.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNombreUsuario.ForeColor = System.Drawing.Color.White;
             this.BtnNombreUsuario.Location = new System.Drawing.Point(0, 0);
             this.BtnNombreUsuario.Name = "BtnNombreUsuario";
-            this.BtnNombreUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnNombreUsuario.Size = new System.Drawing.Size(168, 31);
             this.BtnNombreUsuario.TabIndex = 1;
             this.BtnNombreUsuario.Text = "Usuario: -";
             this.BtnNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnNombreUsuario.UseVisualStyleBackColor = false;
             // 
-            // BtnCuenta
-            // 
-            this.BtnCuenta.AutoSize = true;
-            this.BtnCuenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnCuenta.FlatAppearance.BorderSize = 0;
-            this.BtnCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCuenta.ForeColor = System.Drawing.Color.White;
-            this.BtnCuenta.Location = new System.Drawing.Point(0, 102);
-            this.BtnCuenta.Name = "BtnCuenta";
-            this.BtnCuenta.Size = new System.Drawing.Size(168, 32);
-            this.BtnCuenta.TabIndex = 3;
-            this.BtnCuenta.Text = "Cuenta";
-            this.BtnCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCuenta.UseVisualStyleBackColor = true;
-            this.BtnCuenta.Click += new System.EventHandler(this.BtnCuenta_Click);
-            // 
             // PnlLogo
             // 
+            this.PnlLogo.BackColor = System.Drawing.Color.Maroon;
             this.PnlLogo.Controls.Add(this.PicLogo);
             this.PnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlLogo.Location = new System.Drawing.Point(0, 0);
@@ -462,6 +451,23 @@ namespace BugTrackingSystem.Forms
             this.PicLogo.Size = new System.Drawing.Size(88, 88);
             this.PicLogo.TabIndex = 0;
             this.PicLogo.TabStop = false;
+            // 
+            // BtnReporteSueldos
+            // 
+            this.BtnReporteSueldos.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnReporteSueldos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnReporteSueldos.FlatAppearance.BorderSize = 0;
+            this.BtnReporteSueldos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReporteSueldos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporteSueldos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnReporteSueldos.Location = new System.Drawing.Point(0, 46);
+            this.BtnReporteSueldos.Name = "BtnReporteSueldos";
+            this.BtnReporteSueldos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnReporteSueldos.Size = new System.Drawing.Size(168, 32);
+            this.BtnReporteSueldos.TabIndex = 2;
+            this.BtnReporteSueldos.Text = "Reporte de Sueldos";
+            this.BtnReporteSueldos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnReporteSueldos.UseVisualStyleBackColor = false;
             // 
             // FrmMenuPrincipal
             // 
@@ -503,7 +509,6 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.Button BtnNombreUsuario;
         private System.Windows.Forms.Panel PnlCuenta;
         private System.Windows.Forms.Button BtnCerrarSesion;
-        private System.Windows.Forms.Button BtnCuenta;
         private System.Windows.Forms.Panel PnlGestion;
         private System.Windows.Forms.Button Descuentos;
         private System.Windows.Forms.Button BtnAsistencias;
@@ -518,7 +523,8 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.Button BtnSueldos;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Panel PnlReportes;
-        private System.Windows.Forms.Button BtnReporte1;
+        private System.Windows.Forms.Button BtnListadoSueldos;
         private System.Windows.Forms.Button BtnAsignaciones;
+        private System.Windows.Forms.Button BtnReporteSueldos;
     }
 }

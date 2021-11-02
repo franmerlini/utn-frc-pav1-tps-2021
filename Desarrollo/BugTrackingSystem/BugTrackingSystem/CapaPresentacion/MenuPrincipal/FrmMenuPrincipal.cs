@@ -140,7 +140,6 @@ namespace BugTrackingSystem.Forms
             BtnGestion.Visible = false;
             BtnTransacciones.Visible = false;
             BtnUsuarios.Enabled = false;
-            PnlCuenta.Visible = false;
             PnlGestion.Visible = false;
             PnlTransacciones.Visible = false;
             PnlReportes.Visible = false;
@@ -178,13 +177,7 @@ namespace BugTrackingSystem.Forms
         {
             MostrarVentana(new FrmSueldosPH(), "Consulta de Sueldos Perfil Histórico");
         }
-        private void BtnCuenta_Click(object sender, EventArgs e)
-        {
-            if (PnlCuenta.Visible)
-                PnlCuenta.Visible = false;
-            else
-                PnlCuenta.Visible = true;
-        }
+
         private void BtnGestion_Click(object sender, EventArgs e)
         {
             if (PnlGestion.Visible)
