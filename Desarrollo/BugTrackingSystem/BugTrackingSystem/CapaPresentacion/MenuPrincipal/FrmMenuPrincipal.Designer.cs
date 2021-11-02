@@ -32,9 +32,12 @@ namespace BugTrackingSystem.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.PnlPrincipal = new System.Windows.Forms.Panel();
             this.PnlMenuLateral = new System.Windows.Forms.Panel();
+            this.BtnNombreUsuario = new System.Windows.Forms.Button();
+            this.BtnPerfilNombre = new System.Windows.Forms.Button();
             this.BtnCerrarSesion = new System.Windows.Forms.Button();
             this.BtnAyuda = new System.Windows.Forms.Button();
             this.PnlReportes = new System.Windows.Forms.Panel();
+            this.BtnReporteSueldos = new System.Windows.Forms.Button();
             this.BtnListadoSueldos = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnReportes = new System.Windows.Forms.Button();
@@ -49,17 +52,12 @@ namespace BugTrackingSystem.Forms
             this.BtnAsistencias = new System.Windows.Forms.Button();
             this.BtnAsignaciones = new System.Windows.Forms.Button();
             this.BtnGestion = new System.Windows.Forms.Button();
-            this.PnlCuenta = new System.Windows.Forms.Panel();
-            this.BtnPerfilNombre = new System.Windows.Forms.Button();
-            this.BtnNombreUsuario = new System.Windows.Forms.Button();
             this.PnlLogo = new System.Windows.Forms.Panel();
             this.PicLogo = new System.Windows.Forms.PictureBox();
-            this.BtnReporteSueldos = new System.Windows.Forms.Button();
             this.PnlMenuLateral.SuspendLayout();
             this.PnlReportes.SuspendLayout();
             this.PnlTransacciones.SuspendLayout();
             this.PnlGestion.SuspendLayout();
-            this.PnlCuenta.SuspendLayout();
             this.PnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogo)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +79,8 @@ namespace BugTrackingSystem.Forms
             // 
             this.PnlMenuLateral.AutoScroll = true;
             this.PnlMenuLateral.BackColor = System.Drawing.Color.Maroon;
-            this.PnlMenuLateral.Controls.Add(this.PnlCuenta);
+            this.PnlMenuLateral.Controls.Add(this.BtnNombreUsuario);
+            this.PnlMenuLateral.Controls.Add(this.BtnPerfilNombre);
             this.PnlMenuLateral.Controls.Add(this.BtnCerrarSesion);
             this.PnlMenuLateral.Controls.Add(this.BtnAyuda);
             this.PnlMenuLateral.Controls.Add(this.PnlReportes);
@@ -97,6 +96,44 @@ namespace BugTrackingSystem.Forms
             this.PnlMenuLateral.Name = "PnlMenuLateral";
             this.PnlMenuLateral.Size = new System.Drawing.Size(185, 541);
             this.PnlMenuLateral.TabIndex = 14;
+            // 
+            // BtnNombreUsuario
+            // 
+            this.BtnNombreUsuario.AutoEllipsis = true;
+            this.BtnNombreUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnNombreUsuario.BackColor = System.Drawing.Color.Maroon;
+            this.BtnNombreUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnNombreUsuario.Enabled = false;
+            this.BtnNombreUsuario.FlatAppearance.BorderSize = 0;
+            this.BtnNombreUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNombreUsuario.ForeColor = System.Drawing.Color.White;
+            this.BtnNombreUsuario.Location = new System.Drawing.Point(0, 540);
+            this.BtnNombreUsuario.Name = "BtnNombreUsuario";
+            this.BtnNombreUsuario.Size = new System.Drawing.Size(168, 31);
+            this.BtnNombreUsuario.TabIndex = 14;
+            this.BtnNombreUsuario.Text = "Usuario: -";
+            this.BtnNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNombreUsuario.UseVisualStyleBackColor = false;
+            // 
+            // BtnPerfilNombre
+            // 
+            this.BtnPerfilNombre.AutoEllipsis = true;
+            this.BtnPerfilNombre.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnPerfilNombre.BackColor = System.Drawing.Color.Maroon;
+            this.BtnPerfilNombre.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnPerfilNombre.Enabled = false;
+            this.BtnPerfilNombre.FlatAppearance.BorderSize = 0;
+            this.BtnPerfilNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPerfilNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPerfilNombre.ForeColor = System.Drawing.Color.White;
+            this.BtnPerfilNombre.Location = new System.Drawing.Point(0, 571);
+            this.BtnPerfilNombre.Name = "BtnPerfilNombre";
+            this.BtnPerfilNombre.Size = new System.Drawing.Size(168, 26);
+            this.BtnPerfilNombre.TabIndex = 15;
+            this.BtnPerfilNombre.Text = "Perfil: -";
+            this.BtnPerfilNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPerfilNombre.UseVisualStyleBackColor = false;
             // 
             // BtnCerrarSesion
             // 
@@ -143,6 +180,24 @@ namespace BugTrackingSystem.Forms
             this.PnlReportes.TabIndex = 13;
             this.PnlReportes.Visible = false;
             // 
+            // BtnReporteSueldos
+            // 
+            this.BtnReporteSueldos.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnReporteSueldos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnReporteSueldos.FlatAppearance.BorderSize = 0;
+            this.BtnReporteSueldos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReporteSueldos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporteSueldos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnReporteSueldos.Location = new System.Drawing.Point(0, 46);
+            this.BtnReporteSueldos.Name = "BtnReporteSueldos";
+            this.BtnReporteSueldos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnReporteSueldos.Size = new System.Drawing.Size(168, 32);
+            this.BtnReporteSueldos.TabIndex = 2;
+            this.BtnReporteSueldos.Text = "Reporte de Sueldos";
+            this.BtnReporteSueldos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnReporteSueldos.UseVisualStyleBackColor = false;
+            this.BtnReporteSueldos.Click += new System.EventHandler(this.BtnReporteSueldos_Click);
+            // 
             // BtnListadoSueldos
             // 
             this.BtnListadoSueldos.BackColor = System.Drawing.Color.Firebrick;
@@ -159,6 +214,7 @@ namespace BugTrackingSystem.Forms
             this.BtnListadoSueldos.Text = "Listado de Sueldos por Perfil";
             this.BtnListadoSueldos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnListadoSueldos.UseVisualStyleBackColor = false;
+            this.BtnListadoSueldos.Click += new System.EventHandler(this.BtnListadoSueldos_Click);
             // 
             // BtnSalir
             // 
@@ -380,57 +436,6 @@ namespace BugTrackingSystem.Forms
             this.BtnGestion.UseVisualStyleBackColor = false;
             this.BtnGestion.Click += new System.EventHandler(this.BtnGestion_Click);
             // 
-            // PnlCuenta
-            // 
-            this.PnlCuenta.AutoSize = true;
-            this.PnlCuenta.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PnlCuenta.Controls.Add(this.BtnPerfilNombre);
-            this.PnlCuenta.Controls.Add(this.BtnNombreUsuario);
-            this.PnlCuenta.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlCuenta.ForeColor = System.Drawing.Color.White;
-            this.PnlCuenta.Location = new System.Drawing.Point(0, 540);
-            this.PnlCuenta.Name = "PnlCuenta";
-            this.PnlCuenta.Size = new System.Drawing.Size(168, 57);
-            this.PnlCuenta.TabIndex = 4;
-            // 
-            // BtnPerfilNombre
-            // 
-            this.BtnPerfilNombre.AutoEllipsis = true;
-            this.BtnPerfilNombre.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnPerfilNombre.BackColor = System.Drawing.Color.Maroon;
-            this.BtnPerfilNombre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPerfilNombre.Enabled = false;
-            this.BtnPerfilNombre.FlatAppearance.BorderSize = 0;
-            this.BtnPerfilNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPerfilNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPerfilNombre.ForeColor = System.Drawing.Color.White;
-            this.BtnPerfilNombre.Location = new System.Drawing.Point(0, 31);
-            this.BtnPerfilNombre.Name = "BtnPerfilNombre";
-            this.BtnPerfilNombre.Size = new System.Drawing.Size(168, 26);
-            this.BtnPerfilNombre.TabIndex = 2;
-            this.BtnPerfilNombre.Text = "Perfil: -";
-            this.BtnPerfilNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPerfilNombre.UseVisualStyleBackColor = false;
-            // 
-            // BtnNombreUsuario
-            // 
-            this.BtnNombreUsuario.AutoEllipsis = true;
-            this.BtnNombreUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnNombreUsuario.BackColor = System.Drawing.Color.Maroon;
-            this.BtnNombreUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnNombreUsuario.Enabled = false;
-            this.BtnNombreUsuario.FlatAppearance.BorderSize = 0;
-            this.BtnNombreUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.BtnNombreUsuario.Location = new System.Drawing.Point(0, 0);
-            this.BtnNombreUsuario.Name = "BtnNombreUsuario";
-            this.BtnNombreUsuario.Size = new System.Drawing.Size(168, 31);
-            this.BtnNombreUsuario.TabIndex = 1;
-            this.BtnNombreUsuario.Text = "Usuario: -";
-            this.BtnNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNombreUsuario.UseVisualStyleBackColor = false;
-            // 
             // PnlLogo
             // 
             this.PnlLogo.BackColor = System.Drawing.Color.Maroon;
@@ -446,28 +451,11 @@ namespace BugTrackingSystem.Forms
             this.PicLogo.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Bug;
             this.PicLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PicLogo.Image = global::BugTrackingSystem.Properties.Resources.Bug;
-            this.PicLogo.Location = new System.Drawing.Point(39, 8);
+            this.PicLogo.Location = new System.Drawing.Point(41, 8);
             this.PicLogo.Name = "PicLogo";
             this.PicLogo.Size = new System.Drawing.Size(88, 88);
             this.PicLogo.TabIndex = 0;
             this.PicLogo.TabStop = false;
-            // 
-            // BtnReporteSueldos
-            // 
-            this.BtnReporteSueldos.BackColor = System.Drawing.Color.Firebrick;
-            this.BtnReporteSueldos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnReporteSueldos.FlatAppearance.BorderSize = 0;
-            this.BtnReporteSueldos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReporteSueldos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporteSueldos.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnReporteSueldos.Location = new System.Drawing.Point(0, 46);
-            this.BtnReporteSueldos.Name = "BtnReporteSueldos";
-            this.BtnReporteSueldos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnReporteSueldos.Size = new System.Drawing.Size(168, 32);
-            this.BtnReporteSueldos.TabIndex = 2;
-            this.BtnReporteSueldos.Text = "Reporte de Sueldos";
-            this.BtnReporteSueldos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnReporteSueldos.UseVisualStyleBackColor = false;
             // 
             // FrmMenuPrincipal
             // 
@@ -492,7 +480,6 @@ namespace BugTrackingSystem.Forms
             this.PnlReportes.ResumeLayout(false);
             this.PnlTransacciones.ResumeLayout(false);
             this.PnlGestion.ResumeLayout(false);
-            this.PnlCuenta.ResumeLayout(false);
             this.PnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicLogo)).EndInit();
             this.ResumeLayout(false);
@@ -505,9 +492,6 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.Panel PnlMenuLateral;
         private System.Windows.Forms.Panel PnlLogo;
         private System.Windows.Forms.PictureBox PicLogo;
-        private System.Windows.Forms.Button BtnPerfilNombre;
-        private System.Windows.Forms.Button BtnNombreUsuario;
-        private System.Windows.Forms.Panel PnlCuenta;
         private System.Windows.Forms.Button BtnCerrarSesion;
         private System.Windows.Forms.Panel PnlGestion;
         private System.Windows.Forms.Button Descuentos;
@@ -526,5 +510,7 @@ namespace BugTrackingSystem.Forms
         private System.Windows.Forms.Button BtnListadoSueldos;
         private System.Windows.Forms.Button BtnAsignaciones;
         private System.Windows.Forms.Button BtnReporteSueldos;
+        private System.Windows.Forms.Button BtnPerfilNombre;
+        private System.Windows.Forms.Button BtnNombreUsuario;
     }
 }

@@ -4,6 +4,8 @@ using BugTrackingSystem.CapaPresentacion.ConsultaDescuentos;
 using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH;
 using BugTrackingSystem.CapaPresentacion.ConsultaSueldos;
 using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
+using BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos;
+using BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldos;
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
@@ -45,8 +47,8 @@ namespace BugTrackingSystem.Forms
             if (login.Usuario != null)
             {
                 usuario = login.Usuario;
-                BtnNombreUsuario.Text = "Usuario: " + usuario.Nombre;
-                BtnPerfilNombre.Text = "Perfil: " + usuario.Perfil.Nombre;
+                BtnNombreUsuario.Text = usuario.Nombre;
+                BtnPerfilNombre.Text = usuario.Perfil.Nombre;
                 PnlMenuLateral.Visible = true;
                 switch (usuario.Perfil.Nombre)
                 {
@@ -183,21 +185,34 @@ namespace BugTrackingSystem.Forms
             if (PnlGestion.Visible)
                 PnlGestion.Visible = false;
             else
+            {
                 PnlGestion.Visible = true;
+                PnlTransacciones.Visible = false;
+                PnlReportes.Visible = false;
+            }
         }
         private void BtnTransacciones_Click(object sender, EventArgs e)
         {
             if (PnlTransacciones.Visible)
                 PnlTransacciones.Visible = false;
             else
+            {
                 PnlTransacciones.Visible = true;
+                PnlGestion.Visible = false;
+                PnlReportes.Visible = false;
+            }
         }
         private void BtnReportes_Click(object sender, EventArgs e)
         {
             if (PnlReportes.Visible)
                 PnlReportes.Visible = false;
             else
+            {
                 PnlReportes.Visible = true;
+                PnlGestion.Visible = false;
+                PnlTransacciones.Visible = false;
+            }
+
         }
 
         // Método para remover el flickering en los formularios
@@ -209,6 +224,16 @@ namespace BugTrackingSystem.Forms
                 handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
                 return handleParam;
             }
+        }
+
+        private void BtnReporteSueldos_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmReporteSueldos(), "Reporte de Sueldos");
+        }
+
+        private void BtnListadoSueldos_Click(object sender, EventArgs e)
+        {
+            MostrarVentana(new FrmListadoSueldos(), "Listado de Sueldos");
         }
     }
 }

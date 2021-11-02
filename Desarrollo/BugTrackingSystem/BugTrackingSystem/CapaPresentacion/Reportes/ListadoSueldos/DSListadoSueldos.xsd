@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSListadoSueldos" targetNamespace="http://tempuri.org/DSListadoSueldos.xsd" xmlns:mstns="http://tempuri.org/DSListadoSueldos.xsd" xmlns="http://tempuri.org/DSListadoSueldos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BugTrackerTPIConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BugTrackerTPIConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BugTrackingSystem.Properties.Settings.GlobalReference.Default.BugTrackerTPIConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SueldosPorPerfilTableAdapter" GeneratorDataComponentClassName="SueldosPorPerfilTableAdapter" Name="SueldosPorPerfil" UserDataComponentName="SueldosPorPerfilTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugTrackerTPIConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Perfiles.nombre AS Perfil, Usuarios.usuario AS Usuario, Sueldos.fecha AS Fecha, Sueldos.sueldo_bruto AS SueldoBruto, SUM(DISTINCT SueldoAsignaciones.monto) AS Asignacion, SUM(DISTINCT SueldoDescuentos.monto) 
+                         AS Descuento
+FROM            Sueldos INNER JOIN
+                         Usuarios ON Sueldos.id_usuario = Usuarios.id_usuario INNER JOIN
+                         Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil LEFT OUTER JOIN
+                         SueldoAsignaciones ON Sueldos.id_usuario = SueldoAsignaciones.id_usuario AND Sueldos.fecha = SueldoAsignaciones.fecha LEFT OUTER JOIN
+                         SueldoDescuentos ON Sueldos.id_usuario = SueldoDescuentos.id_usuario AND Sueldos.fecha = SueldoDescuentos.fecha
+GROUP BY Perfiles.nombre, Usuarios.usuario, Sueldos.fecha, Sueldos.sueldo_bruto
+ORDER BY Perfil, Fecha DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="SueldoBruto" DataSetColumn="SueldoBruto" />
+              <Mapping SourceColumn="Asignacion" DataSetColumn="Asignacion" />
+              <Mapping SourceColumn="Perfil" DataSetColumn="Perfil" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSListadoSueldos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSListadoSueldos" msprop:Generator_UserDSName="DSListadoSueldos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SueldosPorPerfil" msprop:Generator_TableClassName="SueldosPorPerfilDataTable" msprop:Generator_TableVarName="tableSueldosPorPerfil" msprop:Generator_TablePropName="SueldosPorPerfil" msprop:Generator_RowDeletingName="SueldosPorPerfilRowDeleting" msprop:Generator_RowChangingName="SueldosPorPerfilRowChanging" msprop:Generator_RowEvHandlerName="SueldosPorPerfilRowChangeEventHandler" msprop:Generator_RowDeletedName="SueldosPorPerfilRowDeleted" msprop:Generator_UserTableName="SueldosPorPerfil" msprop:Generator_RowChangedName="SueldosPorPerfilRowChanged" msprop:Generator_RowEvArgName="SueldosPorPerfilRowChangeEvent" msprop:Generator_RowClassName="SueldosPorPerfilRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="SueldoBruto" msprop:Generator_ColumnVarNameInTable="columnSueldoBruto" msprop:Generator_ColumnPropNameInRow="SueldoBruto" msprop:Generator_ColumnPropNameInTable="SueldoBrutoColumn" msprop:Generator_UserColumnName="SueldoBruto" type="xs:decimal" />
+              <xs:element name="Asignacion" msprop:Generator_ColumnVarNameInTable="columnAsignacion" msprop:Generator_ColumnPropNameInRow="Asignacion" msprop:Generator_ColumnPropNameInTable="AsignacionColumn" msprop:Generator_UserColumnName="Asignacion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Perfil" msprop:Generator_ColumnVarNameInTable="columnPerfil" msprop:Generator_ColumnPropNameInRow="Perfil" msprop:Generator_ColumnPropNameInTable="PerfilColumn" msprop:Generator_UserColumnName="Perfil">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

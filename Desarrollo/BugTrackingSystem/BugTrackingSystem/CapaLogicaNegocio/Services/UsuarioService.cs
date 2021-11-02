@@ -28,7 +28,7 @@ namespace BugTrackingSystem.CapaLogicaNegocio
 
             if (usu.Count != 0)
             {
-                if (usu[0] != null && usu[0].Contrasena.Equals(cont))
+                if (usu[0] != null && usu[0].Contrasena.Equals(cont) && usu[0].Nombre.Equals(nom))
                 {
                     return usu[0];
                 }

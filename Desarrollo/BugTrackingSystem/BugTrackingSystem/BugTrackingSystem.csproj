@@ -33,7 +33,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
@@ -135,6 +155,34 @@
     <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.Designer.cs">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.cs">
+      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\FrmListadoSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\FrmListadoSueldos.Designer.cs">
+      <DependentUpon>FrmListadoSueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.cs">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\FrmReporteSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\FrmReporteSueldos.Designer.cs">
+      <DependentUpon>FrmReporteSueldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +213,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignaciones.resx">
       <DependentUpon>FrmAsignaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +247,13 @@
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.resx">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ListadoSueldos\FrmListadoSueldos.resx">
+      <DependentUpon>FrmListadoSueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ListadoSueldos\ListadoSueldos.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldos\FrmReporteSueldos.resx">
+      <DependentUpon>FrmReporteSueldos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.resx">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +268,29 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.xsc">
+      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSListadoSueldos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.xss">
+      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.xsc">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </None>
+    <None Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.xss">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -274,10 +353,22 @@
     <None Include="Resources\BtnLimpiar1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CapaPresentacion\Reportes\" />
+    <None Include="Resources\Bug.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Bug.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
