@@ -21,10 +21,17 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
 
         private void FrmReporteSueldo_Load(object sender, EventArgs e)
         {
-            this.RvReporte.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-            // ReportDataSource reportDataSource = new ReportDataSource();
-            // reportDataSource.Name = "DsReporte";
-            // reportDataSource.Value = D
+            dateFechaDesde.Value = DateTime.Today.AddMonths(-1);
+        }
+
+        private void BtnGenerar_Click(object sender, EventArgs e)
+        {
+            string fechaDesde = dateFechaDesde.Text;
+            string fechaHasta = dateFechaHasta.Text;
+            RvReporte.LocalReport.SetParameters(new ReportParameter[] { new ReportParameter("prFechaDesde", fechaDesde), new ReportParameter("prFechaHasta", fechaHasta) });
+            this.descuentosTableAdapter.Fill(this.dsSueldo.Descuentos);
+            this.asignacionesTableAdapter.Fill(this.dsSueldo.Asignaciones);
+            this.taSueldoHistoricoTableAdapter.Fill(this.dsSueldo.TaSueldoHistorico);
             this.RvReporte.RefreshReport();
         }
     }

@@ -79,6 +79,9 @@
     <Compile Include="CapaAccesoDatos\Daos\SueldoDao.cs" />
     <Compile Include="CapaAccesoDatos\Daos\SueldoDescuentoDao.cs" />
     <Compile Include="CapaAccesoDatos\Daos\UsuarioDao.cs" />
+    <Compile Include="CapaAccesoDatos\DataSet\DsSueldo.cs">
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CapaAccesoDatos\DataSet\DsSueldo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,7 +246,7 @@
     <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldo\FrmReporteSueldo.resx">
       <DependentUpon>FrmReporteSueldo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldo\ReporteSueldo.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldo\ReportesSueldo.rdlc" />
     <EmbeddedResource Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.resx">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </EmbeddedResource>

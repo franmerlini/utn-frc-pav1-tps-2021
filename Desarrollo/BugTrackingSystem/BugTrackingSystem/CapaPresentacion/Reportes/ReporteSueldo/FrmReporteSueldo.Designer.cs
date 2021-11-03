@@ -29,6 +29,10 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.BtnGenerar = new System.Windows.Forms.Button();
@@ -37,8 +41,27 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
             this.dateFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.RvReporte = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.taSueldoHistoricoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSueldoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSueldo = new BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldo();
+            this.taSueldoHistoricoTableAdapter = new BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldoTableAdapters.TaSueldoHistoricoTableAdapter();
+            this.AsignacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DescuentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.asignacionesTableAdapter = new BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldoTableAdapters.AsignacionesTableAdapter();
+            this.taSueldoHistoricoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.asignacionesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.descuentosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.descuentosTableAdapter = new BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldoTableAdapters.DescuentosTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.grpFiltros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taSueldoHistoricoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSueldoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSueldo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AsignacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescuentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taSueldoHistoricoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asignacionesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descuentosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -87,6 +110,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
             this.BtnGenerar.Size = new System.Drawing.Size(32, 32);
             this.BtnGenerar.TabIndex = 5;
             this.BtnGenerar.UseVisualStyleBackColor = false;
+            this.BtnGenerar.Click += new System.EventHandler(this.BtnGenerar_Click);
             // 
             // dateFechaHasta
             // 
@@ -131,12 +155,73 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
             // RvReporte
             // 
             this.RvReporte.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RvReporte.LocalReport.ReportEmbeddedResource = "BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo.ReporteSueldo.rdlc";
+            reportDataSource4.Name = "DsSueldoHistorico";
+            reportDataSource4.Value = this.taSueldoHistoricoBindingSource;
+            reportDataSource5.Name = "DsAsignacion";
+            reportDataSource5.Value = this.AsignacionesBindingSource;
+            reportDataSource6.Name = "DsDescuento";
+            reportDataSource6.Value = this.DescuentosBindingSource;
+            this.RvReporte.LocalReport.DataSources.Add(reportDataSource4);
+            this.RvReporte.LocalReport.DataSources.Add(reportDataSource5);
+            this.RvReporte.LocalReport.DataSources.Add(reportDataSource6);
+            this.RvReporte.LocalReport.ReportEmbeddedResource = "BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo.ReportesSueldo.rdlc";
             this.RvReporte.Location = new System.Drawing.Point(3, 63);
             this.RvReporte.Name = "RvReporte";
             this.RvReporte.ServerReport.BearerToken = null;
             this.RvReporte.Size = new System.Drawing.Size(794, 384);
             this.RvReporte.TabIndex = 2;
+            // 
+            // taSueldoHistoricoBindingSource
+            // 
+            this.taSueldoHistoricoBindingSource.DataMember = "TaSueldoHistorico";
+            this.taSueldoHistoricoBindingSource.DataSource = this.dsSueldoBindingSource;
+            // 
+            // dsSueldoBindingSource
+            // 
+            this.dsSueldoBindingSource.DataSource = this.dsSueldo;
+            this.dsSueldoBindingSource.Position = 0;
+            // 
+            // dsSueldo
+            // 
+            this.dsSueldo.DataSetName = "DsSueldo";
+            this.dsSueldo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // taSueldoHistoricoTableAdapter
+            // 
+            this.taSueldoHistoricoTableAdapter.ClearBeforeFill = true;
+            // 
+            // AsignacionesBindingSource
+            // 
+            this.AsignacionesBindingSource.DataMember = "Asignaciones";
+            this.AsignacionesBindingSource.DataSource = this.dsSueldo;
+            // 
+            // DescuentosBindingSource
+            // 
+            this.DescuentosBindingSource.DataMember = "Descuentos";
+            this.DescuentosBindingSource.DataSource = this.dsSueldo;
+            // 
+            // asignacionesTableAdapter
+            // 
+            this.asignacionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // taSueldoHistoricoBindingSource1
+            // 
+            this.taSueldoHistoricoBindingSource1.DataMember = "TaSueldoHistorico";
+            this.taSueldoHistoricoBindingSource1.DataSource = this.dsSueldoBindingSource;
+            // 
+            // asignacionesBindingSource1
+            // 
+            this.asignacionesBindingSource1.DataMember = "Asignaciones";
+            this.asignacionesBindingSource1.DataSource = this.dsSueldoBindingSource;
+            // 
+            // descuentosBindingSource1
+            // 
+            this.descuentosBindingSource1.DataMember = "Descuentos";
+            this.descuentosBindingSource1.DataSource = this.dsSueldoBindingSource;
+            // 
+            // descuentosTableAdapter
+            // 
+            this.descuentosTableAdapter.ClearBeforeFill = true;
             // 
             // FrmReporteSueldo
             // 
@@ -154,6 +239,14 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taSueldoHistoricoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSueldoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSueldo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AsignacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescuentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taSueldoHistoricoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asignacionesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descuentosBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,5 +261,16 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
         private System.Windows.Forms.DateTimePicker dateFechaDesde;
         private System.Windows.Forms.Label label1;
         private Microsoft.Reporting.WinForms.ReportViewer RvReporte;
+        private CapaAccesoDatos.DataSet.DsSueldo dsSueldo;
+        private System.Windows.Forms.BindingSource dsSueldoBindingSource;
+        private System.Windows.Forms.BindingSource taSueldoHistoricoBindingSource;
+        private CapaAccesoDatos.DataSet.DsSueldoTableAdapters.TaSueldoHistoricoTableAdapter taSueldoHistoricoTableAdapter;
+        private System.Windows.Forms.BindingSource AsignacionesBindingSource;
+        private System.Windows.Forms.BindingSource DescuentosBindingSource;
+        private CapaAccesoDatos.DataSet.DsSueldoTableAdapters.AsignacionesTableAdapter asignacionesTableAdapter;
+        private System.Windows.Forms.BindingSource taSueldoHistoricoBindingSource1;
+        private System.Windows.Forms.BindingSource asignacionesBindingSource1;
+        private System.Windows.Forms.BindingSource descuentosBindingSource1;
+        private CapaAccesoDatos.DataSet.DsSueldoTableAdapters.DescuentosTableAdapter descuentosTableAdapter;
     }
 }
