@@ -24,7 +24,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
 
         }
 
-        private void btnGenerar_Click(object sender, EventArgs e)
+        private void BtnGenerar_Click(object sender, EventArgs e)
         {
             string fechaDesde = dateFechaDesde.Text;
             string fechaHasta = dateFechaHasta.Text;

@@ -5,6 +5,7 @@ using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH;
 using BugTrackingSystem.CapaPresentacion.ConsultaSueldos;
 using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
 using BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo;
+using BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo;
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
@@ -133,7 +134,7 @@ namespace BugTrackingSystem.Forms
         private void BtnUsuarios_Click(object sender, EventArgs e) {MostrarVentana(new FrmUsuarios(), "Consulta de Usuarios"); }
         private void BtnTransaccionSueldo_Click(object sender, EventArgs e) {MostrarVentana(new FrmGeneracionMensualSueldo(), "Generación mensual de sueldos");}
         private void BtnSueldosPH_Click(object sender, EventArgs e) { MostrarVentana(new FrmSueldosPH(), "Consulta de Sueldos Perfil Histórico");}
-        private void BtnReporteSueldos_Click(object sender, EventArgs e) { }
+        private void BtnReporteSueldos_Click(object sender, EventArgs e) { MostrarVentana(new FrmReporteSueldo(), "Reporte de Sueldos"); }
         private void BtnListadoSueldos_Click(object sender, EventArgs e) { MostrarVentana(new FrmListaSueldo(), "Listado de Sueldos"); }
 
         private void BtnGestion_Click(object sender, EventArgs e)

@@ -166,6 +166,12 @@
     <Compile Include="CapaPresentacion\Reportes\ListaSueldo\FrmListaSueldo.Designer.cs">
       <DependentUpon>FrmListaSueldo.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldo\FrmReporteSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldo\FrmReporteSueldo.Designer.cs">
+      <DependentUpon>FrmReporteSueldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,10 @@
       <DependentUpon>FrmListaSueldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Reportes\ListaSueldo\ListaSueldo.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldo\FrmReporteSueldo.resx">
+      <DependentUpon>FrmReporteSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldo\ReporteSueldo.rdlc" />
     <EmbeddedResource Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.resx">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,8 +349,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CapaPresentacion\Reportes\ReporteSueldos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

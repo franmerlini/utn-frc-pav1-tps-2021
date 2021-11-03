@@ -297,7 +297,6 @@ C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\D
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos.FrmSueldosDetalles.resources
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
-C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldos.FrmReporteSueldos.resources
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
@@ -378,3 +377,4 @@ C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\D
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo.FrmListaSueldo.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo.FrmReporteSueldo.resources

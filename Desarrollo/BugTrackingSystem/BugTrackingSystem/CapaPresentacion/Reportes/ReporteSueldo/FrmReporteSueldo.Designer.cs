@@ -1,7 +1,7 @@
 ﻿
-namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
+namespace BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo
 {
-    partial class FrmListaSueldo
+    partial class FrmReporteSueldo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,6 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.taSueldoNetoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSueldoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSueldo = new BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldo();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.BtnGenerar = new System.Windows.Forms.Button();
@@ -41,29 +36,10 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
             this.label2 = new System.Windows.Forms.Label();
             this.dateFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.RVReporte = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.taSueldoNetoTableAdapter = new BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldoTableAdapters.TaSueldoNetoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.taSueldoNetoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsSueldoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsSueldo)).BeginInit();
+            this.RvReporte = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tableLayoutPanel1.SuspendLayout();
             this.grpFiltros.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // taSueldoNetoBindingSource
-            // 
-            this.taSueldoNetoBindingSource.DataMember = "TaSueldoNeto";
-            this.taSueldoNetoBindingSource.DataSource = this.dsSueldoBindingSource;
-            // 
-            // dsSueldoBindingSource
-            // 
-            this.dsSueldoBindingSource.DataSource = this.dsSueldo;
-            this.dsSueldoBindingSource.Position = 0;
-            // 
-            // dsSueldo
-            // 
-            this.dsSueldo.DataSetName = "DsSueldo";
-            this.dsSueldo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel1
             // 
@@ -71,7 +47,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.grpFiltros, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.RVReporte, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.RvReporte, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -79,11 +55,11 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // grpFiltros
             // 
-            this.grpFiltros.BackColor = System.Drawing.Color.LightCoral;
+            this.grpFiltros.BackColor = System.Drawing.Color.LightSkyBlue;
             this.grpFiltros.Controls.Add(this.BtnGenerar);
             this.grpFiltros.Controls.Add(this.dateFechaHasta);
             this.grpFiltros.Controls.Add(this.label2);
@@ -99,7 +75,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
             // 
             // BtnGenerar
             // 
-            this.BtnGenerar.BackColor = System.Drawing.Color.LightCoral;
+            this.BtnGenerar.BackColor = System.Drawing.Color.SkyBlue;
             this.BtnGenerar.BackgroundImage = global::BugTrackingSystem.Properties.Resources.BtnConsultar;
             this.BtnGenerar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnGenerar.FlatAppearance.BorderSize = 0;
@@ -111,7 +87,6 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
             this.BtnGenerar.Size = new System.Drawing.Size(32, 32);
             this.BtnGenerar.TabIndex = 5;
             this.BtnGenerar.UseVisualStyleBackColor = false;
-            this.BtnGenerar.Click += new System.EventHandler(this.BtnGenerar_Click);
             // 
             // dateFechaHasta
             // 
@@ -153,25 +128,17 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha Desde:";
             // 
-            // RVReporte
+            // RvReporte
             // 
-            this.RVReporte.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RVReporte.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DsReporte";
-            reportDataSource2.Value = this.taSueldoNetoBindingSource;
-            this.RVReporte.LocalReport.DataSources.Add(reportDataSource2);
-            this.RVReporte.LocalReport.ReportEmbeddedResource = "BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo.ListaSueldo.rdlc";
-            this.RVReporte.Location = new System.Drawing.Point(3, 63);
-            this.RVReporte.Name = "RVReporte";
-            this.RVReporte.ServerReport.BearerToken = null;
-            this.RVReporte.Size = new System.Drawing.Size(794, 384);
-            this.RVReporte.TabIndex = 0;
+            this.RvReporte.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RvReporte.LocalReport.ReportEmbeddedResource = "BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo.ReporteSueldo.rdlc";
+            this.RvReporte.Location = new System.Drawing.Point(3, 63);
+            this.RvReporte.Name = "RvReporte";
+            this.RvReporte.ServerReport.BearerToken = null;
+            this.RvReporte.Size = new System.Drawing.Size(794, 384);
+            this.RvReporte.TabIndex = 2;
             // 
-            // taSueldoNetoTableAdapter
-            // 
-            this.taSueldoNetoTableAdapter.ClearBeforeFill = true;
-            // 
-            // FrmListaSueldo
+            // FrmReporteSueldo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,12 +148,9 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmListaSueldo";
-            this.Text = "FrmListaSueldo";
-            this.Load += new System.EventHandler(this.FrmListaSueldo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.taSueldoNetoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsSueldoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsSueldo)).EndInit();
+            this.Name = "FrmReporteSueldo";
+            this.Text = "FrmReporteSueldo";
+            this.Load += new System.EventHandler(this.FrmReporteSueldo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
@@ -203,10 +167,6 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateFechaDesde;
         private System.Windows.Forms.Label label1;
-        private Microsoft.Reporting.WinForms.ReportViewer RVReporte;
-        private System.Windows.Forms.BindingSource dsSueldoBindingSource;
-        private CapaAccesoDatos.DataSet.DsSueldo dsSueldo;
-        private System.Windows.Forms.BindingSource taSueldoNetoBindingSource;
-        private CapaAccesoDatos.DataSet.DsSueldoTableAdapters.TaSueldoNetoTableAdapter taSueldoNetoTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer RvReporte;
     }
 }
