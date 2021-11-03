@@ -1,0 +1,380 @@
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+C:\Users\merli\OneDrive - frc.utn.edu.ar\UTN\2021\PAV I\TPI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignaciones.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignacionesABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentos.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentosABM.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignaciones.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignacionesABM.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentos.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentosABM.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldos.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldosABM.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+C:\Users\merli\Desktop\tpi-pav\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPH.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignaciones.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignacionesABM.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentos.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentosABM.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPH.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPHABM.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldos.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldosABM.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+C:\Users\merli\Desktop\tpi-pav-develop\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignaciones.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignacionesABM.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentos.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentosABM.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPH.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPHABM.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+C:\Users\merli\Desktop\tpi-pav1\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldos.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos.FrmSueldosDetalles.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.SuggestedBindingRedirects.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignaciones.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignacionesABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentos.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentosABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPH.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldos.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos.FrmSueldosDetalles.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldos.FrmReporteSueldos.resources
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\RdlCompile.cache
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\RdlCompile.compiled
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\EnvDTE.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\stdole.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.MSXML.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.Common.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.Design.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\OneDrive - frc.utn.edu.ar\U.T.N\2021 - Programación de Aplicaciones Visuales I\Repositorios\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\EnvDTE.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\stdole.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.MSXML.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignaciones.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignacionesABM.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentos.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentosABM.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPH.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldos.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos.FrmSueldosDetalles.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos.FrmListadoSueldos.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldos.FrmReporteSueldos.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\RdlCompile.cache
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\RdlCompile.compiled
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.AssemblyReference.cache
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignaciones.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones.FrmAsignacionesABM.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistencias.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmAsistenciasABM.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentos.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaDescuentos.FrmDescuentosABM.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH.FrmSueldosPH.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaSueldos.FrmSueldos.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldos.FrmSueldosDetalles.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuarios.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.ConsultaUsuarios.FrmUsuariosABM.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.FrmGeneracionMensualSueldo.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.FrmLogin.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Forms.FrmMenuPrincipal.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.Properties.Resources.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.GenerateResource.cache
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\RdlCompile.cache
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\RdlCompile.compiled
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe.config
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.exe
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\BugTrackingSystem.pdb
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\EnvDTE.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\stdole.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\Microsoft.MSXML.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo.FrmListaSueldo.resources
+C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldo.FrmReporteSueldo.resources

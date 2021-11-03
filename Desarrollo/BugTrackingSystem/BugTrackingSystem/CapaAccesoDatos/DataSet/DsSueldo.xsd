@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsSueldo" targetNamespace="http://tempuri.org/DsSueldo.xsd" xmlns:mstns="http://tempuri.org/DsSueldo.xsd" xmlns="http://tempuri.org/DsSueldo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BugTrackerTPIConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BugTrackerTPIConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BugTrackingSystem.Properties.Settings.GlobalReference.Default.BugTrackerTPIConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TaSueldoHistoricoTableAdapter" GeneratorDataComponentClassName="TaSueldoHistoricoTableAdapter" Name="TaSueldoHistorico" UserDataComponentName="TaSueldoHistoricoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugTrackerTPIConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SueldoPerfilHistorico.fecha, SueldoPerfilHistorico.sueldo, Perfiles.nombre
+FROM            SueldoPerfilHistorico INNER JOIN
+                         Perfiles ON SueldoPerfilHistorico.id_perfil = Perfiles.id_perfil</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="sueldo" DataSetColumn="sueldo" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TaSueldoNetoTableAdapter" GeneratorDataComponentClassName="TaSueldoNetoTableAdapter" Name="TaSueldoNeto" UserDataComponentName="TaSueldoNetoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugTrackerTPIConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        Perfiles.nombre AS Perfil, Usuarios.usuario AS Usuario, Sueldos.fecha AS Fecha, Sueldos.sueldo_bruto AS SueldoBruto, SUM(DISTINCT SueldoAsignaciones.monto) AS Asignacion, SUM(DISTINCT SueldoDescuentos.monto) 
+                         AS Descuento
+FROM            Sueldos INNER JOIN
+                         Usuarios ON Sueldos.id_usuario = Usuarios.id_usuario INNER JOIN
+                         Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil LEFT OUTER JOIN
+                         SueldoAsignaciones ON Sueldos.id_usuario = SueldoAsignaciones.id_usuario AND Sueldos.fecha = SueldoAsignaciones.fecha LEFT OUTER JOIN
+                         SueldoDescuentos ON Sueldos.id_usuario = SueldoDescuentos.id_usuario AND Sueldos.fecha = SueldoDescuentos.fecha
+GROUP BY Perfiles.nombre, Usuarios.usuario, Sueldos.fecha, Sueldos.sueldo_bruto
+ORDER BY Perfil, Fecha DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="SueldoBruto" DataSetColumn="SueldoBruto" />
+              <Mapping SourceColumn="Asignacion" DataSetColumn="Asignacion" />
+              <Mapping SourceColumn="Perfil" DataSetColumn="Perfil" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AsignacionesTableAdapter" GeneratorDataComponentClassName="AsignacionesTableAdapter" Name="Asignaciones" UserDataComponentName="AsignacionesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugTrackerTPIConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(SueldoAsignaciones.monto) AS Monto, Asignaciones.n_asignacion AS Asignacion, SueldoAsignaciones.fecha
+FROM            SueldoAsignaciones INNER JOIN
+                         Asignaciones ON SueldoAsignaciones.id_asignacion = Asignaciones.id_asignacion
+GROUP BY Asignaciones.n_asignacion, SueldoAsignaciones.fecha</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Monto" DataSetColumn="Monto" />
+              <Mapping SourceColumn="Asignacion" DataSetColumn="Asignacion" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DescuentosTableAdapter" GeneratorDataComponentClassName="DescuentosTableAdapter" Name="Descuentos" UserDataComponentName="DescuentosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugTrackerTPIConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(SueldoDescuentos.monto) AS Monto, Descuentos.n_descuento AS Descuento, SueldoDescuentos.fecha
+FROM            SueldoDescuentos INNER JOIN
+                         Descuentos ON SueldoDescuentos.id_descuento = Descuentos.id_descuento
+GROUP BY Descuentos.n_descuento, SueldoDescuentos.fecha</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Monto" DataSetColumn="Monto" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsSueldo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsSueldo" msprop:Generator_UserDSName="DsSueldo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TaSueldoHistorico" msprop:Generator_TableClassName="TaSueldoHistoricoDataTable" msprop:Generator_TableVarName="tableTaSueldoHistorico" msprop:Generator_TablePropName="TaSueldoHistorico" msprop:Generator_RowDeletingName="TaSueldoHistoricoRowDeleting" msprop:Generator_RowChangingName="TaSueldoHistoricoRowChanging" msprop:Generator_RowEvHandlerName="TaSueldoHistoricoRowChangeEventHandler" msprop:Generator_RowDeletedName="TaSueldoHistoricoRowDeleted" msprop:Generator_UserTableName="TaSueldoHistorico" msprop:Generator_RowChangedName="TaSueldoHistoricoRowChanged" msprop:Generator_RowEvArgName="TaSueldoHistoricoRowChangeEvent" msprop:Generator_RowClassName="TaSueldoHistoricoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="sueldo" msprop:Generator_ColumnVarNameInTable="columnsueldo" msprop:Generator_ColumnPropNameInRow="sueldo" msprop:Generator_ColumnPropNameInTable="sueldoColumn" msprop:Generator_UserColumnName="sueldo" type="xs:decimal" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TaSueldoNeto" msprop:Generator_TableClassName="TaSueldoNetoDataTable" msprop:Generator_TableVarName="tableTaSueldoNeto" msprop:Generator_TablePropName="TaSueldoNeto" msprop:Generator_RowDeletingName="TaSueldoNetoRowDeleting" msprop:Generator_RowChangingName="TaSueldoNetoRowChanging" msprop:Generator_RowEvHandlerName="TaSueldoNetoRowChangeEventHandler" msprop:Generator_RowDeletedName="TaSueldoNetoRowDeleted" msprop:Generator_UserTableName="TaSueldoNeto" msprop:Generator_RowChangedName="TaSueldoNetoRowChanged" msprop:Generator_RowEvArgName="TaSueldoNetoRowChangeEvent" msprop:Generator_RowClassName="TaSueldoNetoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="SueldoBruto" msprop:Generator_ColumnVarNameInTable="columnSueldoBruto" msprop:Generator_ColumnPropNameInRow="SueldoBruto" msprop:Generator_ColumnPropNameInTable="SueldoBrutoColumn" msprop:Generator_UserColumnName="SueldoBruto" type="xs:decimal" />
+              <xs:element name="Asignacion" msprop:Generator_ColumnVarNameInTable="columnAsignacion" msprop:Generator_ColumnPropNameInRow="Asignacion" msprop:Generator_ColumnPropNameInTable="AsignacionColumn" msprop:Generator_UserColumnName="Asignacion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Perfil" msprop:Generator_ColumnVarNameInTable="columnPerfil" msprop:Generator_ColumnPropNameInRow="Perfil" msprop:Generator_ColumnPropNameInTable="PerfilColumn" msprop:Generator_UserColumnName="Perfil">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Asignaciones" msprop:Generator_TableClassName="AsignacionesDataTable" msprop:Generator_TableVarName="tableAsignaciones" msprop:Generator_RowChangedName="AsignacionesRowChanged" msprop:Generator_TablePropName="Asignaciones" msprop:Generator_RowDeletingName="AsignacionesRowDeleting" msprop:Generator_RowChangingName="AsignacionesRowChanging" msprop:Generator_RowEvHandlerName="AsignacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="AsignacionesRowDeleted" msprop:Generator_RowClassName="AsignacionesRow" msprop:Generator_UserTableName="Asignaciones" msprop:Generator_RowEvArgName="AsignacionesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Monto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Asignacion" msprop:Generator_ColumnVarNameInTable="columnAsignacion" msprop:Generator_ColumnPropNameInRow="Asignacion" msprop:Generator_ColumnPropNameInTable="AsignacionColumn" msprop:Generator_UserColumnName="Asignacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Descuentos" msprop:Generator_TableClassName="DescuentosDataTable" msprop:Generator_TableVarName="tableDescuentos" msprop:Generator_RowChangedName="DescuentosRowChanged" msprop:Generator_TablePropName="Descuentos" msprop:Generator_RowDeletingName="DescuentosRowDeleting" msprop:Generator_RowChangingName="DescuentosRowChanging" msprop:Generator_RowEvHandlerName="DescuentosRowChangeEventHandler" msprop:Generator_RowDeletedName="DescuentosRowDeleted" msprop:Generator_RowClassName="DescuentosRow" msprop:Generator_UserTableName="Descuentos" msprop:Generator_RowEvArgName="DescuentosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Monto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

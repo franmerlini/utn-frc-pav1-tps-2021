@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{290FD06B-DB4B-4A77-B932-DD7ABAF73119}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BugTrackingSystem</RootNamespace>
+    <AssemblyName>BugTrackingSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CapaAccesoDatos\Daos\AsignacionDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\AsistenciaUsuarioDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\SueldoPerfilHistoricoDao.cs" />
+    <Compile Include="CapaAccesoDatos\DataManager\DataManager.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\DescuentoDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\EstadoAsistenciaDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\PerfilDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\SueldoAsignacionDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\SueldoDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\SueldoDescuentoDao.cs" />
+    <Compile Include="CapaAccesoDatos\Daos\UsuarioDao.cs" />
+    <Compile Include="CapaAccesoDatos\DataSet\DsSueldo.cs">
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaAccesoDatos\DataSet\DsSueldo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CapaLogicaNegocio\Services\AsignacionService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\AsistenciaUsuarioService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\DescuentoService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\EstadoAsistenciaService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\PerfilService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\SueldoAsignacionService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\SueldoDescuentoService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\SueldoPerfilHistoricoService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\SueldoService.cs" />
+    <Compile Include="CapaLogicaNegocio\Services\UsuarioService.cs" />
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignaciones.Designer.cs">
+      <DependentUpon>FrmAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignacionesABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignacionesABM.Designer.cs">
+      <DependentUpon>FrmAsignacionesABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsistencias\FrmAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsistencias\FrmAsistencias.Designer.cs">
+      <DependentUpon>FrmAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsistencias\FrmAsistenciasABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaAsistencias\FrmAsistenciasABM.Designer.cs">
+      <DependentUpon>FrmAsistenciasABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentos.Designer.cs">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentosABM.Designer.cs">
+      <DependentUpon>FrmDescuentosABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldosPH\FrmSueldosPH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldosPH\FrmSueldosPH.Designer.cs">
+      <DependentUpon>FrmSueldosPH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.designer.cs">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosDetalles.Designer.cs">
+      <DependentUpon>FrmSueldosDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.Designer.cs">
+      <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ListaSueldo\FrmListaSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ListaSueldo\FrmListaSueldo.Designer.cs">
+      <DependentUpon>FrmListaSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldo\FrmReporteSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Reportes\ReporteSueldo\FrmReporteSueldo.Designer.cs">
+      <DependentUpon>FrmReporteSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.Designer.cs">
+      <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Asignacion.cs" />
+    <Compile Include="Entidades\AsistenciaUsuario.cs" />
+    <Compile Include="Entidades\Descuento.cs" />
+    <Compile Include="Entidades\EstadoAsistencia.cs" />
+    <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Sueldo.cs" />
+    <Compile Include="Entidades\SueldoAsignacion.cs" />
+    <Compile Include="Entidades\SueldoDescuento.cs" />
+    <Compile Include="Entidades\SueldoPerfilHistorico.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="CapaPresentacion\Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignaciones.resx">
+      <DependentUpon>FrmAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignacionesABM.resx">
+      <DependentUpon>FrmAsignacionesABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaAsistencias\FrmAsistencias.resx">
+      <DependentUpon>FrmAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaAsistencias\FrmAsistenciasABM.resx">
+      <DependentUpon>FrmAsistenciasABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentos.resx">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaDescuentos\FrmDescuentosABM.resx">
+      <DependentUpon>FrmDescuentosABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldosPH\FrmSueldosPH.resx">
+      <DependentUpon>FrmSueldosPH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldos.resx">
+      <DependentUpon>FrmSueldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaSueldos\FrmSueldosDetalles.resx">
+      <DependentUpon>FrmSueldosDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.resx">
+      <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ListaSueldo\FrmListaSueldo.resx">
+      <DependentUpon>FrmListaSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ListaSueldo\ListaSueldo.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldo\FrmReporteSueldo.resx">
+      <DependentUpon>FrmReporteSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldo\ReportesSueldo.rdlc" />
+    <EmbeddedResource Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.resx">
+      <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\MenuPrincipal\FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="CapaAccesoDatos\DataSet\DsSueldo.xsc">
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
+    </None>
+    <None Include="CapaAccesoDatos\DataSet\DsSueldo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsSueldo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaAccesoDatos\DataSet\DsSueldo.xss">
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEditar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnInformacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVolver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnConsultar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnDeshacer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnRehacer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnRecuperar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnGuardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnLimpiar.png" />
+    <None Include="Resources\BtnLimpiar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
