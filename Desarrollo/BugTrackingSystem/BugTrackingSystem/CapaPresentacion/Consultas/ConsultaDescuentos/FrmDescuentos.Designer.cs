@@ -58,7 +58,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.grpInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpInformacion.Location = new System.Drawing.Point(228, 3);
             this.grpInformacion.Name = "grpInformacion";
-            this.grpInformacion.Size = new System.Drawing.Size(758, 118);
+            this.grpInformacion.Size = new System.Drawing.Size(758, 108);
             this.grpInformacion.TabIndex = 9;
             this.grpInformacion.TabStop = false;
             this.grpInformacion.Text = "Información";
@@ -80,12 +80,12 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.DgvDescuentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvDescuentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDescuentos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvDescuentos.Location = new System.Drawing.Point(3, 133);
+            this.DgvDescuentos.Location = new System.Drawing.Point(3, 123);
             this.DgvDescuentos.MultiSelect = false;
             this.DgvDescuentos.Name = "DgvDescuentos";
             this.DgvDescuentos.ReadOnly = true;
             this.DgvDescuentos.RowHeadersWidth = 51;
-            this.DgvDescuentos.Size = new System.Drawing.Size(989, 311);
+            this.DgvDescuentos.Size = new System.Drawing.Size(989, 321);
             this.DgvDescuentos.TabIndex = 10;
             this.DgvDescuentos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvDescuentos_DataBindingComplete);
             // 
@@ -97,7 +97,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.grpAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpAcciones.Location = new System.Drawing.Point(3, 3);
             this.grpAcciones.Name = "grpAcciones";
-            this.grpAcciones.Size = new System.Drawing.Size(219, 118);
+            this.grpAcciones.Size = new System.Drawing.Size(219, 108);
             this.grpAcciones.TabIndex = 8;
             this.grpAcciones.TabStop = false;
             this.grpAcciones.Text = "Acciones";
@@ -105,7 +105,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             // ChkBaja
             // 
             this.ChkBaja.AutoSize = true;
-            this.ChkBaja.Location = new System.Drawing.Point(6, 91);
+            this.ChkBaja.Location = new System.Drawing.Point(6, 88);
             this.ChkBaja.Name = "ChkBaja";
             this.ChkBaja.Size = new System.Drawing.Size(99, 17);
             this.ChkBaja.TabIndex = 9;
@@ -124,7 +124,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tableLayoutPanel1.Controls.Add(this.BtnEditar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnEliminar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.BtnConsultar, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 33);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 30);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
@@ -210,7 +210,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(995, 447);
             this.tableLayoutPanel2.TabIndex = 11;
@@ -228,7 +228,7 @@ namespace BugTrackingSystem.CapaPresentacion.ConsultaDescuentos
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 124);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 114);
             this.tableLayoutPanel3.TabIndex = 12;
             // 
             // FrmDescuentos

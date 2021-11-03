@@ -230,7 +230,7 @@
                     </ChartAxisTitle>
                     <IntervalType>Months</IntervalType>
                     <ChartMajorGridLines>
-                      <Enabled>False</Enabled>
+                      <Enabled>True</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -1708,7 +1708,7 @@
           <BackgroundColor>PaleTurquoise</BackgroundColor>
         </Style>
       </Body>
-      <Width>8.16193in</Width>
+      <Width>8.0161in</Width>
       <Page>
         <PageHeader>
           <Height>1.64042cm</Height>
@@ -1835,8 +1835,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox47</rd:DefaultName>
-              <Top>0.14111cm</Top>
-              <Left>17.2788cm</Left>
+              <Top>0.10583cm</Top>
+              <Left>16.98776cm</Left>
               <Height>0.6cm</Height>
               <Width>3.37313cm</Width>
               <Style>

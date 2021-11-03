@@ -21,7 +21,6 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo
         private void FrmListaSueldo_Load(object sender, EventArgs e)
         {
             dateFechaDesde.Value = DateTime.Today.AddMonths(-1);
-
         }
 
         private void BtnGenerar_Click(object sender, EventArgs e)

@@ -38,7 +38,6 @@ namespace BugTrackingSystem.Forms
             login = new FrmLogin();
             login.FormClosing += Login_FormClosing;
             MostrarVentana(login, "Bug Tracking System");
-            Console.WriteLine(this.DoubleBuffered);
         }
 
         // Event handler del form login para extraer el usuario
@@ -79,6 +78,17 @@ namespace BugTrackingSystem.Forms
                 }
             }
         }
+        private void ReiniciarMenu()
+        {
+            BtnReportes.Visible = false;
+            BtnGestion.Visible = false;
+            BtnTransacciones.Visible = false;
+            BtnUsuarios.Enabled = false;
+            PnlGestion.Visible = false;
+            PnlTransacciones.Visible = false;
+            PnlReportes.Visible = false;
+            PnlMenuLateral.Visible = false;
+        }
 
         // Método para iniciar las ventanas dentro del menú principal.
         private void MostrarVentana(Form ventana, string titulo)
@@ -86,17 +96,19 @@ namespace BugTrackingSystem.Forms
             if (formActivo != null)
             {
                 if (ventana.GetType() == formActivo.GetType() && titulo != "Bug Tracking System")
+                {
                     return;
+                }
                 formActivo.Close();
             }
             formActivo = ventana;
             this.Text = titulo;
-            ventana.TopLevel = false;
-            ventana.Dock = DockStyle.Fill;
-            PnlPrincipal.Controls.Add(ventana);
-            PnlPrincipal.Tag = ventana;
-            ventana.BringToFront();
-            ventana.Show();
+            formActivo.TopLevel = false;
+            formActivo.Dock = DockStyle.Fill;
+            PnlPrincipal.Controls.Add(formActivo);
+            PnlPrincipal.Tag = formActivo;
+            formActivo.BringToFront();
+            formActivo.Show();
         }
 
         // Mensaje en pantalla confirmando si cerrar la ventana
@@ -112,17 +124,6 @@ namespace BugTrackingSystem.Forms
             {
                 Environment.Exit(0);
             }
-        }
-        private void ReiniciarMenu()
-        {
-            BtnReportes.Visible = false;
-            BtnGestion.Visible = false;
-            BtnTransacciones.Visible = false;
-            BtnUsuarios.Enabled = false;
-            PnlGestion.Visible = false;
-            PnlTransacciones.Visible = false;
-            PnlReportes.Visible = false;
-            PnlMenuLateral.Visible = false;
         }
 
         // Botones:
