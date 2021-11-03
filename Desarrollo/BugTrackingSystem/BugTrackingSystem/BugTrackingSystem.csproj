@@ -79,6 +79,11 @@
     <Compile Include="CapaAccesoDatos\Daos\SueldoDao.cs" />
     <Compile Include="CapaAccesoDatos\Daos\SueldoDescuentoDao.cs" />
     <Compile Include="CapaAccesoDatos\Daos\UsuarioDao.cs" />
+    <Compile Include="CapaAccesoDatos\DataSet\DsSueldo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CapaLogicaNegocio\Services\AsignacionService.cs" />
     <Compile Include="CapaLogicaNegocio\Services\AsistenciaUsuarioService.cs" />
     <Compile Include="CapaLogicaNegocio\Services\DescuentoService.cs" />
@@ -155,33 +160,11 @@
     <Compile Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.Designer.cs">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.cs">
-      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\FrmListadoSueldos.cs">
+    <Compile Include="CapaPresentacion\Reportes\ListaSueldo\FrmListaSueldo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ListadoSueldos\FrmListadoSueldos.Designer.cs">
-      <DependentUpon>FrmListadoSueldos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.cs">
-      <DependentUpon>DSReporte.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSReporte.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\FrmReporteSueldos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapaPresentacion\Reportes\ReporteSueldos\FrmReporteSueldos.Designer.cs">
-      <DependentUpon>FrmReporteSueldos.cs</DependentUpon>
+    <Compile Include="CapaPresentacion\Reportes\ListaSueldo\FrmListaSueldo.Designer.cs">
+      <DependentUpon>FrmListaSueldo.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.cs">
       <SubType>Form</SubType>
@@ -247,13 +230,10 @@
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaUsuarios\FrmUsuariosABM.resx">
       <DependentUpon>FrmUsuariosABM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\Reportes\ListadoSueldos\FrmListadoSueldos.resx">
-      <DependentUpon>FrmListadoSueldos.cs</DependentUpon>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ListaSueldo\FrmListaSueldo.resx">
+      <DependentUpon>FrmListaSueldo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\Reportes\ListadoSueldos\ListadoSueldos.rdlc" />
-    <EmbeddedResource Include="CapaPresentacion\Reportes\ReporteSueldos\FrmReporteSueldos.resx">
-      <DependentUpon>FrmReporteSueldos.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Reportes\ListaSueldo\ListaSueldo.rdlc" />
     <EmbeddedResource Include="CapaPresentacion\Transacciones\FrmGeneracionMensualSueldo.resx">
       <DependentUpon>FrmGeneracionMensualSueldo.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,27 +248,16 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.xsc">
-      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
+    <None Include="CapaAccesoDatos\DataSet\DsSueldo.xsc">
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
     </None>
-    <None Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.xsd">
+    <None Include="CapaAccesoDatos\DataSet\DsSueldo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSListadoSueldos.Designer.cs</LastGenOutput>
+      <LastGenOutput>DsSueldo.Designer.cs</LastGenOutput>
     </None>
-    <None Include="CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.xss">
-      <DependentUpon>DSListadoSueldos.xsd</DependentUpon>
-    </None>
-    <None Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.xsc">
-      <DependentUpon>DSReporte.xsd</DependentUpon>
-    </None>
-    <None Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CapaPresentacion\Reportes\ReporteSueldos\DSReporte.xss">
-      <DependentUpon>DSReporte.xsd</DependentUpon>
+    <None Include="CapaAccesoDatos\DataSet\DsSueldo.xss">
+      <DependentUpon>DsSueldo.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -369,6 +338,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CapaPresentacion\Reportes\ReporteSueldos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

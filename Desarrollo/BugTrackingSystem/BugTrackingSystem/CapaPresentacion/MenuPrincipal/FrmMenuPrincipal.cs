@@ -4,8 +4,7 @@ using BugTrackingSystem.CapaPresentacion.ConsultaDescuentos;
 using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH;
 using BugTrackingSystem.CapaPresentacion.ConsultaSueldos;
 using BugTrackingSystem.CapaPresentacion.ConsultaUsuarios;
-using BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos;
-using BugTrackingSystem.CapaPresentacion.Reportes.ReporteSueldos;
+using BugTrackingSystem.CapaPresentacion.Reportes.ListaSueldo;
 using BugTrackingSystem.Entidades;
 using System;
 using System.Collections.Generic;
@@ -113,29 +112,6 @@ namespace BugTrackingSystem.Forms
                 Environment.Exit(0);
             }
         }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void BtnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            DialogResult rta;
-            rta = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (rta == DialogResult.No)
-            {
-                return;
-            }
-            else
-            {
-                ReiniciarMenu();
-                login = new FrmLogin();
-                login.FormClosing += Login_FormClosing;
-                MostrarVentana(login, "Bug Tracking System");
-            }
-        }
-
         private void ReiniciarMenu()
         {
             BtnReportes.Visible = false;
@@ -148,37 +124,17 @@ namespace BugTrackingSystem.Forms
             PnlMenuLateral.Visible = false;
         }
 
-        private void BtnAsignaciones_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmAsignaciones(), "Consulta de Asignaciones");
-        }
-
-        private void BtnAsistencias_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmAsistencias(), "Consulta de Asistencias");
-        }
-
-        private void Descuentos_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmDescuentos(), "Consulta de Descuentos");
-        }
-
-        private void BtnSueldos_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmSueldos(), "Consulta de Sueldos");
-        }
-        private void BtnUsuarios_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmUsuarios(), "Consulta de Usuarios");
-        }
-        private void BtnTransaccionSueldo_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmGeneracionMensualSueldo(), "Generación mensual de sueldos");
-        }
-        private void BtnSueldosPH_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmSueldosPH(), "Consulta de Sueldos Perfil Histórico");
-        }
+        // Botones:
+        private void BtnSalir_Click(object sender, EventArgs e) { this.Close(); }
+        private void BtnAsignaciones_Click(object sender, EventArgs e){MostrarVentana(new FrmAsignaciones(), "Consulta de Asignaciones");}
+        private void BtnAsistencias_Click(object sender, EventArgs e){MostrarVentana(new FrmAsistencias(), "Consulta de Asistencias");}
+        private void Descuentos_Click(object sender, EventArgs e) {MostrarVentana(new FrmDescuentos(), "Consulta de Descuentos");}
+        private void BtnSueldos_Click(object sender, EventArgs e) {MostrarVentana(new FrmSueldos(), "Consulta de Sueldos");}
+        private void BtnUsuarios_Click(object sender, EventArgs e) {MostrarVentana(new FrmUsuarios(), "Consulta de Usuarios"); }
+        private void BtnTransaccionSueldo_Click(object sender, EventArgs e) {MostrarVentana(new FrmGeneracionMensualSueldo(), "Generación mensual de sueldos");}
+        private void BtnSueldosPH_Click(object sender, EventArgs e) { MostrarVentana(new FrmSueldosPH(), "Consulta de Sueldos Perfil Histórico");}
+        private void BtnReporteSueldos_Click(object sender, EventArgs e) { }
+        private void BtnListadoSueldos_Click(object sender, EventArgs e) { MostrarVentana(new FrmListaSueldo(), "Listado de Sueldos"); }
 
         private void BtnGestion_Click(object sender, EventArgs e)
         {
@@ -214,6 +170,22 @@ namespace BugTrackingSystem.Forms
             }
 
         }
+        private void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult rta;
+            rta = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rta == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                ReiniciarMenu();
+                login = new FrmLogin();
+                login.FormClosing += Login_FormClosing;
+                MostrarVentana(login, "Bug Tracking System");
+            }
+        }
 
         // Método para remover el flickering en los formularios
         protected override CreateParams CreateParams
@@ -224,16 +196,6 @@ namespace BugTrackingSystem.Forms
                 handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
                 return handleParam;
             }
-        }
-
-        private void BtnReporteSueldos_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmReporteSueldos(), "Reporte de Sueldos");
-        }
-
-        private void BtnListadoSueldos_Click(object sender, EventArgs e)
-        {
-            MostrarVentana(new FrmListadoSueldos(), "Listado de Sueldos");
         }
     }
 }

@@ -2,18 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DSListadoSueldos">
+    <DataSource Name="DsSueldo">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>7e4c875a-e9e2-4613-96ce-dacf1190b958</rd:DataSourceID>
+      <rd:DataSourceID>c49c8288-1c1f-4cf8-a4d7-3146e1dd9e42</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="TablaSueldoPorPerfil">
+    <DataSet Name="DsReporte">
       <Query>
-        <DataSourceName>DSListadoSueldos</DataSourceName>
+        <DataSourceName>DsSueldo</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -43,12 +43,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DSListadoSueldos</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\franc\Desktop\Desarrollo\BugTrackingSystem\BugTrackingSystem\CapaPresentacion\Reportes\ListadoSueldos\DSListadoSueldos.xsd</rd:SchemaPath>
-        <rd:TableName>SueldosPorPerfil</rd:TableName>
+        <rd:DataSetName>DsSueldo</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\franc\Desktop\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\CapaAccesoDatos\DataSet\DsSueldo.xsd</rd:SchemaPath>
+        <rd:TableName>TaSueldoNeto</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>SueldosPorPerfilTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>TaSueldoNetoTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -219,7 +219,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Usuario1">
+                        <Textbox Name="Usuario">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -233,7 +233,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Usuario1</rd:DefaultName>
+                          <rd:DefaultName>Usuario</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -424,7 +424,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!SueldoBruto.Value, "TablaSueldoPorPerfil")+Sum(Fields!Asignacion.Value, "TablaSueldoPorPerfil")-Sum(Fields!Descuento.Value, "TablaSueldoPorPerfil")</Value>
+                                  <Value>=Sum(Fields!SueldoBruto.Value, "DsReporte")+Sum(Fields!Asignacion.Value, "DsReporte")-Sum(Fields!Descuento.Value, "DsReporte")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
@@ -521,7 +521,7 @@
                   <TablixHeader>
                     <Size>3.52219cm</Size>
                     <CellContents>
-                      <Textbox Name="Perfil1">
+                      <Textbox Name="Perfil">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -539,7 +539,7 @@
                             </Style>
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Perfil1</rd:DefaultName>
+                        <rd:DefaultName>Perfil</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
@@ -606,7 +606,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>TablaSueldoPorPerfil</DataSetName>
+            <DataSetName>DsReporte</DataSetName>
             <Filters>
               <Filter>
                 <FilterExpression>=Fields!Fecha.Value</FilterExpression>
@@ -623,10 +623,10 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>0.45792cm</Top>
-            <Left>1.2139cm</Left>
+            <Top>0.92108cm</Top>
+            <Left>1.09155cm</Left>
             <Height>2.4cm</Height>
-            <Width>14.59147cm</Width>
+            <Width>14.59148cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -635,34 +635,16 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.45834in</Height>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>#ffc0c0</BackgroundColor>
-        </Style>
+        <Height>2.73264in</Height>
+        <Style />
       </Body>
-      <Width>6.6705in</Width>
+      <Width>6.60417in</Width>
       <Page>
         <PageHeader>
-          <Height>2.02599cm</Height>
+          <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Image Name="Bug">
-              <Source>Embedded</Source>
-              <Value>Bug</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.3496cm</Top>
-              <Left>0.31432cm</Left>
-              <Height>1.5cm</Height>
-              <Width>1.5cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
             <Textbox Name="Textbox7">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -712,11 +694,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.77294cm</Top>
-              <Left>1.81432cm</Left>
+              <Top>0.95251cm</Top>
+              <Left>1.73334cm</Left>
               <Height>0.68861cm</Height>
               <Width>14.77666cm</Width>
-              <ZIndex>1</ZIndex>
               <Style>
                 <Border />
                 <PaddingLeft>2pt</PaddingLeft>
@@ -725,16 +706,30 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Image Name="Bug">
+              <Source>Embedded</Source>
+              <Value>Bug</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.60854cm</Top>
+              <Left>0.12751cm</Left>
+              <Height>1.5cm</Height>
+              <Width>1.5cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
           </ReportItems>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <BackgroundColor>LightSalmon</BackgroundColor>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.29604cm</Height>
+          <Height>0.99053cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -758,8 +753,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox47</rd:DefaultName>
-              <Top>0.43146cm</Top>
-              <Left>13.95869cm</Left>
+              <Top>0.14111cm</Top>
+              <Left>14.14229cm</Left>
               <Height>0.6cm</Height>
               <Width>2.36771cm</Width>
               <Style>
@@ -777,7 +772,6 @@
             <Border>
               <Style>None</Style>
             </Border>
-            <BackgroundColor>LightSalmon</BackgroundColor>
           </Style>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
@@ -914,5 +908,5 @@ cUpf97EPE+GjqN9snH0BBW/avvGukTq1zzAtCQsJwzCMw7KBZbMK6P4YCDcD6EutYUHfgcBHRtdv/W1q
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>ffafbbce-9edc-4730-be9b-012ba51b221d</rd:ReportID>
+  <rd:ReportID>355d1dc4-ad08-4d07-a031-7811dff857b1</rd:ReportID>
 </Report>

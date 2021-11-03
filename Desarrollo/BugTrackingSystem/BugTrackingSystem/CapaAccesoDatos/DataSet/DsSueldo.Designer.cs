@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
+namespace BugTrackingSystem.CapaAccesoDatos.DataSet {
     
     
     /// <summary>
@@ -20,17 +20,19 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DSListadoSueldos")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DsSueldo")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DSListadoSueldos : global::System.Data.DataSet {
+    public partial class DsSueldo : global::System.Data.DataSet {
         
-        private SueldosPorPerfilDataTable tableSueldosPorPerfil;
+        private TaSueldoHistoricoDataTable tableTaSueldoHistorico;
+        
+        private TaSueldoNetoDataTable tableTaSueldoNeto;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DSListadoSueldos() {
+        public DsSueldo() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +43,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DSListadoSueldos(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DsSueldo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +56,11 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["SueldosPorPerfil"] != null)) {
-                    base.Tables.Add(new SueldosPorPerfilDataTable(ds.Tables["SueldosPorPerfil"]));
+                if ((ds.Tables["TaSueldoHistorico"] != null)) {
+                    base.Tables.Add(new TaSueldoHistoricoDataTable(ds.Tables["TaSueldoHistorico"]));
+                }
+                if ((ds.Tables["TaSueldoNeto"] != null)) {
+                    base.Tables.Add(new TaSueldoNetoDataTable(ds.Tables["TaSueldoNeto"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +84,19 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SueldosPorPerfilDataTable SueldosPorPerfil {
+        public TaSueldoHistoricoDataTable TaSueldoHistorico {
             get {
-                return this.tableSueldosPorPerfil;
+                return this.tableTaSueldoHistorico;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TaSueldoNetoDataTable TaSueldoNeto {
+            get {
+                return this.tableTaSueldoNeto;
             }
         }
         
@@ -127,7 +142,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DSListadoSueldos cln = ((DSListadoSueldos)(base.Clone()));
+            DsSueldo cln = ((DsSueldo)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +167,11 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["SueldosPorPerfil"] != null)) {
-                    base.Tables.Add(new SueldosPorPerfilDataTable(ds.Tables["SueldosPorPerfil"]));
+                if ((ds.Tables["TaSueldoHistorico"] != null)) {
+                    base.Tables.Add(new TaSueldoHistoricoDataTable(ds.Tables["TaSueldoHistorico"]));
+                }
+                if ((ds.Tables["TaSueldoNeto"] != null)) {
+                    base.Tables.Add(new TaSueldoNetoDataTable(ds.Tables["TaSueldoNeto"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +206,16 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSueldosPorPerfil = ((SueldosPorPerfilDataTable)(base.Tables["SueldosPorPerfil"]));
+            this.tableTaSueldoHistorico = ((TaSueldoHistoricoDataTable)(base.Tables["TaSueldoHistorico"]));
             if ((initTable == true)) {
-                if ((this.tableSueldosPorPerfil != null)) {
-                    this.tableSueldosPorPerfil.InitVars();
+                if ((this.tableTaSueldoHistorico != null)) {
+                    this.tableTaSueldoHistorico.InitVars();
+                }
+            }
+            this.tableTaSueldoNeto = ((TaSueldoNetoDataTable)(base.Tables["TaSueldoNeto"]));
+            if ((initTable == true)) {
+                if ((this.tableTaSueldoNeto != null)) {
+                    this.tableTaSueldoNeto.InitVars();
                 }
             }
         }
@@ -199,18 +223,26 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DSListadoSueldos";
+            this.DataSetName = "DsSueldo";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DSListadoSueldos.xsd";
+            this.Namespace = "http://tempuri.org/DsSueldo.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSueldosPorPerfil = new SueldosPorPerfilDataTable();
-            base.Tables.Add(this.tableSueldosPorPerfil);
+            this.tableTaSueldoHistorico = new TaSueldoHistoricoDataTable();
+            base.Tables.Add(this.tableTaSueldoHistorico);
+            this.tableTaSueldoNeto = new TaSueldoNetoDataTable();
+            base.Tables.Add(this.tableTaSueldoNeto);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSueldosPorPerfil() {
+        private bool ShouldSerializeTaSueldoHistorico() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeTaSueldoNeto() {
             return false;
         }
         
@@ -225,7 +257,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DSListadoSueldos ds = new DSListadoSueldos();
+            DsSueldo ds = new DsSueldo();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,31 +302,28 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SueldosPorPerfilRowChangeEventHandler(object sender, SueldosPorPerfilRowChangeEvent e);
+        public delegate void TaSueldoHistoricoRowChangeEventHandler(object sender, TaSueldoHistoricoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void TaSueldoNetoRowChangeEventHandler(object sender, TaSueldoNetoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SueldosPorPerfilDataTable : global::System.Data.TypedTableBase<SueldosPorPerfilRow> {
+        public partial class TaSueldoHistoricoDataTable : global::System.Data.TypedTableBase<TaSueldoHistoricoRow> {
             
-            private global::System.Data.DataColumn columnUsuario;
+            private global::System.Data.DataColumn columnfecha;
             
-            private global::System.Data.DataColumn columnFecha;
+            private global::System.Data.DataColumn columnsueldo;
             
-            private global::System.Data.DataColumn columnSueldoBruto;
-            
-            private global::System.Data.DataColumn columnAsignacion;
-            
-            private global::System.Data.DataColumn columnPerfil;
-            
-            private global::System.Data.DataColumn columnDescuento;
+            private global::System.Data.DataColumn columnnombre;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SueldosPorPerfilDataTable() {
-                this.TableName = "SueldosPorPerfil";
+            public TaSueldoHistoricoDataTable() {
+                this.TableName = "TaSueldoHistorico";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +331,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SueldosPorPerfilDataTable(global::System.Data.DataTable table) {
+            internal TaSueldoHistoricoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,7 +348,292 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SueldosPorPerfilDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TaSueldoHistoricoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fechaColumn {
+                get {
+                    return this.columnfecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn sueldoColumn {
+                get {
+                    return this.columnsueldo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TaSueldoHistoricoRow this[int index] {
+                get {
+                    return ((TaSueldoHistoricoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TaSueldoHistoricoRowChangeEventHandler TaSueldoHistoricoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TaSueldoHistoricoRowChangeEventHandler TaSueldoHistoricoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TaSueldoHistoricoRowChangeEventHandler TaSueldoHistoricoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event TaSueldoHistoricoRowChangeEventHandler TaSueldoHistoricoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddTaSueldoHistoricoRow(TaSueldoHistoricoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TaSueldoHistoricoRow AddTaSueldoHistoricoRow(System.DateTime fecha, decimal sueldo, string nombre) {
+                TaSueldoHistoricoRow rowTaSueldoHistoricoRow = ((TaSueldoHistoricoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        fecha,
+                        sueldo,
+                        nombre};
+                rowTaSueldoHistoricoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTaSueldoHistoricoRow);
+                return rowTaSueldoHistoricoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TaSueldoHistoricoDataTable cln = ((TaSueldoHistoricoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TaSueldoHistoricoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnfecha = base.Columns["fecha"];
+                this.columnsueldo = base.Columns["sueldo"];
+                this.columnnombre = base.Columns["nombre"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha);
+                this.columnsueldo = new global::System.Data.DataColumn("sueldo", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsueldo);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnfecha.AllowDBNull = false;
+                this.columnsueldo.AllowDBNull = false;
+                this.columnnombre.AllowDBNull = false;
+                this.columnnombre.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TaSueldoHistoricoRow NewTaSueldoHistoricoRow() {
+                return ((TaSueldoHistoricoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TaSueldoHistoricoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TaSueldoHistoricoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TaSueldoHistoricoRowChanged != null)) {
+                    this.TaSueldoHistoricoRowChanged(this, new TaSueldoHistoricoRowChangeEvent(((TaSueldoHistoricoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TaSueldoHistoricoRowChanging != null)) {
+                    this.TaSueldoHistoricoRowChanging(this, new TaSueldoHistoricoRowChangeEvent(((TaSueldoHistoricoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TaSueldoHistoricoRowDeleted != null)) {
+                    this.TaSueldoHistoricoRowDeleted(this, new TaSueldoHistoricoRowChangeEvent(((TaSueldoHistoricoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TaSueldoHistoricoRowDeleting != null)) {
+                    this.TaSueldoHistoricoRowDeleting(this, new TaSueldoHistoricoRowChangeEvent(((TaSueldoHistoricoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveTaSueldoHistoricoRow(TaSueldoHistoricoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DsSueldo ds = new DsSueldo();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TaSueldoHistoricoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TaSueldoNetoDataTable : global::System.Data.TypedTableBase<TaSueldoNetoRow> {
+            
+            private global::System.Data.DataColumn columnUsuario;
+            
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnSueldoBruto;
+            
+            private global::System.Data.DataColumn columnAsignacion;
+            
+            private global::System.Data.DataColumn columnPerfil;
+            
+            private global::System.Data.DataColumn columnDescuento;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TaSueldoNetoDataTable() {
+                this.TableName = "TaSueldoNeto";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal TaSueldoNetoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected TaSueldoNetoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -383,34 +697,34 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SueldosPorPerfilRow this[int index] {
+            public TaSueldoNetoRow this[int index] {
                 get {
-                    return ((SueldosPorPerfilRow)(this.Rows[index]));
+                    return ((TaSueldoNetoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SueldosPorPerfilRowChangeEventHandler SueldosPorPerfilRowChanging;
+            public event TaSueldoNetoRowChangeEventHandler TaSueldoNetoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SueldosPorPerfilRowChangeEventHandler SueldosPorPerfilRowChanged;
+            public event TaSueldoNetoRowChangeEventHandler TaSueldoNetoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SueldosPorPerfilRowChangeEventHandler SueldosPorPerfilRowDeleting;
+            public event TaSueldoNetoRowChangeEventHandler TaSueldoNetoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SueldosPorPerfilRowChangeEventHandler SueldosPorPerfilRowDeleted;
+            public event TaSueldoNetoRowChangeEventHandler TaSueldoNetoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSueldosPorPerfilRow(SueldosPorPerfilRow row) {
+            public void AddTaSueldoNetoRow(TaSueldoNetoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SueldosPorPerfilRow AddSueldosPorPerfilRow(string Usuario, System.DateTime Fecha, decimal SueldoBruto, decimal Asignacion, string Perfil, decimal Descuento) {
-                SueldosPorPerfilRow rowSueldosPorPerfilRow = ((SueldosPorPerfilRow)(this.NewRow()));
+            public TaSueldoNetoRow AddTaSueldoNetoRow(string Usuario, System.DateTime Fecha, decimal SueldoBruto, decimal Asignacion, string Perfil, decimal Descuento) {
+                TaSueldoNetoRow rowTaSueldoNetoRow = ((TaSueldoNetoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Usuario,
                         Fecha,
@@ -418,15 +732,15 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
                         Asignacion,
                         Perfil,
                         Descuento};
-                rowSueldosPorPerfilRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSueldosPorPerfilRow);
-                return rowSueldosPorPerfilRow;
+                rowTaSueldoNetoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTaSueldoNetoRow);
+                return rowTaSueldoNetoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SueldosPorPerfilDataTable cln = ((SueldosPorPerfilDataTable)(base.Clone()));
+                TaSueldoNetoDataTable cln = ((TaSueldoNetoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -434,7 +748,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SueldosPorPerfilDataTable();
+                return new TaSueldoNetoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -473,28 +787,28 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SueldosPorPerfilRow NewSueldosPorPerfilRow() {
-                return ((SueldosPorPerfilRow)(this.NewRow()));
+            public TaSueldoNetoRow NewTaSueldoNetoRow() {
+                return ((TaSueldoNetoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SueldosPorPerfilRow(builder);
+                return new TaSueldoNetoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SueldosPorPerfilRow);
+                return typeof(TaSueldoNetoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SueldosPorPerfilRowChanged != null)) {
-                    this.SueldosPorPerfilRowChanged(this, new SueldosPorPerfilRowChangeEvent(((SueldosPorPerfilRow)(e.Row)), e.Action));
+                if ((this.TaSueldoNetoRowChanged != null)) {
+                    this.TaSueldoNetoRowChanged(this, new TaSueldoNetoRowChangeEvent(((TaSueldoNetoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -502,8 +816,8 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SueldosPorPerfilRowChanging != null)) {
-                    this.SueldosPorPerfilRowChanging(this, new SueldosPorPerfilRowChangeEvent(((SueldosPorPerfilRow)(e.Row)), e.Action));
+                if ((this.TaSueldoNetoRowChanging != null)) {
+                    this.TaSueldoNetoRowChanging(this, new TaSueldoNetoRowChangeEvent(((TaSueldoNetoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -511,8 +825,8 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SueldosPorPerfilRowDeleted != null)) {
-                    this.SueldosPorPerfilRowDeleted(this, new SueldosPorPerfilRowChangeEvent(((SueldosPorPerfilRow)(e.Row)), e.Action));
+                if ((this.TaSueldoNetoRowDeleted != null)) {
+                    this.TaSueldoNetoRowDeleted(this, new TaSueldoNetoRowChangeEvent(((TaSueldoNetoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -520,14 +834,14 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SueldosPorPerfilRowDeleting != null)) {
-                    this.SueldosPorPerfilRowDeleting(this, new SueldosPorPerfilRowChangeEvent(((SueldosPorPerfilRow)(e.Row)), e.Action));
+                if ((this.TaSueldoNetoRowDeleting != null)) {
+                    this.TaSueldoNetoRowDeleting(this, new TaSueldoNetoRowChangeEvent(((TaSueldoNetoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSueldosPorPerfilRow(SueldosPorPerfilRow row) {
+            public void RemoveTaSueldoNetoRow(TaSueldoNetoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -536,7 +850,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSListadoSueldos ds = new DSListadoSueldos();
+                DsSueldo ds = new DsSueldo();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -554,7 +868,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SueldosPorPerfilDataTable";
+                attribute2.FixedValue = "TaSueldoNetoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -598,25 +912,73 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SueldosPorPerfilRow : global::System.Data.DataRow {
+        public partial class TaSueldoHistoricoRow : global::System.Data.DataRow {
             
-            private SueldosPorPerfilDataTable tableSueldosPorPerfil;
+            private TaSueldoHistoricoDataTable tableTaSueldoHistorico;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SueldosPorPerfilRow(global::System.Data.DataRowBuilder rb) : 
+            internal TaSueldoHistoricoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSueldosPorPerfil = ((SueldosPorPerfilDataTable)(this.Table));
+                this.tableTaSueldoHistorico = ((TaSueldoHistoricoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha {
+                get {
+                    return ((global::System.DateTime)(this[this.tableTaSueldoHistorico.fechaColumn]));
+                }
+                set {
+                    this[this.tableTaSueldoHistorico.fechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal sueldo {
+                get {
+                    return ((decimal)(this[this.tableTaSueldoHistorico.sueldoColumn]));
+                }
+                set {
+                    this[this.tableTaSueldoHistorico.sueldoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre {
+                get {
+                    return ((string)(this[this.tableTaSueldoHistorico.nombreColumn]));
+                }
+                set {
+                    this[this.tableTaSueldoHistorico.nombreColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TaSueldoNetoRow : global::System.Data.DataRow {
+            
+            private TaSueldoNetoDataTable tableTaSueldoNeto;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal TaSueldoNetoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTaSueldoNeto = ((TaSueldoNetoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Usuario {
                 get {
-                    return ((string)(this[this.tableSueldosPorPerfil.UsuarioColumn]));
+                    return ((string)(this[this.tableTaSueldoNeto.UsuarioColumn]));
                 }
                 set {
-                    this[this.tableSueldosPorPerfil.UsuarioColumn] = value;
+                    this[this.tableTaSueldoNeto.UsuarioColumn] = value;
                 }
             }
             
@@ -624,10 +986,10 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime Fecha {
                 get {
-                    return ((global::System.DateTime)(this[this.tableSueldosPorPerfil.FechaColumn]));
+                    return ((global::System.DateTime)(this[this.tableTaSueldoNeto.FechaColumn]));
                 }
                 set {
-                    this[this.tableSueldosPorPerfil.FechaColumn] = value;
+                    this[this.tableTaSueldoNeto.FechaColumn] = value;
                 }
             }
             
@@ -635,10 +997,10 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal SueldoBruto {
                 get {
-                    return ((decimal)(this[this.tableSueldosPorPerfil.SueldoBrutoColumn]));
+                    return ((decimal)(this[this.tableTaSueldoNeto.SueldoBrutoColumn]));
                 }
                 set {
-                    this[this.tableSueldosPorPerfil.SueldoBrutoColumn] = value;
+                    this[this.tableTaSueldoNeto.SueldoBrutoColumn] = value;
                 }
             }
             
@@ -647,14 +1009,14 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             public decimal Asignacion {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSueldosPorPerfil.AsignacionColumn]));
+                        return ((decimal)(this[this.tableTaSueldoNeto.AsignacionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Asignacion\' in table \'SueldosPorPerfil\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Asignacion\' in table \'TaSueldoNeto\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSueldosPorPerfil.AsignacionColumn] = value;
+                    this[this.tableTaSueldoNeto.AsignacionColumn] = value;
                 }
             }
             
@@ -662,10 +1024,10 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Perfil {
                 get {
-                    return ((string)(this[this.tableSueldosPorPerfil.PerfilColumn]));
+                    return ((string)(this[this.tableTaSueldoNeto.PerfilColumn]));
                 }
                 set {
-                    this[this.tableSueldosPorPerfil.PerfilColumn] = value;
+                    this[this.tableTaSueldoNeto.PerfilColumn] = value;
                 }
             }
             
@@ -674,39 +1036,39 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
             public decimal Descuento {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSueldosPorPerfil.DescuentoColumn]));
+                        return ((decimal)(this[this.tableTaSueldoNeto.DescuentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Descuento\' in table \'SueldosPorPerfil\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Descuento\' in table \'TaSueldoNeto\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSueldosPorPerfil.DescuentoColumn] = value;
+                    this[this.tableTaSueldoNeto.DescuentoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsAsignacionNull() {
-                return this.IsNull(this.tableSueldosPorPerfil.AsignacionColumn);
+                return this.IsNull(this.tableTaSueldoNeto.AsignacionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetAsignacionNull() {
-                this[this.tableSueldosPorPerfil.AsignacionColumn] = global::System.Convert.DBNull;
+                this[this.tableTaSueldoNeto.AsignacionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDescuentoNull() {
-                return this.IsNull(this.tableSueldosPorPerfil.DescuentoColumn);
+                return this.IsNull(this.tableTaSueldoNeto.DescuentoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDescuentoNull() {
-                this[this.tableSueldosPorPerfil.DescuentoColumn] = global::System.Convert.DBNull;
+                this[this.tableTaSueldoNeto.DescuentoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -714,22 +1076,56 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SueldosPorPerfilRowChangeEvent : global::System.EventArgs {
+        public class TaSueldoHistoricoRowChangeEvent : global::System.EventArgs {
             
-            private SueldosPorPerfilRow eventRow;
+            private TaSueldoHistoricoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SueldosPorPerfilRowChangeEvent(SueldosPorPerfilRow row, global::System.Data.DataRowAction action) {
+            public TaSueldoHistoricoRowChangeEvent(TaSueldoHistoricoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SueldosPorPerfilRow Row {
+            public TaSueldoHistoricoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class TaSueldoNetoRowChangeEvent : global::System.EventArgs {
+            
+            private TaSueldoNetoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TaSueldoNetoRowChangeEvent(TaSueldoNetoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TaSueldoNetoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -745,7 +1141,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos {
         }
     }
 }
-namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos.DSListadoSueldosTableAdapters {
+namespace BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldoTableAdapters {
     
     
     /// <summary>
@@ -757,7 +1153,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos.DSListadoSu
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SueldosPorPerfilTableAdapter : global::System.ComponentModel.Component {
+    public partial class TaSueldoHistoricoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -771,7 +1167,7 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos.DSListadoSu
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SueldosPorPerfilTableAdapter() {
+        public TaSueldoHistoricoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -868,7 +1264,179 @@ namespace BugTrackingSystem.CapaPresentacion.Reportes.ListadoSueldos.DSListadoSu
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SueldosPorPerfil";
+            tableMapping.DataSetTable = "TaSueldoHistorico";
+            tableMapping.ColumnMappings.Add("fecha", "fecha");
+            tableMapping.ColumnMappings.Add("sueldo", "sueldo");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::BugTrackingSystem.Properties.Settings.Default.BugTrackerTPIConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        SueldoPerfilHistorico.fecha, SueldoPerfilHistorico.sueldo, Perfiles.nombre
+FROM            SueldoPerfilHistorico INNER JOIN
+                         Perfiles ON SueldoPerfilHistorico.id_perfil = Perfiles.id_perfil
+ORDER BY Perfiles.nombre, SueldoPerfilHistorico.fecha DESC";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DsSueldo.TaSueldoHistoricoDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DsSueldo.TaSueldoHistoricoDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DsSueldo.TaSueldoHistoricoDataTable dataTable = new DsSueldo.TaSueldoHistoricoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TaSueldoNetoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public TaSueldoNetoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TaSueldoNeto";
             tableMapping.ColumnMappings.Add("Usuario", "Usuario");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
             tableMapping.ColumnMappings.Add("SueldoBruto", "SueldoBruto");
@@ -907,7 +1475,7 @@ ORDER BY Perfil, Fecha DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSListadoSueldos.SueldosPorPerfilDataTable dataTable) {
+        public virtual int Fill(DsSueldo.TaSueldoNetoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -920,9 +1488,9 @@ ORDER BY Perfil, Fecha DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSListadoSueldos.SueldosPorPerfilDataTable GetData() {
+        public virtual DsSueldo.TaSueldoNetoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSListadoSueldos.SueldosPorPerfilDataTable dataTable = new DSListadoSueldos.SueldosPorPerfilDataTable();
+            DsSueldo.TaSueldoNetoDataTable dataTable = new DsSueldo.TaSueldoNetoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -996,7 +1564,7 @@ ORDER BY Perfil, Fecha DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DSListadoSueldos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DsSueldo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1006,7 +1574,7 @@ ORDER BY Perfil, Fecha DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DSListadoSueldos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DsSueldo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1016,7 +1584,7 @@ ORDER BY Perfil, Fecha DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DSListadoSueldos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DsSueldo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1050,7 +1618,7 @@ ORDER BY Perfil, Fecha DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DSListadoSueldos dataSet) {
+        public virtual int UpdateAll(DsSueldo dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
