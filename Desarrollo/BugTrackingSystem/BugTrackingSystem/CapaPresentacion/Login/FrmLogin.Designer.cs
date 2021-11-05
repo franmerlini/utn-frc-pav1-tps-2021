@@ -60,7 +60,7 @@ namespace BugTrackingSystem
             this.gBxLogin.Controls.Add(this.label4);
             this.gBxLogin.Controls.Add(this.btnIniciarSesion);
             this.gBxLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gBxLogin.Location = new System.Drawing.Point(337, 10);
+            this.gBxLogin.Location = new System.Drawing.Point(77, 10);
             this.gBxLogin.Margin = new System.Windows.Forms.Padding(2);
             this.gBxLogin.Name = "gBxLogin";
             this.gBxLogin.Padding = new System.Windows.Forms.Padding(2);
@@ -190,7 +190,7 @@ namespace BugTrackingSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 430F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 447);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(475, 447);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // FrmLogin
@@ -200,7 +200,7 @@ namespace BugTrackingSystem
             this.BackColor = System.Drawing.Color.Maroon;
             this.BackgroundImage = global::BugTrackingSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(995, 447);
+            this.ClientSize = new System.Drawing.Size(475, 447);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

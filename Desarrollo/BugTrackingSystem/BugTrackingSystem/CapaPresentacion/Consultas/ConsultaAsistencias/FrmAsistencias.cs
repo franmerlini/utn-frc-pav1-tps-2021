@@ -187,8 +187,15 @@ namespace BugTrackingSystem.CapaPresentacion
                 MessageBox.Show("Debe seleccionar un registro antes de editarlo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-                
+              
             AsistenciaUsuario asistenciaUsuario = (AsistenciaUsuario)dgvAsistencias.CurrentRow.DataBoundItem;
+
+            if (!(usuarioService.ObtenerUsuarios().Any(u => u.IdUsuario == asistenciaUsuario.Usuario.IdUsuario)))
+            {
+                MessageBox.Show("¡No puede editar la asistencia de un usuario inactivo!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             FrmAsistenciasABM frmEditar = new FrmAsistenciasABM(FrmAsistenciasABM.FormMode.actualizar, asistenciaUsuario);
             frmEditar.ShowDialog();
 
@@ -205,10 +212,14 @@ namespace BugTrackingSystem.CapaPresentacion
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+ 
+        }
 
+        private void DgvAsistencias_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
             foreach (DataGridViewRow a in dgvAsistencias.Rows)
             {
-                if ((bool)a.Cells[6].Value)
+                if (((AsistenciaUsuario)a.DataBoundItem).Borrado)
                 {
                     a.DefaultCellStyle.BackColor = Color.LightGray;
                 }

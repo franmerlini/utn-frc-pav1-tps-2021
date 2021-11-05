@@ -31,9 +31,8 @@ FROM            SueldoPerfilHistorico INNER JOIN
             <MainSource>
               <DbSource ConnectionRef="BugTrackerTPIConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Perfiles.nombre AS Perfil, Usuarios.usuario AS Usuario, Sueldos.fecha AS Fecha, Sueldos.sueldo_bruto AS SueldoBruto, SUM(DISTINCT SueldoAsignaciones.monto) AS Asignacion, SUM(DISTINCT SueldoDescuentos.monto) 
-                         AS Descuento
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Perfiles.nombre AS Perfil, Usuarios.usuario AS Usuario, Sueldos.fecha AS Fecha, Sueldos.sueldo_bruto AS SueldoBruto, SUM(SueldoAsignaciones.monto) AS Asignacion, SUM(SueldoDescuentos.monto) AS Descuento
 FROM            Sueldos INNER JOIN
                          Usuarios ON Sueldos.id_usuario = Usuarios.id_usuario INNER JOIN
                          Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil LEFT OUTER JOIN
@@ -106,7 +105,7 @@ GROUP BY Descuentos.n_descuento, SueldoDescuentos.fecha</CommandText>
   <xs:element name="DsSueldo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsSueldo" msprop:Generator_UserDSName="DsSueldo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TaSueldoHistorico" msprop:Generator_TableClassName="TaSueldoHistoricoDataTable" msprop:Generator_TableVarName="tableTaSueldoHistorico" msprop:Generator_TablePropName="TaSueldoHistorico" msprop:Generator_RowDeletingName="TaSueldoHistoricoRowDeleting" msprop:Generator_RowChangingName="TaSueldoHistoricoRowChanging" msprop:Generator_RowEvHandlerName="TaSueldoHistoricoRowChangeEventHandler" msprop:Generator_RowDeletedName="TaSueldoHistoricoRowDeleted" msprop:Generator_UserTableName="TaSueldoHistorico" msprop:Generator_RowChangedName="TaSueldoHistoricoRowChanged" msprop:Generator_RowEvArgName="TaSueldoHistoricoRowChangeEvent" msprop:Generator_RowClassName="TaSueldoHistoricoRow">
+        <xs:element name="TaSueldoHistorico" msprop:Generator_TableClassName="TaSueldoHistoricoDataTable" msprop:Generator_TableVarName="tableTaSueldoHistorico" msprop:Generator_RowChangedName="TaSueldoHistoricoRowChanged" msprop:Generator_TablePropName="TaSueldoHistorico" msprop:Generator_RowDeletingName="TaSueldoHistoricoRowDeleting" msprop:Generator_RowChangingName="TaSueldoHistoricoRowChanging" msprop:Generator_RowEvHandlerName="TaSueldoHistoricoRowChangeEventHandler" msprop:Generator_RowDeletedName="TaSueldoHistoricoRowDeleted" msprop:Generator_RowClassName="TaSueldoHistoricoRow" msprop:Generator_UserTableName="TaSueldoHistorico" msprop:Generator_RowEvArgName="TaSueldoHistoricoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
@@ -121,7 +120,7 @@ GROUP BY Descuentos.n_descuento, SueldoDescuentos.fecha</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TaSueldoNeto" msprop:Generator_TableClassName="TaSueldoNetoDataTable" msprop:Generator_TableVarName="tableTaSueldoNeto" msprop:Generator_TablePropName="TaSueldoNeto" msprop:Generator_RowDeletingName="TaSueldoNetoRowDeleting" msprop:Generator_RowChangingName="TaSueldoNetoRowChanging" msprop:Generator_RowEvHandlerName="TaSueldoNetoRowChangeEventHandler" msprop:Generator_RowDeletedName="TaSueldoNetoRowDeleted" msprop:Generator_UserTableName="TaSueldoNeto" msprop:Generator_RowChangedName="TaSueldoNetoRowChanged" msprop:Generator_RowEvArgName="TaSueldoNetoRowChangeEvent" msprop:Generator_RowClassName="TaSueldoNetoRow">
+        <xs:element name="TaSueldoNeto" msprop:Generator_TableClassName="TaSueldoNetoDataTable" msprop:Generator_TableVarName="tableTaSueldoNeto" msprop:Generator_RowChangedName="TaSueldoNetoRowChanged" msprop:Generator_TablePropName="TaSueldoNeto" msprop:Generator_RowDeletingName="TaSueldoNetoRowDeleting" msprop:Generator_RowChangingName="TaSueldoNetoRowChanging" msprop:Generator_RowEvHandlerName="TaSueldoNetoRowChangeEventHandler" msprop:Generator_RowDeletedName="TaSueldoNetoRowDeleted" msprop:Generator_RowClassName="TaSueldoNetoRow" msprop:Generator_UserTableName="TaSueldoNeto" msprop:Generator_RowEvArgName="TaSueldoNetoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario">
@@ -145,7 +144,7 @@ GROUP BY Descuentos.n_descuento, SueldoDescuentos.fecha</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Asignaciones" msprop:Generator_TableClassName="AsignacionesDataTable" msprop:Generator_TableVarName="tableAsignaciones" msprop:Generator_RowChangedName="AsignacionesRowChanged" msprop:Generator_TablePropName="Asignaciones" msprop:Generator_RowDeletingName="AsignacionesRowDeleting" msprop:Generator_RowChangingName="AsignacionesRowChanging" msprop:Generator_RowEvHandlerName="AsignacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="AsignacionesRowDeleted" msprop:Generator_RowClassName="AsignacionesRow" msprop:Generator_UserTableName="Asignaciones" msprop:Generator_RowEvArgName="AsignacionesRowChangeEvent">
+        <xs:element name="Asignaciones" msprop:Generator_TableClassName="AsignacionesDataTable" msprop:Generator_TableVarName="tableAsignaciones" msprop:Generator_TablePropName="Asignaciones" msprop:Generator_RowDeletingName="AsignacionesRowDeleting" msprop:Generator_RowChangingName="AsignacionesRowChanging" msprop:Generator_RowEvHandlerName="AsignacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="AsignacionesRowDeleted" msprop:Generator_UserTableName="Asignaciones" msprop:Generator_RowChangedName="AsignacionesRowChanged" msprop:Generator_RowEvArgName="AsignacionesRowChangeEvent" msprop:Generator_RowClassName="AsignacionesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Monto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:decimal" minOccurs="0" />
@@ -160,7 +159,7 @@ GROUP BY Descuentos.n_descuento, SueldoDescuentos.fecha</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Descuentos" msprop:Generator_TableClassName="DescuentosDataTable" msprop:Generator_TableVarName="tableDescuentos" msprop:Generator_RowChangedName="DescuentosRowChanged" msprop:Generator_TablePropName="Descuentos" msprop:Generator_RowDeletingName="DescuentosRowDeleting" msprop:Generator_RowChangingName="DescuentosRowChanging" msprop:Generator_RowEvHandlerName="DescuentosRowChangeEventHandler" msprop:Generator_RowDeletedName="DescuentosRowDeleted" msprop:Generator_RowClassName="DescuentosRow" msprop:Generator_UserTableName="Descuentos" msprop:Generator_RowEvArgName="DescuentosRowChangeEvent">
+        <xs:element name="Descuentos" msprop:Generator_TableClassName="DescuentosDataTable" msprop:Generator_TableVarName="tableDescuentos" msprop:Generator_TablePropName="Descuentos" msprop:Generator_RowDeletingName="DescuentosRowDeleting" msprop:Generator_RowChangingName="DescuentosRowChanging" msprop:Generator_RowEvHandlerName="DescuentosRowChangeEventHandler" msprop:Generator_RowDeletedName="DescuentosRowDeleted" msprop:Generator_UserTableName="Descuentos" msprop:Generator_RowChangedName="DescuentosRowChanged" msprop:Generator_RowEvArgName="DescuentosRowChangeEvent" msprop:Generator_RowClassName="DescuentosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Monto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:decimal" minOccurs="0" />

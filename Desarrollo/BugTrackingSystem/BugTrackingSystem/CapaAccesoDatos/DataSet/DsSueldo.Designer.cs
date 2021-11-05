@@ -2284,8 +2284,7 @@ namespace BugTrackingSystem.CapaAccesoDatos.DataSet.DsSueldoTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Perfiles.nombre AS Perfil, Usuarios.usuario AS Usuario, Sueldos.fecha AS Fecha, Sueldos.sueldo_bruto AS SueldoBruto, SUM(DISTINCT SueldoAsignaciones.monto) AS Asignacion, SUM(DISTINCT SueldoDescuentos.monto) 
-                         AS Descuento
+            this._commandCollection[0].CommandText = @"SELECT        Perfiles.nombre AS Perfil, Usuarios.usuario AS Usuario, Sueldos.fecha AS Fecha, Sueldos.sueldo_bruto AS SueldoBruto, SUM(SueldoAsignaciones.monto) AS Asignacion, SUM(SueldoDescuentos.monto) AS Descuento
 FROM            Sueldos INNER JOIN
                          Usuarios ON Sueldos.id_usuario = Usuarios.id_usuario INNER JOIN
                          Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil LEFT OUTER JOIN

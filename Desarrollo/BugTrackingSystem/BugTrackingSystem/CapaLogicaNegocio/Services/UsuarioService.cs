@@ -45,6 +45,28 @@ namespace BugTrackingSystem.CapaLogicaNegocio
         //Actualizar un usuario
         internal bool ActualizarUsuario(Usuario usuario)
         {
+            // Borrado en cascada para las asistencias
+            if (usuario.Borrado)
+            {
+                var parametros = new Dictionary<string, object>()
+                {
+                    { "idUsuario", usuario.IdUsuario }
+                };
+
+                AsistenciaUsuarioService asistenciaUsuarioService = new AsistenciaUsuarioService();
+                IList<AsistenciaUsuario> asistencias = asistenciaUsuarioService.ObtenerAsistenciasUsuario(parametros);
+                foreach (AsistenciaUsuario a in asistencias)
+                {
+                    a.Borrado = true;
+                    parametros = new Dictionary<string, object>()
+                    {
+                        { "fechaBase", a.Fecha },
+                        { "idUsuarioBase", a.Usuario.IdUsuario }
+                    };
+                    asistenciaUsuarioService.ActualizarAsistenciaUsuario(a, parametros);
+                }
+            }
+
             return usuarioDao.ActualizarUsuario(usuario);
         }
 

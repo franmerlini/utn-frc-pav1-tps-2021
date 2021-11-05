@@ -205,6 +205,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignaciones.resx">
       <DependentUpon>FrmAsignaciones.cs</DependentUpon>
@@ -277,11 +282,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -301,6 +301,7 @@
     <None Include="Resources\BtnInformacion.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BtnLimpiar.png" />
     <None Include="Resources\BtnVolver.png" />
   </ItemGroup>
   <ItemGroup>
@@ -308,12 +309,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BtnConsultar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnDeshacer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnRehacer.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BtnAceptar.png" />
@@ -325,19 +320,10 @@
     <None Include="Resources\LogoUsuario.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BtnRecuperar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnGuardar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnLimpiar.png" />
-    <None Include="Resources\BtnLimpiar1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Bug.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BtnGuardar.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -282,6 +282,7 @@ namespace BugTrackingSystem.CapaPresentacion
             this.dgvAsistencias.ReadOnly = true;
             this.dgvAsistencias.Size = new System.Drawing.Size(1254, 501);
             this.dgvAsistencias.TabIndex = 2;
+            this.dgvAsistencias.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvAsistencias_DataBindingComplete);
             // 
             // grpInformacion
             // 
