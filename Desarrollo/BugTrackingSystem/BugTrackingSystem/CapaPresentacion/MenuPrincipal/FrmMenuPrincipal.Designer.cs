@@ -167,6 +167,7 @@ namespace BugTrackingSystem.Forms
             this.BtnAyuda.Text = "Ayuda";
             this.BtnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAyuda.UseVisualStyleBackColor = false;
+            this.BtnAyuda.Click += new System.EventHandler(this.BtnAyuda_Click);
             // 
             // PnlReportes
             // 

@@ -471,3 +471,4 @@ C:\Users\franc\source\repos\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\
 C:\Users\franc\source\repos\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.csproj.CoreCompileInputs.cache
 C:\Users\franc\source\repos\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.exe
 C:\Users\franc\source\repos\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.pdb
+C:\Users\franc\source\repos\PAVI\Desarrollo\BugTrackingSystem\BugTrackingSystem\obj\Debug\BugTrackingSystem.CapaPresentacion.Ayuda.FrmAyuda.resources

@@ -97,6 +97,12 @@
     <Compile Include="CapaLogicaNegocio\Services\SueldoPerfilHistoricoService.cs" />
     <Compile Include="CapaLogicaNegocio\Services\SueldoService.cs" />
     <Compile Include="CapaLogicaNegocio\Services\UsuarioService.cs" />
+    <Compile Include="CapaPresentacion\Ayuda\FrmAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Ayuda\FrmAyuda.Designer.cs">
+      <DependentUpon>FrmAyuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="CapaPresentacion\Ayuda\FrmAyuda.resx">
+      <DependentUpon>FrmAyuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\Consultas\ConsultaAsignaciones\FrmAsignaciones.resx">
       <DependentUpon>FrmAsignaciones.cs</DependentUpon>
     </EmbeddedResource>

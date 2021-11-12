@@ -1,4 +1,5 @@
 ﻿using BugTrackingSystem.CapaPresentacion;
+using BugTrackingSystem.CapaPresentacion.Ayuda;
 using BugTrackingSystem.CapaPresentacion.ConsultaAsignaciones;
 using BugTrackingSystem.CapaPresentacion.ConsultaDescuentos;
 using BugTrackingSystem.CapaPresentacion.Consultas.ConsultaSueldosPH;
@@ -187,6 +188,12 @@ namespace BugTrackingSystem.Forms
                 login.FormClosing += Login_FormClosing;
                 MostrarVentana(login, "Bug Tracking System");
             }
+        }
+
+        private void BtnAyuda_Click(object sender, EventArgs e)
+        {
+            FrmAyuda ayuda = new FrmAyuda();
+            ayuda.ShowDialog();
         }
 
         // Método para remover el flickering en los formularios
